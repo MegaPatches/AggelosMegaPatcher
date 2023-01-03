@@ -87,6 +87,10 @@
             this.tbGems = new System.Windows.Forms.NumericUpDown();
             this.tbLevel = new System.Windows.Forms.NumericUpDown();
             this.tbExp = new System.Windows.Forms.NumericUpDown();
+            this.groupSaveSlots = new System.Windows.Forms.GroupBox();
+            this.radioSaveSlot1 = new System.Windows.Forms.RadioButton();
+            this.radioSaveSlot2 = new System.Windows.Forms.RadioButton();
+            this.radioSaveSlot3 = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExp)).BeginInit();
@@ -97,6 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbGems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbExp)).BeginInit();
+            this.groupSaveSlots.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbFileSelected
@@ -836,11 +841,54 @@
             this.tbExp.TabIndex = 36;
             this.tbExp.ValueChanged += new System.EventHandler(this.tbExp_ValueChanged);
             // 
+            // groupSaveSlots
+            // 
+            this.groupSaveSlots.Controls.Add(this.radioSaveSlot3);
+            this.groupSaveSlots.Controls.Add(this.radioSaveSlot2);
+            this.groupSaveSlots.Controls.Add(this.radioSaveSlot1);
+            this.groupSaveSlots.Location = new System.Drawing.Point(214, 504);
+            this.groupSaveSlots.Name = "groupSaveSlots";
+            this.groupSaveSlots.Size = new System.Drawing.Size(74, 37);
+            this.groupSaveSlots.TabIndex = 38;
+            this.groupSaveSlots.TabStop = false;
+            this.groupSaveSlots.Text = "Save Slot";
+            // 
+            // radioSaveSlot1
+            // 
+            this.radioSaveSlot1.AutoSize = true;
+            this.radioSaveSlot1.Location = new System.Drawing.Point(6, 16);
+            this.radioSaveSlot1.Name = "radioSaveSlot1";
+            this.radioSaveSlot1.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot1.TabIndex = 34;
+            this.radioSaveSlot1.TabStop = true;
+            this.radioSaveSlot1.UseVisualStyleBackColor = true;
+            // 
+            // radioSaveSlot2
+            // 
+            this.radioSaveSlot2.AutoSize = true;
+            this.radioSaveSlot2.Location = new System.Drawing.Point(29, 16);
+            this.radioSaveSlot2.Name = "radioSaveSlot2";
+            this.radioSaveSlot2.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot2.TabIndex = 35;
+            this.radioSaveSlot2.TabStop = true;
+            this.radioSaveSlot2.UseVisualStyleBackColor = true;
+            // 
+            // radioSaveSlot3
+            // 
+            this.radioSaveSlot3.AutoSize = true;
+            this.radioSaveSlot3.Location = new System.Drawing.Point(53, 16);
+            this.radioSaveSlot3.Name = "radioSaveSlot3";
+            this.radioSaveSlot3.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot3.TabIndex = 36;
+            this.radioSaveSlot3.TabStop = true;
+            this.radioSaveSlot3.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 553);
+            this.Controls.Add(this.groupSaveSlots);
             this.Controls.Add(this.tbExp);
             this.Controls.Add(this.tbLevel);
             this.Controls.Add(this.tbGems);
@@ -872,6 +920,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbGems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbExp)).EndInit();
+            this.groupSaveSlots.ResumeLayout(false);
+            this.groupSaveSlots.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -938,6 +988,10 @@
         private System.Windows.Forms.NumericUpDown tbGems;
         private System.Windows.Forms.NumericUpDown tbLevel;
         private System.Windows.Forms.NumericUpDown tbExp;
+        private System.Windows.Forms.GroupBox groupSaveSlots;
+        private System.Windows.Forms.RadioButton radioSaveSlot3;
+        private System.Windows.Forms.RadioButton radioSaveSlot2;
+        private System.Windows.Forms.RadioButton radioSaveSlot1;
     }
 }
 

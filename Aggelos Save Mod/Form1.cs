@@ -17,12 +17,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
  * 
  * - Manipulating checkboxes through code triggers other checkboxes. Need to make sure they are exclusively doing what I need
  * - Need to figure out harp and water vial states
+ * - Rework how save file/slot is stored in class
  ***************************/
 
 namespace Aggelos_Save_Mod
 {
     public partial class Form1 : Form
     {
+        //Declaring global save file object for use throughout the program
         public Save saveFile = new Save();
 
         public Form1()
@@ -31,12 +33,12 @@ namespace Aggelos_Save_Mod
         }
 
         /************************************************************
-         * RefreshValues
+         * RefreshUI
          * 
          * This function is called to refresh the values displayed to
          * the user based on the currently loaded save file.
          ************************************************************/
-        private void RefreshValues()
+        private void RefreshUI()
         {
             //Make sure we have loaded a file first
             if (saveFile.FileLoaded)
@@ -221,22 +223,33 @@ namespace Aggelos_Save_Mod
             //Call the dialog box and check that the OK button was clicked
             if (openDiag.ShowDialog() == DialogResult.OK)
             {
-                //Get the path of the selected file and load it into our save file object
-                if (saveFile.LoadFile(openDiag.FileName))
-                {
-                    //Be sure to refresh our app based on the loaded values
-                    RefreshValues();
+                //Load the file and store the results as a string array
+                string[] saveData = saveFile.LoadFile(openDiag.FileName);
 
-                    lblStatus.Text = "Save loaded successfully.";
+                //Check if there was a load issue
+                if (saveData.Length != 0)
+                {
+                    //Update the values based on the save data
+                    if (saveFile.UpdateValuesFromSave(saveData))
+                    {
+                        //Be sure to refresh our app based on the loaded values
+                        RefreshUI();
+
+                        lblStatus.Text = "Save loaded successfully.";
+                    }
+                    else
+                    {
+                        lblStatus.Text = "Errors during update...";
+                    }
                 }
                 else
                 {
-                    lblStatus.Text = "Errors during load...";
+                    lblStatus.Text = "Failed to load file...";
                 }
 
-                await Task.Delay(3000);
+                //Leave status message on screen for 5 seconds then remove
+                await Task.Delay(5000);
                 lblStatus.Text = "";
-
             }
         }
 
@@ -274,7 +287,7 @@ namespace Aggelos_Save_Mod
             saveFile.SetDefault();
 
             //Refresh the UI
-            RefreshValues();
+            RefreshUI();
 
             lblStatus.Text = "Defaults loaded.";
 
@@ -1052,26 +1065,23 @@ namespace Aggelos_Save_Mod
          * LoadFile
          * 
          * This function takes a file name and attempts to open and read
-         * the save contents. These are then passed on to a function to 
-         * store each value in the appropriate property variable.
-         * It returns true if success and false if failed.
+         * the save contents.
+         * It returns a string array representation of the save data.
          ************************************************************/
-        public bool LoadFile(string fileName)
+        public string[] LoadFile(string fileName)
         {
             //Attempt to read the file
             try
             {
-                //Store each line of the file in a string
-                string[] saveData = File.ReadAllLines(fileName);
+                //Store each line of the file in a string array
+                string[] saveData = new string[196];
+                saveData = File.ReadAllLines(fileName);
 
-                //Be sure to update all variables based on the data read in
-                if (UpdateSaveValues(saveData) == false)
-                {
-                    return false;
-                }
-
-                //Set the text box to show the file currently selected
+                //Update the file name with the file being read
                 FileName = fileName;
+
+                //Return the array
+                return saveData;
             }
             catch (SecurityException ex)
             {
@@ -1082,24 +1092,19 @@ namespace Aggelos_Save_Mod
                 //Reset the text box to show no file selected
                 FileName = fileName;
 
-                return false;
+                //Return empty array if there was an error
+                return new string[0];
             }
-
-            FileLoaded = true;
-
-            return true;
         }
 
         /************************************************************
-         * UpdateSaveValues
+         * UpdateValuesFromSave
          * 
-         * This function reads the save contents from the provided file name
+         * This function reads the save contents provided from a string array
          * and stores each value in the appropriate property variable.
          * It returns true if success and false if failed.
-         * NOTE: This currently only supports a few modifications until
-         *       more items are verified for what they are.
          ************************************************************/
-        public bool UpdateSaveValues(string[] saveData)
+        public bool UpdateValuesFromSave(string[] saveData)
         {
             try
             {
@@ -1306,6 +1311,9 @@ namespace Aggelos_Save_Mod
                 chest_108 = Int16.Parse(saveData[193].Substring(saveData[193].IndexOf("=") + 1));
                 chest_109 = Int16.Parse(saveData[194].Substring(saveData[194].IndexOf("=") + 1));
                 chest_110 = Int16.Parse(saveData[195].Substring(saveData[195].IndexOf("=") + 1));
+
+                //Mark file as loaded if everything has successfully been set
+                FileLoaded = true;
             }
             catch (Exception e)
             {
