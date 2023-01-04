@@ -37,12 +37,8 @@
             this.btnSaveFile = new System.Windows.Forms.Button();
             this.btnLoadDefault = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.checkHerb = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picExp = new System.Windows.Forms.PictureBox();
-            this.picLvl = new System.Windows.Forms.PictureBox();
-            this.picGem = new System.Windows.Forms.PictureBox();
             this.tabInventory = new System.Windows.Forms.TabPage();
+            this.checkPotion = new System.Windows.Forms.CheckBox();
             this.checkSacredArmor = new System.Windows.Forms.CheckBox();
             this.panelPotions = new System.Windows.Forms.Panel();
             this.radioElixir = new System.Windows.Forms.RadioButton();
@@ -82,22 +78,32 @@
             this.checkWaterRing = new System.Windows.Forms.CheckBox();
             this.checkEarthRing = new System.Windows.Forms.CheckBox();
             this.tabSaves = new System.Windows.Forms.TabPage();
-            this.checkPotion = new System.Windows.Forms.CheckBox();
+            this.checkHerb = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picExp = new System.Windows.Forms.PictureBox();
+            this.picLvl = new System.Windows.Forms.PictureBox();
+            this.picGem = new System.Windows.Forms.PictureBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.tbGems = new System.Windows.Forms.NumericUpDown();
             this.tbLevel = new System.Windows.Forms.NumericUpDown();
             this.tbExp = new System.Windows.Forms.NumericUpDown();
             this.groupSaveSlots = new System.Windows.Forms.GroupBox();
-            this.radioSaveSlot1 = new System.Windows.Forms.RadioButton();
-            this.radioSaveSlot2 = new System.Windows.Forms.RadioButton();
             this.radioSaveSlot3 = new System.Windows.Forms.RadioButton();
+            this.radioSaveSlot2 = new System.Windows.Forms.RadioButton();
+            this.radioSaveSlot1 = new System.Windows.Forms.RadioButton();
+            this.lblInstallPath = new System.Windows.Forms.Label();
+            this.tbInstallPath = new System.Windows.Forms.TextBox();
+            this.btnInstallPath = new System.Windows.Forms.Button();
+            this.lblFileSelected = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnSavePreset = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
+            this.tabInventory.SuspendLayout();
+            this.panelPotions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLvl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGem)).BeginInit();
-            this.tabInventory.SuspendLayout();
-            this.panelPotions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbGems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbExp)).BeginInit();
@@ -109,19 +115,19 @@
             this.tbFileSelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbFileSelected.Enabled = false;
-            this.tbFileSelected.Location = new System.Drawing.Point(12, 12);
+            this.tbFileSelected.Location = new System.Drawing.Point(93, 35);
             this.tbFileSelected.Name = "tbFileSelected";
-            this.tbFileSelected.Size = new System.Drawing.Size(533, 20);
+            this.tbFileSelected.Size = new System.Drawing.Size(452, 20);
             this.tbFileSelected.TabIndex = 0;
             // 
             // btnLoadFile
             // 
             this.btnLoadFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoadFile.Location = new System.Drawing.Point(551, 12);
+            this.btnLoadFile.Location = new System.Drawing.Point(551, 35);
             this.btnLoadFile.Name = "btnLoadFile";
             this.btnLoadFile.Size = new System.Drawing.Size(75, 23);
             this.btnLoadFile.TabIndex = 1;
-            this.btnLoadFile.Text = "Load Save";
+            this.btnLoadFile.Text = "Load Preset";
             this.btnLoadFile.UseVisualStyleBackColor = true;
             this.btnLoadFile.Click += new System.EventHandler(this.btnLoadFile_Click);
             // 
@@ -133,7 +139,7 @@
             // 
             this.lblGems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGems.AutoSize = true;
-            this.lblGems.Location = new System.Drawing.Point(376, 46);
+            this.lblGems.Location = new System.Drawing.Point(376, 69);
             this.lblGems.Name = "lblGems";
             this.lblGems.Size = new System.Drawing.Size(34, 13);
             this.lblGems.TabIndex = 3;
@@ -143,7 +149,7 @@
             // 
             this.lblLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLevel.AutoSize = true;
-            this.lblLevel.Location = new System.Drawing.Point(517, 47);
+            this.lblLevel.Location = new System.Drawing.Point(517, 70);
             this.lblLevel.Name = "lblLevel";
             this.lblLevel.Size = new System.Drawing.Size(33, 13);
             this.lblLevel.TabIndex = 4;
@@ -153,7 +159,7 @@
             // 
             this.lblExp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExp.AutoSize = true;
-            this.lblExp.Location = new System.Drawing.Point(625, 49);
+            this.lblExp.Location = new System.Drawing.Point(625, 72);
             this.lblExp.Name = "lblExp";
             this.lblExp.Size = new System.Drawing.Size(25, 13);
             this.lblExp.TabIndex = 6;
@@ -163,7 +169,7 @@
             // 
             this.btnSaveFile.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSaveFile.Enabled = false;
-            this.btnSaveFile.Location = new System.Drawing.Point(294, 508);
+            this.btnSaveFile.Location = new System.Drawing.Point(294, 532);
             this.btnSaveFile.Name = "btnSaveFile";
             this.btnSaveFile.Size = new System.Drawing.Size(127, 33);
             this.btnSaveFile.TabIndex = 8;
@@ -174,11 +180,11 @@
             // btnLoadDefault
             // 
             this.btnLoadDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoadDefault.Location = new System.Drawing.Point(632, 12);
+            this.btnLoadDefault.Location = new System.Drawing.Point(615, 542);
             this.btnLoadDefault.Name = "btnLoadDefault";
-            this.btnLoadDefault.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadDefault.Size = new System.Drawing.Size(88, 23);
             this.btnLoadDefault.TabIndex = 9;
-            this.btnLoadDefault.Text = "Default";
+            this.btnLoadDefault.Text = "Load Default";
             this.btnLoadDefault.UseVisualStyleBackColor = true;
             this.btnLoadDefault.Click += new System.EventHandler(this.btnLoadDefault_Click);
             // 
@@ -187,64 +193,11 @@
             this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tabControl1.Controls.Add(this.tabInventory);
             this.tabControl1.Controls.Add(this.tabSaves);
-            this.tabControl1.Location = new System.Drawing.Point(12, 91);
+            this.tabControl1.Location = new System.Drawing.Point(12, 114);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(695, 411);
             this.tabControl1.TabIndex = 10;
-            // 
-            // checkHerb
-            // 
-            this.checkHerb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkHerb.AutoSize = true;
-            this.checkHerb.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkHerb.Enabled = false;
-            this.checkHerb.Location = new System.Drawing.Point(254, 65);
-            this.checkHerb.Name = "checkHerb";
-            this.checkHerb.Size = new System.Drawing.Size(15, 14);
-            this.checkHerb.TabIndex = 32;
-            this.checkHerb.UseVisualStyleBackColor = true;
-            this.checkHerb.CheckedChanged += new System.EventHandler(this.checkHerb_CheckedChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Herb;
-            this.pictureBox1.Location = new System.Drawing.Point(275, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 48);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // picExp
-            // 
-            this.picExp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picExp.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Exp;
-            this.picExp.Location = new System.Drawing.Point(579, 62);
-            this.picExp.Name = "picExp";
-            this.picExp.Size = new System.Drawing.Size(43, 23);
-            this.picExp.TabIndex = 13;
-            this.picExp.TabStop = false;
-            // 
-            // picLvl
-            // 
-            this.picLvl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picLvl.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Lvl;
-            this.picLvl.Location = new System.Drawing.Point(471, 58);
-            this.picLvl.Name = "picLvl";
-            this.picLvl.Size = new System.Drawing.Size(43, 25);
-            this.picLvl.TabIndex = 12;
-            this.picLvl.TabStop = false;
-            // 
-            // picGem
-            // 
-            this.picGem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picGem.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Gem;
-            this.picGem.Location = new System.Drawing.Point(342, 47);
-            this.picGem.Name = "picGem";
-            this.picGem.Size = new System.Drawing.Size(31, 37);
-            this.picGem.TabIndex = 11;
-            this.picGem.TabStop = false;
             // 
             // tabInventory
             // 
@@ -293,6 +246,18 @@
             this.tabInventory.TabIndex = 0;
             this.tabInventory.Text = "Inventory";
             this.tabInventory.UseVisualStyleBackColor = true;
+            // 
+            // checkPotion
+            // 
+            this.checkPotion.AutoSize = true;
+            this.checkPotion.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkPotion.Enabled = false;
+            this.checkPotion.Location = new System.Drawing.Point(18, 41);
+            this.checkPotion.Name = "checkPotion";
+            this.checkPotion.Size = new System.Drawing.Size(15, 14);
+            this.checkPotion.TabIndex = 37;
+            this.checkPotion.UseVisualStyleBackColor = true;
+            this.checkPotion.CheckedChanged += new System.EventHandler(this.checkPotion_CheckedChanged);
             // 
             // checkSacredArmor
             // 
@@ -758,23 +723,64 @@
             this.tabSaves.Text = "Saves";
             this.tabSaves.UseVisualStyleBackColor = true;
             // 
-            // checkPotion
+            // checkHerb
             // 
-            this.checkPotion.AutoSize = true;
-            this.checkPotion.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkPotion.Enabled = false;
-            this.checkPotion.Location = new System.Drawing.Point(18, 41);
-            this.checkPotion.Name = "checkPotion";
-            this.checkPotion.Size = new System.Drawing.Size(15, 14);
-            this.checkPotion.TabIndex = 37;
-            this.checkPotion.UseVisualStyleBackColor = true;
-            this.checkPotion.CheckedChanged += new System.EventHandler(this.checkPotion_CheckedChanged);
+            this.checkHerb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkHerb.AutoSize = true;
+            this.checkHerb.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkHerb.Enabled = false;
+            this.checkHerb.Location = new System.Drawing.Point(254, 88);
+            this.checkHerb.Name = "checkHerb";
+            this.checkHerb.Size = new System.Drawing.Size(15, 14);
+            this.checkHerb.TabIndex = 32;
+            this.checkHerb.UseVisualStyleBackColor = true;
+            this.checkHerb.CheckedChanged += new System.EventHandler(this.checkHerb_CheckedChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Herb;
+            this.pictureBox1.Location = new System.Drawing.Point(275, 69);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 48);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picExp
+            // 
+            this.picExp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picExp.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Exp;
+            this.picExp.Location = new System.Drawing.Point(579, 85);
+            this.picExp.Name = "picExp";
+            this.picExp.Size = new System.Drawing.Size(43, 23);
+            this.picExp.TabIndex = 13;
+            this.picExp.TabStop = false;
+            // 
+            // picLvl
+            // 
+            this.picLvl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picLvl.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Lvl;
+            this.picLvl.Location = new System.Drawing.Point(471, 81);
+            this.picLvl.Name = "picLvl";
+            this.picLvl.Size = new System.Drawing.Size(43, 25);
+            this.picLvl.TabIndex = 12;
+            this.picLvl.TabStop = false;
+            // 
+            // picGem
+            // 
+            this.picGem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picGem.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Gem;
+            this.picGem.Location = new System.Drawing.Point(342, 70);
+            this.picGem.Name = "picGem";
+            this.picGem.Size = new System.Drawing.Size(31, 37);
+            this.picGem.TabIndex = 11;
+            this.picGem.TabStop = false;
             // 
             // lblStatus
             // 
             this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(13, 528);
+            this.lblStatus.Location = new System.Drawing.Point(13, 552);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(0, 13);
             this.lblStatus.TabIndex = 33;
@@ -787,7 +793,7 @@
             0,
             0,
             0});
-            this.tbGems.Location = new System.Drawing.Point(379, 62);
+            this.tbGems.Location = new System.Drawing.Point(379, 85);
             this.tbGems.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -801,7 +807,7 @@
             // tbLevel
             // 
             this.tbLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbLevel.Location = new System.Drawing.Point(520, 62);
+            this.tbLevel.Location = new System.Drawing.Point(520, 85);
             this.tbLevel.Maximum = new decimal(new int[] {
             20,
             0,
@@ -830,7 +836,7 @@
             0,
             0,
             0});
-            this.tbExp.Location = new System.Drawing.Point(628, 65);
+            this.tbExp.Location = new System.Drawing.Point(628, 88);
             this.tbExp.Maximum = new decimal(new int[] {
             99999,
             0,
@@ -846,32 +852,12 @@
             this.groupSaveSlots.Controls.Add(this.radioSaveSlot3);
             this.groupSaveSlots.Controls.Add(this.radioSaveSlot2);
             this.groupSaveSlots.Controls.Add(this.radioSaveSlot1);
-            this.groupSaveSlots.Location = new System.Drawing.Point(214, 504);
+            this.groupSaveSlots.Location = new System.Drawing.Point(214, 527);
             this.groupSaveSlots.Name = "groupSaveSlots";
             this.groupSaveSlots.Size = new System.Drawing.Size(74, 37);
             this.groupSaveSlots.TabIndex = 38;
             this.groupSaveSlots.TabStop = false;
             this.groupSaveSlots.Text = "Save Slot";
-            // 
-            // radioSaveSlot1
-            // 
-            this.radioSaveSlot1.AutoSize = true;
-            this.radioSaveSlot1.Location = new System.Drawing.Point(6, 16);
-            this.radioSaveSlot1.Name = "radioSaveSlot1";
-            this.radioSaveSlot1.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot1.TabIndex = 34;
-            this.radioSaveSlot1.TabStop = true;
-            this.radioSaveSlot1.UseVisualStyleBackColor = true;
-            // 
-            // radioSaveSlot2
-            // 
-            this.radioSaveSlot2.AutoSize = true;
-            this.radioSaveSlot2.Location = new System.Drawing.Point(29, 16);
-            this.radioSaveSlot2.Name = "radioSaveSlot2";
-            this.radioSaveSlot2.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot2.TabIndex = 35;
-            this.radioSaveSlot2.TabStop = true;
-            this.radioSaveSlot2.UseVisualStyleBackColor = true;
             // 
             // radioSaveSlot3
             // 
@@ -882,12 +868,96 @@
             this.radioSaveSlot3.TabIndex = 36;
             this.radioSaveSlot3.TabStop = true;
             this.radioSaveSlot3.UseVisualStyleBackColor = true;
+            this.radioSaveSlot3.CheckedChanged += new System.EventHandler(this.radioSaveSlot3_CheckedChanged);
+            // 
+            // radioSaveSlot2
+            // 
+            this.radioSaveSlot2.AutoSize = true;
+            this.radioSaveSlot2.Location = new System.Drawing.Point(29, 16);
+            this.radioSaveSlot2.Name = "radioSaveSlot2";
+            this.radioSaveSlot2.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot2.TabIndex = 35;
+            this.radioSaveSlot2.TabStop = true;
+            this.radioSaveSlot2.UseVisualStyleBackColor = true;
+            this.radioSaveSlot2.CheckedChanged += new System.EventHandler(this.radioSaveSlot2_CheckedChanged);
+            // 
+            // radioSaveSlot1
+            // 
+            this.radioSaveSlot1.AutoSize = true;
+            this.radioSaveSlot1.Location = new System.Drawing.Point(6, 16);
+            this.radioSaveSlot1.Name = "radioSaveSlot1";
+            this.radioSaveSlot1.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot1.TabIndex = 34;
+            this.radioSaveSlot1.TabStop = true;
+            this.radioSaveSlot1.UseVisualStyleBackColor = true;
+            this.radioSaveSlot1.CheckedChanged += new System.EventHandler(this.radioSaveSlot1_CheckedChanged);
+            // 
+            // lblInstallPath
+            // 
+            this.lblInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblInstallPath.AutoSize = true;
+            this.lblInstallPath.Location = new System.Drawing.Point(13, 12);
+            this.lblInstallPath.Name = "lblInstallPath";
+            this.lblInstallPath.Size = new System.Drawing.Size(62, 13);
+            this.lblInstallPath.TabIndex = 39;
+            this.lblInstallPath.Text = "Install Path:";
+            // 
+            // tbInstallPath
+            // 
+            this.tbInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbInstallPath.Enabled = false;
+            this.tbInstallPath.Location = new System.Drawing.Point(93, 9);
+            this.tbInstallPath.Name = "tbInstallPath";
+            this.tbInstallPath.Size = new System.Drawing.Size(452, 20);
+            this.tbInstallPath.TabIndex = 41;
+            // 
+            // btnInstallPath
+            // 
+            this.btnInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInstallPath.Location = new System.Drawing.Point(551, 6);
+            this.btnInstallPath.Name = "btnInstallPath";
+            this.btnInstallPath.Size = new System.Drawing.Size(152, 23);
+            this.btnInstallPath.TabIndex = 42;
+            this.btnInstallPath.Text = "Installation Path...";
+            this.btnInstallPath.UseVisualStyleBackColor = true;
+            this.btnInstallPath.Click += new System.EventHandler(this.btnInstallPath_Click);
+            // 
+            // lblFileSelected
+            // 
+            this.lblFileSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblFileSelected.AutoSize = true;
+            this.lblFileSelected.Location = new System.Drawing.Point(12, 40);
+            this.lblFileSelected.Name = "lblFileSelected";
+            this.lblFileSelected.Size = new System.Drawing.Size(79, 13);
+            this.lblFileSelected.TabIndex = 43;
+            this.lblFileSelected.Text = "Loaded Preset:";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnSavePreset
+            // 
+            this.btnSavePreset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSavePreset.Location = new System.Drawing.Point(628, 35);
+            this.btnSavePreset.Name = "btnSavePreset";
+            this.btnSavePreset.Size = new System.Drawing.Size(75, 23);
+            this.btnSavePreset.TabIndex = 44;
+            this.btnSavePreset.Text = "Save Preset";
+            this.btnSavePreset.UseVisualStyleBackColor = true;
+            this.btnSavePreset.Click += new System.EventHandler(this.btnSavePreset_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 553);
+            this.ClientSize = new System.Drawing.Size(717, 577);
+            this.Controls.Add(this.btnSavePreset);
+            this.Controls.Add(this.lblFileSelected);
+            this.Controls.Add(this.btnInstallPath);
+            this.Controls.Add(this.tbInstallPath);
+            this.Controls.Add(this.lblInstallPath);
             this.Controls.Add(this.groupSaveSlots);
             this.Controls.Add(this.tbExp);
             this.Controls.Add(this.tbLevel);
@@ -909,14 +979,14 @@
             this.Name = "Form1";
             this.Text = "Aggelos Save Mod";
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLvl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGem)).EndInit();
             this.tabInventory.ResumeLayout(false);
             this.tabInventory.PerformLayout();
             this.panelPotions.ResumeLayout(false);
             this.panelPotions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLvl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbExp)).EndInit();
@@ -992,6 +1062,12 @@
         private System.Windows.Forms.RadioButton radioSaveSlot3;
         private System.Windows.Forms.RadioButton radioSaveSlot2;
         private System.Windows.Forms.RadioButton radioSaveSlot1;
+        private System.Windows.Forms.Label lblInstallPath;
+        private System.Windows.Forms.TextBox tbInstallPath;
+        private System.Windows.Forms.Button btnInstallPath;
+        private System.Windows.Forms.Label lblFileSelected;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnSavePreset;
     }
 }
 

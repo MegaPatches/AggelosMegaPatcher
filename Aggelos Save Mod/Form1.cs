@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.Win32;
 
 /***************************
  * NOTES:
@@ -27,9 +28,15 @@ namespace Aggelos_Save_Mod
         //Declaring global save file object for use throughout the program
         public Save saveFile = new Save();
 
+        //Declaring preset file being used
+        public string presetFile = "";
+
         public Form1()
         {
             InitializeComponent();
+
+            //Show detected intall path
+            tbInstallPath.Text = saveFile.InstallationPath;
         }
 
         /************************************************************
@@ -43,7 +50,25 @@ namespace Aggelos_Save_Mod
             //Make sure we have loaded a file first
             if (saveFile.FileLoaded)
             {
-                tbFileSelected.Text = saveFile.FileName;
+                //Set the default save slot to whatever was found in the preset,
+                //otherwise 3 in case the other two slots are for casual
+                switch (saveFile.slotNumber)
+                {
+                    case "sauvegarde1":
+                        radioSaveSlot1.Checked = true;
+                        break;
+                    case "sauvegarde2":
+                        radioSaveSlot2.Checked = true; 
+                        break;
+                    case "savegarde3":
+                        radioSaveSlot3.Checked = true;
+                        break;
+                    default:
+                        radioSaveSlot3.Checked = true;
+                        break;
+                }
+
+                tbFileSelected.Text = presetFile;
                 btnSaveFile.Enabled = true;
 
                 //Main Stats
@@ -213,6 +238,69 @@ namespace Aggelos_Save_Mod
         }
 
         /************************************************************
+        * btnInstallPath_Click
+        * 
+        * This function is called when the user clicks the installation path
+        * button. It prompts the user to select a new folder where save files
+        * are located at for the game.
+        ************************************************************/
+        private void btnInstallPath_Click(object sender, EventArgs e)
+        {
+            //Create a new folder browser dialog reference
+            using (var folderDialog = new FolderBrowserDialog())
+            {
+                //Call the dialog box
+                DialogResult result = folderDialog.ShowDialog();
+
+                //Check that OK button was clicked and that the selected path is not empty
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(folderDialog.SelectedPath))
+                {
+                    //Set the new installation path based on the folder chosen
+                    saveFile.ModifyInstallationPath(folderDialog.SelectedPath);
+
+                    //Update the text box to show the save file path
+                    tbInstallPath.Text = saveFile.InstallationPath;
+                }
+            }
+        }
+
+        /************************************************************
+         * LoadFile
+         * 
+         * This function takes a file name and attempts to open and read
+         * the save contents.
+         * It returns a string array representation of the save data.
+         ************************************************************/
+        public string[] LoadFile(string fileName)
+        {
+            //Attempt to read the file
+            try
+            {
+                //Store each line of the file in a string array
+                string[] saveData = new string[196];
+                saveData = File.ReadAllLines(fileName);
+
+                //Update the file name with the file being read
+                presetFile = fileName;
+
+                //Return the array
+                return saveData;
+            }
+            catch (SecurityException ex)
+            {
+                //Show any errors
+                MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
+                $"Details:\n\n{ex.StackTrace}");
+
+                //Reset the text box to show no file selected
+                presetFile = "";
+
+                //Return empty array if there was an error
+                return new string[0];
+            }
+        }
+        
+        /************************************************************
         * btnLoadFile_Click
         * 
         * This function is called when the user clicks the load button on the form.
@@ -224,7 +312,7 @@ namespace Aggelos_Save_Mod
             if (openDiag.ShowDialog() == DialogResult.OK)
             {
                 //Load the file and store the results as a string array
-                string[] saveData = saveFile.LoadFile(openDiag.FileName);
+                string[] saveData = LoadFile(openDiag.FileName);
 
                 //Check if there was a load issue
                 if (saveData.Length != 0)
@@ -254,6 +342,41 @@ namespace Aggelos_Save_Mod
         }
 
         /************************************************************
+        * btnSavePreset_Click
+        * 
+        * This function is called when the user clicks the save preset button 
+        * on the form. The file chosen is updated with the values from the form.
+        ************************************************************/
+        private async void btnSavePreset_Click(object sender, EventArgs e)
+        {
+            //Declare a new save dialog
+            SaveFileDialog savePresetDialog = new SaveFileDialog();
+
+            //Set the default extension
+            savePresetDialog.AddExtension = true;
+            savePresetDialog.Filter = "Save Files(*.ini)|*.ini";
+            savePresetDialog.DefaultExt = ".ini";
+
+            //Call the dialog box and check that the OK button was clicked
+            if (savePresetDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Save the changes to the preset file
+                if (saveFile.SaveChanges(savePresetDialog.FileName))
+                {
+                    lblStatus.Text = "Save changes completed.";
+                }
+                else
+                {
+                    lblStatus.Text = "Errors during last save...";
+                }
+
+                //Leave status message on screen for 5 seconds then remove
+                await Task.Delay(5000);
+                lblStatus.Text = "";
+            }
+        }
+
+        /************************************************************
         * btnSaveFile_Click
         * 
         * This function is called when the user clicks the save button on the form.
@@ -261,8 +384,10 @@ namespace Aggelos_Save_Mod
         ************************************************************/
         private async void btnSaveFile_Click(object sender, EventArgs e)
         {
-            //Save the changes to the file
-            if (saveFile.SaveChanges())
+            //Save the changes based on the installation path and the slot number
+            string savePath = saveFile.InstallationPath + "\\" + saveFile.slotNumber + ".ini";
+            
+            if (saveFile.SaveChanges(savePath))
             {
                 lblStatus.Text = "Save changes completed.";
             }
@@ -807,6 +932,30 @@ namespace Aggelos_Save_Mod
             }
             //Otherwise this was triggered from unchecking the armor and we don't want to do anything as it will handle variables.
         }
+
+        private void radioSaveSlot1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioSaveSlot1.Checked == true)
+            {
+                saveFile.slotNumber = "sauvegarde1";
+            }
+        }
+
+        private void radioSaveSlot2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioSaveSlot2.Checked == true)
+            {
+                saveFile.slotNumber = "sauvegarde2";
+            }
+        }
+
+        private void radioSaveSlot3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioSaveSlot3.Checked == true)
+            {
+                saveFile.slotNumber = "sauvegarde3";
+            }
+        }
     }
 
     /************************************************************
@@ -819,7 +968,7 @@ namespace Aggelos_Save_Mod
     public class Save
     {
         //File Information
-        public string FileName { get; set; }
+        public string InstallationPath { get; set; }
         public bool FileLoaded { get; set; }
         
         //Slot Number
@@ -1056,45 +1205,66 @@ namespace Aggelos_Save_Mod
          ************************************************************/
         public Save()
         {
+            //Get the installation path for the save
+            GetInstallationPath();
+
+            //Mark that no file is loaded
             FileLoaded = false;
 
+            //Set the default values for each item to an empty loadable save
             SetDefault();
         }
 
         /************************************************************
-         * LoadFile
+         * GetInstallationPath
          * 
-         * This function takes a file name and attempts to open and read
-         * the save contents.
-         * It returns a string array representation of the save data.
+         * This function gets the installation path of Aggelos.
+         * It currently assumes Steam as the default application to use.
          ************************************************************/
-        public string[] LoadFile(string fileName)
+        private void GetInstallationPath()
         {
-            //Attempt to read the file
-            try
+            // Only call if we haven't already found the installation path
+            if (InstallationPath == "" || InstallationPath == null)
             {
-                //Store each line of the file in a string array
-                string[] saveData = new string[196];
-                saveData = File.ReadAllLines(fileName);
+                /*if (RegQueryStringValue(HKLM64,
+                                            'SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 475150',
+                                            'InstallLocation', 
+                                            InstallationPath))*/
 
-                //Update the file name with the file being read
-                FileName = fileName;
-
-                //Return the array
-                return saveData;
+                try
+                {
+                    //Search the registry for a steam installation path key for Aggelos (app ID 717310)
+                    //NOTE: Target Platform must be set to x64 in order to successfully read this registry key.
+                    using (var key = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Steam App 717310", false))
+                    {
+                        //If we found a key at this location we know Aggelos is installed through Steam
+                        if (key != null)
+                        {
+                            InstallationPath = key.GetValue("InstallLocation").ToString();
+                            Console.WriteLine("Detected Steam installation: " + InstallationPath);
+                        }
+                        else
+                        {
+                            InstallationPath = "C:\\Steam\\steamapps\\common\\Aggelos";
+                            Console.WriteLine("No installation detected, using the default path: " + InstallationPath);
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error obtaining installation path: " + e.Message);
+                }
             }
-            catch (SecurityException ex)
-            {
-                //Show any errors
-                MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
-                $"Details:\n\n{ex.StackTrace}");
+        }
 
-                //Reset the text box to show no file selected
-                FileName = fileName;
-
-                //Return empty array if there was an error
-                return new string[0];
-            }
+        /************************************************************
+         * GetInstallationPath
+         * 
+         * This function is called to modify the installation path of Aggelos.
+         ************************************************************/
+        public void ModifyInstallationPath(string folderName)
+        {
+            InstallationPath = folderName;
         }
 
         /************************************************************
@@ -1115,7 +1285,7 @@ namespace Aggelos_Save_Mod
                 }
 
                 //For now each line is pased individually for simplicity
-                slotNumber = saveData[0];
+                slotNumber = saveData[0].Substring(1, saveData[0].Length-2);
                 gem = Int32.Parse(saveData[1].Substring(saveData[1].IndexOf("=") + 1));
                 coeur = Int16.Parse(saveData[2].Substring(saveData[2].IndexOf("=") + 1));
                 magie = Int16.Parse(saveData[3].Substring(saveData[2].IndexOf("=") + 1));
@@ -1535,13 +1705,13 @@ namespace Aggelos_Save_Mod
          * This function creates a string of save data for writing back
          * to the main save file.
          ************************************************************/
-        public bool SaveChanges()
+        public bool SaveChanges(string savePath)
         {
             //Store the data in an array
             string[] saveData = new string[196];
 
             //Set each element of the array to the appropriate string
-            saveData[0] = slotNumber;
+            saveData[0] = "[" + slotNumber + "]"; //expected formatting should be "[sauvegarde#]
             saveData[1] = "gem=" + gem;
             saveData[2] = "coeur=" + coeur;
             saveData[3] = "magie=" + magie;
@@ -1741,7 +1911,7 @@ namespace Aggelos_Save_Mod
             try
             {
                 //Write all lines from the array to the file
-                System.IO.File.WriteAllLines(FileName, saveData);
+                System.IO.File.WriteAllLines(savePath, saveData);
             }
             catch (Exception e)
             {
