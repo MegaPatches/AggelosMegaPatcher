@@ -19,6 +19,9 @@ using Microsoft.Win32;
  * - Manipulating checkboxes through code triggers other checkboxes. Need to make sure they are exclusively doing what I need
  * - Need to figure out harp and water vial states
  * - Rework how save file/slot is stored in class
+ * - During testing found bug when saving in game after loading various presets (still not sure what causes it). 
+ * - Add way to delete a file from the tool in case the above happens.
+ * - Look for cutscene triggers to allow a "skip cutscenes" option if it doesn't break progression of game.
  ***************************/
 
 namespace Aggelos_Save_Mod
