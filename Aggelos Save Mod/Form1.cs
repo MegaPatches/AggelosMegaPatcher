@@ -72,7 +72,7 @@ namespace Aggelos_Save_Mod
                 }
 
                 tbFileSelected.Text = presetFile;
-                btnSaveFile.Enabled = true;
+                btnSaveSlot.Enabled = true;
 
                 //Main Stats
                 tbGems.Enabled = true;
@@ -126,11 +126,88 @@ namespace Aggelos_Save_Mod
                 checkUniversalBook.Enabled = true;
                 checkUniversalBook.Checked = saveFile.livre == 1 ? true : false;
 
-                //Rings - "ring#"
-                checkEarthRing.Enabled = true;
-                checkEarthRing.Checked = saveFile.ring1 >= 1 ? true : false;
+                //Rings and Essences - "ring#"
+                //Be sure to clear the rings and essences first in order to make sure we are setting them correctly on change event
+                checkEarthEssence.Enabled = true;
+                checkWaterEssence.Enabled = true;
+                checkFireEssence.Enabled = true;
+                checkAirEssence.Enabled = true;
 
+                checkEarthRing.Enabled = true;
                 checkWaterRing.Enabled = true;
+                checkFireRing.Enabled = true;
+                checkAirRing.Enabled = true;
+
+                checkEarthEssence.Checked = false;
+                checkWaterEssence.Checked = false;
+                checkFireEssence.Checked = false;
+                checkAirEssence.Checked = false;
+
+                checkEarthRing.Checked = false;
+                checkWaterRing.Checked = false;
+                checkFireRing.Checked = false;
+                checkAirRing.Checked = false;
+                
+                //Make sure we check the appropriate boxes. Checking the essence box should trigger a check on the ring.
+                switch(saveFile.ring1)
+                {
+                    case 2:
+                        //Check the essence box which will trigger the change script to automatically check the ring
+                        checkEarthEssence.Checked = true;
+                        break;
+                    case 1:
+                        //Only check the ring box
+                        checkEarthRing.Checked = true;
+                        break;
+                    default:
+                        break;
+                }
+
+                //Make sure we check the appropriate boxes. Checking the essence box should trigger a check on the ring.
+                switch (saveFile.ring2)
+                {
+                    case 2:
+                        //Check the essence box which will trigger the change script to automatically check the ring
+                        checkWaterEssence.Checked = true;
+                        break;
+                    case 1:
+                        //Only check the ring box
+                        checkWaterRing.Checked = true;
+                        break;
+                    default:
+                        break;
+                }
+
+                //Make sure we check the appropriate boxes. Checking the essence box should trigger a check on the ring.
+                switch (saveFile.ring3)
+                {
+                    case 2:
+                        //Check the essence box which will trigger the change script to automatically check the ring
+                        checkFireEssence.Checked = true;
+                        break;
+                    case 1:
+                        //Only check the ring box
+                        checkFireRing.Checked = true;
+                        break;
+                    default:
+                        break;
+                }
+
+                //Make sure we check the appropriate boxes. Checking the essence box should trigger a check on the ring.
+                switch (saveFile.ring4)
+                {
+                    case 2:
+                        //Check the essence box which will trigger the change script to automatically check the ring
+                        checkAirEssence.Checked = true;
+                        break;
+                    case 1:
+                        //Only check the ring box
+                        checkAirRing.Checked = true;
+                        break;
+                    default:
+                        break;
+                }
+                /*checkWaterRing.Enabled = true;
                 checkWaterRing.Checked = saveFile.ring2 >= 1 ? true : false;
 
                 checkFireRing.Enabled = true;
@@ -150,10 +227,30 @@ namespace Aggelos_Save_Mod
                 checkFireEssence.Checked = saveFile.ring3 == 2 ? true : false;
 
                 checkAirEssence.Enabled = true;
-                checkAirEssence.Checked = saveFile.ring4 == 2 ? true : false;
+                checkAirEssence.Checked = saveFile.ring4 == 2 ? true : false;*/
 
+                //Light Skills - Firefly scroll and light essence are tied together
+                //Be sure to clear the scroll and essence first in order to make sure we are setting them correctly on change event
+                checkFireflyScroll.Enabled = true; 
                 checkLightEssence.Enabled = true;
-                checkLightEssence.Checked = saveFile.lightskill >= 1 ? true : false;
+
+                checkFireflyScroll.Checked = false;
+                checkLightEssence.Checked = false;
+
+                //Make sure we check the appropriate boxes. Checking the essence box should trigger a check on the ring.
+                switch (saveFile.lightskill)
+                {
+                    case 2:
+                        //Check the scroll box which will trigger the change script to automatically check the essence
+                        checkFireflyScroll.Checked = true;
+                        break;
+                    case 1:
+                        //Only check the essence box
+                        checkLightEssence.Checked = true;
+                        break;
+                    default:
+                        break;
+                }
 
                 //Scrolls - 1, 2, or 3 for each main skill. Can't seem to have laters without previous. Firefly is lightskill 2
                 checkMoleScroll.Enabled = true;
@@ -227,7 +324,7 @@ namespace Aggelos_Save_Mod
             //Blank the values and disable the controls since no file is loaded
             else
             {
-                btnSaveFile.Enabled = false;
+                btnSaveSlot.Enabled = false;
 
                 tbGems.Enabled = false;
                 tbGems.Text = "";
@@ -345,12 +442,12 @@ namespace Aggelos_Save_Mod
         }
 
         /************************************************************
-        * btnSavePreset_Click
+        * btnSaveFile_Click
         * 
         * This function is called when the user clicks the save preset button 
         * on the form. The file chosen is updated with the values from the form.
         ************************************************************/
-        private async void btnSavePreset_Click(object sender, EventArgs e)
+        private async void btnSaveFile_Click(object sender, EventArgs e)
         {
             //Declare a new save dialog
             SaveFileDialog savePresetDialog = new SaveFileDialog();
@@ -380,16 +477,16 @@ namespace Aggelos_Save_Mod
         }
 
         /************************************************************
-        * btnSaveFile_Click
+        * btnSaveSlot_Click
         * 
         * This function is called when the user clicks the save button on the form.
         * The file chosen is updated with the values from the form.
         ************************************************************/
-        private async void btnSaveFile_Click(object sender, EventArgs e)
+        private async void btnSaveSlot_Click(object sender, EventArgs e)
         {
             //Save the changes based on the installation path and the slot number
             string savePath = saveFile.InstallationPath + "\\" + saveFile.slotNumber + ".ini";
-            
+
             if (saveFile.SaveChanges(savePath))
             {
                 lblStatus.Text = "Save changes completed.";

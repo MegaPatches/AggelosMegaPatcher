@@ -34,7 +34,6 @@
             this.lblGems = new System.Windows.Forms.Label();
             this.lblLevel = new System.Windows.Forms.Label();
             this.lblExp = new System.Windows.Forms.Label();
-            this.btnSaveFile = new System.Windows.Forms.Button();
             this.btnLoadDefault = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabInventory = new System.Windows.Forms.TabPage();
@@ -96,7 +95,8 @@
             this.btnInstallPath = new System.Windows.Forms.Button();
             this.lblFileSelected = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnSavePreset = new System.Windows.Forms.Button();
+            this.btnSaveSlot = new System.Windows.Forms.Button();
+            this.btnSaveFile = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabInventory.SuspendLayout();
             this.panelPotions.SuspendLayout();
@@ -127,7 +127,7 @@
             this.btnLoadFile.Name = "btnLoadFile";
             this.btnLoadFile.Size = new System.Drawing.Size(75, 23);
             this.btnLoadFile.TabIndex = 1;
-            this.btnLoadFile.Text = "Load Preset";
+            this.btnLoadFile.Text = "Load File";
             this.btnLoadFile.UseVisualStyleBackColor = true;
             this.btnLoadFile.Click += new System.EventHandler(this.btnLoadFile_Click);
             // 
@@ -165,25 +165,13 @@
             this.lblExp.TabIndex = 6;
             this.lblExp.Text = "Exp";
             // 
-            // btnSaveFile
-            // 
-            this.btnSaveFile.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSaveFile.Enabled = false;
-            this.btnSaveFile.Location = new System.Drawing.Point(294, 532);
-            this.btnSaveFile.Name = "btnSaveFile";
-            this.btnSaveFile.Size = new System.Drawing.Size(127, 33);
-            this.btnSaveFile.TabIndex = 8;
-            this.btnSaveFile.Text = "Save Changes";
-            this.btnSaveFile.UseVisualStyleBackColor = true;
-            this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
-            // 
             // btnLoadDefault
             // 
             this.btnLoadDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLoadDefault.Location = new System.Drawing.Point(615, 542);
             this.btnLoadDefault.Name = "btnLoadDefault";
             this.btnLoadDefault.Size = new System.Drawing.Size(88, 23);
-            this.btnLoadDefault.TabIndex = 9;
+            this.btnLoadDefault.TabIndex = 46;
             this.btnLoadDefault.Text = "Load Default";
             this.btnLoadDefault.UseVisualStyleBackColor = true;
             this.btnLoadDefault.Click += new System.EventHandler(this.btnLoadDefault_Click);
@@ -255,7 +243,7 @@
             this.checkPotion.Location = new System.Drawing.Point(18, 41);
             this.checkPotion.Name = "checkPotion";
             this.checkPotion.Size = new System.Drawing.Size(15, 14);
-            this.checkPotion.TabIndex = 37;
+            this.checkPotion.TabIndex = 7;
             this.checkPotion.UseVisualStyleBackColor = true;
             this.checkPotion.CheckedChanged += new System.EventHandler(this.checkPotion_CheckedChanged);
             // 
@@ -267,7 +255,7 @@
             this.checkSacredArmor.Location = new System.Drawing.Point(599, 337);
             this.checkSacredArmor.Name = "checkSacredArmor";
             this.checkSacredArmor.Size = new System.Drawing.Size(15, 14);
-            this.checkSacredArmor.TabIndex = 31;
+            this.checkSacredArmor.TabIndex = 42;
             this.checkSacredArmor.UseVisualStyleBackColor = true;
             this.checkSacredArmor.CheckedChanged += new System.EventHandler(this.checkSacredArmor_CheckedChanged);
             // 
@@ -288,7 +276,7 @@
             this.radioElixir.Location = new System.Drawing.Point(43, 3);
             this.radioElixir.Name = "radioElixir";
             this.radioElixir.Size = new System.Drawing.Size(14, 13);
-            this.radioElixir.TabIndex = 35;
+            this.radioElixir.TabIndex = 10;
             this.radioElixir.TabStop = true;
             this.radioElixir.UseVisualStyleBackColor = true;
             this.radioElixir.CheckedChanged += new System.EventHandler(this.radioElixir_CheckedChanged);
@@ -299,7 +287,7 @@
             this.radioBigPotion.Location = new System.Drawing.Point(23, 3);
             this.radioBigPotion.Name = "radioBigPotion";
             this.radioBigPotion.Size = new System.Drawing.Size(14, 13);
-            this.radioBigPotion.TabIndex = 34;
+            this.radioBigPotion.TabIndex = 9;
             this.radioBigPotion.TabStop = true;
             this.radioBigPotion.UseVisualStyleBackColor = true;
             this.radioBigPotion.CheckedChanged += new System.EventHandler(this.radioBigPotion_CheckedChanged);
@@ -310,7 +298,7 @@
             this.radioSmallPotion.Location = new System.Drawing.Point(4, 3);
             this.radioSmallPotion.Name = "radioSmallPotion";
             this.radioSmallPotion.Size = new System.Drawing.Size(14, 13);
-            this.radioSmallPotion.TabIndex = 33;
+            this.radioSmallPotion.TabIndex = 8;
             this.radioSmallPotion.TabStop = true;
             this.radioSmallPotion.UseVisualStyleBackColor = true;
             this.radioSmallPotion.CheckedChanged += new System.EventHandler(this.radioSmallPotion_CheckedChanged);
@@ -323,7 +311,7 @@
             this.checkSacredSword.Location = new System.Drawing.Point(599, 242);
             this.checkSacredSword.Name = "checkSacredSword";
             this.checkSacredSword.Size = new System.Drawing.Size(15, 14);
-            this.checkSacredSword.TabIndex = 30;
+            this.checkSacredSword.TabIndex = 35;
             this.checkSacredSword.UseVisualStyleBackColor = true;
             this.checkSacredSword.CheckedChanged += new System.EventHandler(this.checkSacredSword_CheckedChanged);
             // 
@@ -335,7 +323,7 @@
             this.checkLyre.Location = new System.Drawing.Point(141, 133);
             this.checkLyre.Name = "checkLyre";
             this.checkLyre.Size = new System.Drawing.Size(15, 14);
-            this.checkLyre.TabIndex = 22;
+            this.checkLyre.TabIndex = 15;
             this.checkLyre.UseVisualStyleBackColor = true;
             // 
             // checkUniversalBook
@@ -346,7 +334,7 @@
             this.checkUniversalBook.Location = new System.Drawing.Point(141, 90);
             this.checkUniversalBook.Name = "checkUniversalBook";
             this.checkUniversalBook.Size = new System.Drawing.Size(15, 14);
-            this.checkUniversalBook.TabIndex = 29;
+            this.checkUniversalBook.TabIndex = 14;
             this.checkUniversalBook.UseVisualStyleBackColor = true;
             this.checkUniversalBook.CheckedChanged += new System.EventHandler(this.checkUniversalBook_CheckedChanged);
             // 
@@ -358,7 +346,7 @@
             this.checkSmallVial.Location = new System.Drawing.Point(141, 41);
             this.checkSmallVial.Name = "checkSmallVial";
             this.checkSmallVial.Size = new System.Drawing.Size(15, 14);
-            this.checkSmallVial.TabIndex = 22;
+            this.checkSmallVial.TabIndex = 13;
             this.checkSmallVial.UseVisualStyleBackColor = true;
             // 
             // checkAngelFeather
@@ -369,7 +357,7 @@
             this.checkAngelFeather.Location = new System.Drawing.Point(23, 133);
             this.checkAngelFeather.Name = "checkAngelFeather";
             this.checkAngelFeather.Size = new System.Drawing.Size(15, 14);
-            this.checkAngelFeather.TabIndex = 22;
+            this.checkAngelFeather.TabIndex = 12;
             this.checkAngelFeather.UseVisualStyleBackColor = true;
             this.checkAngelFeather.CheckedChanged += new System.EventHandler(this.checkAngelFeather_CheckedChanged);
             // 
@@ -381,7 +369,7 @@
             this.checkLumenKey.Location = new System.Drawing.Point(23, 90);
             this.checkLumenKey.Name = "checkLumenKey";
             this.checkLumenKey.Size = new System.Drawing.Size(15, 14);
-            this.checkLumenKey.TabIndex = 28;
+            this.checkLumenKey.TabIndex = 11;
             this.checkLumenKey.UseVisualStyleBackColor = true;
             this.checkLumenKey.CheckedChanged += new System.EventHandler(this.checkLumenKey_CheckedChanged);
             // 
@@ -393,7 +381,7 @@
             this.checkAggelosArmor.Location = new System.Drawing.Point(599, 316);
             this.checkAggelosArmor.Name = "checkAggelosArmor";
             this.checkAggelosArmor.Size = new System.Drawing.Size(15, 14);
-            this.checkAggelosArmor.TabIndex = 22;
+            this.checkAggelosArmor.TabIndex = 41;
             this.checkAggelosArmor.UseVisualStyleBackColor = true;
             this.checkAggelosArmor.CheckedChanged += new System.EventHandler(this.checkAggelosArmor_CheckedChanged);
             // 
@@ -405,7 +393,7 @@
             this.checkLightningArmor.Location = new System.Drawing.Point(533, 337);
             this.checkLightningArmor.Name = "checkLightningArmor";
             this.checkLightningArmor.Size = new System.Drawing.Size(15, 14);
-            this.checkLightningArmor.TabIndex = 22;
+            this.checkLightningArmor.TabIndex = 40;
             this.checkLightningArmor.UseVisualStyleBackColor = true;
             this.checkLightningArmor.CheckedChanged += new System.EventHandler(this.checkLightningArmor_CheckedChanged);
             // 
@@ -417,7 +405,7 @@
             this.checkDragonArmor.Location = new System.Drawing.Point(468, 337);
             this.checkDragonArmor.Name = "checkDragonArmor";
             this.checkDragonArmor.Size = new System.Drawing.Size(15, 14);
-            this.checkDragonArmor.TabIndex = 22;
+            this.checkDragonArmor.TabIndex = 36;
             this.checkDragonArmor.UseVisualStyleBackColor = true;
             this.checkDragonArmor.CheckedChanged += new System.EventHandler(this.checkDragonArmor_CheckedChanged);
             // 
@@ -429,7 +417,7 @@
             this.checkSamuraiArmor.Location = new System.Drawing.Point(404, 337);
             this.checkSamuraiArmor.Name = "checkSamuraiArmor";
             this.checkSamuraiArmor.Size = new System.Drawing.Size(15, 14);
-            this.checkSamuraiArmor.TabIndex = 27;
+            this.checkSamuraiArmor.TabIndex = 38;
             this.checkSamuraiArmor.UseVisualStyleBackColor = true;
             this.checkSamuraiArmor.CheckedChanged += new System.EventHandler(this.checkSamuraiArmor_CheckedChanged);
             // 
@@ -441,7 +429,7 @@
             this.checkCoralArmor.Location = new System.Drawing.Point(337, 337);
             this.checkCoralArmor.Name = "checkCoralArmor";
             this.checkCoralArmor.Size = new System.Drawing.Size(15, 14);
-            this.checkCoralArmor.TabIndex = 26;
+            this.checkCoralArmor.TabIndex = 37;
             this.checkCoralArmor.UseVisualStyleBackColor = true;
             this.checkCoralArmor.CheckedChanged += new System.EventHandler(this.checkCoralArmor_CheckedChanged);
             // 
@@ -453,7 +441,7 @@
             this.checkSteelArmor.Location = new System.Drawing.Point(271, 337);
             this.checkSteelArmor.Name = "checkSteelArmor";
             this.checkSteelArmor.Size = new System.Drawing.Size(15, 14);
-            this.checkSteelArmor.TabIndex = 25;
+            this.checkSteelArmor.TabIndex = 36;
             this.checkSteelArmor.UseVisualStyleBackColor = true;
             this.checkSteelArmor.CheckedChanged += new System.EventHandler(this.checkSteelArmor_CheckedChanged);
             // 
@@ -478,7 +466,7 @@
             this.checkAggelosSword.Location = new System.Drawing.Point(599, 221);
             this.checkAggelosSword.Name = "checkAggelosSword";
             this.checkAggelosSword.Size = new System.Drawing.Size(15, 14);
-            this.checkAggelosSword.TabIndex = 22;
+            this.checkAggelosSword.TabIndex = 34;
             this.checkAggelosSword.UseVisualStyleBackColor = true;
             this.checkAggelosSword.CheckedChanged += new System.EventHandler(this.checkAggelosSword_CheckedChanged);
             // 
@@ -490,7 +478,7 @@
             this.checkLightningSword.Location = new System.Drawing.Point(533, 242);
             this.checkLightningSword.Name = "checkLightningSword";
             this.checkLightningSword.Size = new System.Drawing.Size(15, 14);
-            this.checkLightningSword.TabIndex = 22;
+            this.checkLightningSword.TabIndex = 33;
             this.checkLightningSword.UseVisualStyleBackColor = true;
             this.checkLightningSword.CheckedChanged += new System.EventHandler(this.checkLightningSword_CheckedChanged);
             // 
@@ -502,7 +490,7 @@
             this.checkDragonSword.Location = new System.Drawing.Point(468, 242);
             this.checkDragonSword.Name = "checkDragonSword";
             this.checkDragonSword.Size = new System.Drawing.Size(15, 14);
-            this.checkDragonSword.TabIndex = 23;
+            this.checkDragonSword.TabIndex = 32;
             this.checkDragonSword.UseVisualStyleBackColor = true;
             this.checkDragonSword.CheckedChanged += new System.EventHandler(this.checkDragonSword_CheckedChanged);
             // 
@@ -514,7 +502,7 @@
             this.checkMasamune.Location = new System.Drawing.Point(404, 242);
             this.checkMasamune.Name = "checkMasamune";
             this.checkMasamune.Size = new System.Drawing.Size(15, 14);
-            this.checkMasamune.TabIndex = 22;
+            this.checkMasamune.TabIndex = 31;
             this.checkMasamune.UseVisualStyleBackColor = true;
             this.checkMasamune.CheckedChanged += new System.EventHandler(this.checkMasamune_CheckedChanged);
             // 
@@ -526,7 +514,7 @@
             this.checkBubbleSword.Location = new System.Drawing.Point(337, 242);
             this.checkBubbleSword.Name = "checkBubbleSword";
             this.checkBubbleSword.Size = new System.Drawing.Size(15, 14);
-            this.checkBubbleSword.TabIndex = 21;
+            this.checkBubbleSword.TabIndex = 30;
             this.checkBubbleSword.UseVisualStyleBackColor = true;
             this.checkBubbleSword.CheckedChanged += new System.EventHandler(this.checkBubbleSword_CheckedChanged);
             // 
@@ -538,7 +526,7 @@
             this.checkSteelSword.Location = new System.Drawing.Point(271, 242);
             this.checkSteelSword.Name = "checkSteelSword";
             this.checkSteelSword.Size = new System.Drawing.Size(15, 14);
-            this.checkSteelSword.TabIndex = 20;
+            this.checkSteelSword.TabIndex = 29;
             this.checkSteelSword.UseVisualStyleBackColor = true;
             this.checkSteelSword.CheckedChanged += new System.EventHandler(this.checkSteelSword_CheckedChanged);
             // 
@@ -563,7 +551,7 @@
             this.checkFireflyScroll.Location = new System.Drawing.Point(398, 132);
             this.checkFireflyScroll.Name = "checkFireflyScroll";
             this.checkFireflyScroll.Size = new System.Drawing.Size(15, 14);
-            this.checkFireflyScroll.TabIndex = 18;
+            this.checkFireflyScroll.TabIndex = 23;
             this.checkFireflyScroll.UseVisualStyleBackColor = true;
             this.checkFireflyScroll.CheckedChanged += new System.EventHandler(this.checkFireflyScroll_CheckedChanged);
             // 
@@ -575,7 +563,7 @@
             this.checkWoodpeckerScroll.Location = new System.Drawing.Point(333, 132);
             this.checkWoodpeckerScroll.Name = "checkWoodpeckerScroll";
             this.checkWoodpeckerScroll.Size = new System.Drawing.Size(15, 14);
-            this.checkWoodpeckerScroll.TabIndex = 17;
+            this.checkWoodpeckerScroll.TabIndex = 22;
             this.checkWoodpeckerScroll.UseVisualStyleBackColor = true;
             this.checkWoodpeckerScroll.CheckedChanged += new System.EventHandler(this.checkWoodpeckerScroll_CheckedChanged);
             // 
@@ -587,7 +575,7 @@
             this.checkFleaScroll.Location = new System.Drawing.Point(268, 132);
             this.checkFleaScroll.Name = "checkFleaScroll";
             this.checkFleaScroll.Size = new System.Drawing.Size(15, 14);
-            this.checkFleaScroll.TabIndex = 16;
+            this.checkFleaScroll.TabIndex = 21;
             this.checkFleaScroll.UseVisualStyleBackColor = true;
             this.checkFleaScroll.CheckedChanged += new System.EventHandler(this.checkFleaScroll_CheckedChanged);
             // 
@@ -599,7 +587,7 @@
             this.checkMoleScroll.Location = new System.Drawing.Point(202, 132);
             this.checkMoleScroll.Name = "checkMoleScroll";
             this.checkMoleScroll.Size = new System.Drawing.Size(15, 14);
-            this.checkMoleScroll.TabIndex = 15;
+            this.checkMoleScroll.TabIndex = 20;
             this.checkMoleScroll.UseVisualStyleBackColor = true;
             this.checkMoleScroll.CheckedChanged += new System.EventHandler(this.checkMoleScroll_CheckedChanged);
             // 
@@ -611,7 +599,7 @@
             this.checkLightEssence.Location = new System.Drawing.Point(576, 90);
             this.checkLightEssence.Name = "checkLightEssence";
             this.checkLightEssence.Size = new System.Drawing.Size(15, 14);
-            this.checkLightEssence.TabIndex = 14;
+            this.checkLightEssence.TabIndex = 26;
             this.checkLightEssence.UseVisualStyleBackColor = true;
             this.checkLightEssence.CheckedChanged += new System.EventHandler(this.checkLightEssence_CheckedChanged);
             // 
@@ -623,7 +611,7 @@
             this.checkWaterEssence.Location = new System.Drawing.Point(626, 90);
             this.checkWaterEssence.Name = "checkWaterEssence";
             this.checkWaterEssence.Size = new System.Drawing.Size(15, 14);
-            this.checkWaterEssence.TabIndex = 14;
+            this.checkWaterEssence.TabIndex = 28;
             this.checkWaterEssence.UseVisualStyleBackColor = true;
             this.checkWaterEssence.CheckedChanged += new System.EventHandler(this.checkWaterEssence_CheckedChanged);
             // 
@@ -635,7 +623,7 @@
             this.checkEarthEssence.Location = new System.Drawing.Point(576, 132);
             this.checkEarthEssence.Name = "checkEarthEssence";
             this.checkEarthEssence.Size = new System.Drawing.Size(15, 14);
-            this.checkEarthEssence.TabIndex = 14;
+            this.checkEarthEssence.TabIndex = 27;
             this.checkEarthEssence.UseVisualStyleBackColor = true;
             this.checkEarthEssence.CheckedChanged += new System.EventHandler(this.checkEarthEssence_CheckedChanged);
             // 
@@ -647,7 +635,7 @@
             this.checkFireEssence.Location = new System.Drawing.Point(527, 90);
             this.checkFireEssence.Name = "checkFireEssence";
             this.checkFireEssence.Size = new System.Drawing.Size(15, 14);
-            this.checkFireEssence.TabIndex = 14;
+            this.checkFireEssence.TabIndex = 24;
             this.checkFireEssence.UseVisualStyleBackColor = true;
             this.checkFireEssence.CheckedChanged += new System.EventHandler(this.checkFireEssence_CheckedChanged);
             // 
@@ -659,7 +647,7 @@
             this.checkAirEssence.Location = new System.Drawing.Point(576, 47);
             this.checkAirEssence.Name = "checkAirEssence";
             this.checkAirEssence.Size = new System.Drawing.Size(15, 14);
-            this.checkAirEssence.TabIndex = 4;
+            this.checkAirEssence.TabIndex = 25;
             this.checkAirEssence.UseVisualStyleBackColor = true;
             this.checkAirEssence.CheckedChanged += new System.EventHandler(this.checkAirEssence_CheckedChanged);
             // 
@@ -671,7 +659,7 @@
             this.checkAirRing.Location = new System.Drawing.Point(398, 41);
             this.checkAirRing.Name = "checkAirRing";
             this.checkAirRing.Size = new System.Drawing.Size(15, 14);
-            this.checkAirRing.TabIndex = 3;
+            this.checkAirRing.TabIndex = 19;
             this.checkAirRing.UseVisualStyleBackColor = true;
             this.checkAirRing.CheckedChanged += new System.EventHandler(this.checkAirRing_CheckedChanged);
             // 
@@ -683,7 +671,7 @@
             this.checkFireRing.Location = new System.Drawing.Point(333, 41);
             this.checkFireRing.Name = "checkFireRing";
             this.checkFireRing.Size = new System.Drawing.Size(15, 14);
-            this.checkFireRing.TabIndex = 2;
+            this.checkFireRing.TabIndex = 18;
             this.checkFireRing.UseVisualStyleBackColor = true;
             this.checkFireRing.CheckedChanged += new System.EventHandler(this.checkFireRing_CheckedChanged);
             // 
@@ -695,7 +683,7 @@
             this.checkWaterRing.Location = new System.Drawing.Point(268, 41);
             this.checkWaterRing.Name = "checkWaterRing";
             this.checkWaterRing.Size = new System.Drawing.Size(15, 14);
-            this.checkWaterRing.TabIndex = 1;
+            this.checkWaterRing.TabIndex = 17;
             this.checkWaterRing.UseVisualStyleBackColor = true;
             this.checkWaterRing.CheckedChanged += new System.EventHandler(this.checkWaterRing_CheckedChanged);
             // 
@@ -707,7 +695,7 @@
             this.checkEarthRing.Location = new System.Drawing.Point(202, 41);
             this.checkEarthRing.Name = "checkEarthRing";
             this.checkEarthRing.Size = new System.Drawing.Size(15, 14);
-            this.checkEarthRing.TabIndex = 0;
+            this.checkEarthRing.TabIndex = 16;
             this.checkEarthRing.UseVisualStyleBackColor = true;
             this.checkEarthRing.CheckedChanged += new System.EventHandler(this.checkEarthRing_CheckedChanged);
             // 
@@ -732,7 +720,7 @@
             this.checkHerb.Location = new System.Drawing.Point(254, 88);
             this.checkHerb.Name = "checkHerb";
             this.checkHerb.Size = new System.Drawing.Size(15, 14);
-            this.checkHerb.TabIndex = 32;
+            this.checkHerb.TabIndex = 3;
             this.checkHerb.UseVisualStyleBackColor = true;
             this.checkHerb.CheckedChanged += new System.EventHandler(this.checkHerb_CheckedChanged);
             // 
@@ -801,7 +789,7 @@
             0});
             this.tbGems.Name = "tbGems";
             this.tbGems.Size = new System.Drawing.Size(75, 20);
-            this.tbGems.TabIndex = 34;
+            this.tbGems.TabIndex = 4;
             this.tbGems.ValueChanged += new System.EventHandler(this.tbGems_ValueChanged);
             // 
             // tbLevel
@@ -820,7 +808,7 @@
             0});
             this.tbLevel.Name = "tbLevel";
             this.tbLevel.Size = new System.Drawing.Size(43, 20);
-            this.tbLevel.TabIndex = 35;
+            this.tbLevel.TabIndex = 5;
             this.tbLevel.Value = new decimal(new int[] {
             1,
             0,
@@ -844,7 +832,7 @@
             0});
             this.tbExp.Name = "tbExp";
             this.tbExp.Size = new System.Drawing.Size(75, 20);
-            this.tbExp.TabIndex = 36;
+            this.tbExp.TabIndex = 6;
             this.tbExp.ValueChanged += new System.EventHandler(this.tbExp_ValueChanged);
             // 
             // groupSaveSlots
@@ -865,7 +853,7 @@
             this.radioSaveSlot3.Location = new System.Drawing.Point(53, 16);
             this.radioSaveSlot3.Name = "radioSaveSlot3";
             this.radioSaveSlot3.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot3.TabIndex = 36;
+            this.radioSaveSlot3.TabIndex = 45;
             this.radioSaveSlot3.TabStop = true;
             this.radioSaveSlot3.UseVisualStyleBackColor = true;
             this.radioSaveSlot3.CheckedChanged += new System.EventHandler(this.radioSaveSlot3_CheckedChanged);
@@ -876,7 +864,7 @@
             this.radioSaveSlot2.Location = new System.Drawing.Point(29, 16);
             this.radioSaveSlot2.Name = "radioSaveSlot2";
             this.radioSaveSlot2.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot2.TabIndex = 35;
+            this.radioSaveSlot2.TabIndex = 44;
             this.radioSaveSlot2.TabStop = true;
             this.radioSaveSlot2.UseVisualStyleBackColor = true;
             this.radioSaveSlot2.CheckedChanged += new System.EventHandler(this.radioSaveSlot2_CheckedChanged);
@@ -887,7 +875,7 @@
             this.radioSaveSlot1.Location = new System.Drawing.Point(6, 16);
             this.radioSaveSlot1.Name = "radioSaveSlot1";
             this.radioSaveSlot1.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot1.TabIndex = 34;
+            this.radioSaveSlot1.TabIndex = 43;
             this.radioSaveSlot1.TabStop = true;
             this.radioSaveSlot1.UseVisualStyleBackColor = true;
             this.radioSaveSlot1.CheckedChanged += new System.EventHandler(this.radioSaveSlot1_CheckedChanged);
@@ -929,31 +917,44 @@
             this.lblFileSelected.AutoSize = true;
             this.lblFileSelected.Location = new System.Drawing.Point(12, 40);
             this.lblFileSelected.Name = "lblFileSelected";
-            this.lblFileSelected.Size = new System.Drawing.Size(79, 13);
+            this.lblFileSelected.Size = new System.Drawing.Size(72, 13);
             this.lblFileSelected.TabIndex = 43;
-            this.lblFileSelected.Text = "Loaded Preset:";
+            this.lblFileSelected.Text = "Loaded From:";
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // btnSavePreset
+            // btnSaveSlot
             // 
-            this.btnSavePreset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSavePreset.Location = new System.Drawing.Point(628, 35);
-            this.btnSavePreset.Name = "btnSavePreset";
-            this.btnSavePreset.Size = new System.Drawing.Size(75, 23);
-            this.btnSavePreset.TabIndex = 44;
-            this.btnSavePreset.Text = "Save Preset";
-            this.btnSavePreset.UseVisualStyleBackColor = true;
-            this.btnSavePreset.Click += new System.EventHandler(this.btnSavePreset_Click);
+            this.btnSaveSlot.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSaveSlot.Enabled = false;
+            this.btnSaveSlot.Location = new System.Drawing.Point(294, 533);
+            this.btnSaveSlot.Name = "btnSaveSlot";
+            this.btnSaveSlot.Size = new System.Drawing.Size(127, 33);
+            this.btnSaveSlot.TabIndex = 46;
+            this.btnSaveSlot.Text = "Save To Slot";
+            this.btnSaveSlot.UseVisualStyleBackColor = true;
+            this.btnSaveSlot.Click += new System.EventHandler(this.btnSaveSlot_Click);
+            // 
+            // btnSaveFile
+            // 
+            this.btnSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveFile.Location = new System.Drawing.Point(628, 35);
+            this.btnSaveFile.Name = "btnSaveFile";
+            this.btnSaveFile.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveFile.TabIndex = 2;
+            this.btnSaveFile.Text = "Save File";
+            this.btnSaveFile.UseVisualStyleBackColor = true;
+            this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 577);
-            this.Controls.Add(this.btnSavePreset);
+            this.Controls.Add(this.btnSaveFile);
+            this.Controls.Add(this.btnSaveSlot);
             this.Controls.Add(this.lblFileSelected);
             this.Controls.Add(this.btnInstallPath);
             this.Controls.Add(this.tbInstallPath);
@@ -970,7 +971,6 @@
             this.Controls.Add(this.picGem);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnLoadDefault);
-            this.Controls.Add(this.btnSaveFile);
             this.Controls.Add(this.lblExp);
             this.Controls.Add(this.lblLevel);
             this.Controls.Add(this.lblGems);
@@ -1005,7 +1005,6 @@
         private System.Windows.Forms.Label lblGems;
         private System.Windows.Forms.Label lblLevel;
         private System.Windows.Forms.Label lblExp;
-        private System.Windows.Forms.Button btnSaveFile;
         private System.Windows.Forms.Button btnLoadDefault;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabInventory;
@@ -1067,7 +1066,8 @@
         private System.Windows.Forms.Button btnInstallPath;
         private System.Windows.Forms.Label lblFileSelected;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button btnSavePreset;
+        private System.Windows.Forms.Button btnSaveSlot;
+        private System.Windows.Forms.Button btnSaveFile;
     }
 }
 
