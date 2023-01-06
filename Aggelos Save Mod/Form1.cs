@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Microsoft.Win32;
+using System.Windows.Forms.VisualStyles;
 
 /***************************
  * NOTES:
@@ -126,97 +127,7 @@ namespace Aggelos_Save_Mod
                 checkUniversalBook.Enabled = true;
                 checkUniversalBook.Checked = saveFile.livre == 1 ? true : false;
 
-                //Rings and Essences - "ring#"
-                //Be sure to clear the rings and essences first in order to make sure we are setting them correctly on change event
-                checkEarthEssence.Enabled = true;
-                checkWaterEssence.Enabled = true;
-                checkFireEssence.Enabled = true;
-                checkAirEssence.Enabled = true;
-
-                checkEarthRing.Enabled = true;
-                checkWaterRing.Enabled = true;
-                checkFireRing.Enabled = true;
-                checkAirRing.Enabled = true;
-
-                checkEarthEssence.Checked = false;
-                checkWaterEssence.Checked = false;
-                checkFireEssence.Checked = false;
-                checkAirEssence.Checked = false;
-
-                checkEarthRing.Checked = false;
-                checkWaterRing.Checked = false;
-                checkFireRing.Checked = false;
-                checkAirRing.Checked = false;
-                
-                //Make sure we check the appropriate boxes. Checking the essence box should trigger a check on the ring.
-                switch(saveFile.ring1)
-                {
-                    case 2:
-                        //Check the essence box which will trigger the change script to automatically check the ring
-                        checkEarthEssence.Checked = true;
-                        break;
-                    case 1:
-                        //Only check the ring box
-                        checkEarthRing.Checked = true;
-                        break;
-                    default:
-                        break;
-                }
-
-                //Make sure we check the appropriate boxes. Checking the essence box should trigger a check on the ring.
-                switch (saveFile.ring2)
-                {
-                    case 2:
-                        //Check the essence box which will trigger the change script to automatically check the ring
-                        checkWaterEssence.Checked = true;
-                        break;
-                    case 1:
-                        //Only check the ring box
-                        checkWaterRing.Checked = true;
-                        break;
-                    default:
-                        break;
-                }
-
-                //Make sure we check the appropriate boxes. Checking the essence box should trigger a check on the ring.
-                switch (saveFile.ring3)
-                {
-                    case 2:
-                        //Check the essence box which will trigger the change script to automatically check the ring
-                        checkFireEssence.Checked = true;
-                        break;
-                    case 1:
-                        //Only check the ring box
-                        checkFireRing.Checked = true;
-                        break;
-                    default:
-                        break;
-                }
-
-                //Make sure we check the appropriate boxes. Checking the essence box should trigger a check on the ring.
-                switch (saveFile.ring4)
-                {
-                    case 2:
-                        //Check the essence box which will trigger the change script to automatically check the ring
-                        checkAirEssence.Checked = true;
-                        break;
-                    case 1:
-                        //Only check the ring box
-                        checkAirRing.Checked = true;
-                        break;
-                    default:
-                        break;
-                }
-                /*checkWaterRing.Enabled = true;
-                checkWaterRing.Checked = saveFile.ring2 >= 1 ? true : false;
-
-                checkFireRing.Enabled = true;
-                checkFireRing.Checked = saveFile.ring3 >= 1 ? true : false;
-
-                checkAirRing.Enabled = true;
-                checkAirRing.Checked = saveFile.ring4 >= 1 ? true : false;
-
-                //Essences - "ring#" is 2. Light essence is lightskill 1
+                //Essences - Done first to ensure check box events fire properly for rings
                 checkEarthEssence.Enabled = true;
                 checkEarthEssence.Checked = saveFile.ring1 == 2 ? true : false;
 
@@ -227,43 +138,41 @@ namespace Aggelos_Save_Mod
                 checkFireEssence.Checked = saveFile.ring3 == 2 ? true : false;
 
                 checkAirEssence.Enabled = true;
-                checkAirEssence.Checked = saveFile.ring4 == 2 ? true : false;*/
+                checkAirEssence.Checked = saveFile.ring4 == 2 ? true : false;
+
+                //Rings - "ring#" is 2.
+                checkEarthRing.Enabled = true;
+                checkEarthRing.Checked = saveFile.ring1 >= 1 ? true : false;
+
+                checkWaterRing.Enabled = true;
+                checkWaterRing.Checked = saveFile.ring2 >= 1 ? true : false;
+
+                checkFireRing.Enabled = true;
+                checkFireRing.Checked = saveFile.ring3 >= 1 ? true : false;
+
+                checkAirRing.Enabled = true;
+                checkAirRing.Checked = saveFile.ring4 >= 1 ? true : false;
 
                 //Light Skills - Firefly scroll and light essence are tied together
-                //Be sure to clear the scroll and essence first in order to make sure we are setting them correctly on change event
-                checkFireflyScroll.Enabled = true; 
-                checkLightEssence.Enabled = true;
-
-                checkFireflyScroll.Checked = false;
-                checkLightEssence.Checked = false;
-
-                //Make sure we check the appropriate boxes. Checking the essence box should trigger a check on the ring.
-                switch (saveFile.lightskill)
-                {
-                    case 2:
-                        //Check the scroll box which will trigger the change script to automatically check the essence
-                        checkFireflyScroll.Checked = true;
-                        break;
-                    case 1:
-                        //Only check the essence box
-                        checkLightEssence.Checked = true;
-                        break;
-                    default:
-                        break;
-                }
-
-                //Scrolls - 1, 2, or 3 for each main skill. Can't seem to have laters without previous. Firefly is lightskill 2
-                checkMoleScroll.Enabled = true;
-                checkMoleScroll.Checked = saveFile.scroll >= 1 ? true : false;
-
-                checkFleaScroll.Enabled = true;
-                checkFleaScroll.Checked = saveFile.scroll >= 2 ? true : false;
-
-                checkWoodpeckerScroll.Enabled = true;
-                checkWoodpeckerScroll.Checked = saveFile.scroll >= 3 ? true : false;
-
                 checkFireflyScroll.Enabled = true;
                 checkFireflyScroll.Checked = saveFile.lightskill == 2 ? true : false;
+
+                checkLightEssence.Enabled = true;
+                checkLightEssence.Checked = saveFile.lightskill >= 1 ? true : false;
+
+                //Scrolls - 1, 2, or 3 for each main skill. Can't seem to have laters without previous.
+                //Be sure to clear the scrolls first in order to make sure we are setting them correctly on change event
+                checkMoleScroll.Enabled = true;
+                checkFleaScroll.Enabled = true;
+                checkWoodpeckerScroll.Enabled = true;
+
+                checkWoodpeckerScroll.Checked = false;
+                checkFleaScroll.Checked = false;
+                checkMoleScroll.Checked = false;
+
+                checkWoodpeckerScroll.Checked = saveFile.scroll >= 3 ? true : false;
+                checkFleaScroll.Checked = saveFile.scroll >= 2 ? true : false;
+                checkMoleScroll.Checked = saveFile.scroll >= 1 ? true : false;
 
                 //Weapons - "epee#" is 1. epee 1 is always available and epee7 is 1 or 2 based on blessed status
                 //checkIronSword.Enabled = false;
@@ -645,11 +554,6 @@ namespace Aggelos_Save_Mod
             {
                 saveFile.ring1 = 1;
             }
-            //We shouldn't fall here except maybe during initialize.
-            else if (checkEarthRing.Checked && checkEarthEssence.Checked)
-            {
-                saveFile.ring1 = 2;
-            }
             //If we are not checked be sure we dont have essence checked and set to 0
             else if (!checkEarthRing.Checked)
             {
@@ -665,11 +569,6 @@ namespace Aggelos_Save_Mod
             if (checkWaterRing.Checked && !checkWaterEssence.Checked)
             {
                 saveFile.ring2 = 1;
-            }
-            //We shouldn't fall here except maybe during initialize.
-            else if (checkWaterRing.Checked && checkWaterEssence.Checked)
-            {
-                saveFile.ring2 = 2;
             }
             //If we are not checked be sure we dont have essence checked and set to 0
             else if (!checkWaterRing.Checked)
@@ -687,11 +586,6 @@ namespace Aggelos_Save_Mod
             {
                 saveFile.ring3 = 1;
             }
-            //We shouldn't fall here except maybe during initialize.
-            else if (checkFireRing.Checked && checkFireEssence.Checked)
-            {
-                saveFile.ring3 = 2;
-            }
             //If we are not checked be sure we dont have essence checked and set to 0
             else if (!checkFireRing.Checked)
             {
@@ -707,11 +601,6 @@ namespace Aggelos_Save_Mod
             if (checkAirRing.Checked && !checkAirEssence.Checked)
             {
                 saveFile.ring4 = 1;
-            }
-            //We shouldn't fall here except maybe during initialize.
-            else if (checkAirRing.Checked && checkAirEssence.Checked)
-            {
-                saveFile.ring4 = 2;
             }
             //If we are not checked be sure we dont have essence checked and set to 0
             else if (!checkAirRing.Checked)
@@ -790,11 +679,6 @@ namespace Aggelos_Save_Mod
             {
                 saveFile.lightskill = 1;
             }
-            //We shouldn't fall here except maybe during initialize.
-            else if (!checkFireflyScroll.Checked && !checkLightEssence.Checked)
-            {
-                saveFile.lightskill = 0;
-            }
             //Otherwise this was triggered from unchecking the light essence and we don't want to do anything as it will handle variables.
         }
 
@@ -817,11 +701,6 @@ namespace Aggelos_Save_Mod
             {
                 saveFile.ring1 = 1;
             }
-            //We shouldn't fall here except maybe during initialize.
-            else if (!checkEarthEssence.Checked && !checkEarthRing.Checked)
-            {
-                saveFile.ring1 = 0;
-            }
             //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
         }
 
@@ -837,11 +716,6 @@ namespace Aggelos_Save_Mod
             else if (!checkWaterEssence.Checked && checkWaterRing.Checked)
             {
                 saveFile.ring2 = 1;
-            }
-            //We shouldn't fall here except maybe during initialize.
-            else if (!checkWaterEssence.Checked && !checkWaterRing.Checked)
-            {
-                saveFile.ring2 = 0;
             }
             //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
         }
@@ -859,11 +733,6 @@ namespace Aggelos_Save_Mod
             {
                 saveFile.ring3 = 1;
             }
-            //We shouldn't fall here except maybe during initialize.
-            else if (!checkFireEssence.Checked && !checkFireRing.Checked)
-            {
-                saveFile.ring3 = 0;
-            }
             //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
         }
 
@@ -880,11 +749,6 @@ namespace Aggelos_Save_Mod
             {
                 saveFile.ring4 = 1;
             }
-            //We shouldn't fall here except maybe during initialize.
-            else if (!checkAirEssence.Checked && !checkAirRing.Checked)
-            {
-                saveFile.ring4 = 0;
-            }
             //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
         }
 
@@ -894,11 +758,6 @@ namespace Aggelos_Save_Mod
             if (checkLightEssence.Checked && !checkFireflyScroll.Checked)
             {
                 saveFile.lightskill = 1;
-            }
-            //We shouldn't fall here except maybe during initialize.
-            else if (checkLightEssence.Checked && checkFireflyScroll.Checked)
-            {
-                saveFile.lightskill = 2;
             }
             //If we are not checked be sure we dont have firefly checked and set to 0
             else if (!checkLightEssence.Checked)
@@ -1096,7 +955,7 @@ namespace Aggelos_Save_Mod
         public int ring3 { get; set; }
         public int ring4 { get; set; }
 
-        //?????
+        //Map you start in, x/y coords, and percent complete
         public int scene { get; set; }
         public Int32 x { get; set; }
         public Int32 y { get; set; }
