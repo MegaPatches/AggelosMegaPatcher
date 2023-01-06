@@ -23,6 +23,7 @@ using System.Windows.Forms.VisualStyles;
  * - During testing found bug when saving in game after loading various presets (still not sure what causes it). 
  * - Add way to delete a file from the tool in case the above happens.
  * - Look for cutscene triggers to allow a "skip cutscenes" option if it doesn't break progression of game.
+ * - Change interface for potions to be a cycle with an arrow? Maybe for anything that has a state do this for clarity....
  ***************************/
 
 namespace Aggelos_Save_Mod
@@ -124,8 +125,14 @@ namespace Aggelos_Save_Mod
                 checkAngelFeather.Enabled = true;
                 checkAngelFeather.Checked = saveFile.plume == 1 ? true : false;
 
+                checkSmallVial.Enabled = true;
+                checkSmallVial.Checked = saveFile.map == 12 ? true : false;
+
                 checkUniversalBook.Enabled = true;
                 checkUniversalBook.Checked = saveFile.livre == 1 ? true : false;
+
+                checkLyre.Enabled = true;
+                checkLyre.Checked = saveFile.harpmax == 1 ? true : false;
 
                 //Essences - Done first to ensure check box events fire properly for rings
                 checkEarthEssence.Enabled = true;
@@ -537,9 +544,40 @@ namespace Aggelos_Save_Mod
             saveFile.plume = checkAngelFeather.Checked == true ? 1 : 0;
         }
 
+        private void checkSmallVial_CheckedChanged(object sender, EventArgs e)
+        {
+            //This value may be dependent on trade sequence state.
+            //16 is "done and no vial"
+            //11 is "done and empty small vial"
+            //12 is "done and full small vial"
+            saveFile.map = checkSmallVial.Checked == true ? 12 : 16; 
+        }
+
         private void checkUniversalBook_CheckedChanged(object sender, EventArgs e)
         {
             saveFile.livre = checkUniversalBook.Checked == true ? 1 : 0;
+        }
+
+        private void checkLyre_CheckedChanged(object sender, EventArgs e)
+        {
+            //Make sure to disable the radio buttons if we do not want a potion
+            if (checkLyre.Checked)
+            {
+                //panelPotions.Enabled = true;
+                saveFile.harpefil = 1;
+                saveFile.harpechassis = 1;
+                saveFile.harpmax = 1;
+            }
+            else
+            {
+                //panelPotions.Enabled = false;
+                //radioLyreString.Checked = false;
+                //radioLyreChassis.Checked = false;
+                //radioElixir.Checked = false;
+                saveFile.harpefil = 0;
+                saveFile.harpechassis = 0;
+                saveFile.harpmax = 0;
+            }
         }
 
         /************************************************************
@@ -915,6 +953,7 @@ namespace Aggelos_Save_Mod
                 saveFile.slotNumber = "sauvegarde3";
             }
         }
+
     }
 
     /************************************************************
@@ -1016,7 +1055,7 @@ namespace Aggelos_Save_Mod
         //Regions?
         public int region1 { get; set; }
         public int region2 { get; set; }
-        public int region3 { get; set; }
+        public int region3 { get; set; }            //Went from "4" to "6" after opening two chests in sun crest room, one being empty vial
         public int region4 { get; set; }
         public int region5 { get; set; }
         public int region6 { get; set; }
@@ -1028,13 +1067,33 @@ namespace Aggelos_Save_Mod
         public int kingkey { get; set; }
         public int livre { get; set; }
         public int plume { get; set; }
-        public int harpefil { get; set; }
-        public int harpechassis { get; set; }
-        public int harpmax { get; set; }
+        public int harpefil { get; set; }           //String
+        public int harpechassis { get; set; }       //Body
+        public int harpmax { get; set; }            //Repaired
 
-        //?????
-        public int map { get; set; }
+        //Map appears to be related to the armor quest. Getting the bananas sets it to 1.
+        //The value is changed as you progress through the quest.
+        public int map { get; set; }                //1 = Bananas
+                                                    //2 = Necklace
+                                                    //3 = Broken Crown
+                                                    //4 = Princess' Tiara
+                                                    //5 = Moon Symbol
+                                                    //6 = Shell
+                                                    //7 = Star Symbol
+                                                    //8 = Crystal Ball
+                                                    //9 = King Bartelele's Scepter
+                                                    //10 = Sun Symbol
+                                                    //11 = Empty Vial
+                                                    //12 = Full Vial
+                                                    //13 = 
+                                                    //14 = 
+                                                    //15 = Used Star Symbol or Used Moon Symbol and Scepter is not in collection in this state
+                                                    //16 = Shows scepter in collection after using Sun Symbol
+
+        //Potions State
         public int boule { get; set; }
+
+        //??????
         public int coffre20xp { get; set; }
         public int coffre50xp { get; set; }
         public int groscoffre { get; set; }
@@ -1099,8 +1158,8 @@ namespace Aggelos_Save_Mod
         public int chest_49 { get; set; }
         public int chest_50 { get; set; }
         public int chest_51 { get; set; }
-        public int chest_52 { get; set; }
-        public int chest_53 { get; set; }
+        public int chest_52 { get; set; }           //elixir chest in sun crest room
+        public int chest_53 { get; set; }           //small vial chest in sun crest room (does not give vile if set to open)
         public int chest_54 { get; set; }
         public int chest_55 { get; set; }
         public int chest_56 { get; set; }

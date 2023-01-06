@@ -97,6 +97,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnSaveSlot = new System.Windows.Forms.Button();
             this.btnSaveFile = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabInventory.SuspendLayout();
             this.panelPotions.SuspendLayout();
@@ -325,6 +326,7 @@
             this.checkLyre.Size = new System.Drawing.Size(15, 14);
             this.checkLyre.TabIndex = 15;
             this.checkLyre.UseVisualStyleBackColor = true;
+            this.checkLyre.CheckedChanged += new System.EventHandler(this.checkLyre_CheckedChanged);
             // 
             // checkUniversalBook
             // 
@@ -348,6 +350,7 @@
             this.checkSmallVial.Size = new System.Drawing.Size(15, 14);
             this.checkSmallVial.TabIndex = 13;
             this.checkSmallVial.UseVisualStyleBackColor = true;
+            this.checkSmallVial.CheckedChanged += new System.EventHandler(this.checkSmallVial_CheckedChanged);
             // 
             // checkAngelFeather
             // 
@@ -948,11 +951,24 @@
             this.btnSaveFile.UseVisualStyleBackColor = true;
             this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Boss Room 1",
+            "Boss Room 2",
+            "Boos Room 3"});
+            this.comboBox1.Location = new System.Drawing.Point(298, 278);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 47;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 577);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnSaveFile);
             this.Controls.Add(this.btnSaveSlot);
             this.Controls.Add(this.lblFileSelected);
@@ -1068,6 +1084,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnSaveSlot;
         private System.Windows.Forms.Button btnSaveFile;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
