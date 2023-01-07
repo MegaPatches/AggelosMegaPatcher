@@ -11,38 +11,70 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.Win32;
+using System.Windows.Forms.VisualStyles;
 
 /***************************
  * NOTES:
  * 
  * - Manipulating checkboxes through code triggers other checkboxes. Need to make sure they are exclusively doing what I need
  * - Need to figure out harp and water vial states
+ * - Rework how save file/slot is stored in class
+ * - During testing found bug when saving in game after loading various presets (still not sure what causes it). 
+ * - Add way to delete a file from the tool in case the above happens.
+ * - Look for cutscene triggers to allow a "skip cutscenes" option if it doesn't break progression of game.
+ * - Change interface for potions to be a cycle with an arrow? Maybe for anything that has a state do this for clarity....
  ***************************/
 
 namespace Aggelos_Save_Mod
 {
     public partial class Form1 : Form
     {
+        //Declaring global save file object for use throughout the program
         public Save saveFile = new Save();
+
+        //Declaring preset file being used
+        public string presetFile = "";
 
         public Form1()
         {
             InitializeComponent();
+
+            //Show detected intall path
+            tbInstallPath.Text = saveFile.InstallationPath;
         }
 
         /************************************************************
-         * RefreshValues
+         * RefreshUI
          * 
          * This function is called to refresh the values displayed to
          * the user based on the currently loaded save file.
          ************************************************************/
-        private void RefreshValues()
+        private void RefreshUI()
         {
             //Make sure we have loaded a file first
             if (saveFile.FileLoaded)
             {
-                tbFileSelected.Text = saveFile.FileName;
-                btnSaveFile.Enabled = true;
+                //Set the default save slot to whatever was found in the preset,
+                //otherwise 3 in case the other two slots are for casual
+                switch (saveFile.slotNumber)
+                {
+                    case "sauvegarde1":
+                        radioSaveSlot1.Checked = true;
+                        break;
+                    case "sauvegarde2":
+                        radioSaveSlot2.Checked = true; 
+                        break;
+                    case "savegarde3":
+                        radioSaveSlot3.Checked = true;
+                        break;
+                    default:
+                        radioSaveSlot3.Checked = true;
+                        break;
+                }
+
+                tbFileSelected.Text = presetFile;
+                btnSaveSlot.Enabled = true;
 
                 //Main Stats
                 tbGems.Enabled = true;
@@ -93,23 +125,16 @@ namespace Aggelos_Save_Mod
                 checkAngelFeather.Enabled = true;
                 checkAngelFeather.Checked = saveFile.plume == 1 ? true : false;
 
+                checkSmallVial.Enabled = true;
+                checkSmallVial.Checked = saveFile.map == 12 ? true : false;
+
                 checkUniversalBook.Enabled = true;
                 checkUniversalBook.Checked = saveFile.livre == 1 ? true : false;
 
-                //Rings - "ring#"
-                checkEarthRing.Enabled = true;
-                checkEarthRing.Checked = saveFile.ring1 >= 1 ? true : false;
+                checkLyre.Enabled = true;
+                checkLyre.Checked = saveFile.harpmax == 1 ? true : false;
 
-                checkWaterRing.Enabled = true;
-                checkWaterRing.Checked = saveFile.ring2 >= 1 ? true : false;
-
-                checkFireRing.Enabled = true;
-                checkFireRing.Checked = saveFile.ring3 >= 1 ? true : false;
-
-                checkAirRing.Enabled = true;
-                checkAirRing.Checked = saveFile.ring4 >= 1 ? true : false;
-
-                //Essences - "ring#" is 2. Light essence is lightskill 1
+                //Essences - Done first to ensure check box events fire properly for rings
                 checkEarthEssence.Enabled = true;
                 checkEarthEssence.Checked = saveFile.ring1 == 2 ? true : false;
 
@@ -122,21 +147,39 @@ namespace Aggelos_Save_Mod
                 checkAirEssence.Enabled = true;
                 checkAirEssence.Checked = saveFile.ring4 == 2 ? true : false;
 
+                //Rings - "ring#" is 2.
+                checkEarthRing.Enabled = true;
+                checkEarthRing.Checked = saveFile.ring1 >= 1 ? true : false;
+
+                checkWaterRing.Enabled = true;
+                checkWaterRing.Checked = saveFile.ring2 >= 1 ? true : false;
+
+                checkFireRing.Enabled = true;
+                checkFireRing.Checked = saveFile.ring3 >= 1 ? true : false;
+
+                checkAirRing.Enabled = true;
+                checkAirRing.Checked = saveFile.ring4 >= 1 ? true : false;
+
+                //Light Skills - Firefly scroll and light essence are tied together
+                checkFireflyScroll.Enabled = true;
+                checkFireflyScroll.Checked = saveFile.lightskill == 2 ? true : false;
+
                 checkLightEssence.Enabled = true;
                 checkLightEssence.Checked = saveFile.lightskill >= 1 ? true : false;
 
-                //Scrolls - 1, 2, or 3 for each main skill. Can't seem to have laters without previous. Firefly is lightskill 2
+                //Scrolls - 1, 2, or 3 for each main skill. Can't seem to have laters without previous.
+                //Be sure to clear the scrolls first in order to make sure we are setting them correctly on change event
                 checkMoleScroll.Enabled = true;
-                checkMoleScroll.Checked = saveFile.scroll >= 1 ? true : false;
-
                 checkFleaScroll.Enabled = true;
-                checkFleaScroll.Checked = saveFile.scroll >= 2 ? true : false;
-
                 checkWoodpeckerScroll.Enabled = true;
-                checkWoodpeckerScroll.Checked = saveFile.scroll >= 3 ? true : false;
 
-                checkFireflyScroll.Enabled = true;
-                checkFireflyScroll.Checked = saveFile.lightskill == 2 ? true : false;
+                checkWoodpeckerScroll.Checked = false;
+                checkFleaScroll.Checked = false;
+                checkMoleScroll.Checked = false;
+
+                checkWoodpeckerScroll.Checked = saveFile.scroll >= 3 ? true : false;
+                checkFleaScroll.Checked = saveFile.scroll >= 2 ? true : false;
+                checkMoleScroll.Checked = saveFile.scroll >= 1 ? true : false;
 
                 //Weapons - "epee#" is 1. epee 1 is always available and epee7 is 1 or 2 based on blessed status
                 //checkIronSword.Enabled = false;
@@ -197,7 +240,7 @@ namespace Aggelos_Save_Mod
             //Blank the values and disable the controls since no file is loaded
             else
             {
-                btnSaveFile.Enabled = false;
+                btnSaveSlot.Enabled = false;
 
                 tbGems.Enabled = false;
                 tbGems.Text = "";
@@ -211,6 +254,69 @@ namespace Aggelos_Save_Mod
         }
 
         /************************************************************
+        * btnInstallPath_Click
+        * 
+        * This function is called when the user clicks the installation path
+        * button. It prompts the user to select a new folder where save files
+        * are located at for the game.
+        ************************************************************/
+        private void btnInstallPath_Click(object sender, EventArgs e)
+        {
+            //Create a new folder browser dialog reference
+            using (var folderDialog = new FolderBrowserDialog())
+            {
+                //Call the dialog box
+                DialogResult result = folderDialog.ShowDialog();
+
+                //Check that OK button was clicked and that the selected path is not empty
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(folderDialog.SelectedPath))
+                {
+                    //Set the new installation path based on the folder chosen
+                    saveFile.ModifyInstallationPath(folderDialog.SelectedPath);
+
+                    //Update the text box to show the save file path
+                    tbInstallPath.Text = saveFile.InstallationPath;
+                }
+            }
+        }
+
+        /************************************************************
+         * LoadFile
+         * 
+         * This function takes a file name and attempts to open and read
+         * the save contents.
+         * It returns a string array representation of the save data.
+         ************************************************************/
+        public string[] LoadFile(string fileName)
+        {
+            //Attempt to read the file
+            try
+            {
+                //Store each line of the file in a string array
+                string[] saveData = new string[196];
+                saveData = File.ReadAllLines(fileName);
+
+                //Update the file name with the file being read
+                presetFile = fileName;
+
+                //Return the array
+                return saveData;
+            }
+            catch (SecurityException ex)
+            {
+                //Show any errors
+                MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
+                $"Details:\n\n{ex.StackTrace}");
+
+                //Reset the text box to show no file selected
+                presetFile = "";
+
+                //Return empty array if there was an error
+                return new string[0];
+            }
+        }
+        
+        /************************************************************
         * btnLoadFile_Click
         * 
         * This function is called when the user clicks the load button on the form.
@@ -221,35 +327,83 @@ namespace Aggelos_Save_Mod
             //Call the dialog box and check that the OK button was clicked
             if (openDiag.ShowDialog() == DialogResult.OK)
             {
-                //Get the path of the selected file and load it into our save file object
-                if (saveFile.LoadFile(openDiag.FileName))
-                {
-                    //Be sure to refresh our app based on the loaded values
-                    RefreshValues();
+                //Load the file and store the results as a string array
+                string[] saveData = LoadFile(openDiag.FileName);
 
-                    lblStatus.Text = "Save loaded successfully.";
+                //Check if there was a load issue
+                if (saveData.Length != 0)
+                {
+                    //Update the values based on the save data
+                    if (saveFile.UpdateValuesFromSave(saveData))
+                    {
+                        //Be sure to refresh our app based on the loaded values
+                        RefreshUI();
+
+                        lblStatus.Text = "Save loaded successfully.";
+                    }
+                    else
+                    {
+                        lblStatus.Text = "Errors during update...";
+                    }
                 }
                 else
                 {
-                    lblStatus.Text = "Errors during load...";
+                    lblStatus.Text = "Failed to load file...";
                 }
 
-                await Task.Delay(3000);
+                //Leave status message on screen for 5 seconds then remove
+                await Task.Delay(5000);
                 lblStatus.Text = "";
-
             }
         }
 
         /************************************************************
         * btnSaveFile_Click
         * 
-        * This function is called when the user clicks the save button on the form.
-        * The file chosen is updated with the values from the form.
+        * This function is called when the user clicks the save preset button 
+        * on the form. The file chosen is updated with the values from the form.
         ************************************************************/
         private async void btnSaveFile_Click(object sender, EventArgs e)
         {
-            //Save the changes to the file
-            if (saveFile.SaveChanges())
+            //Declare a new save dialog
+            SaveFileDialog savePresetDialog = new SaveFileDialog();
+
+            //Set the default extension
+            savePresetDialog.AddExtension = true;
+            savePresetDialog.Filter = "Save Files(*.ini)|*.ini";
+            savePresetDialog.DefaultExt = ".ini";
+
+            //Call the dialog box and check that the OK button was clicked
+            if (savePresetDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Save the changes to the preset file
+                if (saveFile.SaveChanges(savePresetDialog.FileName))
+                {
+                    lblStatus.Text = "Save changes completed.";
+                }
+                else
+                {
+                    lblStatus.Text = "Errors during last save...";
+                }
+
+                //Leave status message on screen for 5 seconds then remove
+                await Task.Delay(5000);
+                lblStatus.Text = "";
+            }
+        }
+
+        /************************************************************
+        * btnSaveSlot_Click
+        * 
+        * This function is called when the user clicks the save button on the form.
+        * The file chosen is updated with the values from the form.
+        ************************************************************/
+        private async void btnSaveSlot_Click(object sender, EventArgs e)
+        {
+            //Save the changes based on the installation path and the slot number
+            string savePath = saveFile.InstallationPath + "\\" + saveFile.slotNumber + ".ini";
+
+            if (saveFile.SaveChanges(savePath))
             {
                 lblStatus.Text = "Save changes completed.";
             }
@@ -274,7 +428,7 @@ namespace Aggelos_Save_Mod
             saveFile.SetDefault();
 
             //Refresh the UI
-            RefreshValues();
+            RefreshUI();
 
             lblStatus.Text = "Defaults loaded.";
 
@@ -390,9 +544,40 @@ namespace Aggelos_Save_Mod
             saveFile.plume = checkAngelFeather.Checked == true ? 1 : 0;
         }
 
+        private void checkSmallVial_CheckedChanged(object sender, EventArgs e)
+        {
+            //This value may be dependent on trade sequence state.
+            //16 is "done and no vial"
+            //11 is "done and empty small vial"
+            //12 is "done and full small vial"
+            saveFile.map = checkSmallVial.Checked == true ? 12 : 16; 
+        }
+
         private void checkUniversalBook_CheckedChanged(object sender, EventArgs e)
         {
             saveFile.livre = checkUniversalBook.Checked == true ? 1 : 0;
+        }
+
+        private void checkLyre_CheckedChanged(object sender, EventArgs e)
+        {
+            //Make sure to disable the radio buttons if we do not want a potion
+            if (checkLyre.Checked)
+            {
+                //panelPotions.Enabled = true;
+                saveFile.harpefil = 1;
+                saveFile.harpechassis = 1;
+                saveFile.harpmax = 1;
+            }
+            else
+            {
+                //panelPotions.Enabled = false;
+                //radioLyreString.Checked = false;
+                //radioLyreChassis.Checked = false;
+                //radioElixir.Checked = false;
+                saveFile.harpefil = 0;
+                saveFile.harpechassis = 0;
+                saveFile.harpmax = 0;
+            }
         }
 
         /************************************************************
@@ -406,11 +591,6 @@ namespace Aggelos_Save_Mod
             if (checkEarthRing.Checked && !checkEarthEssence.Checked)
             {
                 saveFile.ring1 = 1;
-            }
-            //We shouldn't fall here except maybe during initialize.
-            else if (checkEarthRing.Checked && checkEarthEssence.Checked)
-            {
-                saveFile.ring1 = 2;
             }
             //If we are not checked be sure we dont have essence checked and set to 0
             else if (!checkEarthRing.Checked)
@@ -428,11 +608,6 @@ namespace Aggelos_Save_Mod
             {
                 saveFile.ring2 = 1;
             }
-            //We shouldn't fall here except maybe during initialize.
-            else if (checkWaterRing.Checked && checkWaterEssence.Checked)
-            {
-                saveFile.ring2 = 2;
-            }
             //If we are not checked be sure we dont have essence checked and set to 0
             else if (!checkWaterRing.Checked)
             {
@@ -449,11 +624,6 @@ namespace Aggelos_Save_Mod
             {
                 saveFile.ring3 = 1;
             }
-            //We shouldn't fall here except maybe during initialize.
-            else if (checkFireRing.Checked && checkFireEssence.Checked)
-            {
-                saveFile.ring3 = 2;
-            }
             //If we are not checked be sure we dont have essence checked and set to 0
             else if (!checkFireRing.Checked)
             {
@@ -469,11 +639,6 @@ namespace Aggelos_Save_Mod
             if (checkAirRing.Checked && !checkAirEssence.Checked)
             {
                 saveFile.ring4 = 1;
-            }
-            //We shouldn't fall here except maybe during initialize.
-            else if (checkAirRing.Checked && checkAirEssence.Checked)
-            {
-                saveFile.ring4 = 2;
             }
             //If we are not checked be sure we dont have essence checked and set to 0
             else if (!checkAirRing.Checked)
@@ -552,11 +717,6 @@ namespace Aggelos_Save_Mod
             {
                 saveFile.lightskill = 1;
             }
-            //We shouldn't fall here except maybe during initialize.
-            else if (!checkFireflyScroll.Checked && !checkLightEssence.Checked)
-            {
-                saveFile.lightskill = 0;
-            }
             //Otherwise this was triggered from unchecking the light essence and we don't want to do anything as it will handle variables.
         }
 
@@ -579,11 +739,6 @@ namespace Aggelos_Save_Mod
             {
                 saveFile.ring1 = 1;
             }
-            //We shouldn't fall here except maybe during initialize.
-            else if (!checkEarthEssence.Checked && !checkEarthRing.Checked)
-            {
-                saveFile.ring1 = 0;
-            }
             //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
         }
 
@@ -599,11 +754,6 @@ namespace Aggelos_Save_Mod
             else if (!checkWaterEssence.Checked && checkWaterRing.Checked)
             {
                 saveFile.ring2 = 1;
-            }
-            //We shouldn't fall here except maybe during initialize.
-            else if (!checkWaterEssence.Checked && !checkWaterRing.Checked)
-            {
-                saveFile.ring2 = 0;
             }
             //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
         }
@@ -621,11 +771,6 @@ namespace Aggelos_Save_Mod
             {
                 saveFile.ring3 = 1;
             }
-            //We shouldn't fall here except maybe during initialize.
-            else if (!checkFireEssence.Checked && !checkFireRing.Checked)
-            {
-                saveFile.ring3 = 0;
-            }
             //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
         }
 
@@ -642,11 +787,6 @@ namespace Aggelos_Save_Mod
             {
                 saveFile.ring4 = 1;
             }
-            //We shouldn't fall here except maybe during initialize.
-            else if (!checkAirEssence.Checked && !checkAirRing.Checked)
-            {
-                saveFile.ring4 = 0;
-            }
             //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
         }
 
@@ -656,11 +796,6 @@ namespace Aggelos_Save_Mod
             if (checkLightEssence.Checked && !checkFireflyScroll.Checked)
             {
                 saveFile.lightskill = 1;
-            }
-            //We shouldn't fall here except maybe during initialize.
-            else if (checkLightEssence.Checked && checkFireflyScroll.Checked)
-            {
-                saveFile.lightskill = 2;
             }
             //If we are not checked be sure we dont have firefly checked and set to 0
             else if (!checkLightEssence.Checked)
@@ -794,6 +929,31 @@ namespace Aggelos_Save_Mod
             }
             //Otherwise this was triggered from unchecking the armor and we don't want to do anything as it will handle variables.
         }
+
+        private void radioSaveSlot1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioSaveSlot1.Checked == true)
+            {
+                saveFile.slotNumber = "sauvegarde1";
+            }
+        }
+
+        private void radioSaveSlot2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioSaveSlot2.Checked == true)
+            {
+                saveFile.slotNumber = "sauvegarde2";
+            }
+        }
+
+        private void radioSaveSlot3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioSaveSlot3.Checked == true)
+            {
+                saveFile.slotNumber = "sauvegarde3";
+            }
+        }
+
     }
 
     /************************************************************
@@ -806,7 +966,7 @@ namespace Aggelos_Save_Mod
     public class Save
     {
         //File Information
-        public string FileName { get; set; }
+        public string InstallationPath { get; set; }
         public bool FileLoaded { get; set; }
         
         //Slot Number
@@ -834,7 +994,7 @@ namespace Aggelos_Save_Mod
         public int ring3 { get; set; }
         public int ring4 { get; set; }
 
-        //?????
+        //Map you start in, x/y coords, and percent complete
         public int scene { get; set; }
         public Int32 x { get; set; }
         public Int32 y { get; set; }
@@ -895,7 +1055,7 @@ namespace Aggelos_Save_Mod
         //Regions?
         public int region1 { get; set; }
         public int region2 { get; set; }
-        public int region3 { get; set; }
+        public int region3 { get; set; }            //Went from "4" to "6" after opening two chests in sun crest room, one being empty vial
         public int region4 { get; set; }
         public int region5 { get; set; }
         public int region6 { get; set; }
@@ -907,13 +1067,33 @@ namespace Aggelos_Save_Mod
         public int kingkey { get; set; }
         public int livre { get; set; }
         public int plume { get; set; }
-        public int harpefil { get; set; }
-        public int harpechassis { get; set; }
-        public int harpmax { get; set; }
+        public int harpefil { get; set; }           //String
+        public int harpechassis { get; set; }       //Body
+        public int harpmax { get; set; }            //Repaired
 
-        //?????
-        public int map { get; set; }
+        //Map appears to be related to the armor quest. Getting the bananas sets it to 1.
+        //The value is changed as you progress through the quest.
+        public int map { get; set; }                //1 = Bananas
+                                                    //2 = Necklace
+                                                    //3 = Broken Crown
+                                                    //4 = Princess' Tiara
+                                                    //5 = Moon Symbol
+                                                    //6 = Shell
+                                                    //7 = Star Symbol
+                                                    //8 = Crystal Ball
+                                                    //9 = King Bartelele's Scepter
+                                                    //10 = Sun Symbol
+                                                    //11 = Empty Vial
+                                                    //12 = Full Vial
+                                                    //13 = 
+                                                    //14 = 
+                                                    //15 = Used Star Symbol or Used Moon Symbol and Scepter is not in collection in this state
+                                                    //16 = Shows scepter in collection after using Sun Symbol
+
+        //Potions State
         public int boule { get; set; }
+
+        //??????
         public int coffre20xp { get; set; }
         public int coffre50xp { get; set; }
         public int groscoffre { get; set; }
@@ -978,8 +1158,8 @@ namespace Aggelos_Save_Mod
         public int chest_49 { get; set; }
         public int chest_50 { get; set; }
         public int chest_51 { get; set; }
-        public int chest_52 { get; set; }
-        public int chest_53 { get; set; }
+        public int chest_52 { get; set; }           //elixir chest in sun crest room
+        public int chest_53 { get; set; }           //small vial chest in sun crest room (does not give vile if set to open)
         public int chest_54 { get; set; }
         public int chest_55 { get; set; }
         public int chest_56 { get; set; }
@@ -1043,63 +1223,76 @@ namespace Aggelos_Save_Mod
          ************************************************************/
         public Save()
         {
+            //Get the installation path for the save
+            GetInstallationPath();
+
+            //Mark that no file is loaded
             FileLoaded = false;
 
+            //Set the default values for each item to an empty loadable save
             SetDefault();
         }
 
         /************************************************************
-         * LoadFile
+         * GetInstallationPath
          * 
-         * This function takes a file name and attempts to open and read
-         * the save contents. These are then passed on to a function to 
-         * store each value in the appropriate property variable.
-         * It returns true if success and false if failed.
+         * This function gets the installation path of Aggelos.
+         * It currently assumes Steam as the default application to use.
          ************************************************************/
-        public bool LoadFile(string fileName)
+        private void GetInstallationPath()
         {
-            //Attempt to read the file
-            try
+            // Only call if we haven't already found the installation path
+            if (InstallationPath == "" || InstallationPath == null)
             {
-                //Store each line of the file in a string
-                string[] saveData = File.ReadAllLines(fileName);
+                /*if (RegQueryStringValue(HKLM64,
+                                            'SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 475150',
+                                            'InstallLocation', 
+                                            InstallationPath))*/
 
-                //Be sure to update all variables based on the data read in
-                if (UpdateSaveValues(saveData) == false)
+                try
                 {
-                    return false;
+                    //Search the registry for a steam installation path key for Aggelos (app ID 717310)
+                    //NOTE: Target Platform must be set to x64 in order to successfully read this registry key.
+                    using (var key = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Steam App 717310", false))
+                    {
+                        //If we found a key at this location we know Aggelos is installed through Steam
+                        if (key != null)
+                        {
+                            InstallationPath = key.GetValue("InstallLocation").ToString();
+                            Console.WriteLine("Detected Steam installation: " + InstallationPath);
+                        }
+                        else
+                        {
+                            InstallationPath = "C:\\Steam\\steamapps\\common\\Aggelos";
+                            Console.WriteLine("No installation detected, using the default path: " + InstallationPath);
+                        }
+                    }
                 }
-
-                //Set the text box to show the file currently selected
-                FileName = fileName;
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error obtaining installation path: " + e.Message);
+                }
             }
-            catch (SecurityException ex)
-            {
-                //Show any errors
-                MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
-                $"Details:\n\n{ex.StackTrace}");
-
-                //Reset the text box to show no file selected
-                FileName = fileName;
-
-                return false;
-            }
-
-            FileLoaded = true;
-
-            return true;
         }
 
         /************************************************************
-         * UpdateSaveValues
+         * GetInstallationPath
          * 
-         * This function reads the save contents from the provided file name
+         * This function is called to modify the installation path of Aggelos.
+         ************************************************************/
+        public void ModifyInstallationPath(string folderName)
+        {
+            InstallationPath = folderName;
+        }
+
+        /************************************************************
+         * UpdateValuesFromSave
+         * 
+         * This function reads the save contents provided from a string array
          * and stores each value in the appropriate property variable.
          * It returns true if success and false if failed.
-         * NOTE: This currently only supports a few modifications until
-         *       more items are verified for what they are.
          ************************************************************/
-        public bool UpdateSaveValues(string[] saveData)
+        public bool UpdateValuesFromSave(string[] saveData)
         {
             try
             {
@@ -1110,7 +1303,7 @@ namespace Aggelos_Save_Mod
                 }
 
                 //For now each line is pased individually for simplicity
-                slotNumber = saveData[0];
+                slotNumber = saveData[0].Substring(1, saveData[0].Length-2);
                 gem = Int32.Parse(saveData[1].Substring(saveData[1].IndexOf("=") + 1));
                 coeur = Int16.Parse(saveData[2].Substring(saveData[2].IndexOf("=") + 1));
                 magie = Int16.Parse(saveData[3].Substring(saveData[2].IndexOf("=") + 1));
@@ -1306,6 +1499,9 @@ namespace Aggelos_Save_Mod
                 chest_108 = Int16.Parse(saveData[193].Substring(saveData[193].IndexOf("=") + 1));
                 chest_109 = Int16.Parse(saveData[194].Substring(saveData[194].IndexOf("=") + 1));
                 chest_110 = Int16.Parse(saveData[195].Substring(saveData[195].IndexOf("=") + 1));
+
+                //Mark file as loaded if everything has successfully been set
+                FileLoaded = true;
             }
             catch (Exception e)
             {
@@ -1527,13 +1723,13 @@ namespace Aggelos_Save_Mod
          * This function creates a string of save data for writing back
          * to the main save file.
          ************************************************************/
-        public bool SaveChanges()
+        public bool SaveChanges(string savePath)
         {
             //Store the data in an array
             string[] saveData = new string[196];
 
             //Set each element of the array to the appropriate string
-            saveData[0] = slotNumber;
+            saveData[0] = "[" + slotNumber + "]"; //expected formatting should be "[sauvegarde#]
             saveData[1] = "gem=" + gem;
             saveData[2] = "coeur=" + coeur;
             saveData[3] = "magie=" + magie;
@@ -1733,7 +1929,7 @@ namespace Aggelos_Save_Mod
             try
             {
                 //Write all lines from the array to the file
-                System.IO.File.WriteAllLines(FileName, saveData);
+                System.IO.File.WriteAllLines(savePath, saveData);
             }
             catch (Exception e)
             {
