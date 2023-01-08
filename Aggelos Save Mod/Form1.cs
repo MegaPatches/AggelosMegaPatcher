@@ -200,11 +200,28 @@ namespace Aggelos_Save_Mod
                 checkLightningSword.Enabled = true;
                 checkLightningSword.Checked = saveFile.epee6 == 1 ? true : false;
 
-                checkAggelosSword.Enabled = true;
-                checkAggelosSword.Checked = saveFile.epee7 >= 1 ? true : false;
-
-                checkSacredSword.Enabled = true;
-                checkAggelosSword.Checked = saveFile.epee7 == 2 ? true : false;
+                //Control the visibility of the correct image
+                btnSelectSwordLeft.Visible = true;
+                btnSelectSwordRight.Visible = true;
+                switch (saveFile.epee7)
+                {
+                    case 0:
+                        picAggelosSword.Visible = false;
+                        picSacredSword.Visible = false;
+                        btnSelectSwordLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picAggelosSword.Visible = true;
+                        picSacredSword.Visible = false;
+                        break;
+                    case 2:
+                        picAggelosSword.Visible = false;
+                        picSacredSword.Visible = true;
+                        btnSelectSwordRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
                 //Armor - "armure#" is 1. armure 1 is always available and armure7 is 1 or 2 based on blessed status
                 //checkIronArmor.Enabled = false;
@@ -225,11 +242,28 @@ namespace Aggelos_Save_Mod
                 checkLightningArmor.Enabled = true;
                 checkLightningArmor.Checked = saveFile.armure6 == 1 ? true : false;
 
-                checkAggelosArmor.Enabled = true;
-                checkAggelosArmor.Checked = saveFile.armure7 >= 1 ? true : false;
-
-                checkSacredArmor.Enabled = true;
-                checkSacredArmor.Checked = saveFile.armure7 == 2 ? true : false;
+                //Control the visibility of the correct image
+                btnSelectArmorLeft.Visible = true;
+                btnSelectArmorRight.Visible = true;
+                switch (saveFile.armure7)
+                {
+                    case 0:
+                        picAggelosArmor.Visible = false;
+                        picSacredArmor.Visible = false;
+                        btnSelectArmorLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picAggelosArmor.Visible = true;
+                        picSacredArmor.Visible = false;
+                        break;
+                    case 2:
+                        picAggelosArmor.Visible = false;
+                        picSacredArmor.Visible = true;
+                        btnSelectArmorRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
 
                 //Map
@@ -836,36 +870,77 @@ namespace Aggelos_Save_Mod
             saveFile.epee6 = checkLightningSword.Checked == true ? 1 : 0;
         }
 
-        private void checkAggelosSword_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectSwordLeft_Click(object sender, EventArgs e)
         {
-            //Only change to 1 if checked and we didn't get trigger from the sacred checkbox
-            if (checkAggelosSword.Checked && !checkSacredSword.Checked)
+            //Decrease the value for sword slot as long as we aren't at min
+            if (saveFile.epee7 > 0)
             {
-                saveFile.epee7 = 1;
+                saveFile.epee7 -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectSwordRight.Visible = true;
             }
-            //If we are not checked be sure we dont have sacred checked and set to 0
-            else if (!checkAggelosSword.Checked)
+
+            //If we ever become the min, disable the control
+            if (saveFile.epee7 == 0)
             {
-                checkSacredSword.Checked = false;
-                saveFile.epee7 = 0;
+                btnSelectSwordLeft.Visible = false;
             }
-            //Otherwise do nothing because this event was triggered from another function that will handle the variable.
+
+            //Control the visibility of the correct image
+            switch (saveFile.epee7)
+            {
+                case 0:
+                    picAggelosSword.Visible = false;
+                    picSacredSword.Visible = false;
+                    break;
+                case 1:
+                    picAggelosSword.Visible = true;
+                    picSacredSword.Visible = false;
+                    break;
+                case 2:
+                    picAggelosSword.Visible = false;
+                    picSacredSword.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void checkSacredSword_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectSwordRight_Click(object sender, EventArgs e)
         {
-            //If checked always make sure aggelos sword is checked and set to 2
-            if (checkSacredSword.Checked)
+            //Increase the value for sword slot as long as we aren't at max
+            if (saveFile.epee7 < 2)
             {
-                checkAggelosSword.Checked = true;
-                saveFile.epee7 = 2;
+                saveFile.epee7 += 1;
+                //Make sure to re-enable the left select now that we've decreased
+                btnSelectSwordLeft.Visible = true;
             }
-            //Otherwise if we have just gotten unchecked while the aggelos sword was checked we leave it at 1
-            else if (!checkSacredSword.Checked && checkAggelosSword.Checked)
+            
+            //If we ever become the max, disable the control
+            if (saveFile.epee7 == 2)
             {
-                saveFile.epee7 = 1;
+                btnSelectSwordRight.Visible = false;
             }
-            //Otherwise this was triggered from unchecking the sword and we don't want to do anything as it will handle variables.
+
+            //Control the visibility of the correct image
+            switch (saveFile.epee7)
+            {
+                case 0:
+                    picAggelosSword.Visible = false;
+                    picSacredSword.Visible = false;
+                    break;
+                case 1:
+                    picAggelosSword.Visible = true;
+                    picSacredSword.Visible = false;
+                    break;
+                case 2:
+                    picAggelosSword.Visible = false;
+                    picSacredSword.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
         /************************************************************
@@ -898,36 +973,77 @@ namespace Aggelos_Save_Mod
             saveFile.armure6 = checkLightningArmor.Checked == true ? 1 : 0;
         }
 
-        private void checkAggelosArmor_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectArmorLeft_Click(object sender, EventArgs e)
         {
-            //Only change to 1 if checked and we didn't get trigger from the sacred checkbox
-            if (checkAggelosArmor.Checked && !checkSacredArmor.Checked)
+            //Decrease the value for armor slot as long as we aren't at min
+            if (saveFile.armure7 > 0)
             {
-                saveFile.armure7 = 1;
+                saveFile.armure7 -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectArmorRight.Visible = true;
             }
-            //If we are not checked be sure we dont have sacred checked and set to 0
-            else if (!checkAggelosArmor.Checked)
+
+            //If we ever become the min, disable the control
+            if (saveFile.armure7 == 0)
             {
-                checkSacredArmor.Checked = false;
-                saveFile.armure7 = 0;
+                btnSelectArmorLeft.Visible = false;
             }
-            //Otherwise do nothing because this event was triggered from another function that will handle the variable.
+
+            //Control the visibility of the correct image
+            switch (saveFile.armure7)
+            {
+                case 0:
+                    picAggelosArmor.Visible = false;
+                    picSacredArmor.Visible = false;
+                    break;
+                case 1:
+                    picAggelosArmor.Visible = true;
+                    picSacredArmor.Visible = false;
+                    break;
+                case 2:
+                    picAggelosArmor.Visible = false;
+                    picSacredArmor.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void checkSacredArmor_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectArmorRight_Click(object sender, EventArgs e)
         {
-            //If checked always make sure aggelos armor is checked and set to 2
-            if (checkSacredArmor.Checked)
+            //Increase the value for sword slot as long as we aren't at max
+            if (saveFile.armure7 < 2)
             {
-                checkAggelosArmor.Checked = true;
-                saveFile.armure7 = 2;
+                saveFile.armure7 += 1;
+                //Make sure to re-enable the left select now that we've decreased
+                btnSelectArmorLeft.Visible = true;
             }
-            //Otherwise if we have just gotten unchecked while the aggelos armor was checked we leave it at 1
-            else if (!checkSacredArmor.Checked && checkAggelosArmor.Checked)
+
+            //If we ever become the max, disable the control
+            if (saveFile.armure7 == 2)
             {
-                saveFile.armure7 = 1;
+                btnSelectArmorRight.Visible = false;
             }
-            //Otherwise this was triggered from unchecking the armor and we don't want to do anything as it will handle variables.
+
+            //Control the visibility of the correct image
+            switch (saveFile.armure7)
+            {
+                case 0:
+                    picAggelosArmor.Visible = false;
+                    picSacredArmor.Visible = false;
+                    break;
+                case 1:
+                    picAggelosArmor.Visible = true;
+                    picSacredArmor.Visible = false;
+                    break;
+                case 2:
+                    picAggelosArmor.Visible = false;
+                    picSacredArmor.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void radioSaveSlot1_CheckedChanged(object sender, EventArgs e)
@@ -953,7 +1069,6 @@ namespace Aggelos_Save_Mod
                 saveFile.slotNumber = "sauvegarde3";
             }
         }
-
     }
 
     /************************************************************

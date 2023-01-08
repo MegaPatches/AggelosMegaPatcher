@@ -143,5 +143,17 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggelos_AggelosSword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggelos_SacredSword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggelos_SacredArmor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggelos_AggelosArmor.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

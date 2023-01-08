@@ -63,6 +63,26 @@ namespace Aggelos_Save_Mod.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Aggelos_AggelosArmor {
+            get {
+                object obj = ResourceManager.GetObject("Aggelos_AggelosArmor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Aggelos_AggelosSword {
+            get {
+                object obj = ResourceManager.GetObject("Aggelos_AggelosSword", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Aggelos_Exp {
             get {
                 object obj = ResourceManager.GetObject("Aggelos_Exp", resourceCulture);
@@ -116,6 +136,26 @@ namespace Aggelos_Save_Mod.Properties {
         internal static System.Drawing.Bitmap Aggelos_Map {
             get {
                 object obj = ResourceManager.GetObject("Aggelos_Map", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Aggelos_SacredArmor {
+            get {
+                object obj = ResourceManager.GetObject("Aggelos_SacredArmor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Aggelos_SacredSword {
+            get {
+                object obj = ResourceManager.GetObject("Aggelos_SacredSword", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -36,27 +36,51 @@
             this.lblExp = new System.Windows.Forms.Label();
             this.btnLoadDefault = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.checkHerb = new System.Windows.Forms.CheckBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.tbGems = new System.Windows.Forms.NumericUpDown();
+            this.tbLevel = new System.Windows.Forms.NumericUpDown();
+            this.tbExp = new System.Windows.Forms.NumericUpDown();
+            this.groupSaveSlots = new System.Windows.Forms.GroupBox();
+            this.radioSaveSlot3 = new System.Windows.Forms.RadioButton();
+            this.radioSaveSlot2 = new System.Windows.Forms.RadioButton();
+            this.radioSaveSlot1 = new System.Windows.Forms.RadioButton();
+            this.lblInstallPath = new System.Windows.Forms.Label();
+            this.tbInstallPath = new System.Windows.Forms.TextBox();
+            this.btnInstallPath = new System.Windows.Forms.Button();
+            this.lblFileSelected = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnSaveSlot = new System.Windows.Forms.Button();
+            this.btnSaveFile = new System.Windows.Forms.Button();
+            this.picHerb = new System.Windows.Forms.PictureBox();
+            this.picExp = new System.Windows.Forms.PictureBox();
+            this.picLvl = new System.Windows.Forms.PictureBox();
+            this.picGem = new System.Windows.Forms.PictureBox();
             this.tabInventory = new System.Windows.Forms.TabPage();
+            this.picSacredArmor = new System.Windows.Forms.PictureBox();
+            this.picAggelosArmor = new System.Windows.Forms.PictureBox();
+            this.btnSelectArmorRight = new System.Windows.Forms.Button();
+            this.btnSelectArmorLeft = new System.Windows.Forms.Button();
+            this.picSacredSword = new System.Windows.Forms.PictureBox();
+            this.picAggelosSword = new System.Windows.Forms.PictureBox();
+            this.btnSelectSwordRight = new System.Windows.Forms.Button();
+            this.btnSelectSwordLeft = new System.Windows.Forms.Button();
             this.checkPotion = new System.Windows.Forms.CheckBox();
-            this.checkSacredArmor = new System.Windows.Forms.CheckBox();
             this.panelPotions = new System.Windows.Forms.Panel();
             this.radioElixir = new System.Windows.Forms.RadioButton();
             this.radioBigPotion = new System.Windows.Forms.RadioButton();
             this.radioSmallPotion = new System.Windows.Forms.RadioButton();
-            this.checkSacredSword = new System.Windows.Forms.CheckBox();
             this.checkLyre = new System.Windows.Forms.CheckBox();
             this.checkUniversalBook = new System.Windows.Forms.CheckBox();
             this.checkSmallVial = new System.Windows.Forms.CheckBox();
             this.checkAngelFeather = new System.Windows.Forms.CheckBox();
             this.checkLumenKey = new System.Windows.Forms.CheckBox();
-            this.checkAggelosArmor = new System.Windows.Forms.CheckBox();
             this.checkLightningArmor = new System.Windows.Forms.CheckBox();
             this.checkDragonArmor = new System.Windows.Forms.CheckBox();
             this.checkSamuraiArmor = new System.Windows.Forms.CheckBox();
             this.checkCoralArmor = new System.Windows.Forms.CheckBox();
             this.checkSteelArmor = new System.Windows.Forms.CheckBox();
             this.checkIronArmor = new System.Windows.Forms.CheckBox();
-            this.checkAggelosSword = new System.Windows.Forms.CheckBox();
             this.checkLightningSword = new System.Windows.Forms.CheckBox();
             this.checkDragonSword = new System.Windows.Forms.CheckBox();
             this.checkMasamune = new System.Windows.Forms.CheckBox();
@@ -77,37 +101,21 @@
             this.checkWaterRing = new System.Windows.Forms.CheckBox();
             this.checkEarthRing = new System.Windows.Forms.CheckBox();
             this.tabSaves = new System.Windows.Forms.TabPage();
-            this.checkHerb = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picExp = new System.Windows.Forms.PictureBox();
-            this.picLvl = new System.Windows.Forms.PictureBox();
-            this.picGem = new System.Windows.Forms.PictureBox();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.tbGems = new System.Windows.Forms.NumericUpDown();
-            this.tbLevel = new System.Windows.Forms.NumericUpDown();
-            this.tbExp = new System.Windows.Forms.NumericUpDown();
-            this.groupSaveSlots = new System.Windows.Forms.GroupBox();
-            this.radioSaveSlot3 = new System.Windows.Forms.RadioButton();
-            this.radioSaveSlot2 = new System.Windows.Forms.RadioButton();
-            this.radioSaveSlot1 = new System.Windows.Forms.RadioButton();
-            this.lblInstallPath = new System.Windows.Forms.Label();
-            this.tbInstallPath = new System.Windows.Forms.TextBox();
-            this.btnInstallPath = new System.Windows.Forms.Button();
-            this.lblFileSelected = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnSaveSlot = new System.Windows.Forms.Button();
-            this.btnSaveFile = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
-            this.tabInventory.SuspendLayout();
-            this.panelPotions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLvl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbExp)).BeginInit();
             this.groupSaveSlots.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHerb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLvl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGem)).BeginInit();
+            this.tabInventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSacredArmor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAggelosArmor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSacredSword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAggelosSword)).BeginInit();
+            this.panelPotions.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbFileSelected
@@ -134,6 +142,7 @@
             // openDiag
             // 
             this.openDiag.FileName = "openFileDialog1";
+            this.openDiag.Filter = "Save Files(*.ini)|*.ini";
             // 
             // lblGems
             // 
@@ -187,27 +196,268 @@
             this.tabControl1.Size = new System.Drawing.Size(695, 411);
             this.tabControl1.TabIndex = 10;
             // 
+            // checkHerb
+            // 
+            this.checkHerb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkHerb.AutoSize = true;
+            this.checkHerb.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkHerb.Enabled = false;
+            this.checkHerb.Location = new System.Drawing.Point(254, 88);
+            this.checkHerb.Name = "checkHerb";
+            this.checkHerb.Size = new System.Drawing.Size(15, 14);
+            this.checkHerb.TabIndex = 3;
+            this.checkHerb.UseVisualStyleBackColor = true;
+            this.checkHerb.CheckedChanged += new System.EventHandler(this.checkHerb_CheckedChanged);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(13, 552);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 13);
+            this.lblStatus.TabIndex = 33;
+            // 
+            // tbGems
+            // 
+            this.tbGems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbGems.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tbGems.Location = new System.Drawing.Point(379, 85);
+            this.tbGems.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.tbGems.Name = "tbGems";
+            this.tbGems.Size = new System.Drawing.Size(75, 20);
+            this.tbGems.TabIndex = 4;
+            this.tbGems.ValueChanged += new System.EventHandler(this.tbGems_ValueChanged);
+            // 
+            // tbLevel
+            // 
+            this.tbLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbLevel.Location = new System.Drawing.Point(520, 85);
+            this.tbLevel.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.tbLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.tbLevel.Name = "tbLevel";
+            this.tbLevel.Size = new System.Drawing.Size(43, 20);
+            this.tbLevel.TabIndex = 5;
+            this.tbLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.tbLevel.ValueChanged += new System.EventHandler(this.tbLevel_ValueChanged);
+            // 
+            // tbExp
+            // 
+            this.tbExp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbExp.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tbExp.Location = new System.Drawing.Point(628, 88);
+            this.tbExp.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.tbExp.Name = "tbExp";
+            this.tbExp.Size = new System.Drawing.Size(75, 20);
+            this.tbExp.TabIndex = 6;
+            this.tbExp.ValueChanged += new System.EventHandler(this.tbExp_ValueChanged);
+            // 
+            // groupSaveSlots
+            // 
+            this.groupSaveSlots.Controls.Add(this.radioSaveSlot3);
+            this.groupSaveSlots.Controls.Add(this.radioSaveSlot2);
+            this.groupSaveSlots.Controls.Add(this.radioSaveSlot1);
+            this.groupSaveSlots.Location = new System.Drawing.Point(214, 527);
+            this.groupSaveSlots.Name = "groupSaveSlots";
+            this.groupSaveSlots.Size = new System.Drawing.Size(74, 37);
+            this.groupSaveSlots.TabIndex = 38;
+            this.groupSaveSlots.TabStop = false;
+            this.groupSaveSlots.Text = "Save Slot";
+            // 
+            // radioSaveSlot3
+            // 
+            this.radioSaveSlot3.AutoSize = true;
+            this.radioSaveSlot3.Location = new System.Drawing.Point(53, 16);
+            this.radioSaveSlot3.Name = "radioSaveSlot3";
+            this.radioSaveSlot3.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot3.TabIndex = 45;
+            this.radioSaveSlot3.TabStop = true;
+            this.radioSaveSlot3.UseVisualStyleBackColor = true;
+            this.radioSaveSlot3.CheckedChanged += new System.EventHandler(this.radioSaveSlot3_CheckedChanged);
+            // 
+            // radioSaveSlot2
+            // 
+            this.radioSaveSlot2.AutoSize = true;
+            this.radioSaveSlot2.Location = new System.Drawing.Point(29, 16);
+            this.radioSaveSlot2.Name = "radioSaveSlot2";
+            this.radioSaveSlot2.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot2.TabIndex = 44;
+            this.radioSaveSlot2.TabStop = true;
+            this.radioSaveSlot2.UseVisualStyleBackColor = true;
+            this.radioSaveSlot2.CheckedChanged += new System.EventHandler(this.radioSaveSlot2_CheckedChanged);
+            // 
+            // radioSaveSlot1
+            // 
+            this.radioSaveSlot1.AutoSize = true;
+            this.radioSaveSlot1.Location = new System.Drawing.Point(6, 16);
+            this.radioSaveSlot1.Name = "radioSaveSlot1";
+            this.radioSaveSlot1.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot1.TabIndex = 43;
+            this.radioSaveSlot1.TabStop = true;
+            this.radioSaveSlot1.UseVisualStyleBackColor = true;
+            this.radioSaveSlot1.CheckedChanged += new System.EventHandler(this.radioSaveSlot1_CheckedChanged);
+            // 
+            // lblInstallPath
+            // 
+            this.lblInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblInstallPath.AutoSize = true;
+            this.lblInstallPath.Location = new System.Drawing.Point(13, 12);
+            this.lblInstallPath.Name = "lblInstallPath";
+            this.lblInstallPath.Size = new System.Drawing.Size(62, 13);
+            this.lblInstallPath.TabIndex = 39;
+            this.lblInstallPath.Text = "Install Path:";
+            // 
+            // tbInstallPath
+            // 
+            this.tbInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbInstallPath.Enabled = false;
+            this.tbInstallPath.Location = new System.Drawing.Point(93, 9);
+            this.tbInstallPath.Name = "tbInstallPath";
+            this.tbInstallPath.Size = new System.Drawing.Size(452, 20);
+            this.tbInstallPath.TabIndex = 41;
+            // 
+            // btnInstallPath
+            // 
+            this.btnInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInstallPath.Location = new System.Drawing.Point(551, 6);
+            this.btnInstallPath.Name = "btnInstallPath";
+            this.btnInstallPath.Size = new System.Drawing.Size(152, 23);
+            this.btnInstallPath.TabIndex = 42;
+            this.btnInstallPath.Text = "Installation Path...";
+            this.btnInstallPath.UseVisualStyleBackColor = true;
+            this.btnInstallPath.Click += new System.EventHandler(this.btnInstallPath_Click);
+            // 
+            // lblFileSelected
+            // 
+            this.lblFileSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblFileSelected.AutoSize = true;
+            this.lblFileSelected.Location = new System.Drawing.Point(12, 40);
+            this.lblFileSelected.Name = "lblFileSelected";
+            this.lblFileSelected.Size = new System.Drawing.Size(72, 13);
+            this.lblFileSelected.TabIndex = 43;
+            this.lblFileSelected.Text = "Loaded From:";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnSaveSlot
+            // 
+            this.btnSaveSlot.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSaveSlot.Enabled = false;
+            this.btnSaveSlot.Location = new System.Drawing.Point(294, 533);
+            this.btnSaveSlot.Name = "btnSaveSlot";
+            this.btnSaveSlot.Size = new System.Drawing.Size(127, 33);
+            this.btnSaveSlot.TabIndex = 46;
+            this.btnSaveSlot.Text = "Save To Slot";
+            this.btnSaveSlot.UseVisualStyleBackColor = true;
+            this.btnSaveSlot.Click += new System.EventHandler(this.btnSaveSlot_Click);
+            // 
+            // btnSaveFile
+            // 
+            this.btnSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveFile.Location = new System.Drawing.Point(628, 35);
+            this.btnSaveFile.Name = "btnSaveFile";
+            this.btnSaveFile.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveFile.TabIndex = 2;
+            this.btnSaveFile.Text = "Save File";
+            this.btnSaveFile.UseVisualStyleBackColor = true;
+            this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
+            // 
+            // picHerb
+            // 
+            this.picHerb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picHerb.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Herb;
+            this.picHerb.Location = new System.Drawing.Point(275, 69);
+            this.picHerb.Name = "picHerb";
+            this.picHerb.Size = new System.Drawing.Size(49, 48);
+            this.picHerb.TabIndex = 14;
+            this.picHerb.TabStop = false;
+            // 
+            // picExp
+            // 
+            this.picExp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picExp.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Exp;
+            this.picExp.Location = new System.Drawing.Point(579, 85);
+            this.picExp.Name = "picExp";
+            this.picExp.Size = new System.Drawing.Size(43, 23);
+            this.picExp.TabIndex = 13;
+            this.picExp.TabStop = false;
+            // 
+            // picLvl
+            // 
+            this.picLvl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picLvl.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Lvl;
+            this.picLvl.Location = new System.Drawing.Point(471, 81);
+            this.picLvl.Name = "picLvl";
+            this.picLvl.Size = new System.Drawing.Size(43, 25);
+            this.picLvl.TabIndex = 12;
+            this.picLvl.TabStop = false;
+            // 
+            // picGem
+            // 
+            this.picGem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picGem.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Gem;
+            this.picGem.Location = new System.Drawing.Point(342, 70);
+            this.picGem.Name = "picGem";
+            this.picGem.Size = new System.Drawing.Size(31, 37);
+            this.picGem.TabIndex = 11;
+            this.picGem.TabStop = false;
+            // 
             // tabInventory
             // 
             this.tabInventory.BackgroundImage = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Inventory;
             this.tabInventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabInventory.Controls.Add(this.picSacredArmor);
+            this.tabInventory.Controls.Add(this.picAggelosArmor);
+            this.tabInventory.Controls.Add(this.btnSelectArmorRight);
+            this.tabInventory.Controls.Add(this.btnSelectArmorLeft);
+            this.tabInventory.Controls.Add(this.picSacredSword);
+            this.tabInventory.Controls.Add(this.picAggelosSword);
+            this.tabInventory.Controls.Add(this.btnSelectSwordRight);
+            this.tabInventory.Controls.Add(this.btnSelectSwordLeft);
             this.tabInventory.Controls.Add(this.checkPotion);
-            this.tabInventory.Controls.Add(this.checkSacredArmor);
             this.tabInventory.Controls.Add(this.panelPotions);
-            this.tabInventory.Controls.Add(this.checkSacredSword);
             this.tabInventory.Controls.Add(this.checkLyre);
             this.tabInventory.Controls.Add(this.checkUniversalBook);
             this.tabInventory.Controls.Add(this.checkSmallVial);
             this.tabInventory.Controls.Add(this.checkAngelFeather);
             this.tabInventory.Controls.Add(this.checkLumenKey);
-            this.tabInventory.Controls.Add(this.checkAggelosArmor);
             this.tabInventory.Controls.Add(this.checkLightningArmor);
             this.tabInventory.Controls.Add(this.checkDragonArmor);
             this.tabInventory.Controls.Add(this.checkSamuraiArmor);
             this.tabInventory.Controls.Add(this.checkCoralArmor);
             this.tabInventory.Controls.Add(this.checkSteelArmor);
             this.tabInventory.Controls.Add(this.checkIronArmor);
-            this.tabInventory.Controls.Add(this.checkAggelosSword);
             this.tabInventory.Controls.Add(this.checkLightningSword);
             this.tabInventory.Controls.Add(this.checkDragonSword);
             this.tabInventory.Controls.Add(this.checkMasamune);
@@ -235,6 +485,90 @@
             this.tabInventory.Text = "Inventory";
             this.tabInventory.UseVisualStyleBackColor = true;
             // 
+            // picSacredArmor
+            // 
+            this.picSacredArmor.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_SacredArmor;
+            this.picSacredArmor.Location = new System.Drawing.Point(610, 325);
+            this.picSacredArmor.Name = "picSacredArmor";
+            this.picSacredArmor.Size = new System.Drawing.Size(40, 40);
+            this.picSacredArmor.TabIndex = 54;
+            this.picSacredArmor.TabStop = false;
+            this.picSacredArmor.Visible = false;
+            // 
+            // picAggelosArmor
+            // 
+            this.picAggelosArmor.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_AggelosArmor;
+            this.picAggelosArmor.Location = new System.Drawing.Point(610, 325);
+            this.picAggelosArmor.Name = "picAggelosArmor";
+            this.picAggelosArmor.Size = new System.Drawing.Size(40, 40);
+            this.picAggelosArmor.TabIndex = 53;
+            this.picAggelosArmor.TabStop = false;
+            this.picAggelosArmor.Visible = false;
+            // 
+            // btnSelectArmorRight
+            // 
+            this.btnSelectArmorRight.Location = new System.Drawing.Point(649, 331);
+            this.btnSelectArmorRight.Name = "btnSelectArmorRight";
+            this.btnSelectArmorRight.Size = new System.Drawing.Size(17, 23);
+            this.btnSelectArmorRight.TabIndex = 52;
+            this.btnSelectArmorRight.Text = ">";
+            this.btnSelectArmorRight.UseVisualStyleBackColor = true;
+            this.btnSelectArmorRight.Visible = false;
+            this.btnSelectArmorRight.Click += new System.EventHandler(this.btnSelectArmorRight_Click);
+            // 
+            // btnSelectArmorLeft
+            // 
+            this.btnSelectArmorLeft.Location = new System.Drawing.Point(593, 331);
+            this.btnSelectArmorLeft.Name = "btnSelectArmorLeft";
+            this.btnSelectArmorLeft.Size = new System.Drawing.Size(17, 23);
+            this.btnSelectArmorLeft.TabIndex = 51;
+            this.btnSelectArmorLeft.Text = "<";
+            this.btnSelectArmorLeft.UseVisualStyleBackColor = true;
+            this.btnSelectArmorLeft.Visible = false;
+            this.btnSelectArmorLeft.Click += new System.EventHandler(this.btnSelectArmorLeft_Click);
+            // 
+            // picSacredSword
+            // 
+            this.picSacredSword.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_SacredSword;
+            this.picSacredSword.Location = new System.Drawing.Point(610, 231);
+            this.picSacredSword.Name = "picSacredSword";
+            this.picSacredSword.Size = new System.Drawing.Size(40, 40);
+            this.picSacredSword.TabIndex = 50;
+            this.picSacredSword.TabStop = false;
+            this.picSacredSword.Visible = false;
+            // 
+            // picAggelosSword
+            // 
+            this.picAggelosSword.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_AggelosSword;
+            this.picAggelosSword.Location = new System.Drawing.Point(610, 231);
+            this.picAggelosSword.Name = "picAggelosSword";
+            this.picAggelosSword.Size = new System.Drawing.Size(40, 40);
+            this.picAggelosSword.TabIndex = 49;
+            this.picAggelosSword.TabStop = false;
+            this.picAggelosSword.Visible = false;
+            // 
+            // btnSelectSwordRight
+            // 
+            this.btnSelectSwordRight.Location = new System.Drawing.Point(649, 237);
+            this.btnSelectSwordRight.Name = "btnSelectSwordRight";
+            this.btnSelectSwordRight.Size = new System.Drawing.Size(17, 23);
+            this.btnSelectSwordRight.TabIndex = 48;
+            this.btnSelectSwordRight.Text = ">";
+            this.btnSelectSwordRight.UseVisualStyleBackColor = true;
+            this.btnSelectSwordRight.Visible = false;
+            this.btnSelectSwordRight.Click += new System.EventHandler(this.btnSelectSwordRight_Click);
+            // 
+            // btnSelectSwordLeft
+            // 
+            this.btnSelectSwordLeft.Location = new System.Drawing.Point(593, 237);
+            this.btnSelectSwordLeft.Name = "btnSelectSwordLeft";
+            this.btnSelectSwordLeft.Size = new System.Drawing.Size(17, 23);
+            this.btnSelectSwordLeft.TabIndex = 47;
+            this.btnSelectSwordLeft.Text = "<";
+            this.btnSelectSwordLeft.UseVisualStyleBackColor = true;
+            this.btnSelectSwordLeft.Visible = false;
+            this.btnSelectSwordLeft.Click += new System.EventHandler(this.btnSelectSwordLeft_Click);
+            // 
             // checkPotion
             // 
             this.checkPotion.AutoSize = true;
@@ -246,18 +580,6 @@
             this.checkPotion.TabIndex = 7;
             this.checkPotion.UseVisualStyleBackColor = true;
             this.checkPotion.CheckedChanged += new System.EventHandler(this.checkPotion_CheckedChanged);
-            // 
-            // checkSacredArmor
-            // 
-            this.checkSacredArmor.AutoSize = true;
-            this.checkSacredArmor.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSacredArmor.Enabled = false;
-            this.checkSacredArmor.Location = new System.Drawing.Point(599, 337);
-            this.checkSacredArmor.Name = "checkSacredArmor";
-            this.checkSacredArmor.Size = new System.Drawing.Size(15, 14);
-            this.checkSacredArmor.TabIndex = 42;
-            this.checkSacredArmor.UseVisualStyleBackColor = true;
-            this.checkSacredArmor.CheckedChanged += new System.EventHandler(this.checkSacredArmor_CheckedChanged);
             // 
             // panelPotions
             // 
@@ -302,18 +624,6 @@
             this.radioSmallPotion.TabStop = true;
             this.radioSmallPotion.UseVisualStyleBackColor = true;
             this.radioSmallPotion.CheckedChanged += new System.EventHandler(this.radioSmallPotion_CheckedChanged);
-            // 
-            // checkSacredSword
-            // 
-            this.checkSacredSword.AutoSize = true;
-            this.checkSacredSword.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSacredSword.Enabled = false;
-            this.checkSacredSword.Location = new System.Drawing.Point(599, 242);
-            this.checkSacredSword.Name = "checkSacredSword";
-            this.checkSacredSword.Size = new System.Drawing.Size(15, 14);
-            this.checkSacredSword.TabIndex = 35;
-            this.checkSacredSword.UseVisualStyleBackColor = true;
-            this.checkSacredSword.CheckedChanged += new System.EventHandler(this.checkSacredSword_CheckedChanged);
             // 
             // checkLyre
             // 
@@ -374,18 +684,6 @@
             this.checkLumenKey.TabIndex = 11;
             this.checkLumenKey.UseVisualStyleBackColor = true;
             this.checkLumenKey.CheckedChanged += new System.EventHandler(this.checkLumenKey_CheckedChanged);
-            // 
-            // checkAggelosArmor
-            // 
-            this.checkAggelosArmor.AutoSize = true;
-            this.checkAggelosArmor.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkAggelosArmor.Enabled = false;
-            this.checkAggelosArmor.Location = new System.Drawing.Point(599, 316);
-            this.checkAggelosArmor.Name = "checkAggelosArmor";
-            this.checkAggelosArmor.Size = new System.Drawing.Size(15, 14);
-            this.checkAggelosArmor.TabIndex = 41;
-            this.checkAggelosArmor.UseVisualStyleBackColor = true;
-            this.checkAggelosArmor.CheckedChanged += new System.EventHandler(this.checkAggelosArmor_CheckedChanged);
             // 
             // checkLightningArmor
             // 
@@ -459,18 +757,6 @@
             this.checkIronArmor.Size = new System.Drawing.Size(15, 14);
             this.checkIronArmor.TabIndex = 24;
             this.checkIronArmor.UseVisualStyleBackColor = true;
-            // 
-            // checkAggelosSword
-            // 
-            this.checkAggelosSword.AutoSize = true;
-            this.checkAggelosSword.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkAggelosSword.Enabled = false;
-            this.checkAggelosSword.Location = new System.Drawing.Point(599, 221);
-            this.checkAggelosSword.Name = "checkAggelosSword";
-            this.checkAggelosSword.Size = new System.Drawing.Size(15, 14);
-            this.checkAggelosSword.TabIndex = 34;
-            this.checkAggelosSword.UseVisualStyleBackColor = true;
-            this.checkAggelosSword.CheckedChanged += new System.EventHandler(this.checkAggelosSword_CheckedChanged);
             // 
             // checkLightningSword
             // 
@@ -713,243 +999,6 @@
             this.tabSaves.Text = "Saves";
             this.tabSaves.UseVisualStyleBackColor = true;
             // 
-            // checkHerb
-            // 
-            this.checkHerb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkHerb.AutoSize = true;
-            this.checkHerb.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkHerb.Enabled = false;
-            this.checkHerb.Location = new System.Drawing.Point(254, 88);
-            this.checkHerb.Name = "checkHerb";
-            this.checkHerb.Size = new System.Drawing.Size(15, 14);
-            this.checkHerb.TabIndex = 3;
-            this.checkHerb.UseVisualStyleBackColor = true;
-            this.checkHerb.CheckedChanged += new System.EventHandler(this.checkHerb_CheckedChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Herb;
-            this.pictureBox1.Location = new System.Drawing.Point(275, 69);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(49, 48);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // picExp
-            // 
-            this.picExp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picExp.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Exp;
-            this.picExp.Location = new System.Drawing.Point(579, 85);
-            this.picExp.Name = "picExp";
-            this.picExp.Size = new System.Drawing.Size(43, 23);
-            this.picExp.TabIndex = 13;
-            this.picExp.TabStop = false;
-            // 
-            // picLvl
-            // 
-            this.picLvl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picLvl.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Lvl;
-            this.picLvl.Location = new System.Drawing.Point(471, 81);
-            this.picLvl.Name = "picLvl";
-            this.picLvl.Size = new System.Drawing.Size(43, 25);
-            this.picLvl.TabIndex = 12;
-            this.picLvl.TabStop = false;
-            // 
-            // picGem
-            // 
-            this.picGem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picGem.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Gem;
-            this.picGem.Location = new System.Drawing.Point(342, 70);
-            this.picGem.Name = "picGem";
-            this.picGem.Size = new System.Drawing.Size(31, 37);
-            this.picGem.TabIndex = 11;
-            this.picGem.TabStop = false;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(13, 552);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(0, 13);
-            this.lblStatus.TabIndex = 33;
-            // 
-            // tbGems
-            // 
-            this.tbGems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbGems.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.tbGems.Location = new System.Drawing.Point(379, 85);
-            this.tbGems.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.tbGems.Name = "tbGems";
-            this.tbGems.Size = new System.Drawing.Size(75, 20);
-            this.tbGems.TabIndex = 4;
-            this.tbGems.ValueChanged += new System.EventHandler(this.tbGems_ValueChanged);
-            // 
-            // tbLevel
-            // 
-            this.tbLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbLevel.Location = new System.Drawing.Point(520, 85);
-            this.tbLevel.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.tbLevel.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.tbLevel.Name = "tbLevel";
-            this.tbLevel.Size = new System.Drawing.Size(43, 20);
-            this.tbLevel.TabIndex = 5;
-            this.tbLevel.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.tbLevel.ValueChanged += new System.EventHandler(this.tbLevel_ValueChanged);
-            // 
-            // tbExp
-            // 
-            this.tbExp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbExp.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.tbExp.Location = new System.Drawing.Point(628, 88);
-            this.tbExp.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.tbExp.Name = "tbExp";
-            this.tbExp.Size = new System.Drawing.Size(75, 20);
-            this.tbExp.TabIndex = 6;
-            this.tbExp.ValueChanged += new System.EventHandler(this.tbExp_ValueChanged);
-            // 
-            // groupSaveSlots
-            // 
-            this.groupSaveSlots.Controls.Add(this.radioSaveSlot3);
-            this.groupSaveSlots.Controls.Add(this.radioSaveSlot2);
-            this.groupSaveSlots.Controls.Add(this.radioSaveSlot1);
-            this.groupSaveSlots.Location = new System.Drawing.Point(214, 527);
-            this.groupSaveSlots.Name = "groupSaveSlots";
-            this.groupSaveSlots.Size = new System.Drawing.Size(74, 37);
-            this.groupSaveSlots.TabIndex = 38;
-            this.groupSaveSlots.TabStop = false;
-            this.groupSaveSlots.Text = "Save Slot";
-            // 
-            // radioSaveSlot3
-            // 
-            this.radioSaveSlot3.AutoSize = true;
-            this.radioSaveSlot3.Location = new System.Drawing.Point(53, 16);
-            this.radioSaveSlot3.Name = "radioSaveSlot3";
-            this.radioSaveSlot3.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot3.TabIndex = 45;
-            this.radioSaveSlot3.TabStop = true;
-            this.radioSaveSlot3.UseVisualStyleBackColor = true;
-            this.radioSaveSlot3.CheckedChanged += new System.EventHandler(this.radioSaveSlot3_CheckedChanged);
-            // 
-            // radioSaveSlot2
-            // 
-            this.radioSaveSlot2.AutoSize = true;
-            this.radioSaveSlot2.Location = new System.Drawing.Point(29, 16);
-            this.radioSaveSlot2.Name = "radioSaveSlot2";
-            this.radioSaveSlot2.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot2.TabIndex = 44;
-            this.radioSaveSlot2.TabStop = true;
-            this.radioSaveSlot2.UseVisualStyleBackColor = true;
-            this.radioSaveSlot2.CheckedChanged += new System.EventHandler(this.radioSaveSlot2_CheckedChanged);
-            // 
-            // radioSaveSlot1
-            // 
-            this.radioSaveSlot1.AutoSize = true;
-            this.radioSaveSlot1.Location = new System.Drawing.Point(6, 16);
-            this.radioSaveSlot1.Name = "radioSaveSlot1";
-            this.radioSaveSlot1.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot1.TabIndex = 43;
-            this.radioSaveSlot1.TabStop = true;
-            this.radioSaveSlot1.UseVisualStyleBackColor = true;
-            this.radioSaveSlot1.CheckedChanged += new System.EventHandler(this.radioSaveSlot1_CheckedChanged);
-            // 
-            // lblInstallPath
-            // 
-            this.lblInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblInstallPath.AutoSize = true;
-            this.lblInstallPath.Location = new System.Drawing.Point(13, 12);
-            this.lblInstallPath.Name = "lblInstallPath";
-            this.lblInstallPath.Size = new System.Drawing.Size(62, 13);
-            this.lblInstallPath.TabIndex = 39;
-            this.lblInstallPath.Text = "Install Path:";
-            // 
-            // tbInstallPath
-            // 
-            this.tbInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbInstallPath.Enabled = false;
-            this.tbInstallPath.Location = new System.Drawing.Point(93, 9);
-            this.tbInstallPath.Name = "tbInstallPath";
-            this.tbInstallPath.Size = new System.Drawing.Size(452, 20);
-            this.tbInstallPath.TabIndex = 41;
-            // 
-            // btnInstallPath
-            // 
-            this.btnInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInstallPath.Location = new System.Drawing.Point(551, 6);
-            this.btnInstallPath.Name = "btnInstallPath";
-            this.btnInstallPath.Size = new System.Drawing.Size(152, 23);
-            this.btnInstallPath.TabIndex = 42;
-            this.btnInstallPath.Text = "Installation Path...";
-            this.btnInstallPath.UseVisualStyleBackColor = true;
-            this.btnInstallPath.Click += new System.EventHandler(this.btnInstallPath_Click);
-            // 
-            // lblFileSelected
-            // 
-            this.lblFileSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblFileSelected.AutoSize = true;
-            this.lblFileSelected.Location = new System.Drawing.Point(12, 40);
-            this.lblFileSelected.Name = "lblFileSelected";
-            this.lblFileSelected.Size = new System.Drawing.Size(72, 13);
-            this.lblFileSelected.TabIndex = 43;
-            this.lblFileSelected.Text = "Loaded From:";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnSaveSlot
-            // 
-            this.btnSaveSlot.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSaveSlot.Enabled = false;
-            this.btnSaveSlot.Location = new System.Drawing.Point(294, 533);
-            this.btnSaveSlot.Name = "btnSaveSlot";
-            this.btnSaveSlot.Size = new System.Drawing.Size(127, 33);
-            this.btnSaveSlot.TabIndex = 46;
-            this.btnSaveSlot.Text = "Save To Slot";
-            this.btnSaveSlot.UseVisualStyleBackColor = true;
-            this.btnSaveSlot.Click += new System.EventHandler(this.btnSaveSlot_Click);
-            // 
-            // btnSaveFile
-            // 
-            this.btnSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveFile.Location = new System.Drawing.Point(628, 35);
-            this.btnSaveFile.Name = "btnSaveFile";
-            this.btnSaveFile.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveFile.TabIndex = 2;
-            this.btnSaveFile.Text = "Save File";
-            this.btnSaveFile.UseVisualStyleBackColor = true;
-            this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -967,7 +1016,7 @@
             this.Controls.Add(this.tbGems);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.checkHerb);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picHerb);
             this.Controls.Add(this.picExp);
             this.Controls.Add(this.picLvl);
             this.Controls.Add(this.picGem);
@@ -981,19 +1030,23 @@
             this.Name = "Form1";
             this.Text = "Aggelos Save Mod";
             this.tabControl1.ResumeLayout(false);
-            this.tabInventory.ResumeLayout(false);
-            this.tabInventory.PerformLayout();
-            this.panelPotions.ResumeLayout(false);
-            this.panelPotions.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picExp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLvl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbExp)).EndInit();
             this.groupSaveSlots.ResumeLayout(false);
             this.groupSaveSlots.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHerb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLvl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGem)).EndInit();
+            this.tabInventory.ResumeLayout(false);
+            this.tabInventory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSacredArmor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAggelosArmor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSacredSword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAggelosSword)).EndInit();
+            this.panelPotions.ResumeLayout(false);
+            this.panelPotions.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1027,14 +1080,12 @@
         private System.Windows.Forms.CheckBox checkWoodpeckerScroll;
         private System.Windows.Forms.CheckBox checkFleaScroll;
         private System.Windows.Forms.CheckBox checkMoleScroll;
-        private System.Windows.Forms.CheckBox checkAggelosArmor;
         private System.Windows.Forms.CheckBox checkLightningArmor;
         private System.Windows.Forms.CheckBox checkDragonArmor;
         private System.Windows.Forms.CheckBox checkSamuraiArmor;
         private System.Windows.Forms.CheckBox checkCoralArmor;
         private System.Windows.Forms.CheckBox checkSteelArmor;
         private System.Windows.Forms.CheckBox checkIronArmor;
-        private System.Windows.Forms.CheckBox checkAggelosSword;
         private System.Windows.Forms.CheckBox checkLightningSword;
         private System.Windows.Forms.CheckBox checkDragonSword;
         private System.Windows.Forms.CheckBox checkMasamune;
@@ -1046,9 +1097,7 @@
         private System.Windows.Forms.CheckBox checkSmallVial;
         private System.Windows.Forms.CheckBox checkAngelFeather;
         private System.Windows.Forms.CheckBox checkLumenKey;
-        private System.Windows.Forms.CheckBox checkSacredArmor;
-        private System.Windows.Forms.CheckBox checkSacredSword;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picHerb;
         private System.Windows.Forms.CheckBox checkHerb;
         private System.Windows.Forms.Panel panelPotions;
         private System.Windows.Forms.RadioButton radioElixir;
@@ -1070,6 +1119,14 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnSaveSlot;
         private System.Windows.Forms.Button btnSaveFile;
+        private System.Windows.Forms.Button btnSelectSwordLeft;
+        private System.Windows.Forms.PictureBox picAggelosSword;
+        private System.Windows.Forms.Button btnSelectSwordRight;
+        private System.Windows.Forms.PictureBox picSacredSword;
+        private System.Windows.Forms.PictureBox picSacredArmor;
+        private System.Windows.Forms.PictureBox picAggelosArmor;
+        private System.Windows.Forms.Button btnSelectArmorRight;
+        private System.Windows.Forms.Button btnSelectArmorLeft;
     }
 }
 
