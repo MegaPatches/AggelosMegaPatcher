@@ -91,31 +91,34 @@ namespace Aggelos_Save_Mod
                 checkHerb.Enabled = true;
                 checkHerb.Checked = saveFile.herbe == 1 ? true : false;
 
-                //Check the potion value to see if there is a potion and what type it is
-                checkPotion.Enabled = true;
+                //Control the visibility of the correct image
+                btnSelectPotionLeft.Visible = true;
+                btnSelectPotionRight.Visible = true;
                 switch (saveFile.boule)
                 {
+                    case 0:
+                        picSmallPotion.Visible = false;
+                        picBigPotion.Visible = false;
+                        picElixir.Visible = false;
+                        btnSelectPotionLeft.Visible = false; //Re-disable if at min
+                        break;
                     case 1:
-                        checkPotion.Checked = true;
-                        panelPotions.Enabled = true;
-                        radioSmallPotion.Checked = true;
+                        picSmallPotion.Visible = true;
+                        picBigPotion.Visible = false;
+                        picElixir.Visible = false;
                         break;
                     case 2:
-                        checkPotion.Checked = true;
-                        panelPotions.Enabled = true;
-                        radioBigPotion.Checked = true;
+                        picSmallPotion.Visible = false;
+                        picBigPotion.Visible = true;
+                        picElixir.Visible = false;
                         break;
                     case 3:
-                        checkPotion.Checked = true;
-                        panelPotions.Enabled = true;
-                        radioElixir.Checked = true;
+                        picSmallPotion.Visible = false;
+                        picBigPotion.Visible = false;
+                        picElixir.Visible = true;
+                        btnSelectPotionRight.Visible = false; //Re-disable if at max
                         break;
                     default:
-                        checkPotion.Checked = false;
-                        panelPotions.Enabled = false;
-                        radioSmallPotion.Checked = false;
-                        radioBigPotion.Checked = false;
-                        radioElixir.Checked = false;
                         break;
                 }
 
@@ -607,44 +610,92 @@ namespace Aggelos_Save_Mod
         * 
         * The following functions are called for inventory changes.
         ************************************************************/
-        private void checkPotion_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectPotionLeft_Click(object sender, EventArgs e)
         {
-            //Make sure to disable the radio buttons if we do not want a potion
-            if (checkPotion.Checked)
+            //Decrease the value for potion slot as long as we aren't at min
+            if (saveFile.boule > 0)
             {
-                panelPotions.Enabled = true;
+                saveFile.boule -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectPotionRight.Visible = true;
             }
-            else
+
+            //If we ever become the min, disable the control
+            if (saveFile.boule == 0)
             {
-                panelPotions.Enabled = false;
-                radioSmallPotion.Checked = false;
-                radioBigPotion.Checked = false;
-                radioElixir.Checked = false;
-                saveFile.boule = 0;
+                btnSelectPotionLeft.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.boule)
+            {
+                case 0:
+                    picSmallPotion.Visible = false;
+                    picBigPotion.Visible = false;
+                    picElixir.Visible = false;
+                    break;
+                case 1:
+                    picSmallPotion.Visible = true;
+                    picBigPotion.Visible = false;
+                    picElixir.Visible = false;
+                    break;
+                case 2:
+                    picSmallPotion.Visible = false;
+                    picBigPotion.Visible = true;
+                    picElixir.Visible = false;
+                    break;
+                case 3:
+                    picSmallPotion.Visible = false;
+                    picBigPotion.Visible = false;
+                    picElixir.Visible = true;
+                    break;
+                default:
+                    break;
             }
         }
 
-        private void radioSmallPotion_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectPotionRight_Click(object sender, EventArgs e)
         {
-            if (radioSmallPotion.Checked == true)
+            //Increase the value for potion slot as long as we aren't at max
+            if (saveFile.boule < 3)
             {
-                saveFile.boule = 1;
+                saveFile.boule += 1;
+                //Make sure to re-enable the left select now that we've decreased
+                btnSelectPotionLeft.Visible = true;
             }
-        }
 
-        private void radioBigPotion_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioBigPotion.Checked == true)
+            //If we ever become the max, disable the control
+            if (saveFile.boule == 3)
             {
-                saveFile.boule = 2;
+                btnSelectPotionRight.Visible = false;
             }
-        }
 
-        private void radioElixir_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioElixir.Checked == true)
+            //Control the visibility of the correct image
+            switch (saveFile.boule)
             {
-                saveFile.boule = 3;
+                case 0:
+                    picSmallPotion.Visible = false;
+                    picBigPotion.Visible = false;
+                    picElixir.Visible = false;
+                    break;
+                case 1:
+                    picSmallPotion.Visible = true;
+                    picBigPotion.Visible = false;
+                    picElixir.Visible = false;
+                    break;
+                case 2:
+                    picSmallPotion.Visible = false;
+                    picBigPotion.Visible = true;
+                    picElixir.Visible = false;
+                    break;
+                case 3:
+                    picSmallPotion.Visible = false;
+                    picBigPotion.Visible = false;
+                    picElixir.Visible = true;
+                    break;
+                default:
+                    break;
             }
         }
 

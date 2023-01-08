@@ -118,49 +118,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Aggelos_AggelosSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_AggelosSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Map" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Map.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Aggelos_Lvl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_Lvl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AggelosArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AggelosArmor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LyreStrings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LyreStrings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LyreBody" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LyreBody.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lvl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lvl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SacredSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SacredSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SacredArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SacredArmor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LyreRepaired" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LyreRepaired.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Exp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Exp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LyreAndStrings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LyreAndStrings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AggelosSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AggelosSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Herb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Herb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Inventory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inventory.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BigPotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BigPotion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Aggelos_Inventory" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_Inventory.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Elixir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Elixir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Aggelos_Exp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_Exp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aggelos_LyreStrings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_LyreStrings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aggelos_Map" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_Map.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aggelos_SacredSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_SacredSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aggelos_Herb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_Herb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aggelos_Gem" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_Gem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aggelos_LyreAndStrings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_LyreAndStrings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aggelos_SacredArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_SacredArmor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aggelos_AggelosArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_AggelosArmor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aggelos_LyreRepaired" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_LyreRepaired.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Aggelos_LyreBody" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Aggelos_LyreBody.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SmallPotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SmallPotion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

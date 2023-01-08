@@ -119,14 +119,14 @@
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aggelos_Inventory.jpg" />
-    <None Include="Resources\Aggelos_Map.jpg" />
-    <None Include="Resources\Aggelos_Lvl.png" />
-    <None Include="Resources\Aggelos_Gem.png" />
-    <None Include="Resources\Aggelos_Exp.png" />
+    <None Include="Resources\Inventory.jpg" />
+    <None Include="Resources\Map.jpg" />
+    <None Include="Resources\Lvl.png" />
+    <None Include="Resources\Gem.png" />
+    <None Include="Resources\Exp.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aggelos_Herb.png" />
+    <None Include="Resources\Herb.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BigPotion.png" />
@@ -144,28 +144,40 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aggelos_AggelosSword.png" />
+    <None Include="Resources\AggelosSword.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aggelos_SacredSword.png" />
+    <None Include="Resources\SacredSword.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aggelos_SacredArmor.png" />
+    <None Include="Resources\SacredArmor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aggelos_AggelosArmor.png" />
+    <None Include="Resources\AggelosArmor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aggelos_LyreRepaired.png" />
+    <None Include="Resources\LyreRepaired.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aggelos_LyreAndStrings.png" />
+    <None Include="Resources\LyreAndStrings.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aggelos_LyreStrings.png" />
+    <None Include="Resources\LyreStrings.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aggelos_LyreBody.png" />
+    <None Include="Resources\LyreBody.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggelos_Elixir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggelos_SmallPotion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elixir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmallPotion.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -57,6 +57,11 @@
             this.picLvl = new System.Windows.Forms.PictureBox();
             this.picGem = new System.Windows.Forms.PictureBox();
             this.tabInventory = new System.Windows.Forms.TabPage();
+            this.picElixir = new System.Windows.Forms.PictureBox();
+            this.picBigPotion = new System.Windows.Forms.PictureBox();
+            this.picSmallPotion = new System.Windows.Forms.PictureBox();
+            this.btnSelectPotionRight = new System.Windows.Forms.Button();
+            this.btnSelectPotionLeft = new System.Windows.Forms.Button();
             this.picLyreRepaired = new System.Windows.Forms.PictureBox();
             this.picLyreWithStrings = new System.Windows.Forms.PictureBox();
             this.picLyreBody = new System.Windows.Forms.PictureBox();
@@ -71,11 +76,6 @@
             this.picAggelosSword = new System.Windows.Forms.PictureBox();
             this.btnSelectSwordRight = new System.Windows.Forms.Button();
             this.btnSelectSwordLeft = new System.Windows.Forms.Button();
-            this.checkPotion = new System.Windows.Forms.CheckBox();
-            this.panelPotions = new System.Windows.Forms.Panel();
-            this.radioElixir = new System.Windows.Forms.RadioButton();
-            this.radioBigPotion = new System.Windows.Forms.RadioButton();
-            this.radioSmallPotion = new System.Windows.Forms.RadioButton();
             this.checkUniversalBook = new System.Windows.Forms.CheckBox();
             this.checkSmallVial = new System.Windows.Forms.CheckBox();
             this.checkAngelFeather = new System.Windows.Forms.CheckBox();
@@ -116,6 +116,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLvl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGem)).BeginInit();
             this.tabInventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picElixir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBigPotion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSmallPotion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLyreRepaired)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLyreWithStrings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLyreBody)).BeginInit();
@@ -124,7 +127,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosArmor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSacredSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosSword)).BeginInit();
-            this.panelPotions.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbFileSelected
@@ -405,7 +407,7 @@
             // picHerb
             // 
             this.picHerb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picHerb.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Herb;
+            this.picHerb.Image = global::Aggelos_Save_Mod.Properties.Resources.Herb;
             this.picHerb.Location = new System.Drawing.Point(275, 69);
             this.picHerb.Name = "picHerb";
             this.picHerb.Size = new System.Drawing.Size(49, 48);
@@ -415,7 +417,7 @@
             // picExp
             // 
             this.picExp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picExp.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Exp;
+            this.picExp.Image = global::Aggelos_Save_Mod.Properties.Resources.Exp;
             this.picExp.Location = new System.Drawing.Point(579, 85);
             this.picExp.Name = "picExp";
             this.picExp.Size = new System.Drawing.Size(43, 23);
@@ -425,7 +427,7 @@
             // picLvl
             // 
             this.picLvl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picLvl.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Lvl;
+            this.picLvl.Image = global::Aggelos_Save_Mod.Properties.Resources.Lvl;
             this.picLvl.Location = new System.Drawing.Point(471, 81);
             this.picLvl.Name = "picLvl";
             this.picLvl.Size = new System.Drawing.Size(43, 25);
@@ -435,7 +437,7 @@
             // picGem
             // 
             this.picGem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picGem.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Gem;
+            this.picGem.Image = global::Aggelos_Save_Mod.Properties.Resources.Gem;
             this.picGem.Location = new System.Drawing.Point(342, 70);
             this.picGem.Name = "picGem";
             this.picGem.Size = new System.Drawing.Size(31, 37);
@@ -444,8 +446,13 @@
             // 
             // tabInventory
             // 
-            this.tabInventory.BackgroundImage = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Inventory;
+            this.tabInventory.BackgroundImage = global::Aggelos_Save_Mod.Properties.Resources.Inventory;
             this.tabInventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabInventory.Controls.Add(this.picElixir);
+            this.tabInventory.Controls.Add(this.picBigPotion);
+            this.tabInventory.Controls.Add(this.picSmallPotion);
+            this.tabInventory.Controls.Add(this.btnSelectPotionRight);
+            this.tabInventory.Controls.Add(this.btnSelectPotionLeft);
             this.tabInventory.Controls.Add(this.picLyreRepaired);
             this.tabInventory.Controls.Add(this.picLyreWithStrings);
             this.tabInventory.Controls.Add(this.picLyreBody);
@@ -460,8 +467,6 @@
             this.tabInventory.Controls.Add(this.picAggelosSword);
             this.tabInventory.Controls.Add(this.btnSelectSwordRight);
             this.tabInventory.Controls.Add(this.btnSelectSwordLeft);
-            this.tabInventory.Controls.Add(this.checkPotion);
-            this.tabInventory.Controls.Add(this.panelPotions);
             this.tabInventory.Controls.Add(this.checkUniversalBook);
             this.tabInventory.Controls.Add(this.checkSmallVial);
             this.tabInventory.Controls.Add(this.checkAngelFeather);
@@ -499,9 +504,61 @@
             this.tabInventory.Text = "Inventory";
             this.tabInventory.UseVisualStyleBackColor = true;
             // 
+            // picElixir
+            // 
+            this.picElixir.Image = global::Aggelos_Save_Mod.Properties.Resources.Elixir;
+            this.picElixir.Location = new System.Drawing.Point(35, 33);
+            this.picElixir.Name = "picElixir";
+            this.picElixir.Size = new System.Drawing.Size(40, 40);
+            this.picElixir.TabIndex = 66;
+            this.picElixir.TabStop = false;
+            this.picElixir.Visible = false;
+            // 
+            // picBigPotion
+            // 
+            this.picBigPotion.Image = global::Aggelos_Save_Mod.Properties.Resources.BigPotion;
+            this.picBigPotion.Location = new System.Drawing.Point(35, 33);
+            this.picBigPotion.Name = "picBigPotion";
+            this.picBigPotion.Size = new System.Drawing.Size(40, 40);
+            this.picBigPotion.TabIndex = 65;
+            this.picBigPotion.TabStop = false;
+            this.picBigPotion.Visible = false;
+            // 
+            // picSmallPotion
+            // 
+            this.picSmallPotion.Image = global::Aggelos_Save_Mod.Properties.Resources.SmallPotion;
+            this.picSmallPotion.Location = new System.Drawing.Point(35, 33);
+            this.picSmallPotion.Name = "picSmallPotion";
+            this.picSmallPotion.Size = new System.Drawing.Size(40, 40);
+            this.picSmallPotion.TabIndex = 64;
+            this.picSmallPotion.TabStop = false;
+            this.picSmallPotion.Visible = false;
+            // 
+            // btnSelectPotionRight
+            // 
+            this.btnSelectPotionRight.Location = new System.Drawing.Point(74, 39);
+            this.btnSelectPotionRight.Name = "btnSelectPotionRight";
+            this.btnSelectPotionRight.Size = new System.Drawing.Size(17, 23);
+            this.btnSelectPotionRight.TabIndex = 62;
+            this.btnSelectPotionRight.Text = ">";
+            this.btnSelectPotionRight.UseVisualStyleBackColor = true;
+            this.btnSelectPotionRight.Visible = false;
+            this.btnSelectPotionRight.Click += new System.EventHandler(this.btnSelectPotionRight_Click);
+            // 
+            // btnSelectPotionLeft
+            // 
+            this.btnSelectPotionLeft.Location = new System.Drawing.Point(18, 39);
+            this.btnSelectPotionLeft.Name = "btnSelectPotionLeft";
+            this.btnSelectPotionLeft.Size = new System.Drawing.Size(17, 23);
+            this.btnSelectPotionLeft.TabIndex = 61;
+            this.btnSelectPotionLeft.Text = "<";
+            this.btnSelectPotionLeft.UseVisualStyleBackColor = true;
+            this.btnSelectPotionLeft.Visible = false;
+            this.btnSelectPotionLeft.Click += new System.EventHandler(this.btnSelectPotionLeft_Click);
+            // 
             // picLyreRepaired
             // 
-            this.picLyreRepaired.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_LyreRepaired;
+            this.picLyreRepaired.Image = global::Aggelos_Save_Mod.Properties.Resources.LyreRepaired;
             this.picLyreRepaired.Location = new System.Drawing.Point(101, 119);
             this.picLyreRepaired.Name = "picLyreRepaired";
             this.picLyreRepaired.Size = new System.Drawing.Size(40, 40);
@@ -511,7 +568,7 @@
             // 
             // picLyreWithStrings
             // 
-            this.picLyreWithStrings.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_LyreAndStrings;
+            this.picLyreWithStrings.Image = global::Aggelos_Save_Mod.Properties.Resources.LyreAndStrings;
             this.picLyreWithStrings.Location = new System.Drawing.Point(101, 119);
             this.picLyreWithStrings.Name = "picLyreWithStrings";
             this.picLyreWithStrings.Size = new System.Drawing.Size(40, 40);
@@ -521,7 +578,7 @@
             // 
             // picLyreBody
             // 
-            this.picLyreBody.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_LyreBody;
+            this.picLyreBody.Image = global::Aggelos_Save_Mod.Properties.Resources.LyreBody;
             this.picLyreBody.Location = new System.Drawing.Point(101, 119);
             this.picLyreBody.Name = "picLyreBody";
             this.picLyreBody.Size = new System.Drawing.Size(40, 40);
@@ -531,7 +588,7 @@
             // 
             // picLyreStrings
             // 
-            this.picLyreStrings.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_LyreStrings;
+            this.picLyreStrings.Image = global::Aggelos_Save_Mod.Properties.Resources.LyreStrings;
             this.picLyreStrings.Location = new System.Drawing.Point(101, 119);
             this.picLyreStrings.Name = "picLyreStrings";
             this.picLyreStrings.Size = new System.Drawing.Size(40, 40);
@@ -563,7 +620,7 @@
             // 
             // picSacredArmor
             // 
-            this.picSacredArmor.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_SacredArmor;
+            this.picSacredArmor.Image = global::Aggelos_Save_Mod.Properties.Resources.SacredArmor;
             this.picSacredArmor.Location = new System.Drawing.Point(610, 325);
             this.picSacredArmor.Name = "picSacredArmor";
             this.picSacredArmor.Size = new System.Drawing.Size(40, 40);
@@ -573,7 +630,7 @@
             // 
             // picAggelosArmor
             // 
-            this.picAggelosArmor.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_AggelosArmor;
+            this.picAggelosArmor.Image = global::Aggelos_Save_Mod.Properties.Resources.AggelosArmor;
             this.picAggelosArmor.Location = new System.Drawing.Point(610, 325);
             this.picAggelosArmor.Name = "picAggelosArmor";
             this.picAggelosArmor.Size = new System.Drawing.Size(40, 40);
@@ -605,7 +662,7 @@
             // 
             // picSacredSword
             // 
-            this.picSacredSword.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_SacredSword;
+            this.picSacredSword.Image = global::Aggelos_Save_Mod.Properties.Resources.SacredSword;
             this.picSacredSword.Location = new System.Drawing.Point(610, 231);
             this.picSacredSword.Name = "picSacredSword";
             this.picSacredSword.Size = new System.Drawing.Size(40, 40);
@@ -615,7 +672,7 @@
             // 
             // picAggelosSword
             // 
-            this.picAggelosSword.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_AggelosSword;
+            this.picAggelosSword.Image = global::Aggelos_Save_Mod.Properties.Resources.AggelosSword;
             this.picAggelosSword.Location = new System.Drawing.Point(610, 231);
             this.picAggelosSword.Name = "picAggelosSword";
             this.picAggelosSword.Size = new System.Drawing.Size(40, 40);
@@ -644,62 +701,6 @@
             this.btnSelectSwordLeft.UseVisualStyleBackColor = true;
             this.btnSelectSwordLeft.Visible = false;
             this.btnSelectSwordLeft.Click += new System.EventHandler(this.btnSelectSwordLeft_Click);
-            // 
-            // checkPotion
-            // 
-            this.checkPotion.AutoSize = true;
-            this.checkPotion.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkPotion.Enabled = false;
-            this.checkPotion.Location = new System.Drawing.Point(18, 41);
-            this.checkPotion.Name = "checkPotion";
-            this.checkPotion.Size = new System.Drawing.Size(15, 14);
-            this.checkPotion.TabIndex = 7;
-            this.checkPotion.UseVisualStyleBackColor = true;
-            this.checkPotion.CheckedChanged += new System.EventHandler(this.checkPotion_CheckedChanged);
-            // 
-            // panelPotions
-            // 
-            this.panelPotions.Controls.Add(this.radioElixir);
-            this.panelPotions.Controls.Add(this.radioBigPotion);
-            this.panelPotions.Controls.Add(this.radioSmallPotion);
-            this.panelPotions.Enabled = false;
-            this.panelPotions.Location = new System.Drawing.Point(34, 55);
-            this.panelPotions.Name = "panelPotions";
-            this.panelPotions.Size = new System.Drawing.Size(59, 20);
-            this.panelPotions.TabIndex = 36;
-            // 
-            // radioElixir
-            // 
-            this.radioElixir.AutoSize = true;
-            this.radioElixir.Location = new System.Drawing.Point(43, 3);
-            this.radioElixir.Name = "radioElixir";
-            this.radioElixir.Size = new System.Drawing.Size(14, 13);
-            this.radioElixir.TabIndex = 10;
-            this.radioElixir.TabStop = true;
-            this.radioElixir.UseVisualStyleBackColor = true;
-            this.radioElixir.CheckedChanged += new System.EventHandler(this.radioElixir_CheckedChanged);
-            // 
-            // radioBigPotion
-            // 
-            this.radioBigPotion.AutoSize = true;
-            this.radioBigPotion.Location = new System.Drawing.Point(23, 3);
-            this.radioBigPotion.Name = "radioBigPotion";
-            this.radioBigPotion.Size = new System.Drawing.Size(14, 13);
-            this.radioBigPotion.TabIndex = 9;
-            this.radioBigPotion.TabStop = true;
-            this.radioBigPotion.UseVisualStyleBackColor = true;
-            this.radioBigPotion.CheckedChanged += new System.EventHandler(this.radioBigPotion_CheckedChanged);
-            // 
-            // radioSmallPotion
-            // 
-            this.radioSmallPotion.AutoSize = true;
-            this.radioSmallPotion.Location = new System.Drawing.Point(4, 3);
-            this.radioSmallPotion.Name = "radioSmallPotion";
-            this.radioSmallPotion.Size = new System.Drawing.Size(14, 13);
-            this.radioSmallPotion.TabIndex = 8;
-            this.radioSmallPotion.TabStop = true;
-            this.radioSmallPotion.UseVisualStyleBackColor = true;
-            this.radioSmallPotion.CheckedChanged += new System.EventHandler(this.radioSmallPotion_CheckedChanged);
             // 
             // checkUniversalBook
             // 
@@ -1053,7 +1054,7 @@
             // 
             // tabSaves
             // 
-            this.tabSaves.BackgroundImage = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Map;
+            this.tabSaves.BackgroundImage = global::Aggelos_Save_Mod.Properties.Resources.Map;
             this.tabSaves.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabSaves.Location = new System.Drawing.Point(4, 22);
             this.tabSaves.Name = "tabSaves";
@@ -1105,6 +1106,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picGem)).EndInit();
             this.tabInventory.ResumeLayout(false);
             this.tabInventory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picElixir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBigPotion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSmallPotion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLyreRepaired)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLyreWithStrings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLyreBody)).EndInit();
@@ -1113,8 +1117,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosArmor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSacredSword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosSword)).EndInit();
-            this.panelPotions.ResumeLayout(false);
-            this.panelPotions.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1166,11 +1168,6 @@
         private System.Windows.Forms.CheckBox checkLumenKey;
         private System.Windows.Forms.PictureBox picHerb;
         private System.Windows.Forms.CheckBox checkHerb;
-        private System.Windows.Forms.Panel panelPotions;
-        private System.Windows.Forms.RadioButton radioElixir;
-        private System.Windows.Forms.RadioButton radioBigPotion;
-        private System.Windows.Forms.RadioButton radioSmallPotion;
-        private System.Windows.Forms.CheckBox checkPotion;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.NumericUpDown tbGems;
         private System.Windows.Forms.NumericUpDown tbLevel;
@@ -1200,6 +1197,11 @@
         private System.Windows.Forms.Button btnSelectLyreLeft;
         private System.Windows.Forms.PictureBox picLyreRepaired;
         private System.Windows.Forms.PictureBox picLyreWithStrings;
+        private System.Windows.Forms.PictureBox picElixir;
+        private System.Windows.Forms.PictureBox picBigPotion;
+        private System.Windows.Forms.PictureBox picSmallPotion;
+        private System.Windows.Forms.Button btnSelectPotionRight;
+        private System.Windows.Forms.Button btnSelectPotionLeft;
     }
 }
 

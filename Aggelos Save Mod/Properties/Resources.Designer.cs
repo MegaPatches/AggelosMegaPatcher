@@ -63,9 +63,9 @@ namespace Aggelos_Save_Mod.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_AggelosArmor {
+        internal static System.Drawing.Bitmap AggelosArmor {
             get {
-                object obj = ResourceManager.GetObject("Aggelos_AggelosArmor", resourceCulture);
+                object obj = ResourceManager.GetObject("AggelosArmor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,129 +73,9 @@ namespace Aggelos_Save_Mod.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_AggelosSword {
+        internal static System.Drawing.Bitmap AggelosSword {
             get {
-                object obj = ResourceManager.GetObject("Aggelos_AggelosSword", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_Exp {
-            get {
-                object obj = ResourceManager.GetObject("Aggelos_Exp", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_Gem {
-            get {
-                object obj = ResourceManager.GetObject("Aggelos_Gem", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_Herb {
-            get {
-                object obj = ResourceManager.GetObject("Aggelos_Herb", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_Inventory {
-            get {
-                object obj = ResourceManager.GetObject("Aggelos_Inventory", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_Lvl {
-            get {
-                object obj = ResourceManager.GetObject("Aggelos_Lvl", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_LyreAndStrings {
-            get {
-                object obj = ResourceManager.GetObject("Aggelos_LyreAndStrings", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_LyreBody {
-            get {
-                object obj = ResourceManager.GetObject("Aggelos_LyreBody", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_LyreRepaired {
-            get {
-                object obj = ResourceManager.GetObject("Aggelos_LyreRepaired", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_LyreStrings {
-            get {
-                object obj = ResourceManager.GetObject("Aggelos_LyreStrings", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_Map {
-            get {
-                object obj = ResourceManager.GetObject("Aggelos_Map", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_SacredArmor {
-            get {
-                object obj = ResourceManager.GetObject("Aggelos_SacredArmor", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Aggelos_SacredSword {
-            get {
-                object obj = ResourceManager.GetObject("Aggelos_SacredSword", resourceCulture);
+                object obj = ResourceManager.GetObject("AggelosSword", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +86,146 @@ namespace Aggelos_Save_Mod.Properties {
         internal static System.Drawing.Bitmap BigPotion {
             get {
                 object obj = ResourceManager.GetObject("BigPotion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir {
+            get {
+                object obj = ResourceManager.GetObject("Elixir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Exp {
+            get {
+                object obj = ResourceManager.GetObject("Exp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gem {
+            get {
+                object obj = ResourceManager.GetObject("Gem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Herb {
+            get {
+                object obj = ResourceManager.GetObject("Herb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inventory {
+            get {
+                object obj = ResourceManager.GetObject("Inventory", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lvl {
+            get {
+                object obj = ResourceManager.GetObject("Lvl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LyreAndStrings {
+            get {
+                object obj = ResourceManager.GetObject("LyreAndStrings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LyreBody {
+            get {
+                object obj = ResourceManager.GetObject("LyreBody", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LyreRepaired {
+            get {
+                object obj = ResourceManager.GetObject("LyreRepaired", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LyreStrings {
+            get {
+                object obj = ResourceManager.GetObject("LyreStrings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Map {
+            get {
+                object obj = ResourceManager.GetObject("Map", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SacredArmor {
+            get {
+                object obj = ResourceManager.GetObject("SacredArmor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SacredSword {
+            get {
+                object obj = ResourceManager.GetObject("SacredSword", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SmallPotion {
+            get {
+                object obj = ResourceManager.GetObject("SmallPotion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
