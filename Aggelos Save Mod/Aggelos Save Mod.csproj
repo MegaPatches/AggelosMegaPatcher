@@ -119,14 +119,14 @@
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aggelos_Inventory.jpg" />
-    <None Include="Resources\Aggelos_Map.jpg" />
-    <None Include="Resources\Aggelos_Lvl.png" />
-    <None Include="Resources\Aggelos_Gem.png" />
-    <None Include="Resources\Aggelos_Exp.png" />
+    <None Include="Resources\Inventory.jpg" />
+    <None Include="Resources\Map.jpg" />
+    <None Include="Resources\Lvl.png" />
+    <None Include="Resources\Gem.png" />
+    <None Include="Resources\Exp.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aggelos_Herb.png" />
+    <None Include="Resources\Herb.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BigPotion.png" />
@@ -142,6 +142,78 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AggelosSword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SacredSword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SacredArmor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AggelosArmor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LyreRepaired.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LyreAndStrings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LyreStrings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LyreBody.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggelos_Elixir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggelos_SmallPotion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elixir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmallPotion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bananas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BrokenCrown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crystal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmptyVial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FullVial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Moon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Necklace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scepter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tiara.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
