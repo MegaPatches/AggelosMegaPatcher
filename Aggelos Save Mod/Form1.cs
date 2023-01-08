@@ -86,6 +86,18 @@ namespace Aggelos_Save_Mod
                 tbExp.Enabled = true;
                 tbExp.Text = saveFile.exp.ToString();
 
+                tbPower.Enabled = true;
+                tbPower.Text = saveFile.pow.ToString();
+
+                tbDefense.Enabled = true;
+                tbDefense.Text = saveFile.def.ToString();
+
+                tbHealth.Enabled = true;
+                tbHealth.Text = saveFile.coeur.ToString();
+
+                tbMagic.Enabled = true;
+                tbMagic.Text = saveFile.magie.ToString();
+
                 //Inventory
                 //Items
                 checkHerb.Enabled = true;
@@ -407,52 +419,162 @@ namespace Aggelos_Save_Mod
                         break;
                 }
 
-                //Essences - Done first to ensure check box events fire properly for rings
-                checkEarthEssence.Enabled = true;
-                checkEarthEssence.Checked = saveFile.ring1 == 2 ? true : false;
+                //Rings and Essences - 1 or 2 for each ring. Can't seem to have essences without rings.
+                //Control the visibility of the correct image
+                btnSelectEarthLeft.Visible = true;
+                btnSelectEarthRight.Visible = true;
+                switch (saveFile.ring1)
+                {
+                    case 0:
+                        picEarthRing.Visible = false;
+                        picEarthEssence.Visible = false;
+                        btnSelectEarthLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picEarthRing.Visible = true;
+                        picEarthEssence.Visible = false;
+                        break;
+                    case 2:
+                        picEarthRing.Visible = false;
+                        picEarthEssence.Visible = true;
+                        btnSelectEarthRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
-                checkWaterEssence.Enabled = true;
-                checkWaterEssence.Checked = saveFile.ring2 == 2 ? true : false;
+                btnSelectWaterLeft.Visible = true;
+                btnSelectWaterRight.Visible = true;
+                switch (saveFile.ring2)
+                {
+                    case 0:
+                        picWaterRing.Visible = false;
+                        picWaterEssence.Visible = false;
+                        btnSelectWaterLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picWaterRing.Visible = true;
+                        picWaterEssence.Visible = false;
+                        break;
+                    case 2:
+                        picWaterRing.Visible = false;
+                        picWaterEssence.Visible = true;
+                        btnSelectWaterRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
-                checkFireEssence.Enabled = true;
-                checkFireEssence.Checked = saveFile.ring3 == 2 ? true : false;
+                btnSelectFireLeft.Visible = true;
+                btnSelectFireRight.Visible = true;
+                switch (saveFile.ring3)
+                {
+                    case 0:
+                        picFireRing.Visible = false;
+                        picFireEssence.Visible = false;
+                        btnSelectFireLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picFireRing.Visible = true;
+                        picFireEssence.Visible = false;
+                        break;
+                    case 2:
+                        picFireRing.Visible = false;
+                        picFireEssence.Visible = true;
+                        btnSelectFireRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
-                checkAirEssence.Enabled = true;
-                checkAirEssence.Checked = saveFile.ring4 == 2 ? true : false;
-
-                //Rings - "ring#" is 2.
-                checkEarthRing.Enabled = true;
-                checkEarthRing.Checked = saveFile.ring1 >= 1 ? true : false;
-
-                checkWaterRing.Enabled = true;
-                checkWaterRing.Checked = saveFile.ring2 >= 1 ? true : false;
-
-                checkFireRing.Enabled = true;
-                checkFireRing.Checked = saveFile.ring3 >= 1 ? true : false;
-
-                checkAirRing.Enabled = true;
-                checkAirRing.Checked = saveFile.ring4 >= 1 ? true : false;
-
-                //Light Skills - Firefly scroll and light essence are tied together
-                checkFireflyScroll.Enabled = true;
-                checkFireflyScroll.Checked = saveFile.lightskill == 2 ? true : false;
-
-                checkLightEssence.Enabled = true;
-                checkLightEssence.Checked = saveFile.lightskill >= 1 ? true : false;
+                btnSelectAirLeft.Visible = true;
+                btnSelectAirRight.Visible = true;
+                switch (saveFile.ring4)
+                {
+                    case 0:
+                        picAirRing.Visible = false;
+                        picAirEssence.Visible = false;
+                        btnSelectAirLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picAirRing.Visible = true;
+                        picAirEssence.Visible = false;
+                        break;
+                    case 2:
+                        picAirRing.Visible = false;
+                        picAirEssence.Visible = true;
+                        btnSelectAirRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
                 //Scrolls - 1, 2, or 3 for each main skill. Can't seem to have laters without previous.
-                //Be sure to clear the scrolls first in order to make sure we are setting them correctly on change event
-                checkMoleScroll.Enabled = true;
-                checkFleaScroll.Enabled = true;
-                checkWoodpeckerScroll.Enabled = true;
+                //Control the visibility of the correct image
+                btnSelectScrollLeft.Visible = true;
+                btnSelectScrollRight.Visible = true;
+                switch (saveFile.scroll)
+                {
+                    case 0:
+                        picMoleScroll.Visible = false;
+                        picMoleText.Visible = false;
+                        picFleaScroll.Visible = false;
+                        picFleaText.Visible = false;
+                        picWoodpeckerScroll.Visible = false;
+                        picWoodpeckerText.Visible = false;
+                        btnSelectScrollLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picMoleScroll.Visible = true;
+                        picMoleText.Visible = true;
+                        picFleaScroll.Visible = false;
+                        picFleaText.Visible = false;
+                        picWoodpeckerScroll.Visible = false;
+                        picWoodpeckerText.Visible = false;
+                        break;
+                    case 2:
+                        picMoleScroll.Visible = false;
+                        picMoleText.Visible = false;
+                        picFleaScroll.Visible = true;
+                        picFleaText.Visible = true;
+                        picWoodpeckerScroll.Visible = false;
+                        picWoodpeckerText.Visible = false;
+                        break;
+                    case 3:
+                        picMoleScroll.Visible = false;
+                        picMoleText.Visible = false;
+                        picFleaScroll.Visible = false;
+                        picFleaText.Visible = false;
+                        picWoodpeckerScroll.Visible = true;
+                        picWoodpeckerText.Visible = true;
+                        btnSelectScrollRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
-                checkWoodpeckerScroll.Checked = false;
-                checkFleaScroll.Checked = false;
-                checkMoleScroll.Checked = false;
-
-                checkWoodpeckerScroll.Checked = saveFile.scroll >= 3 ? true : false;
-                checkFleaScroll.Checked = saveFile.scroll >= 2 ? true : false;
-                checkMoleScroll.Checked = saveFile.scroll >= 1 ? true : false;
+                //Light Skills - Firefly scroll and light essence are tied together
+                btnSelectLightSkillLeft.Visible = true;
+                btnSelectLightSkillRight.Visible = true;
+                switch (saveFile.lightskill)
+                {
+                    case 0:
+                        picLightEssence.Visible = false;
+                        picFireflyScroll.Visible = false;
+                        btnSelectLightSkillLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picLightEssence.Visible = true;
+                        picFireflyScroll.Visible = false;
+                        break;
+                    case 2:
+                        picLightEssence.Visible = false;
+                        picFireflyScroll.Visible = true;
+                        btnSelectLightSkillRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
                 //Weapons - "epee#" is 1. epee 1 is always available and epee7 is 1 or 2 based on blessed status
                 //checkIronSword.Enabled = false;
@@ -793,6 +915,62 @@ namespace Aggelos_Save_Mod
         private void checkHerb_CheckedChanged(object sender, EventArgs e)
         {
             saveFile.herbe = checkHerb.Checked == true ? 1 : 0;
+        }
+
+        private void tbPower_ValueChanged(object sender, EventArgs e)
+        {
+            if (tbPower.Value > tbPower.Maximum)
+            {
+                tbPower.Value = tbPower.Maximum;
+            }
+            else if (tbPower.Value < tbPower.Minimum)
+            {
+                tbPower.Value = tbPower.Minimum;
+            }
+
+            saveFile.pow = ((int)tbPower.Value);
+        }
+
+        private void tbDefense_ValueChanged(object sender, EventArgs e)
+        {
+            if (tbDefense.Value > tbDefense.Maximum)
+            {
+                tbDefense.Value = tbDefense.Maximum;
+            }
+            else if (tbDefense.Value < tbDefense.Minimum)
+            {
+                tbDefense.Value = tbDefense.Minimum;
+            }
+
+            saveFile.def = ((int)tbDefense.Value);
+        }
+        
+        private void tbHealth_ValueChanged(object sender, EventArgs e)
+        {
+            if (tbHealth.Value > tbHealth.Maximum)
+            {
+                tbHealth.Value = tbHealth.Maximum;
+            }
+            else if (tbHealth.Value < tbHealth.Minimum)
+            {
+                tbHealth.Value = tbHealth.Minimum;
+            }
+
+            saveFile.coeur = ((int)tbHealth.Value);
+        }
+
+        private void tbMagic_ValueChanged(object sender, EventArgs e)
+        {
+            if (tbMagic.Value > tbMagic.Maximum)
+            {
+                tbMagic.Value = tbMagic.Maximum;
+            }
+            else if (tbMagic.Value < tbMagic.Minimum)
+            {
+                tbMagic.Value = tbMagic.Minimum;
+            }
+
+            saveFile.magie = ((int)tbMagic.Value);
         }
 
         /************************************************************
@@ -1513,229 +1691,497 @@ namespace Aggelos_Save_Mod
         }
 
         /************************************************************
-        * RING CHANGES
-        * 
-        * The following functions are called for ring changes.
-        ************************************************************/
-        private void checkEarthRing_CheckedChanged(object sender, EventArgs e)
-        {
-            //Only change to 1 if checked and we didn't get trigger from the essence checkbox
-            if (checkEarthRing.Checked && !checkEarthEssence.Checked)
-            {
-                saveFile.ring1 = 1;
-            }
-            //If we are not checked be sure we dont have essence checked and set to 0
-            else if (!checkEarthRing.Checked)
-            {
-                checkEarthEssence.Checked = false;
-                saveFile.ring1 = 0;
-            }
-            //Otherwise do nothing because this event was triggered from another function that will handle the variable.
-        }
-
-        private void checkWaterRing_CheckedChanged(object sender, EventArgs e)
-        {
-            //Only change to 1 if checked and we didn't get trigger from the essence checkbox
-            if (checkWaterRing.Checked && !checkWaterEssence.Checked)
-            {
-                saveFile.ring2 = 1;
-            }
-            //If we are not checked be sure we dont have essence checked and set to 0
-            else if (!checkWaterRing.Checked)
-            {
-                checkWaterEssence.Checked = false;
-                saveFile.ring2 = 0;
-            }
-            //Otherwise do nothing because this event was triggered from another function that will handle the variable.
-        }
-
-        private void checkFireRing_CheckedChanged(object sender, EventArgs e)
-        {
-            //Only change to 1 if checked and we didn't get trigger from the essence checkbox
-            if (checkFireRing.Checked && !checkFireEssence.Checked)
-            {
-                saveFile.ring3 = 1;
-            }
-            //If we are not checked be sure we dont have essence checked and set to 0
-            else if (!checkFireRing.Checked)
-            {
-                checkFireEssence.Checked = false;
-                saveFile.ring3 = 0;
-            }
-            //Otherwise do nothing because this event was triggered from another function that will handle the variable.
-        }
-
-        private void checkAirRing_CheckedChanged(object sender, EventArgs e)
-        {
-            //Only change to 1 if checked and we didn't get trigger from the essence checkbox
-            if (checkAirRing.Checked && !checkAirEssence.Checked)
-            {
-                saveFile.ring4 = 1;
-            }
-            //If we are not checked be sure we dont have essence checked and set to 0
-            else if (!checkAirRing.Checked)
-            {
-                checkAirEssence.Checked = false;
-                saveFile.ring4 = 0;
-            }
-            //Otherwise do nothing because this event was triggered from another function that will handle the variable.
-        }
-
-        /************************************************************
         * SCROLL CHANGES
         * 
         * The following functions are called for scroll changes.
         ************************************************************/
-        private void checkMoleScroll_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectScrollLeft_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("MOLE");
-            //Since you can't have later scrolls without earlier scrolls, check/uncheck all that apply if unchecked here
-            if (checkMoleScroll.Checked)
+            //Decrease the value for ring slot as long as we aren't at min
+            if (saveFile.scroll > 0)
             {
-                saveFile.scroll = 1;
-            }
-            else
-            {
-                saveFile.scroll = 0;
-                checkFleaScroll.Checked = false;
-                checkWoodpeckerScroll.Checked = false;
+                saveFile.scroll -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectScrollRight.Visible = true;
             }
 
+            //If we ever become the min, disable the control
+            if (saveFile.scroll == 0)
+            {
+                btnSelectScrollLeft.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.scroll)
+            {
+                case 0:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 1:
+                    picMoleScroll.Visible = true;
+                    picMoleText.Visible = true;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 2:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = true;
+                    picFleaText.Visible = true;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 3:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = true;
+                    picWoodpeckerText.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void checkFleaScroll_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectScrollRight_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("FLEA");
-            //Since you can't have later scrolls without earlier scrolls, check/uncheck all that apply if unchecked here
-            if (checkFleaScroll.Checked)
+            //Increase the value for ring slot as long as we aren't at max
+            if (saveFile.scroll < 3)
             {
-                saveFile.scroll = 2;
-                checkMoleScroll.Checked = true;
+                saveFile.scroll += 1;
+                //Make sure to re-enable the left select now that we've increased
+                btnSelectScrollLeft.Visible = true;
             }
-            else
-            {
-                saveFile.scroll = 1;
-                checkWoodpeckerScroll.Checked = false;
-            }
-        }
 
-        private void checkWoodpeckerScroll_CheckedChanged(object sender, EventArgs e)
-        {
-            Console.WriteLine("WOODPECKER");
-            //Since you can't have later scrolls without earlier scrolls, check/uncheck all that apply if unchecked here
-            if (checkWoodpeckerScroll.Checked)
+            //If we ever become the max, disable the control
+            if (saveFile.scroll == 3)
             {
-                saveFile.scroll = 3;
-                checkMoleScroll.Checked = true;
-                checkFleaScroll.Checked = true;
+                btnSelectScrollRight.Visible = false;
             }
-            else
-            {
-                saveFile.scroll = 2;
-            }
-        }
 
-        //Can't have the firefly scroll without the light essence
-        private void checkFireflyScroll_CheckedChanged(object sender, EventArgs e)
-        {
-            //If checked always make sure light essence is checked and set to 2
-            if (checkFireflyScroll.Checked)
+            //Control the visibility of the correct image
+            switch (saveFile.scroll)
             {
-                checkLightEssence.Checked = true;
-                saveFile.lightskill = 2;
+                case 0:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 1:
+                    picMoleScroll.Visible = true;
+                    picMoleText.Visible = true;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 2:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = true;
+                    picFleaText.Visible = true;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 3:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = true;
+                    picWoodpeckerText.Visible = true;
+                    break;
+                default:
+                    break;
             }
-            //Otherwise if we have just gotten unchecked while the light essence was checked we leave it at 1
-            else if (!checkFireflyScroll.Checked && checkLightEssence.Checked)
-            {
-                saveFile.lightskill = 1;
-            }
-            //Otherwise this was triggered from unchecking the light essence and we don't want to do anything as it will handle variables.
         }
 
         /************************************************************
-        * ESSENCE CHANGES
+        * RING AND ESSENCE CHANGES
         * 
-        * The following functions are called for essence changes.
+        * The following functions are called for the ring and essence changes.
         * There is no way to give yourself the essence and not the ring.
         ************************************************************/
-        private void checkEarthEssence_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectEarthLeft_Click(object sender, EventArgs e)
         {
-            //If checked always make sure ring is checked and set to 2
-            if (checkEarthEssence.Checked)
+            //Decrease the value for ring slot as long as we aren't at min
+            if (saveFile.ring1 > 0)
             {
-                checkEarthRing.Checked = true;
-                saveFile.ring1 = 2;
+                saveFile.ring1 -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectEarthRight.Visible = true;
             }
-            //Otherwise if we have just gotten unchecked while the ring was checked we leave it at 1
-            else if (!checkEarthEssence.Checked && checkEarthRing.Checked)
+
+            //If we ever become the min, disable the control
+            if (saveFile.ring1 == 0)
             {
-                saveFile.ring1 = 1;
+                btnSelectEarthLeft.Visible = false;
             }
-            //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring1)
+            {
+                case 0:
+                    picEarthRing.Visible = false;
+                    picEarthEssence.Visible = false;
+                    break;
+                case 1:
+                    picEarthRing.Visible = true;
+                    picEarthEssence.Visible = false;
+                    break;
+                case 2:
+                    picEarthRing.Visible = true;
+                    picEarthEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void checkWaterEssence_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectEarthRight_Click(object sender, EventArgs e)
         {
-            //If checked always make sure ring is checked and set to 2
-            if (checkWaterEssence.Checked)
+            //Increase the value for ring slot as long as we aren't at max
+            if (saveFile.ring1 < 2)
             {
-                checkWaterRing.Checked = true;
-                saveFile.ring2 = 2;
+                saveFile.ring1 += 1;
+                //Make sure to re-enable the left select now that we've increased
+                btnSelectEarthLeft.Visible = true;
             }
-            //Otherwise if we have just gotten unchecked while the ring was checked we leave it at 1
-            else if (!checkWaterEssence.Checked && checkWaterRing.Checked)
+
+            //If we ever become the max, disable the control
+            if (saveFile.ring1 == 2)
             {
-                saveFile.ring2 = 1;
+                btnSelectEarthRight.Visible = false;
             }
-            //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring1)
+            {
+                case 0:
+                    picEarthRing.Visible = false;
+                    picEarthEssence.Visible = false;
+                    break;
+                case 1:
+                    picEarthRing.Visible = true;
+                    picEarthEssence.Visible = false;
+                    break;
+                case 2:
+                    picEarthRing.Visible = true;
+                    picEarthEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void checkFireEssence_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectWaterLeft_Click(object sender, EventArgs e)
         {
-            //If checked always make sure ring is checked and set to 2
-            if (checkFireEssence.Checked)
+            //Decrease the value for ring slot as long as we aren't at min
+            if (saveFile.ring2 > 0)
             {
-                checkFireRing.Checked = true;
-                saveFile.ring3 = 2;
+                saveFile.ring2 -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectWaterRight.Visible = true;
             }
-            //Otherwise if we have just gotten unchecked while the ring was checked we leave it at 1
-            else if (!checkFireEssence.Checked && checkFireRing.Checked)
+
+            //If we ever become the min, disable the control
+            if (saveFile.ring2 == 0)
             {
-                saveFile.ring3 = 1;
+                btnSelectWaterLeft.Visible = false;
             }
-            //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring2)
+            {
+                case 0:
+                    picWaterRing.Visible = false;
+                    picWaterEssence.Visible = false;
+                    break;
+                case 1:
+                    picWaterRing.Visible = true;
+                    picWaterEssence.Visible = false;
+                    break;
+                case 2:
+                    picEarthRing.Visible = true;
+                    picWaterEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void checkAirEssence_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectWaterRight_Click(object sender, EventArgs e)
         {
-            //If checked always make sure ring is checked and set to 2
-            if (checkAirEssence.Checked)
+            //Increase the value for ring slot as long as we aren't at max
+            if (saveFile.ring2 < 2)
             {
-                checkAirRing.Checked = true;
-                saveFile.ring4 = 2;
+                saveFile.ring2 += 1;
+                //Make sure to re-enable the left select now that we've increased
+                btnSelectWaterLeft.Visible = true;
             }
-            //Otherwise if we have just gotten unchecked while the ring was checked we leave it at 1
-            else if (!checkAirEssence.Checked && checkAirRing.Checked)
+
+            //If we ever become the max, disable the control
+            if (saveFile.ring2 == 2)
             {
-                saveFile.ring4 = 1;
+                btnSelectWaterRight.Visible = false;
             }
-            //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring2)
+            {
+                case 0:
+                    picWaterRing.Visible = false;
+                    picWaterEssence.Visible = false;
+                    break;
+                case 1:
+                    picWaterRing.Visible = true;
+                    picWaterEssence.Visible = false;
+                    break;
+                case 2:
+                    picWaterRing.Visible = true;
+                    picWaterEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void checkLightEssence_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectFireLeft_Click(object sender, EventArgs e)
         {
-            //Only change to 1 if checked and we didn't get trigger from the firefly scroll checkbox
-            if (checkLightEssence.Checked && !checkFireflyScroll.Checked)
+            //Decrease the value for ring slot as long as we aren't at min
+            if (saveFile.ring3 > 0)
             {
-                saveFile.lightskill = 1;
+                saveFile.ring3 -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectFireRight.Visible = true;
             }
-            //If we are not checked be sure we dont have firefly checked and set to 0
-            else if (!checkLightEssence.Checked)
+
+            //If we ever become the min, disable the control
+            if (saveFile.ring3 == 0)
             {
-                checkFireflyScroll.Checked = false;
-                saveFile.lightskill = 0;
+                btnSelectFireLeft.Visible = false;
             }
-            //Otherwise do nothing because this event was triggered from another function that will handle the variable.
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring3)
+            {
+                case 0:
+                    picFireRing.Visible = false;
+                    picFireEssence.Visible = false;
+                    break;
+                case 1:
+                    picFireRing.Visible = true;
+                    picFireEssence.Visible = false;
+                    break;
+                case 2:
+                    picFireRing.Visible = true;
+                    picFireEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnSelectFireRight_Click(object sender, EventArgs e)
+        {
+            //Increase the value for ring slot as long as we aren't at max
+            if (saveFile.ring3 < 2)
+            {
+                saveFile.ring3 += 1;
+                //Make sure to re-enable the left select now that we've increased
+                btnSelectFireLeft.Visible = true;
+            }
+
+            //If we ever become the max, disable the control
+            if (saveFile.ring3 == 2)
+            {
+                btnSelectFireRight.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring3)
+            {
+                case 0:
+                    picFireRing.Visible = false;
+                    picFireEssence.Visible = false;
+                    break;
+                case 1:
+                    picFireRing.Visible = true;
+                    picFireEssence.Visible = false;
+                    break;
+                case 2:
+                    picFireRing.Visible = true;
+                    picFireEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnSelectAirLeft_Click(object sender, EventArgs e)
+        {
+            //Decrease the value for ring slot as long as we aren't at min
+            if (saveFile.ring4 > 0)
+            {
+                saveFile.ring4 -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectAirRight.Visible = true;
+            }
+
+            //If we ever become the min, disable the control
+            if (saveFile.ring4 == 0)
+            {
+                btnSelectAirLeft.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring4)
+            {
+                case 0:
+                    picAirRing.Visible = false;
+                    picAirEssence.Visible = false;
+                    break;
+                case 1:
+                    picAirRing.Visible = true;
+                    picAirEssence.Visible = false;
+                    break;
+                case 2:
+                    picAirRing.Visible = true;
+                    picAirEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnSelectAirRight_Click(object sender, EventArgs e)
+        {
+            //Increase the value for ring slot as long as we aren't at max
+            if (saveFile.ring4 < 2)
+            {
+                saveFile.ring4 += 1;
+                //Make sure to re-enable the left select now that we've increased
+                btnSelectAirLeft.Visible = true;
+            }
+
+            //If we ever become the max, disable the control
+            if (saveFile.ring4 == 2)
+            {
+                btnSelectAirRight.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring4)
+            {
+                case 0:
+                    picAirRing.Visible = false;
+                    picAirEssence.Visible = false;
+                    break;
+                case 1:
+                    picAirRing.Visible = true;
+                    picAirEssence.Visible = false;
+                    break;
+                case 2:
+                    picAirRing.Visible = true;
+                    picAirEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /************************************************************
+        * LIGHT SKILL CHANGES
+        * 
+        * The following functions are called for the light essence and firefly scroll.
+        * There is no way to give yourself the scroll and not the essence.
+        ************************************************************/
+        private void btnSelectLightSkillLeft_Click(object sender, EventArgs e)
+        {
+            //Decrease the value for ring slot as long as we aren't at min
+            if (saveFile.lightskill > 0)
+            {
+                saveFile.lightskill -= 1;
+
+                btnSelectLightSkillRight.Visible = true;
+            }
+
+            //If we ever become the min, disable the control
+            if (saveFile.lightskill == 0)
+            {
+                btnSelectLightSkillLeft.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.lightskill)
+            {
+                case 0:
+                    picLightEssence.Visible = false;
+                    picFireflyScroll.Visible = false;
+                    break;
+                case 1:
+                    picLightEssence.Visible = true;
+                    picFireflyScroll.Visible = false;
+                    break;
+                case 2:
+                    picLightEssence.Visible = false;
+                    picFireflyScroll.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnSelectLightSkillRight_Click(object sender, EventArgs e)
+        {
+            //Increase the value for ring slot as long as we aren't at max
+            if (saveFile.lightskill < 2)
+            {
+                saveFile.lightskill += 1;
+                //Make sure to re-enable the left select now that we've increased
+                btnSelectLightSkillLeft.Visible = true;
+            }
+
+            //If we ever become the max, disable the control
+            if (saveFile.lightskill == 2)
+            {
+                btnSelectLightSkillRight.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.lightskill)
+            {
+                case 0:
+                    picLightEssence.Visible = false;
+                    picFireflyScroll.Visible = false;
+                    break;
+                case 1:
+                    picLightEssence.Visible = true;
+                    picFireflyScroll.Visible = false;
+                    break;
+                case 2:
+                    picLightEssence.Visible = false;
+                    picFireflyScroll.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
         /************************************************************
