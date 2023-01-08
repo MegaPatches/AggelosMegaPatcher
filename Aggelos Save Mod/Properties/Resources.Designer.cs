@@ -133,6 +133,46 @@ namespace Aggelos_Save_Mod.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Aggelos_LyreAndStrings {
+            get {
+                object obj = ResourceManager.GetObject("Aggelos_LyreAndStrings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Aggelos_LyreBody {
+            get {
+                object obj = ResourceManager.GetObject("Aggelos_LyreBody", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Aggelos_LyreRepaired {
+            get {
+                object obj = ResourceManager.GetObject("Aggelos_LyreRepaired", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Aggelos_LyreStrings {
+            get {
+                object obj = ResourceManager.GetObject("Aggelos_LyreStrings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Aggelos_Map {
             get {
                 object obj = ResourceManager.GetObject("Aggelos_Map", resourceCulture);

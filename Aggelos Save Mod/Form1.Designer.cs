@@ -57,6 +57,12 @@
             this.picLvl = new System.Windows.Forms.PictureBox();
             this.picGem = new System.Windows.Forms.PictureBox();
             this.tabInventory = new System.Windows.Forms.TabPage();
+            this.picLyreRepaired = new System.Windows.Forms.PictureBox();
+            this.picLyreWithStrings = new System.Windows.Forms.PictureBox();
+            this.picLyreBody = new System.Windows.Forms.PictureBox();
+            this.picLyreStrings = new System.Windows.Forms.PictureBox();
+            this.btnSelectLyreRight = new System.Windows.Forms.Button();
+            this.btnSelectLyreLeft = new System.Windows.Forms.Button();
             this.picSacredArmor = new System.Windows.Forms.PictureBox();
             this.picAggelosArmor = new System.Windows.Forms.PictureBox();
             this.btnSelectArmorRight = new System.Windows.Forms.Button();
@@ -70,7 +76,6 @@
             this.radioElixir = new System.Windows.Forms.RadioButton();
             this.radioBigPotion = new System.Windows.Forms.RadioButton();
             this.radioSmallPotion = new System.Windows.Forms.RadioButton();
-            this.checkLyre = new System.Windows.Forms.CheckBox();
             this.checkUniversalBook = new System.Windows.Forms.CheckBox();
             this.checkSmallVial = new System.Windows.Forms.CheckBox();
             this.checkAngelFeather = new System.Windows.Forms.CheckBox();
@@ -111,6 +116,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLvl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGem)).BeginInit();
             this.tabInventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLyreRepaired)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLyreWithStrings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLyreBody)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLyreStrings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSacredArmor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosArmor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSacredSword)).BeginInit();
@@ -437,6 +446,12 @@
             // 
             this.tabInventory.BackgroundImage = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_Inventory;
             this.tabInventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabInventory.Controls.Add(this.picLyreRepaired);
+            this.tabInventory.Controls.Add(this.picLyreWithStrings);
+            this.tabInventory.Controls.Add(this.picLyreBody);
+            this.tabInventory.Controls.Add(this.picLyreStrings);
+            this.tabInventory.Controls.Add(this.btnSelectLyreRight);
+            this.tabInventory.Controls.Add(this.btnSelectLyreLeft);
             this.tabInventory.Controls.Add(this.picSacredArmor);
             this.tabInventory.Controls.Add(this.picAggelosArmor);
             this.tabInventory.Controls.Add(this.btnSelectArmorRight);
@@ -447,7 +462,6 @@
             this.tabInventory.Controls.Add(this.btnSelectSwordLeft);
             this.tabInventory.Controls.Add(this.checkPotion);
             this.tabInventory.Controls.Add(this.panelPotions);
-            this.tabInventory.Controls.Add(this.checkLyre);
             this.tabInventory.Controls.Add(this.checkUniversalBook);
             this.tabInventory.Controls.Add(this.checkSmallVial);
             this.tabInventory.Controls.Add(this.checkAngelFeather);
@@ -484,6 +498,68 @@
             this.tabInventory.TabIndex = 0;
             this.tabInventory.Text = "Inventory";
             this.tabInventory.UseVisualStyleBackColor = true;
+            // 
+            // picLyreRepaired
+            // 
+            this.picLyreRepaired.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_LyreRepaired;
+            this.picLyreRepaired.Location = new System.Drawing.Point(101, 119);
+            this.picLyreRepaired.Name = "picLyreRepaired";
+            this.picLyreRepaired.Size = new System.Drawing.Size(40, 40);
+            this.picLyreRepaired.TabIndex = 60;
+            this.picLyreRepaired.TabStop = false;
+            this.picLyreRepaired.Visible = false;
+            // 
+            // picLyreWithStrings
+            // 
+            this.picLyreWithStrings.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_LyreAndStrings;
+            this.picLyreWithStrings.Location = new System.Drawing.Point(101, 119);
+            this.picLyreWithStrings.Name = "picLyreWithStrings";
+            this.picLyreWithStrings.Size = new System.Drawing.Size(40, 40);
+            this.picLyreWithStrings.TabIndex = 59;
+            this.picLyreWithStrings.TabStop = false;
+            this.picLyreWithStrings.Visible = false;
+            // 
+            // picLyreBody
+            // 
+            this.picLyreBody.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_LyreBody;
+            this.picLyreBody.Location = new System.Drawing.Point(101, 119);
+            this.picLyreBody.Name = "picLyreBody";
+            this.picLyreBody.Size = new System.Drawing.Size(40, 40);
+            this.picLyreBody.TabIndex = 58;
+            this.picLyreBody.TabStop = false;
+            this.picLyreBody.Visible = false;
+            // 
+            // picLyreStrings
+            // 
+            this.picLyreStrings.Image = global::Aggelos_Save_Mod.Properties.Resources.Aggelos_LyreStrings;
+            this.picLyreStrings.Location = new System.Drawing.Point(101, 119);
+            this.picLyreStrings.Name = "picLyreStrings";
+            this.picLyreStrings.Size = new System.Drawing.Size(40, 40);
+            this.picLyreStrings.TabIndex = 57;
+            this.picLyreStrings.TabStop = false;
+            this.picLyreStrings.Visible = false;
+            // 
+            // btnSelectLyreRight
+            // 
+            this.btnSelectLyreRight.Location = new System.Drawing.Point(140, 125);
+            this.btnSelectLyreRight.Name = "btnSelectLyreRight";
+            this.btnSelectLyreRight.Size = new System.Drawing.Size(17, 23);
+            this.btnSelectLyreRight.TabIndex = 56;
+            this.btnSelectLyreRight.Text = ">";
+            this.btnSelectLyreRight.UseVisualStyleBackColor = true;
+            this.btnSelectLyreRight.Visible = false;
+            this.btnSelectLyreRight.Click += new System.EventHandler(this.btnSelectLyreRight_Click);
+            // 
+            // btnSelectLyreLeft
+            // 
+            this.btnSelectLyreLeft.Location = new System.Drawing.Point(84, 125);
+            this.btnSelectLyreLeft.Name = "btnSelectLyreLeft";
+            this.btnSelectLyreLeft.Size = new System.Drawing.Size(17, 23);
+            this.btnSelectLyreLeft.TabIndex = 55;
+            this.btnSelectLyreLeft.Text = "<";
+            this.btnSelectLyreLeft.UseVisualStyleBackColor = true;
+            this.btnSelectLyreLeft.Visible = false;
+            this.btnSelectLyreLeft.Click += new System.EventHandler(this.btnSelectLyreLeft_Click);
             // 
             // picSacredArmor
             // 
@@ -624,18 +700,6 @@
             this.radioSmallPotion.TabStop = true;
             this.radioSmallPotion.UseVisualStyleBackColor = true;
             this.radioSmallPotion.CheckedChanged += new System.EventHandler(this.radioSmallPotion_CheckedChanged);
-            // 
-            // checkLyre
-            // 
-            this.checkLyre.AutoSize = true;
-            this.checkLyre.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkLyre.Enabled = false;
-            this.checkLyre.Location = new System.Drawing.Point(141, 133);
-            this.checkLyre.Name = "checkLyre";
-            this.checkLyre.Size = new System.Drawing.Size(15, 14);
-            this.checkLyre.TabIndex = 15;
-            this.checkLyre.UseVisualStyleBackColor = true;
-            this.checkLyre.CheckedChanged += new System.EventHandler(this.checkLyre_CheckedChanged);
             // 
             // checkUniversalBook
             // 
@@ -1041,6 +1105,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picGem)).EndInit();
             this.tabInventory.ResumeLayout(false);
             this.tabInventory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLyreRepaired)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLyreWithStrings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLyreBody)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLyreStrings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSacredArmor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosArmor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSacredSword)).EndInit();
@@ -1092,7 +1160,6 @@
         private System.Windows.Forms.CheckBox checkBubbleSword;
         private System.Windows.Forms.CheckBox checkSteelSword;
         private System.Windows.Forms.CheckBox checkIronSword;
-        private System.Windows.Forms.CheckBox checkLyre;
         private System.Windows.Forms.CheckBox checkUniversalBook;
         private System.Windows.Forms.CheckBox checkSmallVial;
         private System.Windows.Forms.CheckBox checkAngelFeather;
@@ -1127,6 +1194,12 @@
         private System.Windows.Forms.PictureBox picAggelosArmor;
         private System.Windows.Forms.Button btnSelectArmorRight;
         private System.Windows.Forms.Button btnSelectArmorLeft;
+        private System.Windows.Forms.PictureBox picLyreBody;
+        private System.Windows.Forms.PictureBox picLyreStrings;
+        private System.Windows.Forms.Button btnSelectLyreRight;
+        private System.Windows.Forms.Button btnSelectLyreLeft;
+        private System.Windows.Forms.PictureBox picLyreRepaired;
+        private System.Windows.Forms.PictureBox picLyreWithStrings;
     }
 }
 

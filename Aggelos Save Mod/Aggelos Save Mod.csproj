@@ -155,5 +155,17 @@
   <ItemGroup>
     <None Include="Resources\Aggelos_AggelosArmor.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggelos_LyreRepaired.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggelos_LyreAndStrings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggelos_LyreStrings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aggelos_LyreBody.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -131,8 +131,88 @@ namespace Aggelos_Save_Mod
                 checkUniversalBook.Enabled = true;
                 checkUniversalBook.Checked = saveFile.livre == 1 ? true : false;
 
-                checkLyre.Enabled = true;
-                checkLyre.Checked = saveFile.harpmax == 1 ? true : false;
+                //Determine the current state of the lyre based on the three variables
+                int currentLyreState = 0;
+                if (saveFile.harpefil == 0 && saveFile.harpechassis == 0 && saveFile.harpmax == 0)
+                {
+                    currentLyreState = 0;
+                }
+                else if (saveFile.harpefil == 1 && saveFile.harpechassis == 0 && saveFile.harpmax == 0)
+                {
+                    currentLyreState = 1;
+                }
+                else if (saveFile.harpefil == 0 && saveFile.harpechassis == 1 && saveFile.harpmax == 0)
+                {
+                    currentLyreState = 2;
+                }
+                else if (saveFile.harpefil == 1 && saveFile.harpechassis == 1 && saveFile.harpmax == 0)
+                {
+                    currentLyreState = 3;
+                }
+                else if (saveFile.harpefil == 1 && saveFile.harpechassis == 1 && saveFile.harpmax == 1)
+                {
+                    currentLyreState = 4;
+                }
+                //Control the visibility of the correct image and set the correct variables
+                btnSelectLyreLeft.Visible = true;
+                btnSelectLyreRight.Visible = true;
+                switch (currentLyreState)
+                {
+                    //Have none
+                    case 0:
+                        saveFile.harpefil = 0;
+                        saveFile.harpechassis = 0;
+                        saveFile.harpmax = 0;
+                        picLyreStrings.Visible = false;
+                        picLyreBody.Visible = false;
+                        picLyreWithStrings.Visible = false;
+                        picLyreRepaired.Visible = false;
+                        btnSelectLyreLeft.Visible = false; //Re-disable if at min
+                        break;
+                    //Have string only
+                    case 1:
+                        saveFile.harpefil = 1;
+                        saveFile.harpechassis = 0;
+                        saveFile.harpmax = 0;
+                        picLyreStrings.Visible = true;
+                        picLyreBody.Visible = false;
+                        picLyreWithStrings.Visible = false;
+                        picLyreRepaired.Visible = false;
+                        break;
+                    //Have body only
+                    case 2:
+                        saveFile.harpefil = 0;
+                        saveFile.harpechassis = 1;
+                        saveFile.harpmax = 0;
+                        picLyreStrings.Visible = false;
+                        picLyreBody.Visible = true;
+                        picLyreWithStrings.Visible = false;
+                        picLyreRepaired.Visible = false;
+                        break;
+                    //Have body and string
+                    case 3:
+                        saveFile.harpefil = 1;
+                        saveFile.harpechassis = 1;
+                        saveFile.harpmax = 0;
+                        picLyreStrings.Visible = false;
+                        picLyreBody.Visible = false;
+                        picLyreWithStrings.Visible = true;
+                        picLyreRepaired.Visible = false;
+                        break;
+                    //Repaired
+                    case 4:
+                        saveFile.harpefil = 1;
+                        saveFile.harpechassis = 1;
+                        saveFile.harpmax = 1;
+                        picLyreStrings.Visible = false;
+                        picLyreBody.Visible = false;
+                        picLyreWithStrings.Visible = false;
+                        picLyreRepaired.Visible = true;
+                        btnSelectLyreRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
                 //Essences - Done first to ensure check box events fire properly for rings
                 checkEarthEssence.Enabled = true;
@@ -592,25 +672,199 @@ namespace Aggelos_Save_Mod
             saveFile.livre = checkUniversalBook.Checked == true ? 1 : 0;
         }
 
-        private void checkLyre_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectLyreLeft_Click(object sender, EventArgs e)
         {
-            //Make sure to disable the radio buttons if we do not want a potion
-            if (checkLyre.Checked)
+            //Determine the current state of the lyre based on the three variables
+            int currentLyreState = 0;
+            if (saveFile.harpefil == 0 && saveFile.harpechassis == 0 && saveFile.harpmax == 0)
             {
-                //panelPotions.Enabled = true;
-                saveFile.harpefil = 1;
-                saveFile.harpechassis = 1;
-                saveFile.harpmax = 1;
+                currentLyreState = 0;
             }
-            else
+            else if (saveFile.harpefil == 1 && saveFile.harpechassis == 0 && saveFile.harpmax == 0)
             {
-                //panelPotions.Enabled = false;
-                //radioLyreString.Checked = false;
-                //radioLyreChassis.Checked = false;
-                //radioElixir.Checked = false;
-                saveFile.harpefil = 0;
-                saveFile.harpechassis = 0;
-                saveFile.harpmax = 0;
+                currentLyreState = 1;
+            }
+            else if (saveFile.harpefil == 0 && saveFile.harpechassis == 1 && saveFile.harpmax == 0)
+            {
+                currentLyreState = 2;
+            }
+            else if (saveFile.harpefil == 1 && saveFile.harpechassis == 1 && saveFile.harpmax == 0)
+            {
+                currentLyreState = 3;
+            }
+            else if (saveFile.harpefil == 1 && saveFile.harpechassis == 1 && saveFile.harpmax == 1)
+            {
+                currentLyreState = 4;
+            }
+
+            //Decrease the value for lyre slot as long as we aren't at min
+            if (currentLyreState > 0)
+            {
+                currentLyreState -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectLyreRight.Visible = true;
+            }
+
+            //If we ever become the min, disable the control
+            if (currentLyreState == 0)
+            {
+                btnSelectLyreLeft.Visible = false;
+            }
+
+            //Control the visibility of the correct image and set the correct variables
+            switch (currentLyreState)
+            {
+                //Have none
+                case 0:
+                    saveFile.harpefil = 0;
+                    saveFile.harpechassis = 0;
+                    saveFile.harpmax = 0;
+                    picLyreStrings.Visible = false;
+                    picLyreBody.Visible = false;
+                    picLyreWithStrings.Visible = false;
+                    picLyreRepaired.Visible = false;
+                    break;
+                //Have string only
+                case 1:
+                    saveFile.harpefil = 1;
+                    saveFile.harpechassis = 0;
+                    saveFile.harpmax = 0;
+                    picLyreStrings.Visible = true;
+                    picLyreBody.Visible = false;
+                    picLyreWithStrings.Visible = false;
+                    picLyreRepaired.Visible = false;
+                    break;
+                //Have body only
+                case 2:
+                    saveFile.harpefil = 0;
+                    saveFile.harpechassis = 1;
+                    saveFile.harpmax = 0;
+                    picLyreStrings.Visible = false;
+                    picLyreBody.Visible = true;
+                    picLyreWithStrings.Visible = false;
+                    picLyreRepaired.Visible = false;
+                    break;
+                //Have body and string
+                case 3:
+                    saveFile.harpefil = 1;
+                    saveFile.harpechassis = 1;
+                    saveFile.harpmax = 0;
+                    picLyreStrings.Visible = false;
+                    picLyreBody.Visible = false;
+                    picLyreWithStrings.Visible = true;
+                    picLyreRepaired.Visible = false;
+                    break;
+                //Repaired
+                case 4:
+                    saveFile.harpefil = 1;
+                    saveFile.harpechassis = 1;
+                    saveFile.harpmax = 1;
+                    picLyreStrings.Visible = false;
+                    picLyreBody.Visible = false;
+                    picLyreWithStrings.Visible = false;
+                    picLyreRepaired.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnSelectLyreRight_Click(object sender, EventArgs e)
+        {
+            //Determine the current state of the lyre based on the three variables
+            int currentLyreState = 0;
+            if (saveFile.harpefil == 0 && saveFile.harpechassis == 0 && saveFile.harpmax == 0)
+            {
+                currentLyreState = 0;
+            }
+            else if (saveFile.harpefil == 1 && saveFile.harpechassis == 0 && saveFile.harpmax == 0)
+            {
+                currentLyreState = 1;
+            }
+            else if (saveFile.harpefil == 0 && saveFile.harpechassis == 1 && saveFile.harpmax == 0)
+            {
+                currentLyreState = 2;
+            }
+            else if (saveFile.harpefil == 1 && saveFile.harpechassis == 1 && saveFile.harpmax == 0)
+            {
+                currentLyreState = 3;
+            }
+            else if (saveFile.harpefil == 1 && saveFile.harpechassis == 1 && saveFile.harpmax == 1)
+            {
+                currentLyreState = 4;
+            }
+
+            //Increase the value for lyre slot as long as we aren't at max
+            if (currentLyreState < 4)
+            {
+                currentLyreState += 1;
+
+                //Make sure to re-enable the left select now that we've decreased
+                btnSelectLyreLeft.Visible = true;
+            }
+
+            //If we ever become the max, disable the control
+            if (currentLyreState == 4)
+            {
+                btnSelectLyreRight.Visible = false;
+            }
+
+            //Control the visibility of the correct image and set the correct variables
+            switch (currentLyreState)
+            {
+                //Have none
+                case 0:
+                    saveFile.harpefil = 0;
+                    saveFile.harpechassis = 0;
+                    saveFile.harpmax = 0;
+                    picLyreStrings.Visible = false;
+                    picLyreBody.Visible = false;
+                    picLyreWithStrings.Visible = false;
+                    picLyreRepaired.Visible = false;
+                    break;
+                //Have string only
+                case 1:
+                    saveFile.harpefil = 1;
+                    saveFile.harpechassis = 0;
+                    saveFile.harpmax = 0;
+                    picLyreStrings.Visible = true;
+                    picLyreBody.Visible = false;
+                    picLyreWithStrings.Visible = false;
+                    picLyreRepaired.Visible = false;
+                    break;
+                //Have body only
+                case 2:
+                    saveFile.harpefil = 0;
+                    saveFile.harpechassis = 1;
+                    saveFile.harpmax = 0;
+                    picLyreStrings.Visible = false;
+                    picLyreBody.Visible = true;
+                    picLyreWithStrings.Visible = false;
+                    picLyreRepaired.Visible = false;
+                    break;
+                //Have body and string
+                case 3:
+                    saveFile.harpefil = 1;
+                    saveFile.harpechassis = 1;
+                    saveFile.harpmax = 0;
+                    picLyreStrings.Visible = false;
+                    picLyreBody.Visible = false;
+                    picLyreWithStrings.Visible = true;
+                    picLyreRepaired.Visible = false;
+                    break;
+                //Repaired
+                case 4:
+                    saveFile.harpefil = 1;
+                    saveFile.harpechassis = 1;
+                    saveFile.harpmax = 1;
+                    picLyreStrings.Visible = false;
+                    picLyreBody.Visible = false;
+                    picLyreWithStrings.Visible = false;
+                    picLyreRepaired.Visible = true;
+                    break;
+                default:
+                    break;
             }
         }
 
