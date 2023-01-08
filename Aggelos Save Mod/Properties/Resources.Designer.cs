@@ -83,9 +83,39 @@ namespace Aggelos_Save_Mod.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bananas {
+            get {
+                object obj = ResourceManager.GetObject("Bananas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BigPotion {
             get {
                 object obj = ResourceManager.GetObject("BigPotion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BrokenCrown {
+            get {
+                object obj = ResourceManager.GetObject("BrokenCrown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Crystal {
+            get {
+                object obj = ResourceManager.GetObject("Crystal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +133,29 @@ namespace Aggelos_Save_Mod.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EmptyVial {
+            get {
+                object obj = ResourceManager.GetObject("EmptyVial", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Exp {
             get {
                 object obj = ResourceManager.GetObject("Exp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FullVial {
+            get {
+                object obj = ResourceManager.GetObject("FullVial", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,6 +253,26 @@ namespace Aggelos_Save_Mod.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Moon {
+            get {
+                object obj = ResourceManager.GetObject("Moon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Necklace {
+            get {
+                object obj = ResourceManager.GetObject("Necklace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SacredArmor {
             get {
                 object obj = ResourceManager.GetObject("SacredArmor", resourceCulture);
@@ -223,9 +293,59 @@ namespace Aggelos_Save_Mod.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Scepter {
+            get {
+                object obj = ResourceManager.GetObject("Scepter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Shell {
+            get {
+                object obj = ResourceManager.GetObject("Shell", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SmallPotion {
             get {
                 object obj = ResourceManager.GetObject("SmallPotion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Star {
+            get {
+                object obj = ResourceManager.GetObject("Star", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sun {
+            get {
+                object obj = ResourceManager.GetObject("Sun", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tiara {
+            get {
+                object obj = ResourceManager.GetObject("Tiara", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

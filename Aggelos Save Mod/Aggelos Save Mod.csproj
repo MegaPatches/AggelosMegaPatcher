@@ -179,5 +179,41 @@
   <ItemGroup>
     <None Include="Resources\SmallPotion.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bananas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BrokenCrown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crystal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmptyVial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FullVial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Moon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Necklace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scepter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tiara.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

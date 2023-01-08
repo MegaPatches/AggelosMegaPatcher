@@ -128,8 +128,198 @@ namespace Aggelos_Save_Mod
                 checkAngelFeather.Enabled = true;
                 checkAngelFeather.Checked = saveFile.plume == 1 ? true : false;
 
-                checkSmallVial.Enabled = true;
-                checkSmallVial.Checked = saveFile.map == 12 ? true : false;
+                //Control the visibility of the correct image
+                btnSelectQuestItemLeft.Visible = true;
+                btnSelectQuestItemRight.Visible = true;
+                switch (saveFile.map)
+                {
+                    case 0:
+                        picBananas.Visible = false;
+                        picNecklace.Visible = false;
+                        picBrokenCrown.Visible = false;
+                        picTiara.Visible = false;
+                        picMoon.Visible = false;
+                        picShell.Visible = false;
+                        picStar.Visible = false;
+                        picCrystal.Visible = false;
+                        picScepter.Visible = false;
+                        picSun.Visible = false;
+                        picEmptyVial.Visible = false;
+                        picFullVial.Visible = false;
+                        btnSelectQuestItemLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picBananas.Visible = true;
+                        picNecklace.Visible = false;
+                        picBrokenCrown.Visible = false;
+                        picTiara.Visible = false;
+                        picMoon.Visible = false;
+                        picShell.Visible = false;
+                        picStar.Visible = false;
+                        picCrystal.Visible = false;
+                        picScepter.Visible = false;
+                        picSun.Visible = false;
+                        picEmptyVial.Visible = false;
+                        picFullVial.Visible = false;
+                        break;
+                    case 2:
+                        picBananas.Visible = false;
+                        picNecklace.Visible = true;
+                        picBrokenCrown.Visible = false;
+                        picTiara.Visible = false;
+                        picMoon.Visible = false;
+                        picShell.Visible = false;
+                        picStar.Visible = false;
+                        picCrystal.Visible = false;
+                        picScepter.Visible = false;
+                        picSun.Visible = false;
+                        picEmptyVial.Visible = false;
+                        picFullVial.Visible = false;
+                        break;
+                    case 3:
+                        picBananas.Visible = false;
+                        picNecklace.Visible = false;
+                        picBrokenCrown.Visible = true;
+                        picTiara.Visible = false;
+                        picMoon.Visible = false;
+                        picShell.Visible = false;
+                        picStar.Visible = false;
+                        picCrystal.Visible = false;
+                        picScepter.Visible = false;
+                        picSun.Visible = false;
+                        picEmptyVial.Visible = false;
+                        picFullVial.Visible = false;
+                        break;
+                    case 4:
+                        picBananas.Visible = false;
+                        picNecklace.Visible = false;
+                        picBrokenCrown.Visible = false;
+                        picTiara.Visible = true;
+                        picMoon.Visible = false;
+                        picShell.Visible = false;
+                        picStar.Visible = false;
+                        picCrystal.Visible = false;
+                        picScepter.Visible = false;
+                        picSun.Visible = false;
+                        picEmptyVial.Visible = false;
+                        picFullVial.Visible = false;
+                        break;
+                    case 5:
+                        picBananas.Visible = false;
+                        picNecklace.Visible = false;
+                        picBrokenCrown.Visible = false;
+                        picTiara.Visible = false;
+                        picMoon.Visible = true;
+                        picShell.Visible = false;
+                        picStar.Visible = false;
+                        picCrystal.Visible = false;
+                        picScepter.Visible = false;
+                        picSun.Visible = false;
+                        picEmptyVial.Visible = false;
+                        picFullVial.Visible = false;
+                        break;
+                    case 6:
+                        picBananas.Visible = false;
+                        picNecklace.Visible = false;
+                        picBrokenCrown.Visible = false;
+                        picTiara.Visible = false;
+                        picMoon.Visible = false;
+                        picShell.Visible = true;
+                        picStar.Visible = false;
+                        picCrystal.Visible = false;
+                        picScepter.Visible = false;
+                        picSun.Visible = false;
+                        picEmptyVial.Visible = false;
+                        picFullVial.Visible = false;
+                        break;
+                    case 7:
+                        picBananas.Visible = false;
+                        picNecklace.Visible = false;
+                        picBrokenCrown.Visible = false;
+                        picTiara.Visible = false;
+                        picMoon.Visible = false;
+                        picShell.Visible = false;
+                        picStar.Visible = true;
+                        picCrystal.Visible = false;
+                        picScepter.Visible = false;
+                        picSun.Visible = false;
+                        picEmptyVial.Visible = false;
+                        picFullVial.Visible = false;
+                        break;
+                    case 8:
+                        picBananas.Visible = false;
+                        picNecklace.Visible = false;
+                        picBrokenCrown.Visible = false;
+                        picTiara.Visible = false;
+                        picMoon.Visible = false;
+                        picShell.Visible = false;
+                        picStar.Visible = false;
+                        picCrystal.Visible = true;
+                        picScepter.Visible = false;
+                        picSun.Visible = false;
+                        picEmptyVial.Visible = false;
+                        picFullVial.Visible = false;
+                        break;
+                    case 9:
+                        picBananas.Visible = false;
+                        picNecklace.Visible = false;
+                        picBrokenCrown.Visible = false;
+                        picTiara.Visible = false;
+                        picMoon.Visible = false;
+                        picShell.Visible = false;
+                        picStar.Visible = false;
+                        picCrystal.Visible = false;
+                        picScepter.Visible = true;
+                        picSun.Visible = false;
+                        picEmptyVial.Visible = false;
+                        picFullVial.Visible = false;
+                        break;
+                    case 10:
+                        picBananas.Visible = false;
+                        picNecklace.Visible = false;
+                        picBrokenCrown.Visible = false;
+                        picTiara.Visible = false;
+                        picMoon.Visible = false;
+                        picShell.Visible = false;
+                        picStar.Visible = false;
+                        picCrystal.Visible = false;
+                        picScepter.Visible = false;
+                        picSun.Visible = true;
+                        picEmptyVial.Visible = false;
+                        picFullVial.Visible = false;
+                        break;
+                    case 11:
+                        picBananas.Visible = false;
+                        picNecklace.Visible = false;
+                        picBrokenCrown.Visible = false;
+                        picTiara.Visible = false;
+                        picMoon.Visible = false;
+                        picShell.Visible = false;
+                        picStar.Visible = false;
+                        picCrystal.Visible = false;
+                        picScepter.Visible = false;
+                        picSun.Visible = false;
+                        picEmptyVial.Visible = true;
+                        picFullVial.Visible = false;
+                        break;
+                    case 12:
+                        picBananas.Visible = false;
+                        picNecklace.Visible = false;
+                        picBrokenCrown.Visible = false;
+                        picTiara.Visible = false;
+                        picMoon.Visible = false;
+                        picShell.Visible = false;
+                        picStar.Visible = false;
+                        picCrystal.Visible = false;
+                        picScepter.Visible = false;
+                        picSun.Visible = false;
+                        picEmptyVial.Visible = false;
+                        picFullVial.Visible = true;
+                        btnSelectQuestItemRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
                 checkUniversalBook.Enabled = true;
                 checkUniversalBook.Checked = saveFile.livre == 1 ? true : false;
@@ -709,13 +899,416 @@ namespace Aggelos_Save_Mod
             saveFile.plume = checkAngelFeather.Checked == true ? 1 : 0;
         }
 
-        private void checkSmallVial_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectQuestItemLeft_Click(object sender, EventArgs e)
         {
-            //This value may be dependent on trade sequence state.
-            //16 is "done and no vial"
-            //11 is "done and empty small vial"
-            //12 is "done and full small vial"
-            saveFile.map = checkSmallVial.Checked == true ? 12 : 16; 
+            //Decrease the value for quest item slot as long as we aren't at min
+            if (saveFile.map > 0)
+            {
+                saveFile.map -= 1;
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectQuestItemRight.Visible = true;
+            }
+
+            //If we ever become the min, disable the control
+            if (saveFile.map == 0)
+            {
+                btnSelectQuestItemLeft.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.map)
+            {
+                case 0:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 1:
+                    picBananas.Visible = true;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 2:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = true;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 3:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = true;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 4:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = true;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 5:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = true;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 6:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = true;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 7:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = true;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 8:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = true;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 9:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = true;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 10:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = true;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 11:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = true;
+                    picFullVial.Visible = false;
+                    break;
+                case 12:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnSelectQuestItemRight_Click(object sender, EventArgs e)
+        {
+            //Increase the value for quest item slot as long as we aren't at max
+            if (saveFile.map < 12)
+            {
+                saveFile.map += 1;
+                //Make sure to re-enable the left select now that we've increased
+                btnSelectQuestItemLeft.Visible = true;
+            }
+
+            //If we ever become the max, disable the control
+            if (saveFile.map == 12)
+            {
+                btnSelectQuestItemRight.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.map)
+            {
+                case 0:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 1:
+                    picBananas.Visible = true;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 2:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = true;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 3:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = true;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 4:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = true;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 5:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = true;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 6:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = true;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 7:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = true;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 8:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = true;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 9:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = true;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 10:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = true;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 11:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = true;
+                    picFullVial.Visible = false;
+                    break;
+                case 12:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void checkUniversalBook_CheckedChanged(object sender, EventArgs e)
@@ -851,7 +1444,7 @@ namespace Aggelos_Save_Mod
             {
                 currentLyreState += 1;
 
-                //Make sure to re-enable the left select now that we've decreased
+                //Make sure to re-enable the left select now that we've increased
                 btnSelectLyreLeft.Visible = true;
             }
 
@@ -1218,7 +1811,7 @@ namespace Aggelos_Save_Mod
             if (saveFile.epee7 < 2)
             {
                 saveFile.epee7 += 1;
-                //Make sure to re-enable the left select now that we've decreased
+                //Make sure to re-enable the left select now that we've increased
                 btnSelectSwordLeft.Visible = true;
             }
             
@@ -1321,7 +1914,7 @@ namespace Aggelos_Save_Mod
             if (saveFile.armure7 < 2)
             {
                 saveFile.armure7 += 1;
-                //Make sure to re-enable the left select now that we've decreased
+                //Make sure to re-enable the left select now that we've increased
                 btnSelectArmorLeft.Visible = true;
             }
 
@@ -1351,6 +1944,11 @@ namespace Aggelos_Save_Mod
             }
         }
 
+        /************************************************************
+        * SAVE SLOTS
+        * 
+        * The following functions are called for save slot changes.
+        ************************************************************/
         private void radioSaveSlot1_CheckedChanged(object sender, EventArgs e)
         {
             if (radioSaveSlot1.Checked == true)

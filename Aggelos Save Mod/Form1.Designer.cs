@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tbFileSelected = new System.Windows.Forms.TextBox();
             this.btnLoadFile = new System.Windows.Forms.Button();
             this.openDiag = new System.Windows.Forms.OpenFileDialog();
@@ -57,6 +58,20 @@
             this.picLvl = new System.Windows.Forms.PictureBox();
             this.picGem = new System.Windows.Forms.PictureBox();
             this.tabInventory = new System.Windows.Forms.TabPage();
+            this.picFullVial = new System.Windows.Forms.PictureBox();
+            this.picEmptyVial = new System.Windows.Forms.PictureBox();
+            this.picSun = new System.Windows.Forms.PictureBox();
+            this.picScepter = new System.Windows.Forms.PictureBox();
+            this.picCrystal = new System.Windows.Forms.PictureBox();
+            this.picStar = new System.Windows.Forms.PictureBox();
+            this.picShell = new System.Windows.Forms.PictureBox();
+            this.picMoon = new System.Windows.Forms.PictureBox();
+            this.picTiara = new System.Windows.Forms.PictureBox();
+            this.picBrokenCrown = new System.Windows.Forms.PictureBox();
+            this.picNecklace = new System.Windows.Forms.PictureBox();
+            this.picBananas = new System.Windows.Forms.PictureBox();
+            this.btnSelectQuestItemRight = new System.Windows.Forms.Button();
+            this.btnSelectQuestItemLeft = new System.Windows.Forms.Button();
             this.picElixir = new System.Windows.Forms.PictureBox();
             this.picBigPotion = new System.Windows.Forms.PictureBox();
             this.picSmallPotion = new System.Windows.Forms.PictureBox();
@@ -77,7 +92,6 @@
             this.btnSelectSwordRight = new System.Windows.Forms.Button();
             this.btnSelectSwordLeft = new System.Windows.Forms.Button();
             this.checkUniversalBook = new System.Windows.Forms.CheckBox();
-            this.checkSmallVial = new System.Windows.Forms.CheckBox();
             this.checkAngelFeather = new System.Windows.Forms.CheckBox();
             this.checkLumenKey = new System.Windows.Forms.CheckBox();
             this.checkLightningArmor = new System.Windows.Forms.CheckBox();
@@ -116,6 +130,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLvl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGem)).BeginInit();
             this.tabInventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFullVial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEmptyVial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picScepter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrystal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTiara)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBrokenCrown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNecklace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBananas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picElixir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBigPotion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSmallPotion)).BeginInit();
@@ -448,6 +474,20 @@
             // 
             this.tabInventory.BackgroundImage = global::Aggelos_Save_Mod.Properties.Resources.Inventory;
             this.tabInventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabInventory.Controls.Add(this.picFullVial);
+            this.tabInventory.Controls.Add(this.picEmptyVial);
+            this.tabInventory.Controls.Add(this.picSun);
+            this.tabInventory.Controls.Add(this.picScepter);
+            this.tabInventory.Controls.Add(this.picCrystal);
+            this.tabInventory.Controls.Add(this.picStar);
+            this.tabInventory.Controls.Add(this.picShell);
+            this.tabInventory.Controls.Add(this.picMoon);
+            this.tabInventory.Controls.Add(this.picTiara);
+            this.tabInventory.Controls.Add(this.picBrokenCrown);
+            this.tabInventory.Controls.Add(this.picNecklace);
+            this.tabInventory.Controls.Add(this.picBananas);
+            this.tabInventory.Controls.Add(this.btnSelectQuestItemRight);
+            this.tabInventory.Controls.Add(this.btnSelectQuestItemLeft);
             this.tabInventory.Controls.Add(this.picElixir);
             this.tabInventory.Controls.Add(this.picBigPotion);
             this.tabInventory.Controls.Add(this.picSmallPotion);
@@ -468,7 +508,6 @@
             this.tabInventory.Controls.Add(this.btnSelectSwordRight);
             this.tabInventory.Controls.Add(this.btnSelectSwordLeft);
             this.tabInventory.Controls.Add(this.checkUniversalBook);
-            this.tabInventory.Controls.Add(this.checkSmallVial);
             this.tabInventory.Controls.Add(this.checkAngelFeather);
             this.tabInventory.Controls.Add(this.checkLumenKey);
             this.tabInventory.Controls.Add(this.checkLightningArmor);
@@ -504,10 +543,152 @@
             this.tabInventory.Text = "Inventory";
             this.tabInventory.UseVisualStyleBackColor = true;
             // 
+            // picFullVial
+            // 
+            this.picFullVial.Image = global::Aggelos_Save_Mod.Properties.Resources.FullVial;
+            this.picFullVial.Location = new System.Drawing.Point(105, 33);
+            this.picFullVial.Name = "picFullVial";
+            this.picFullVial.Size = new System.Drawing.Size(40, 40);
+            this.picFullVial.TabIndex = 80;
+            this.picFullVial.TabStop = false;
+            this.picFullVial.Visible = false;
+            // 
+            // picEmptyVial
+            // 
+            this.picEmptyVial.Image = global::Aggelos_Save_Mod.Properties.Resources.EmptyVial;
+            this.picEmptyVial.Location = new System.Drawing.Point(105, 33);
+            this.picEmptyVial.Name = "picEmptyVial";
+            this.picEmptyVial.Size = new System.Drawing.Size(40, 40);
+            this.picEmptyVial.TabIndex = 79;
+            this.picEmptyVial.TabStop = false;
+            this.picEmptyVial.Visible = false;
+            // 
+            // picSun
+            // 
+            this.picSun.Image = global::Aggelos_Save_Mod.Properties.Resources.Sun;
+            this.picSun.Location = new System.Drawing.Point(105, 33);
+            this.picSun.Name = "picSun";
+            this.picSun.Size = new System.Drawing.Size(40, 40);
+            this.picSun.TabIndex = 78;
+            this.picSun.TabStop = false;
+            this.picSun.Visible = false;
+            // 
+            // picScepter
+            // 
+            this.picScepter.Image = global::Aggelos_Save_Mod.Properties.Resources.Scepter;
+            this.picScepter.Location = new System.Drawing.Point(105, 33);
+            this.picScepter.Name = "picScepter";
+            this.picScepter.Size = new System.Drawing.Size(40, 40);
+            this.picScepter.TabIndex = 77;
+            this.picScepter.TabStop = false;
+            this.picScepter.Visible = false;
+            // 
+            // picCrystal
+            // 
+            this.picCrystal.Image = global::Aggelos_Save_Mod.Properties.Resources.Crystal;
+            this.picCrystal.Location = new System.Drawing.Point(105, 33);
+            this.picCrystal.Name = "picCrystal";
+            this.picCrystal.Size = new System.Drawing.Size(40, 40);
+            this.picCrystal.TabIndex = 76;
+            this.picCrystal.TabStop = false;
+            this.picCrystal.Visible = false;
+            // 
+            // picStar
+            // 
+            this.picStar.Image = global::Aggelos_Save_Mod.Properties.Resources.Star;
+            this.picStar.Location = new System.Drawing.Point(105, 33);
+            this.picStar.Name = "picStar";
+            this.picStar.Size = new System.Drawing.Size(40, 40);
+            this.picStar.TabIndex = 75;
+            this.picStar.TabStop = false;
+            this.picStar.Visible = false;
+            // 
+            // picShell
+            // 
+            this.picShell.Image = global::Aggelos_Save_Mod.Properties.Resources.Shell;
+            this.picShell.Location = new System.Drawing.Point(105, 33);
+            this.picShell.Name = "picShell";
+            this.picShell.Size = new System.Drawing.Size(40, 40);
+            this.picShell.TabIndex = 74;
+            this.picShell.TabStop = false;
+            this.picShell.Visible = false;
+            // 
+            // picMoon
+            // 
+            this.picMoon.Image = global::Aggelos_Save_Mod.Properties.Resources.Moon;
+            this.picMoon.Location = new System.Drawing.Point(105, 33);
+            this.picMoon.Name = "picMoon";
+            this.picMoon.Size = new System.Drawing.Size(40, 40);
+            this.picMoon.TabIndex = 73;
+            this.picMoon.TabStop = false;
+            this.picMoon.Visible = false;
+            // 
+            // picTiara
+            // 
+            this.picTiara.Image = global::Aggelos_Save_Mod.Properties.Resources.Tiara;
+            this.picTiara.Location = new System.Drawing.Point(105, 33);
+            this.picTiara.Name = "picTiara";
+            this.picTiara.Size = new System.Drawing.Size(40, 40);
+            this.picTiara.TabIndex = 72;
+            this.picTiara.TabStop = false;
+            this.picTiara.Visible = false;
+            // 
+            // picBrokenCrown
+            // 
+            this.picBrokenCrown.Image = global::Aggelos_Save_Mod.Properties.Resources.BrokenCrown;
+            this.picBrokenCrown.Location = new System.Drawing.Point(105, 33);
+            this.picBrokenCrown.Name = "picBrokenCrown";
+            this.picBrokenCrown.Size = new System.Drawing.Size(40, 40);
+            this.picBrokenCrown.TabIndex = 71;
+            this.picBrokenCrown.TabStop = false;
+            this.picBrokenCrown.Visible = false;
+            // 
+            // picNecklace
+            // 
+            this.picNecklace.Image = global::Aggelos_Save_Mod.Properties.Resources.Necklace;
+            this.picNecklace.Location = new System.Drawing.Point(105, 33);
+            this.picNecklace.Name = "picNecklace";
+            this.picNecklace.Size = new System.Drawing.Size(40, 40);
+            this.picNecklace.TabIndex = 70;
+            this.picNecklace.TabStop = false;
+            this.picNecklace.Visible = false;
+            // 
+            // picBananas
+            // 
+            this.picBananas.Image = global::Aggelos_Save_Mod.Properties.Resources.Bananas;
+            this.picBananas.Location = new System.Drawing.Point(105, 33);
+            this.picBananas.Name = "picBananas";
+            this.picBananas.Size = new System.Drawing.Size(40, 40);
+            this.picBananas.TabIndex = 69;
+            this.picBananas.TabStop = false;
+            this.picBananas.Visible = false;
+            // 
+            // btnSelectQuestItemRight
+            // 
+            this.btnSelectQuestItemRight.Location = new System.Drawing.Point(144, 39);
+            this.btnSelectQuestItemRight.Name = "btnSelectQuestItemRight";
+            this.btnSelectQuestItemRight.Size = new System.Drawing.Size(17, 23);
+            this.btnSelectQuestItemRight.TabIndex = 68;
+            this.btnSelectQuestItemRight.Text = ">";
+            this.btnSelectQuestItemRight.UseVisualStyleBackColor = true;
+            this.btnSelectQuestItemRight.Visible = false;
+            this.btnSelectQuestItemRight.Click += new System.EventHandler(this.btnSelectQuestItemRight_Click);
+            // 
+            // btnSelectQuestItemLeft
+            // 
+            this.btnSelectQuestItemLeft.Location = new System.Drawing.Point(88, 39);
+            this.btnSelectQuestItemLeft.Name = "btnSelectQuestItemLeft";
+            this.btnSelectQuestItemLeft.Size = new System.Drawing.Size(17, 23);
+            this.btnSelectQuestItemLeft.TabIndex = 67;
+            this.btnSelectQuestItemLeft.Text = "<";
+            this.btnSelectQuestItemLeft.UseVisualStyleBackColor = true;
+            this.btnSelectQuestItemLeft.Visible = false;
+            this.btnSelectQuestItemLeft.Click += new System.EventHandler(this.btnSelectQuestItemLeft_Click);
+            // 
             // picElixir
             // 
             this.picElixir.Image = global::Aggelos_Save_Mod.Properties.Resources.Elixir;
-            this.picElixir.Location = new System.Drawing.Point(35, 33);
+            this.picElixir.Location = new System.Drawing.Point(33, 33);
             this.picElixir.Name = "picElixir";
             this.picElixir.Size = new System.Drawing.Size(40, 40);
             this.picElixir.TabIndex = 66;
@@ -516,8 +697,8 @@
             // 
             // picBigPotion
             // 
-            this.picBigPotion.Image = global::Aggelos_Save_Mod.Properties.Resources.BigPotion;
-            this.picBigPotion.Location = new System.Drawing.Point(35, 33);
+            this.picBigPotion.Image = ((System.Drawing.Image)(resources.GetObject("picBigPotion.Image")));
+            this.picBigPotion.Location = new System.Drawing.Point(33, 33);
             this.picBigPotion.Name = "picBigPotion";
             this.picBigPotion.Size = new System.Drawing.Size(40, 40);
             this.picBigPotion.TabIndex = 65;
@@ -527,7 +708,7 @@
             // picSmallPotion
             // 
             this.picSmallPotion.Image = global::Aggelos_Save_Mod.Properties.Resources.SmallPotion;
-            this.picSmallPotion.Location = new System.Drawing.Point(35, 33);
+            this.picSmallPotion.Location = new System.Drawing.Point(33, 33);
             this.picSmallPotion.Name = "picSmallPotion";
             this.picSmallPotion.Size = new System.Drawing.Size(40, 40);
             this.picSmallPotion.TabIndex = 64;
@@ -536,7 +717,7 @@
             // 
             // btnSelectPotionRight
             // 
-            this.btnSelectPotionRight.Location = new System.Drawing.Point(74, 39);
+            this.btnSelectPotionRight.Location = new System.Drawing.Point(72, 39);
             this.btnSelectPotionRight.Name = "btnSelectPotionRight";
             this.btnSelectPotionRight.Size = new System.Drawing.Size(17, 23);
             this.btnSelectPotionRight.TabIndex = 62;
@@ -547,7 +728,7 @@
             // 
             // btnSelectPotionLeft
             // 
-            this.btnSelectPotionLeft.Location = new System.Drawing.Point(18, 39);
+            this.btnSelectPotionLeft.Location = new System.Drawing.Point(16, 39);
             this.btnSelectPotionLeft.Name = "btnSelectPotionLeft";
             this.btnSelectPotionLeft.Size = new System.Drawing.Size(17, 23);
             this.btnSelectPotionLeft.TabIndex = 61;
@@ -713,18 +894,6 @@
             this.checkUniversalBook.TabIndex = 14;
             this.checkUniversalBook.UseVisualStyleBackColor = true;
             this.checkUniversalBook.CheckedChanged += new System.EventHandler(this.checkUniversalBook_CheckedChanged);
-            // 
-            // checkSmallVial
-            // 
-            this.checkSmallVial.AutoSize = true;
-            this.checkSmallVial.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSmallVial.Enabled = false;
-            this.checkSmallVial.Location = new System.Drawing.Point(141, 41);
-            this.checkSmallVial.Name = "checkSmallVial";
-            this.checkSmallVial.Size = new System.Drawing.Size(15, 14);
-            this.checkSmallVial.TabIndex = 13;
-            this.checkSmallVial.UseVisualStyleBackColor = true;
-            this.checkSmallVial.CheckedChanged += new System.EventHandler(this.checkSmallVial_CheckedChanged);
             // 
             // checkAngelFeather
             // 
@@ -1106,6 +1275,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.picGem)).EndInit();
             this.tabInventory.ResumeLayout(false);
             this.tabInventory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFullVial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEmptyVial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picScepter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCrystal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTiara)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBrokenCrown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNecklace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBananas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picElixir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBigPotion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSmallPotion)).EndInit();
@@ -1163,7 +1344,6 @@
         private System.Windows.Forms.CheckBox checkSteelSword;
         private System.Windows.Forms.CheckBox checkIronSword;
         private System.Windows.Forms.CheckBox checkUniversalBook;
-        private System.Windows.Forms.CheckBox checkSmallVial;
         private System.Windows.Forms.CheckBox checkAngelFeather;
         private System.Windows.Forms.CheckBox checkLumenKey;
         private System.Windows.Forms.PictureBox picHerb;
@@ -1202,6 +1382,20 @@
         private System.Windows.Forms.PictureBox picSmallPotion;
         private System.Windows.Forms.Button btnSelectPotionRight;
         private System.Windows.Forms.Button btnSelectPotionLeft;
+        private System.Windows.Forms.PictureBox picTiara;
+        private System.Windows.Forms.PictureBox picBrokenCrown;
+        private System.Windows.Forms.PictureBox picNecklace;
+        private System.Windows.Forms.PictureBox picBananas;
+        private System.Windows.Forms.Button btnSelectQuestItemRight;
+        private System.Windows.Forms.Button btnSelectQuestItemLeft;
+        private System.Windows.Forms.PictureBox picMoon;
+        private System.Windows.Forms.PictureBox picStar;
+        private System.Windows.Forms.PictureBox picShell;
+        private System.Windows.Forms.PictureBox picCrystal;
+        private System.Windows.Forms.PictureBox picFullVial;
+        private System.Windows.Forms.PictureBox picEmptyVial;
+        private System.Windows.Forms.PictureBox picSun;
+        private System.Windows.Forms.PictureBox picScepter;
     }
 }
 
