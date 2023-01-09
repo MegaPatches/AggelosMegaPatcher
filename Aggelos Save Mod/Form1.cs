@@ -2480,7 +2480,7 @@ namespace Aggelos_Save_Mod
 
         //Tutorials?
         public int tutocoffre { get; set; }         //
-        public int tutosave { get; set; }           //
+        public int tutosave { get; set; }           //Controls tutorial for how to save the first time you hit the first save point
 
         public int lightskill { get; set; }         //Light unlocks: Light Essence=1, Firefly Scroll=2
 
