@@ -2468,8 +2468,15 @@ namespace Aggelos_Save_Mod
         public int water { get; set; }              //
         public int herbe { get; set; }              //Whether you have an herb or not
 
-        //?????
-        public int histoire { get; set; }           //
+        //Cutscene triggers?
+        public int histoire { get; set; }           //starts at 3 in the beginning of the game
+                                                    //goes to 4 after cutscene with king
+                                                    //goes to 7 after repair harp cutscene on way to tower
+                                                    //goes to 8 after tower boss and before pillars
+                                                    //goes to 9 when the monkey is on your back
+                                                    //goes to 11 after opening door to dark clouds with monkey
+                                                    //goes to 12 after returning monkey and on the way to air ring
+                                                    //goes to 13 after defeating Varion and before jumping in to Downpour
 
         //Tutorials?
         public int tutocoffre { get; set; }         //
