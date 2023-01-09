@@ -2434,106 +2434,106 @@ namespace Aggelos_Save_Mod
         public bool FileLoaded { get; set; }
         
         //Slot Number
-        public string slotNumber { get; set; }
+        public string slotNumber { get; set; }      //Save file name: "sauvegarde1", "sauvegarde2", or "sauvegarde3" for each slot
 
         //Stats
-        public Int32 gem { get; set; }
-        public int coeur { get; set; }
-        public int magie { get; set; }
-        public int level { get; set; }
-        public int hard { get; set; }
-        public int heure { get; set; }
-        public int minute { get; set; }
-        public Int32 seconde { get; set; }
-        public int death { get; set; }
-        public Int32 exp { get; set; }
-        public int clé { get; set; }
-        public int pow { get; set; }
-        public int def { get; set; }
+        public Int32 gem { get; set; }              //String
+        public int coeur { get; set; }              //Health
+        public int magie { get; set; }              //Magic
+        public int level { get; set; }              //Level
+        public int hard { get; set; }               //Hard mode or not
+        public int heure { get; set; }              //Playtime hours
+        public int minute { get; set; }             //Playtime minutes
+        public Int32 seconde { get; set; }          //Playtime seconds
+        public int death { get; set; }              //Number of deaths
+        public Int32 exp { get; set; }              //Amount of experience at current level
+        public int clé { get; set; }                //
+        public int pow { get; set; }                //Base attack stat
+        public int def { get; set; }                //Base defense stat
 
         //Skills
-        public int scroll { get; set; }
-        public int ring1 { get; set; }
-        public int ring2 { get; set; }
-        public int ring3 { get; set; }
-        public int ring4 { get; set; }
+        public int scroll { get; set; }             //Scroll unlocks: Mole=1, Flea=2, Woodpecker=3
+        public int ring1 { get; set; }              //Earth unlocks: Ring=1, Essence=2
+        public int ring2 { get; set; }              //Water unlocks: Ring=1, Essence=2
+        public int ring3 { get; set; }              //Fire unlocks: Ring=1, Essence=2
+        public int ring4 { get; set; }              //Air unlocks: Ring=1, Essence=2
 
         //Map you start in, x/y coords, and percent complete
-        public int scene { get; set; }
-        public Int32 x { get; set; }
-        public Int32 y { get; set; }
-        public int pourcent { get; set; }
+        public int scene { get; set; }              //Screen the character starts on
+        public Int32 x { get; set; }                //X coordinates on the screen
+        public Int32 y { get; set; }                //Y coordinates on the screen
+        public int pourcent { get; set; }           //Percent game complete
 
         //Healing
-        public int water { get; set; }
-        public int herbe { get; set; }
+        public int water { get; set; }              //
+        public int herbe { get; set; }              //Whether you have an herb or not
 
         //?????
-        public int histoire { get; set; }
+        public int histoire { get; set; }           //
 
         //Tutorials?
-        public int tutocoffre { get; set; }
-        public int tutosave { get; set; }
+        public int tutocoffre { get; set; }         //
+        public int tutosave { get; set; }           //
 
-        public int lightskill { get; set; }
+        public int lightskill { get; set; }         //Light unlocks: Light Essence=1, Firefly Scroll=2
 
         //Save Point Unlocks
-        public int savep1 { get; set; }
-        public int savep2 { get; set; }
-        public int savep3 { get; set; }
-        public int savep4 { get; set; }
-        public int savep5 { get; set; }
-        public int savep6 { get; set; }
-        public int savep7 { get; set; }
-        public int savep8 { get; set; }
-        public int savep9 { get; set; }
-        public int savep10 { get; set; }
-        public int savep11 { get; set; }
-        public int savep12 { get; set; }
-        public int savep13 { get; set; }
-        public int savep14 { get; set; }
-        public int savep15 { get; set; }
+        public int savep1 { get; set; }             //
+        public int savep2 { get; set; }             //
+        public int savep3 { get; set; }             //
+        public int savep4 { get; set; }             //
+        public int savep5 { get; set; }             //
+        public int savep6 { get; set; }             //
+        public int savep7 { get; set; }             //
+        public int savep8 { get; set; }             //
+        public int savep9 { get; set; }             //
+        public int savep10 { get; set; }            //
+        public int savep11 { get; set; }            //
+        public int savep12 { get; set; }            //
+        public int savep13 { get; set; }            //
+        public int savep14 { get; set; }            //
+        public int savep15 { get; set; }            //
 
         //Something to do with Armor and Weapon
-        public int numeroarmure { get; set; }
-        public int numeroepee { get; set; }
+        public int numeroarmure { get; set; }       //Which armor is equiped
+        public int numeroepee { get; set; }         //Which weapon is equiped
 
         //Armors
-        public int armure1 { get; set; }
-        public int armure2 { get; set; }
-        public int armure3 { get; set; }
-        public int armure4 { get; set; }
-        public int armure5 { get; set; }
-        public int armure6 { get; set; }
-        public int armure7 { get; set; }
+        public int armure1 { get; set; }            //Iron armor (can't be removed even with a 0)
+        public int armure2 { get; set; }            //Steel armor
+        public int armure3 { get; set; }            //Coral armor
+        public int armure4 { get; set; }            //Samurai armor
+        public int armure5 { get; set; }            //Dragon armor
+        public int armure6 { get; set; }            //Lightning armor
+        public int armure7 { get; set; }            //Aggelos armor: Aggelos=1, Sacred=2
 
         //Weapons
-        public int epee1 { get; set; }
-        public int epee2 { get; set; }
-        public int epee3 { get; set; }
-        public int epee4 { get; set; }
-        public int epee5 { get; set; }
-        public int epee6 { get; set; }
-        public int epee7 { get; set; }
+        public int epee1 { get; set; }              //Iron dagger (can't be removed even with a 0)
+        public int epee2 { get; set; }              //Steel sword
+        public int epee3 { get; set; }              //Bubble sword
+        public int epee4 { get; set; }              //Masamune
+        public int epee5 { get; set; }              //Dragon sword
+        public int epee6 { get; set; }              //Lightning sword
+        public int epee7 { get; set; }              //Aggelos sword: Aggelos=1, Sacred=2
 
         //Regions?
-        public int region1 { get; set; }
-        public int region2 { get; set; }
+        public int region1 { get; set; }            //
+        public int region2 { get; set; }            //
         public int region3 { get; set; }            //Went from "4" to "6" after opening two chests in sun crest room, one being empty vial
-        public int region4 { get; set; }
-        public int region5 { get; set; }
-        public int region6 { get; set; }
-        public int region7 { get; set; }
-        public int region8 { get; set; }
-        public int region9 { get; set; }
+        public int region4 { get; set; }            //
+        public int region5 { get; set; }            //
+        public int region6 { get; set; }            //
+        public int region7 { get; set; }            //
+        public int region8 { get; set; }            //
+        public int region9 { get; set; }            //
 
         //Story Items
-        public int kingkey { get; set; }
-        public int livre { get; set; }
-        public int plume { get; set; }
-        public int harpefil { get; set; }           //String
-        public int harpechassis { get; set; }       //Body
-        public int harpmax { get; set; }            //Repaired
+        public int kingkey { get; set; }            //Lumen Key
+        public int livre { get; set; }              //Universal book
+        public int plume { get; set; }              //Angel feather
+        public int harpefil { get; set; }           //Lyre String: having this and "harpechassis" set to 1 shows "lyre and strings" in inventory
+        public int harpechassis { get; set; }       //Lyre Body: having this and "harpefil" set to 1 shows "lyre and strings" in inventory
+        public int harpmax { get; set; }            //Lyre Repaired: having this set to 1 overrides the other two
 
         //Map appears to be related to the armor quest. Getting the bananas sets it to 1.
         //The value is changed as you progress through the quest.
@@ -2555,128 +2555,128 @@ namespace Aggelos_Save_Mod
                                                     //16 = Shows scepter in collection after using Sun Symbol
 
         //Potions State
-        public int boule { get; set; }
+        public int boule { get; set; }              //Potions: Small Potion=1, Big Potion=2, Elixir=3
 
-        //??????
-        public int coffre20xp { get; set; }
-        public int coffre50xp { get; set; }
-        public int groscoffre { get; set; }
-        public int groscoffreelement { get; set; }
-        public int porte1 { get; set; }
-        public int porte2 { get; set; }
-        public int coffre_herbe1 { get; set; }
-        public int coffre_contener1 { get; set; }
-        public int coffre_power_up { get; set; }
-        public int coffre_defense_up { get; set; }
-        public int coffre_50xp2 { get; set; }
-        public int coffre_magie_up { get; set; }
-        public int clé1 { get; set; }
-        public int power_mont { get; set; }
-        public int contener_mont { get; set; }
-        public int herb_mont { get; set; }
-        public int chest_A1 { get; set; }
-        public int chest_B1 { get; set; }
-        public int chest_C1 { get; set; }
-        public int chest_D1 { get; set; }
-        public int chest_E1 { get; set; }
-        public int chest_F1 { get; set; }
-        public int chest_G1 { get; set; }
-        public int chest_H1 { get; set; }
-        public int chest_I1 { get; set; }
-        public int chest_J1 { get; set; }
-        public int chest_K1 { get; set; }
-        public int chest_L1 { get; set; }
-        public int chest_M1 { get; set; }
-        public int chest_N1 { get; set; }
-        public int chest_O1 { get; set; }
-        public int chest_P1 { get; set; }
-        public int chest_Q1 { get; set; }
-        public int chest_R1 { get; set; }
-        public int chest_S1 { get; set; }
-        public int chest_T1 { get; set; }
-        public int chest_U1 { get; set; }
-        public int chest_V1 { get; set; }
-        public int chest_W1 { get; set; }
-        public int chest_X1 { get; set; }
-        public int chest_Y1 { get; set; }
-        public int chest_Z1 { get; set; }
-        public int chest_30 { get; set; }
-        public int chest_31 { get; set; }
-        public int chest_32 { get; set; }
-        public int chest_33 { get; set; }
-        public int chest_34 { get; set; }
-        public int chest_35 { get; set; }
-        public int chest_36 { get; set; }
-        public int chest_37 { get; set; }
-        public int chest_38 { get; set; }
-        public int chest_39 { get; set; }
-        public int chest_40 { get; set; }
-        public int chest_41 { get; set; }
-        public int chest_42 { get; set; }
-        public int chest_43 { get; set; }
-        public int chest_44 { get; set; }
-        public int chest_45 { get; set; }
-        public int chest_46 { get; set; }
-        public int chest_47 { get; set; }
-        public int chest_48 { get; set; }
-        public int chest_49 { get; set; }
-        public int chest_50 { get; set; }
-        public int chest_51 { get; set; }
+        //Appears to be various chests
+        public int coffre20xp { get; set; }         //
+        public int coffre50xp { get; set; }         //
+        public int groscoffre { get; set; }         //
+        public int groscoffreelement { get; set; }  //Guessing this is whether or not you've picked up the light element
+        public int porte1 { get; set; }             //This and porte2 went to 1 when earth temple was defeated on the way to book
+        public int porte2 { get; set; }             //This and porte1 went to 1 when earth temple was defeated on the way to book
+        public int coffre_herbe1 { get; set; }      //
+        public int coffre_contener1 { get; set; }   //
+        public int coffre_power_up { get; set; }    //
+        public int coffre_defense_up { get; set; }  //
+        public int coffre_50xp2 { get; set; }       //
+        public int coffre_magie_up { get; set; }    //
+        public int clé1 { get; set; }               //
+        public int power_mont { get; set; }         //
+        public int contener_mont { get; set; }      //
+        public int herb_mont { get; set; }          //
+        public int chest_A1 { get; set; }           //
+        public int chest_B1 { get; set; }           //
+        public int chest_C1 { get; set; }           //
+        public int chest_D1 { get; set; }           //
+        public int chest_E1 { get; set; }           //
+        public int chest_F1 { get; set; }           //
+        public int chest_G1 { get; set; }           //
+        public int chest_H1 { get; set; }           //
+        public int chest_I1 { get; set; }           //
+        public int chest_J1 { get; set; }           //
+        public int chest_K1 { get; set; }           //
+        public int chest_L1 { get; set; }           //
+        public int chest_M1 { get; set; }           //
+        public int chest_N1 { get; set; }           //
+        public int chest_O1 { get; set; }           //
+        public int chest_P1 { get; set; }           //
+        public int chest_Q1 { get; set; }           //
+        public int chest_R1 { get; set; }           //
+        public int chest_S1 { get; set; }           //
+        public int chest_T1 { get; set; }           //
+        public int chest_U1 { get; set; }           //
+        public int chest_V1 { get; set; }           //
+        public int chest_W1 { get; set; }           //
+        public int chest_X1 { get; set; }           //
+        public int chest_Y1 { get; set; }           //
+        public int chest_Z1 { get; set; }           //
+        public int chest_30 { get; set; }           //
+        public int chest_31 { get; set; }           //
+        public int chest_32 { get; set; }           //
+        public int chest_33 { get; set; }           //
+        public int chest_34 { get; set; }           //
+        public int chest_35 { get; set; }           //
+        public int chest_36 { get; set; }           //
+        public int chest_37 { get; set; }           //
+        public int chest_38 { get; set; }           //
+        public int chest_39 { get; set; }           //
+        public int chest_40 { get; set; }           //
+        public int chest_41 { get; set; }           //
+        public int chest_42 { get; set; }           //
+        public int chest_43 { get; set; }           //
+        public int chest_44 { get; set; }           //
+        public int chest_45 { get; set; }           //
+        public int chest_46 { get; set; }           //
+        public int chest_47 { get; set; }           //
+        public int chest_48 { get; set; }           //
+        public int chest_49 { get; set; }           //
+        public int chest_50 { get; set; }           //
+        public int chest_51 { get; set; }           //
         public int chest_52 { get; set; }           //elixir chest in sun crest room
         public int chest_53 { get; set; }           //small vial chest in sun crest room (does not give vile if set to open)
-        public int chest_54 { get; set; }
-        public int chest_55 { get; set; }
-        public int chest_56 { get; set; }
-        public int chest_57 { get; set; }
-        public int chest_58 { get; set; }
-        public int chest_59 { get; set; }
-        public int chest_60 { get; set; }
-        public int chest_61 { get; set; }
-        public int chest_62 { get; set; }
-        public int chest_63 { get; set; }
-        public int chest_64 { get; set; }
-        public int chest_65 { get; set; }
-        public int chest_66 { get; set; }
-        public int chest_67 { get; set; }
-        public int chest_68 { get; set; }
-        public int chest_69 { get; set; }
-        public int chest_70 { get; set; }
-        public int chest_71 { get; set; }
-        public int chest_72 { get; set; }
-        public int chest_73 { get; set; }
-        public int chest_74 { get; set; }
-        public int chest_75 { get; set; }
-        public int chest_76 { get; set; }
-        public int chest_77 { get; set; }
-        public int chest_78 { get; set; }
-        public int chest_79 { get; set; }
-        public int chest_80 { get; set; }
-        public int chest_81 { get; set; }
-        public int chest_82 { get; set; }
-        public int chest_83 { get; set; }
-        public int chest_84 { get; set; }
-        public int chest_85 { get; set; }
-        public int chest_86 { get; set; }
-        public int chest_87 { get; set; }
-        public int chest_88 { get; set; }
-        public int chest_89 { get; set; }
-        public int chest_90 { get; set; }
-        public int chest_91 { get; set; }
-        public int chest_94 { get; set; }
-        public int chest_95 { get; set; }
-        public int chest_96 { get; set; }
-        public int chest_97 { get; set; }
-        public int chest_98 { get; set; }
-        public int chest_99 { get; set; }
-        public int chest_100 { get; set; }
-        public int chest_101 { get; set; }
-        public int chest_103 { get; set; }
-        public int chest_104 { get; set; }
-        public int chest_105 { get; set; }
-        public int chest_106 { get; set; }
-        public int chest_108 { get; set; }
-        public int chest_109 { get; set; }
-        public int chest_110 { get; set; }
+        public int chest_54 { get; set; }           //
+        public int chest_55 { get; set; }           //
+        public int chest_56 { get; set; }           //
+        public int chest_57 { get; set; }           //
+        public int chest_58 { get; set; }           //
+        public int chest_59 { get; set; }           //
+        public int chest_60 { get; set; }           //
+        public int chest_61 { get; set; }           //
+        public int chest_62 { get; set; }           //
+        public int chest_63 { get; set; }           //
+        public int chest_64 { get; set; }           //
+        public int chest_65 { get; set; }           //
+        public int chest_66 { get; set; }           //
+        public int chest_67 { get; set; }           //
+        public int chest_68 { get; set; }           //
+        public int chest_69 { get; set; }           //
+        public int chest_70 { get; set; }           //
+        public int chest_71 { get; set; }           //
+        public int chest_72 { get; set; }           //
+        public int chest_73 { get; set; }           //
+        public int chest_74 { get; set; }           //
+        public int chest_75 { get; set; }           //
+        public int chest_76 { get; set; }           //
+        public int chest_77 { get; set; }           //
+        public int chest_78 { get; set; }           //
+        public int chest_79 { get; set; }           //
+        public int chest_80 { get; set; }           //
+        public int chest_81 { get; set; }           //
+        public int chest_82 { get; set; }           //
+        public int chest_83 { get; set; }           //
+        public int chest_84 { get; set; }           //
+        public int chest_85 { get; set; }           //
+        public int chest_86 { get; set; }           //
+        public int chest_87 { get; set; }           //
+        public int chest_88 { get; set; }           //
+        public int chest_89 { get; set; }           //
+        public int chest_90 { get; set; }           //
+        public int chest_91 { get; set; }           //
+        public int chest_94 { get; set; }           //
+        public int chest_95 { get; set; }           //
+        public int chest_96 { get; set; }           //
+        public int chest_97 { get; set; }           //
+        public int chest_98 { get; set; }           //
+        public int chest_99 { get; set; }           //
+        public int chest_100 { get; set; }          //
+        public int chest_101 { get; set; }          //
+        public int chest_103 { get; set; }          //
+        public int chest_104 { get; set; }          //
+        public int chest_105 { get; set; }          //
+        public int chest_106 { get; set; }          //
+        public int chest_108 { get; set; }          //
+        public int chest_109 { get; set; }          //
+        public int chest_110 { get; set; }          //
 
 
         /************************************************************
