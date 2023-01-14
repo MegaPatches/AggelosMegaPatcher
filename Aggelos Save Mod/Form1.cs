@@ -662,7 +662,46 @@ namespace Aggelos_Save_Mod
                 }
 
 
-                //Map
+                //Save Point Map
+                checkSaveLumenWoods.Enabled = true;
+                checkSaveLumenWoods.Checked = saveFile.savep1 == 1 ? true : false;
+
+                checkSaveBoscoVillage.Enabled = true;
+                checkSaveBoscoVillage.Checked = saveFile.savep2 == 1 ? true : false;
+
+                checkSaveBoscoCave.Enabled = true;
+                checkSaveBoscoCave.Checked = saveFile.savep3 == 1 ? true : false;
+
+                checkSaveLumenCastle.Enabled = true;
+                checkSaveLumenCastle.Checked = saveFile.savep4 == 1 ? true : false;
+
+                checkSaveAtlantVillage.Enabled = true;
+                checkSaveAtlantVillage.Checked = saveFile.savep5 == 1 ? true : false;
+
+                checkSaveTheAbyss.Enabled = true;
+                checkSaveTheAbyss.Checked = saveFile.savep6 == 1 ? true : false;
+
+                checkSavePaluluTown.Enabled = true;
+                checkSavePaluluTown.Checked = saveFile.savep7 == 1 ? true : false;
+
+                checkSaveTheWall.Enabled = true;
+                checkSaveTheWall.Checked = saveFile.savep8 == 1 ? true : false;
+
+                checkSaveFiraVillage.Enabled = true;
+                checkSaveFiraVillage.Checked = saveFile.savep9 == 1 ? true : false;
+
+                checkSaveFiraVolcano.Enabled = true;
+                checkSaveFiraVolcano.Checked = saveFile.savep10 == 1 ? true : false;
+
+                checkSaveCelestiaVillage.Enabled = true;
+                checkSaveCelestiaVillage.Checked = saveFile.savep11 == 1 ? true : false;
+
+                checkSaveDarkClouds.Enabled = true;
+                checkSaveDarkClouds.Checked = saveFile.savep12 == 1 ? true : false; 
+                
+                checkSaveValionsCastle.Enabled = true;
+                checkSaveValionsCastle.Checked = saveFile.savep13 == 1 ? true : false;
+
 
                 //Split States
 
@@ -2418,6 +2457,115 @@ namespace Aggelos_Save_Mod
             {
                 saveFile.slotNumber = "sauvegarde3";
             }
+        }
+
+        /************************************************************
+        * SAVE POINT UNLOCKS
+        * 
+        * The following functions are called for save point unlocks.
+        ************************************************************/
+        private void checkSaveLumenWoods_CheckedChanged(object sender, EventArgs e)
+        {
+            saveFile.savep1 = checkSaveLumenWoods.Checked == true ? 1 : 0;
+
+            //Update the image
+            checkSaveLumenWoods.ImageIndex = saveFile.savep1;
+        }
+
+        private void checkSaveBoscoVillage_CheckedChanged(object sender, EventArgs e)
+        {
+            saveFile.savep2 = checkSaveBoscoVillage.Checked == true ? 1 : 0;
+
+            //Update the image
+            checkSaveBoscoVillage.ImageIndex = saveFile.savep2;
+        }
+
+        private void checkSaveBoscoCave_CheckedChanged(object sender, EventArgs e)
+        {
+            saveFile.savep3 = checkSaveBoscoCave.Checked == true ? 1 : 0;
+
+            //Update the image
+            checkSaveBoscoCave.ImageIndex = saveFile.savep3;
+        }
+
+        private void checkSaveLumenCastle_CheckedChanged(object sender, EventArgs e)
+        {
+            saveFile.savep4 = checkSaveLumenCastle.Checked == true ? 1 : 0;
+
+            //Update the image
+            checkSaveLumenCastle.ImageIndex = saveFile.savep4;
+        }
+
+        private void checkSaveAtlantVillage_CheckedChanged(object sender, EventArgs e)
+        {
+            saveFile.savep5 = checkSaveAtlantVillage.Checked == true ? 1 : 0;
+
+            //Update the image
+            checkSaveAtlantVillage.ImageIndex = saveFile.savep5;
+        }
+
+        private void checkSaveTheAbyss_CheckedChanged(object sender, EventArgs e)
+        {
+            saveFile.savep6 = checkSaveTheAbyss.Checked == true ? 1 : 0;
+
+            //Update the image
+            checkSaveTheAbyss.ImageIndex = saveFile.savep6;
+        }
+
+        private void checkSavePaluluTown_CheckedChanged(object sender, EventArgs e)
+        {
+            saveFile.savep7 = checkSavePaluluTown.Checked == true ? 1 : 0;
+
+            //Update the image
+            checkSavePaluluTown.ImageIndex = saveFile.savep7;
+        }
+
+        private void checkSaveTheWall_CheckedChanged(object sender, EventArgs e)
+        {
+            saveFile.savep8 = checkSaveTheWall.Checked == true ? 1 : 0;
+
+            //Update the image
+            checkSaveTheWall.ImageIndex = saveFile.savep8;
+        }
+
+        private void checkSaveFiraVillage_CheckedChanged(object sender, EventArgs e)
+        {
+            saveFile.savep9 = checkSaveFiraVillage.Checked == true ? 1 : 0;
+
+            //Update the image
+            checkSaveFiraVillage.ImageIndex = saveFile.savep9;
+        }
+
+        private void checkSaveFiraVolcano_CheckedChanged(object sender, EventArgs e)
+        {
+            saveFile.savep10 = checkSaveFiraVolcano.Checked == true ? 1 : 0;
+
+            //Update the image
+            checkSaveFiraVolcano.ImageIndex = saveFile.savep10;
+        }
+
+        private void checkSaveCelestiaVillage_CheckedChanged(object sender, EventArgs e)
+        {
+            saveFile.savep11 = checkSaveCelestiaVillage.Checked == true ? 1 : 0;
+
+            //Update the image
+            checkSaveCelestiaVillage.ImageIndex = saveFile.savep11;
+        }
+
+        private void checkSaveDarkClouds_CheckedChanged(object sender, EventArgs e)
+        {
+            saveFile.savep12 = checkSaveDarkClouds.Checked == true ? 1 : 0;
+
+            //Update the image
+            checkSaveDarkClouds.ImageIndex = saveFile.savep12;
+        }
+
+        private void checkSaveValionsCastle_CheckedChanged(object sender, EventArgs e)
+        {
+            saveFile.savep13 = checkSaveValionsCastle.Checked == true ? 1 : 0;
+
+            //Update the image
+            checkSaveValionsCastle.ImageIndex = saveFile.savep13;
         }
     }
 

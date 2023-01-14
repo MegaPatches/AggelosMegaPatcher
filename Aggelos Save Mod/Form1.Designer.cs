@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tbFileSelected = new System.Windows.Forms.TextBox();
             this.btnLoadFile = new System.Windows.Forms.Button();
@@ -35,6 +36,8 @@
             this.btnLoadDefault = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabInventory = new System.Windows.Forms.TabPage();
+            this.tbMagic = new System.Windows.Forms.NumericUpDown();
+            this.tbHealth = new System.Windows.Forms.NumericUpDown();
             this.tbDefense = new System.Windows.Forms.NumericUpDown();
             this.tbPower = new System.Windows.Forms.NumericUpDown();
             this.picFireflyScroll = new System.Windows.Forms.PictureBox();
@@ -118,6 +121,11 @@
             this.checkSteelSword = new System.Windows.Forms.CheckBox();
             this.checkIronSword = new System.Windows.Forms.CheckBox();
             this.tabSaves = new System.Windows.Forms.TabPage();
+            this.checkSaveBoscoCave = new System.Windows.Forms.CheckBox();
+            this.checkSaveBoscoVillage = new System.Windows.Forms.CheckBox();
+            this.checkSaveLumenWoods = new System.Windows.Forms.CheckBox();
+            this.picSaveMapSelectors = new System.Windows.Forms.PictureBox();
+            this.picSaveMap = new System.Windows.Forms.PictureBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.groupSaveSlots = new System.Windows.Forms.GroupBox();
             this.radioSaveSlot3 = new System.Windows.Forms.RadioButton();
@@ -130,10 +138,21 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnSaveSlot = new System.Windows.Forms.Button();
             this.btnSaveFile = new System.Windows.Forms.Button();
-            this.tbHealth = new System.Windows.Forms.NumericUpDown();
-            this.tbMagic = new System.Windows.Forms.NumericUpDown();
+            this.imgListSavePointSelectors = new System.Windows.Forms.ImageList(this.components);
+            this.checkSaveLumenCastle = new System.Windows.Forms.CheckBox();
+            this.checkSaveAtlantVillage = new System.Windows.Forms.CheckBox();
+            this.checkSaveTheAbyss = new System.Windows.Forms.CheckBox();
+            this.checkSavePaluluTown = new System.Windows.Forms.CheckBox();
+            this.checkSaveTheWall = new System.Windows.Forms.CheckBox();
+            this.checkSaveFiraVillage = new System.Windows.Forms.CheckBox();
+            this.checkSaveFiraVolcano = new System.Windows.Forms.CheckBox();
+            this.checkSaveCelestiaVillage = new System.Windows.Forms.CheckBox();
+            this.checkSaveDarkClouds = new System.Windows.Forms.CheckBox();
+            this.checkSaveValionsCastle = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabInventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbHealth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDefense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFireflyScroll)).BeginInit();
@@ -178,9 +197,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosArmor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSacredSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosSword)).BeginInit();
+            this.tabSaves.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveMapSelectors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveMap)).BeginInit();
             this.groupSaveSlots.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbHealth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).BeginInit();
             this.SuspendLayout();
             // 
             // tbFileSelected
@@ -327,6 +347,36 @@
             this.tabInventory.TabIndex = 0;
             this.tabInventory.Text = "Inventory";
             this.tabInventory.UseVisualStyleBackColor = true;
+            // 
+            // tbMagic
+            // 
+            this.tbMagic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbMagic.Enabled = false;
+            this.tbMagic.Location = new System.Drawing.Point(616, 89);
+            this.tbMagic.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.tbMagic.Name = "tbMagic";
+            this.tbMagic.Size = new System.Drawing.Size(75, 20);
+            this.tbMagic.TabIndex = 112;
+            this.tbMagic.ValueChanged += new System.EventHandler(this.tbMagic_ValueChanged);
+            // 
+            // tbHealth
+            // 
+            this.tbHealth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbHealth.Enabled = false;
+            this.tbHealth.Location = new System.Drawing.Point(535, 89);
+            this.tbHealth.Maximum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            this.tbHealth.Name = "tbHealth";
+            this.tbHealth.Size = new System.Drawing.Size(75, 20);
+            this.tbHealth.TabIndex = 111;
+            this.tbHealth.ValueChanged += new System.EventHandler(this.tbHealth_ValueChanged);
             // 
             // tbDefense
             // 
@@ -1252,15 +1302,98 @@
             // 
             // tabSaves
             // 
-            this.tabSaves.BackgroundImage = global::Aggelos_Save_Mod.Properties.Resources.Map;
             this.tabSaves.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabSaves.Controls.Add(this.checkSaveValionsCastle);
+            this.tabSaves.Controls.Add(this.checkSaveDarkClouds);
+            this.tabSaves.Controls.Add(this.checkSaveCelestiaVillage);
+            this.tabSaves.Controls.Add(this.checkSaveFiraVolcano);
+            this.tabSaves.Controls.Add(this.checkSaveFiraVillage);
+            this.tabSaves.Controls.Add(this.checkSaveTheWall);
+            this.tabSaves.Controls.Add(this.checkSavePaluluTown);
+            this.tabSaves.Controls.Add(this.checkSaveTheAbyss);
+            this.tabSaves.Controls.Add(this.checkSaveAtlantVillage);
+            this.tabSaves.Controls.Add(this.checkSaveLumenCastle);
+            this.tabSaves.Controls.Add(this.checkSaveBoscoCave);
+            this.tabSaves.Controls.Add(this.checkSaveBoscoVillage);
+            this.tabSaves.Controls.Add(this.checkSaveLumenWoods);
+            this.tabSaves.Controls.Add(this.picSaveMapSelectors);
+            this.tabSaves.Controls.Add(this.picSaveMap);
             this.tabSaves.Location = new System.Drawing.Point(4, 22);
             this.tabSaves.Name = "tabSaves";
             this.tabSaves.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSaves.Size = new System.Drawing.Size(798, 437);
+            this.tabSaves.Size = new System.Drawing.Size(714, 437);
             this.tabSaves.TabIndex = 1;
             this.tabSaves.Text = "Saves";
             this.tabSaves.UseVisualStyleBackColor = true;
+            // 
+            // checkSaveBoscoCave
+            // 
+            this.checkSaveBoscoCave.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveBoscoCave.AutoSize = true;
+            this.checkSaveBoscoCave.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveBoscoCave.Enabled = false;
+            this.checkSaveBoscoCave.ImageIndex = 0;
+            this.checkSaveBoscoCave.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveBoscoCave.Location = new System.Drawing.Point(0, 60);
+            this.checkSaveBoscoCave.Name = "checkSaveBoscoCave";
+            this.checkSaveBoscoCave.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveBoscoCave.TabIndex = 49;
+            this.checkSaveBoscoCave.UseVisualStyleBackColor = true;
+            this.checkSaveBoscoCave.CheckedChanged += new System.EventHandler(this.checkSaveBoscoCave_CheckedChanged);
+            // 
+            // checkSaveBoscoVillage
+            // 
+            this.checkSaveBoscoVillage.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveBoscoVillage.AutoSize = true;
+            this.checkSaveBoscoVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveBoscoVillage.Enabled = false;
+            this.checkSaveBoscoVillage.ImageIndex = 0;
+            this.checkSaveBoscoVillage.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveBoscoVillage.Location = new System.Drawing.Point(0, 30);
+            this.checkSaveBoscoVillage.Name = "checkSaveBoscoVillage";
+            this.checkSaveBoscoVillage.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveBoscoVillage.TabIndex = 48;
+            this.checkSaveBoscoVillage.UseVisualStyleBackColor = true;
+            this.checkSaveBoscoVillage.CheckedChanged += new System.EventHandler(this.checkSaveBoscoVillage_CheckedChanged);
+            // 
+            // checkSaveLumenWoods
+            // 
+            this.checkSaveLumenWoods.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveLumenWoods.AutoSize = true;
+            this.checkSaveLumenWoods.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveLumenWoods.Enabled = false;
+            this.checkSaveLumenWoods.ImageIndex = 0;
+            this.checkSaveLumenWoods.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveLumenWoods.Location = new System.Drawing.Point(0, 0);
+            this.checkSaveLumenWoods.Name = "checkSaveLumenWoods";
+            this.checkSaveLumenWoods.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveLumenWoods.TabIndex = 47;
+            this.checkSaveLumenWoods.UseVisualStyleBackColor = true;
+            this.checkSaveLumenWoods.CheckedChanged += new System.EventHandler(this.checkSaveLumenWoods_CheckedChanged);
+            // 
+            // picSaveMapSelectors
+            // 
+            this.picSaveMapSelectors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.picSaveMapSelectors.BackgroundImage = global::Aggelos_Save_Mod.Properties.Resources.SaveMapSelections;
+            this.picSaveMapSelectors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picSaveMapSelectors.Location = new System.Drawing.Point(0, 0);
+            this.picSaveMapSelectors.Name = "picSaveMapSelectors";
+            this.picSaveMapSelectors.Size = new System.Drawing.Size(41, 437);
+            this.picSaveMapSelectors.TabIndex = 1;
+            this.picSaveMapSelectors.TabStop = false;
+            // 
+            // picSaveMap
+            // 
+            this.picSaveMap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picSaveMap.BackgroundImage = global::Aggelos_Save_Mod.Properties.Resources.SaveMap;
+            this.picSaveMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picSaveMap.Location = new System.Drawing.Point(43, 0);
+            this.picSaveMap.Name = "picSaveMap";
+            this.picSaveMap.Size = new System.Drawing.Size(671, 441);
+            this.picSaveMap.TabIndex = 0;
+            this.picSaveMap.TabStop = false;
             // 
             // lblStatus
             // 
@@ -1384,35 +1517,162 @@
             this.btnSaveFile.UseVisualStyleBackColor = true;
             this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
             // 
-            // tbHealth
+            // imgListSavePointSelectors
             // 
-            this.tbHealth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbHealth.Enabled = false;
-            this.tbHealth.Location = new System.Drawing.Point(535, 89);
-            this.tbHealth.Maximum = new decimal(new int[] {
-            40,
-            0,
-            0,
-            0});
-            this.tbHealth.Name = "tbHealth";
-            this.tbHealth.Size = new System.Drawing.Size(75, 20);
-            this.tbHealth.TabIndex = 111;
-            this.tbHealth.ValueChanged += new System.EventHandler(this.tbHealth_ValueChanged);
+            this.imgListSavePointSelectors.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListSavePointSelectors.ImageStream")));
+            this.imgListSavePointSelectors.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListSavePointSelectors.Images.SetKeyName(0, "SaveMapSelectorOff.jpg");
+            this.imgListSavePointSelectors.Images.SetKeyName(1, "SaveMapSelectorOn.jpg");
             // 
-            // tbMagic
+            // checkSaveLumenCastle
             // 
-            this.tbMagic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbMagic.Enabled = false;
-            this.tbMagic.Location = new System.Drawing.Point(616, 89);
-            this.tbMagic.Maximum = new decimal(new int[] {
-            6,
-            0,
-            0,
-            0});
-            this.tbMagic.Name = "tbMagic";
-            this.tbMagic.Size = new System.Drawing.Size(75, 20);
-            this.tbMagic.TabIndex = 112;
-            this.tbMagic.ValueChanged += new System.EventHandler(this.tbMagic_ValueChanged);
+            this.checkSaveLumenCastle.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveLumenCastle.AutoSize = true;
+            this.checkSaveLumenCastle.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveLumenCastle.Enabled = false;
+            this.checkSaveLumenCastle.ImageIndex = 0;
+            this.checkSaveLumenCastle.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveLumenCastle.Location = new System.Drawing.Point(0, 90);
+            this.checkSaveLumenCastle.Name = "checkSaveLumenCastle";
+            this.checkSaveLumenCastle.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveLumenCastle.TabIndex = 50;
+            this.checkSaveLumenCastle.UseVisualStyleBackColor = true;
+            this.checkSaveLumenCastle.CheckedChanged += new System.EventHandler(this.checkSaveLumenCastle_CheckedChanged);
+            // 
+            // checkSaveAtlantVillage
+            // 
+            this.checkSaveAtlantVillage.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveAtlantVillage.AutoSize = true;
+            this.checkSaveAtlantVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveAtlantVillage.Enabled = false;
+            this.checkSaveAtlantVillage.ImageIndex = 0;
+            this.checkSaveAtlantVillage.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveAtlantVillage.Location = new System.Drawing.Point(0, 120);
+            this.checkSaveAtlantVillage.Name = "checkSaveAtlantVillage";
+            this.checkSaveAtlantVillage.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveAtlantVillage.TabIndex = 51;
+            this.checkSaveAtlantVillage.UseVisualStyleBackColor = true;
+            this.checkSaveAtlantVillage.CheckedChanged += new System.EventHandler(this.checkSaveAtlantVillage_CheckedChanged);
+            // 
+            // checkSaveTheAbyss
+            // 
+            this.checkSaveTheAbyss.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveTheAbyss.AutoSize = true;
+            this.checkSaveTheAbyss.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveTheAbyss.Enabled = false;
+            this.checkSaveTheAbyss.ImageIndex = 0;
+            this.checkSaveTheAbyss.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveTheAbyss.Location = new System.Drawing.Point(0, 149);
+            this.checkSaveTheAbyss.Name = "checkSaveTheAbyss";
+            this.checkSaveTheAbyss.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveTheAbyss.TabIndex = 52;
+            this.checkSaveTheAbyss.UseVisualStyleBackColor = true;
+            this.checkSaveTheAbyss.CheckedChanged += new System.EventHandler(this.checkSaveTheAbyss_CheckedChanged);
+            // 
+            // checkSavePaluluTown
+            // 
+            this.checkSavePaluluTown.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSavePaluluTown.AutoSize = true;
+            this.checkSavePaluluTown.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSavePaluluTown.Enabled = false;
+            this.checkSavePaluluTown.ImageIndex = 0;
+            this.checkSavePaluluTown.ImageList = this.imgListSavePointSelectors;
+            this.checkSavePaluluTown.Location = new System.Drawing.Point(0, 177);
+            this.checkSavePaluluTown.Name = "checkSavePaluluTown";
+            this.checkSavePaluluTown.Size = new System.Drawing.Size(41, 31);
+            this.checkSavePaluluTown.TabIndex = 53;
+            this.checkSavePaluluTown.UseVisualStyleBackColor = true;
+            this.checkSavePaluluTown.CheckedChanged += new System.EventHandler(this.checkSavePaluluTown_CheckedChanged);
+            // 
+            // checkSaveTheWall
+            // 
+            this.checkSaveTheWall.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveTheWall.AutoSize = true;
+            this.checkSaveTheWall.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveTheWall.Enabled = false;
+            this.checkSaveTheWall.ImageIndex = 0;
+            this.checkSaveTheWall.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveTheWall.Location = new System.Drawing.Point(0, 206);
+            this.checkSaveTheWall.Name = "checkSaveTheWall";
+            this.checkSaveTheWall.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveTheWall.TabIndex = 54;
+            this.checkSaveTheWall.UseVisualStyleBackColor = true;
+            this.checkSaveTheWall.CheckedChanged += new System.EventHandler(this.checkSaveTheWall_CheckedChanged);
+            // 
+            // checkSaveFiraVillage
+            // 
+            this.checkSaveFiraVillage.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveFiraVillage.AutoSize = true;
+            this.checkSaveFiraVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveFiraVillage.Enabled = false;
+            this.checkSaveFiraVillage.ImageIndex = 0;
+            this.checkSaveFiraVillage.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveFiraVillage.Location = new System.Drawing.Point(0, 236);
+            this.checkSaveFiraVillage.Name = "checkSaveFiraVillage";
+            this.checkSaveFiraVillage.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveFiraVillage.TabIndex = 55;
+            this.checkSaveFiraVillage.UseVisualStyleBackColor = true;
+            this.checkSaveFiraVillage.CheckedChanged += new System.EventHandler(this.checkSaveFiraVillage_CheckedChanged);
+            // 
+            // checkSaveFiraVolcano
+            // 
+            this.checkSaveFiraVolcano.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveFiraVolcano.AutoSize = true;
+            this.checkSaveFiraVolcano.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveFiraVolcano.Enabled = false;
+            this.checkSaveFiraVolcano.ImageIndex = 0;
+            this.checkSaveFiraVolcano.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveFiraVolcano.Location = new System.Drawing.Point(0, 265);
+            this.checkSaveFiraVolcano.Name = "checkSaveFiraVolcano";
+            this.checkSaveFiraVolcano.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveFiraVolcano.TabIndex = 56;
+            this.checkSaveFiraVolcano.UseVisualStyleBackColor = true;
+            this.checkSaveFiraVolcano.CheckedChanged += new System.EventHandler(this.checkSaveFiraVolcano_CheckedChanged);
+            // 
+            // checkSaveCelestiaVillage
+            // 
+            this.checkSaveCelestiaVillage.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveCelestiaVillage.AutoSize = true;
+            this.checkSaveCelestiaVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveCelestiaVillage.Enabled = false;
+            this.checkSaveCelestiaVillage.ImageIndex = 0;
+            this.checkSaveCelestiaVillage.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveCelestiaVillage.Location = new System.Drawing.Point(0, 295);
+            this.checkSaveCelestiaVillage.Name = "checkSaveCelestiaVillage";
+            this.checkSaveCelestiaVillage.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveCelestiaVillage.TabIndex = 57;
+            this.checkSaveCelestiaVillage.UseVisualStyleBackColor = true;
+            this.checkSaveCelestiaVillage.CheckedChanged += new System.EventHandler(this.checkSaveCelestiaVillage_CheckedChanged);
+            // 
+            // checkSaveDarkClouds
+            // 
+            this.checkSaveDarkClouds.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveDarkClouds.AutoSize = true;
+            this.checkSaveDarkClouds.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveDarkClouds.Enabled = false;
+            this.checkSaveDarkClouds.ImageIndex = 0;
+            this.checkSaveDarkClouds.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveDarkClouds.Location = new System.Drawing.Point(0, 324);
+            this.checkSaveDarkClouds.Name = "checkSaveDarkClouds";
+            this.checkSaveDarkClouds.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveDarkClouds.TabIndex = 58;
+            this.checkSaveDarkClouds.UseVisualStyleBackColor = true;
+            this.checkSaveDarkClouds.CheckedChanged += new System.EventHandler(this.checkSaveDarkClouds_CheckedChanged);
+            // 
+            // checkSaveValionsCastle
+            // 
+            this.checkSaveValionsCastle.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveValionsCastle.AutoSize = true;
+            this.checkSaveValionsCastle.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveValionsCastle.Enabled = false;
+            this.checkSaveValionsCastle.ImageIndex = 0;
+            this.checkSaveValionsCastle.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveValionsCastle.Location = new System.Drawing.Point(0, 354);
+            this.checkSaveValionsCastle.Name = "checkSaveValionsCastle";
+            this.checkSaveValionsCastle.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveValionsCastle.TabIndex = 59;
+            this.checkSaveValionsCastle.UseVisualStyleBackColor = true;
+            this.checkSaveValionsCastle.CheckedChanged += new System.EventHandler(this.checkSaveValionsCastle_CheckedChanged);
             // 
             // Form1
             // 
@@ -1436,6 +1696,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabInventory.ResumeLayout(false);
             this.tabInventory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbHealth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDefense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFireflyScroll)).EndInit();
@@ -1480,10 +1742,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosArmor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSacredSword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosSword)).EndInit();
+            this.tabSaves.ResumeLayout(false);
+            this.tabSaves.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveMapSelectors)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaveMap)).EndInit();
             this.groupSaveSlots.ResumeLayout(false);
             this.groupSaveSlots.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbHealth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1594,6 +1858,22 @@
         private System.Windows.Forms.NumericUpDown tbPower;
         private System.Windows.Forms.NumericUpDown tbMagic;
         private System.Windows.Forms.NumericUpDown tbHealth;
+        private System.Windows.Forms.PictureBox picSaveMapSelectors;
+        private System.Windows.Forms.PictureBox picSaveMap;
+        private System.Windows.Forms.CheckBox checkSaveLumenWoods;
+        private System.Windows.Forms.CheckBox checkSaveBoscoCave;
+        private System.Windows.Forms.CheckBox checkSaveBoscoVillage;
+        private System.Windows.Forms.ImageList imgListSavePointSelectors;
+        private System.Windows.Forms.CheckBox checkSaveValionsCastle;
+        private System.Windows.Forms.CheckBox checkSaveDarkClouds;
+        private System.Windows.Forms.CheckBox checkSaveCelestiaVillage;
+        private System.Windows.Forms.CheckBox checkSaveFiraVolcano;
+        private System.Windows.Forms.CheckBox checkSaveFiraVillage;
+        private System.Windows.Forms.CheckBox checkSaveTheWall;
+        private System.Windows.Forms.CheckBox checkSavePaluluTown;
+        private System.Windows.Forms.CheckBox checkSaveTheAbyss;
+        private System.Windows.Forms.CheckBox checkSaveAtlantVillage;
+        private System.Windows.Forms.CheckBox checkSaveLumenCastle;
     }
 }
 

@@ -118,38 +118,47 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Map" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Map.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AirEssence" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AirEssence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AggelosArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AggelosArmor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LyreStrings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LyreStrings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Gem" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Gem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LyreBody" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LyreBody.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FullVial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FullVial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Lvl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lvl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SacredSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SacredSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Scepter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Scepter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SacredArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SacredArmor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BrokenCrown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BrokenCrown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LyreRepaired" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LyreRepaired.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FireRing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FireRing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Exp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Exp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LyreBody" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LyreBody.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FireEssence" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FireEssence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MoleText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MoleText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AggelosArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AggelosArmor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FleaText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FleaText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LyreAndStrings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LyreAndStrings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Exp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Exp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AggelosSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AggelosSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,103 +166,106 @@
   <data name="Herb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Herb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Inventory" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Inventory.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tiara" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiara.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BigPotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BigPotion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Elixir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Elixir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SmallPotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SmallPotion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bananas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bananas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BrokenCrown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BrokenCrown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Crystal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Crystal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EmptyVial" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EmptyVial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FullVial" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FullVial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Moon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Moon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Necklace" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Necklace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Scepter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Scepter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Shell" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Shell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Star" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sun" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Tiara" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tiara.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AirEssence" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AirEssence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AirRing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AirRing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EarthEssence" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EarthEssence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EarthRing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EarthRing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FireEssence" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FireEssence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FireFlyScroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FireFlyScroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SaveMapSelections" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveMapSelections.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FireFlyText" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FireFlyText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FireRing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FireRing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MoleScroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MoleScroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FleaScroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FleaScroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AirRing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AirRing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FleaText" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FleaText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EarthRing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EarthRing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Inventory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inventory.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Elixir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Elixir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LightEssence" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LightEssence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MoleScroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MoleScroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="WoodpeckerScroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WoodpeckerScroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MoleText" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MoleText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LyreRepaired" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LyreRepaired.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Necklace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Necklace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FireFlyScroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FireFlyScroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EarthEssence" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EarthEssence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LyreStrings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LyreStrings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WoodpeckerText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WoodpeckerText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SacredArmor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SacredArmor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EmptyVial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EmptyVial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Crystal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Crystal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bananas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bananas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WaterEssence" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WaterEssence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SmallPotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SmallPotion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Moon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Moon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Map.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SacredSword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SacredSword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FleaScroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FleaScroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="WaterRing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WaterRing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WoodpeckerScroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WoodpeckerScroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SaveMap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveMap.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WoodpeckerText" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WoodpeckerText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SaveMapSelectorOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveMapSelectorOff.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaveMapSelectorOn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveMapSelectorOn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

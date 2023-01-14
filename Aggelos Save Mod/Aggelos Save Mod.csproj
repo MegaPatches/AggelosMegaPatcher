@@ -261,6 +261,10 @@
     <None Include="Resources\WoodpeckerText.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\SaveMap.jpg" />
+    <None Include="Resources\SaveMapSelections.jpg" />
+    <None Include="Resources\SaveMapSelectorOff.jpg" />
+    <None Include="Resources\SaveMapSelectorOn.jpg" />
     <Content Include="ScenesList.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
