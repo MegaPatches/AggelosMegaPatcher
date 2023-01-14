@@ -703,6 +703,20 @@ namespace Aggelos_Save_Mod
                 checkSaveValionsCastle.Checked = saveFile.savep13 == 1 ? true : false;
 
 
+                //Scenes
+                //listViewScenes.Items.
+                foreach (ListViewItem item in listViewScenes.Items)
+                {
+                    if (item.Tag.ToString() == saveFile.scene.ToString())
+                    {
+                        item.Selected = true;
+                    }
+                    else 
+                    { 
+                        item.Selected = false; 
+                    }
+                }
+
                 //Split States
 
             }
@@ -2566,6 +2580,37 @@ namespace Aggelos_Save_Mod
 
             //Update the image
             checkSaveValionsCastle.ImageIndex = saveFile.savep13;
+        }
+
+        /************************************************************
+        * SCENE SELECTIONS
+        * 
+        * This function is called when the user selects a new scene
+        * from the list provided. The collection is defined in the 
+        * control and each item's "Tag" value holds the scene number
+        * to set for the save.
+        * Control is called twice on selection, once for "unselecting"
+        * the first item and again for "selecting" the second.
+        ************************************************************/
+        private void listViewScenes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Since this function can be called on deselect, only run it if we have selected an item.
+            if (listViewScenes.SelectedItems.Count > 0)
+            {
+                //Get the selected scene number
+                int sceneNumber = 0;
+                try
+                {
+                    sceneNumber = Int32.Parse(listViewScenes.SelectedItems[0].Tag.ToString());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Invalid scene number selected: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                //Set the scene to the save file
+                saveFile.scene = sceneNumber;
+            }
         }
     }
 

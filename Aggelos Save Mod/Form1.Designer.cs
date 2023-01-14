@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Lumen Woods", 13);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Bosco", 14);
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Castle / Basement", 15);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Bosco Cave", 16);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Earth Temple", 17);
             this.tbFileSelected = new System.Windows.Forms.TextBox();
             this.btnLoadFile = new System.Windows.Forms.Button();
             this.openDiag = new System.Windows.Forms.OpenFileDialog();
@@ -149,6 +154,9 @@
             this.checkSaveCelestiaVillage = new System.Windows.Forms.CheckBox();
             this.checkSaveDarkClouds = new System.Windows.Forms.CheckBox();
             this.checkSaveValionsCastle = new System.Windows.Forms.CheckBox();
+            this.tabScenes = new System.Windows.Forms.TabPage();
+            this.listViewScenes = new System.Windows.Forms.ListView();
+            this.imgListScenePreviews = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.tabInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).BeginInit();
@@ -201,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMapSelectors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMap)).BeginInit();
             this.groupSaveSlots.SuspendLayout();
+            this.tabScenes.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbFileSelected
@@ -246,6 +255,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabInventory);
             this.tabControl1.Controls.Add(this.tabSaves);
+            this.tabControl1.Controls.Add(this.tabScenes);
             this.tabControl1.Location = new System.Drawing.Point(16, 64);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1677,6 +1687,73 @@
             this.checkSaveValionsCastle.UseVisualStyleBackColor = true;
             this.checkSaveValionsCastle.CheckedChanged += new System.EventHandler(this.checkSaveValionsCastle_CheckedChanged);
             // 
+            // tabScenes
+            // 
+            this.tabScenes.Controls.Add(this.listViewScenes);
+            this.tabScenes.Location = new System.Drawing.Point(4, 22);
+            this.tabScenes.Name = "tabScenes";
+            this.tabScenes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabScenes.Size = new System.Drawing.Size(714, 437);
+            this.tabScenes.TabIndex = 2;
+            this.tabScenes.Text = "Scenes";
+            this.tabScenes.UseVisualStyleBackColor = true;
+            // 
+            // listViewScenes
+            // 
+            this.listViewScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewScenes.HideSelection = false;
+            listViewItem1.StateImageIndex = 0;
+            listViewItem1.Tag = "13";
+            listViewItem2.StateImageIndex = 0;
+            listViewItem2.Tag = "14";
+            listViewItem3.StateImageIndex = 0;
+            listViewItem3.Tag = "15";
+            listViewItem4.StateImageIndex = 0;
+            listViewItem4.Tag = "16";
+            listViewItem5.StateImageIndex = 0;
+            listViewItem5.Tag = "17";
+            this.listViewScenes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
+            this.listViewScenes.LargeImageList = this.imgListScenePreviews;
+            this.listViewScenes.Location = new System.Drawing.Point(6, 6);
+            this.listViewScenes.MultiSelect = false;
+            this.listViewScenes.Name = "listViewScenes";
+            this.listViewScenes.Size = new System.Drawing.Size(702, 425);
+            this.listViewScenes.SmallImageList = this.imgListScenePreviews;
+            this.listViewScenes.TabIndex = 0;
+            this.listViewScenes.TileSize = new System.Drawing.Size(78, 30);
+            this.listViewScenes.UseCompatibleStateImageBehavior = false;
+            this.listViewScenes.SelectedIndexChanged += new System.EventHandler(this.listViewScenes_SelectedIndexChanged);
+            // 
+            // imgListScenePreviews
+            // 
+            this.imgListScenePreviews.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListScenePreviews.ImageStream")));
+            this.imgListScenePreviews.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListScenePreviews.Images.SetKeyName(0, "ScenePreview0.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(1, "ScenePreview1.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(2, "ScenePreview2.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(3, "ScenePreview3.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(4, "ScenePreview4.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(5, "ScenePreview5.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(6, "ScenePreview6.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(7, "ScenePreview7.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(8, "ScenePreview8.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(9, "ScenePreview9.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(10, "ScenePreview10.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(11, "ScenePreview11.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(12, "ScenePreview12.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(13, "ScenePreview13.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(14, "ScenePreview14.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(15, "ScenePreview15.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(16, "ScenePreview16.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(17, "ScenePreview17.jpg");
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1751,6 +1828,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMap)).EndInit();
             this.groupSaveSlots.ResumeLayout(false);
             this.groupSaveSlots.PerformLayout();
+            this.tabScenes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1877,6 +1955,9 @@
         private System.Windows.Forms.CheckBox checkSaveTheAbyss;
         private System.Windows.Forms.CheckBox checkSaveAtlantVillage;
         private System.Windows.Forms.CheckBox checkSaveLumenCastle;
+        private System.Windows.Forms.TabPage tabScenes;
+        private System.Windows.Forms.ListView listViewScenes;
+        private System.Windows.Forms.ImageList imgListScenePreviews;
     }
 }
 
