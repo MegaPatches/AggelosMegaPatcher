@@ -56,6 +56,11 @@
             this.btnAddScene = new System.Windows.Forms.Button();
             this.btnDeleteScene = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.tbX = new System.Windows.Forms.NumericUpDown();
+            this.tbY = new System.Windows.Forms.NumericUpDown();
+            this.lblX = new System.Windows.Forms.Label();
+            this.lblY = new System.Windows.Forms.Label();
+            this.btnReloadScenes = new System.Windows.Forms.Button();
             this.tabInventory = new System.Windows.Forms.TabPage();
             this.tbMagic = new System.Windows.Forms.NumericUpDown();
             this.tbHealth = new System.Windows.Forms.NumericUpDown();
@@ -156,15 +161,12 @@
             this.checkSaveLumenWoods = new System.Windows.Forms.CheckBox();
             this.picSaveMapSelectors = new System.Windows.Forms.PictureBox();
             this.picSaveMap = new System.Windows.Forms.PictureBox();
-            this.tbX = new System.Windows.Forms.NumericUpDown();
-            this.tbY = new System.Windows.Forms.NumericUpDown();
-            this.lblX = new System.Windows.Forms.Label();
-            this.lblY = new System.Windows.Forms.Label();
-            this.btnReloadScenes = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabSaves.SuspendLayout();
             this.groupSaveSlots.SuspendLayout();
             this.tabScenes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbY)).BeginInit();
             this.tabInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbHealth)).BeginInit();
@@ -214,8 +216,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMapSelectors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbY)).BeginInit();
             this.SuspendLayout();
             // 
             // tbFileSelected
@@ -505,6 +505,7 @@
             this.btnAddScene.TabIndex = 48;
             this.btnAddScene.Text = "Add Scene";
             this.btnAddScene.UseVisualStyleBackColor = true;
+            this.btnAddScene.Click += new System.EventHandler(this.btnAddScene_Click);
             // 
             // btnDeleteScene
             // 
@@ -516,6 +517,80 @@
             this.btnDeleteScene.Text = "Delete Scene";
             this.btnDeleteScene.UseVisualStyleBackColor = true;
             this.btnDeleteScene.Click += new System.EventHandler(this.btnDeleteScene_Click);
+            // 
+            // tbX
+            // 
+            this.tbX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbX.Enabled = false;
+            this.tbX.Location = new System.Drawing.Point(569, 69);
+            this.tbX.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.tbX.Minimum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            -2147483648});
+            this.tbX.Name = "tbX";
+            this.tbX.Size = new System.Drawing.Size(75, 20);
+            this.tbX.TabIndex = 113;
+            this.tbX.ThousandsSeparator = true;
+            this.tbX.ValueChanged += new System.EventHandler(this.tbX_ValueChanged);
+            // 
+            // tbY
+            // 
+            this.tbY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbY.Enabled = false;
+            this.tbY.Location = new System.Drawing.Point(569, 125);
+            this.tbY.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.tbY.Minimum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            -2147483648});
+            this.tbY.Name = "tbY";
+            this.tbY.Size = new System.Drawing.Size(75, 20);
+            this.tbY.TabIndex = 114;
+            this.tbY.ValueChanged += new System.EventHandler(this.tbY_ValueChanged);
+            // 
+            // lblX
+            // 
+            this.lblX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblX.AutoSize = true;
+            this.lblX.Location = new System.Drawing.Point(594, 53);
+            this.lblX.Name = "lblX";
+            this.lblX.Size = new System.Drawing.Size(17, 13);
+            this.lblX.TabIndex = 47;
+            this.lblX.Text = "X:";
+            // 
+            // lblY
+            // 
+            this.lblY.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblY.AutoSize = true;
+            this.lblY.Location = new System.Drawing.Point(594, 109);
+            this.lblY.Name = "lblY";
+            this.lblY.Size = new System.Drawing.Size(17, 13);
+            this.lblY.TabIndex = 115;
+            this.lblY.Text = "Y:";
+            // 
+            // btnReloadScenes
+            // 
+            this.btnReloadScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReloadScenes.Location = new System.Drawing.Point(549, 375);
+            this.btnReloadScenes.Name = "btnReloadScenes";
+            this.btnReloadScenes.Size = new System.Drawing.Size(111, 45);
+            this.btnReloadScenes.TabIndex = 116;
+            this.btnReloadScenes.Text = "Reload Scenes";
+            this.btnReloadScenes.UseVisualStyleBackColor = true;
+            this.btnReloadScenes.Click += new System.EventHandler(this.btnReloadScenes_Click);
             // 
             // tabInventory
             // 
@@ -1784,80 +1859,6 @@
             this.picSaveMap.TabIndex = 0;
             this.picSaveMap.TabStop = false;
             // 
-            // tbX
-            // 
-            this.tbX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbX.Enabled = false;
-            this.tbX.Location = new System.Drawing.Point(569, 69);
-            this.tbX.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.tbX.Minimum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            -2147483648});
-            this.tbX.Name = "tbX";
-            this.tbX.Size = new System.Drawing.Size(75, 20);
-            this.tbX.TabIndex = 113;
-            this.tbX.ThousandsSeparator = true;
-            this.tbX.ValueChanged += new System.EventHandler(this.tbX_ValueChanged);
-            // 
-            // tbY
-            // 
-            this.tbY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbY.Enabled = false;
-            this.tbY.Location = new System.Drawing.Point(569, 125);
-            this.tbY.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.tbY.Minimum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            -2147483648});
-            this.tbY.Name = "tbY";
-            this.tbY.Size = new System.Drawing.Size(75, 20);
-            this.tbY.TabIndex = 114;
-            this.tbY.ValueChanged += new System.EventHandler(this.tbY_ValueChanged);
-            // 
-            // lblX
-            // 
-            this.lblX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblX.AutoSize = true;
-            this.lblX.Location = new System.Drawing.Point(594, 53);
-            this.lblX.Name = "lblX";
-            this.lblX.Size = new System.Drawing.Size(17, 13);
-            this.lblX.TabIndex = 47;
-            this.lblX.Text = "X:";
-            // 
-            // lblY
-            // 
-            this.lblY.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblY.AutoSize = true;
-            this.lblY.Location = new System.Drawing.Point(594, 109);
-            this.lblY.Name = "lblY";
-            this.lblY.Size = new System.Drawing.Size(17, 13);
-            this.lblY.TabIndex = 115;
-            this.lblY.Text = "Y:";
-            // 
-            // btnReloadScenes
-            // 
-            this.btnReloadScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReloadScenes.Location = new System.Drawing.Point(549, 375);
-            this.btnReloadScenes.Name = "btnReloadScenes";
-            this.btnReloadScenes.Size = new System.Drawing.Size(111, 45);
-            this.btnReloadScenes.TabIndex = 116;
-            this.btnReloadScenes.Text = "Reload Scenes";
-            this.btnReloadScenes.UseVisualStyleBackColor = true;
-            this.btnReloadScenes.Click += new System.EventHandler(this.btnReloadScenes_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1884,6 +1885,8 @@
             this.groupSaveSlots.PerformLayout();
             this.tabScenes.ResumeLayout(false);
             this.tabScenes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbY)).EndInit();
             this.tabInventory.ResumeLayout(false);
             this.tabInventory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).EndInit();
@@ -1934,8 +1937,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosSword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMapSelectors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbY)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

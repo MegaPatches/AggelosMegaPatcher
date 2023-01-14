@@ -2789,6 +2789,48 @@ namespace Aggelos_Save_Mod
         {
             LoadScenes();
         }
+
+        /************************************************************
+        * btnAddScene_Click
+        * 
+        * This function is called when the user clicks the add
+        * scene button on the form. This will show a popup to the user
+        * for entering in the information for a new scene selection in
+        * the scene list.
+        ************************************************************/
+        private void btnAddScene_Click(object sender, EventArgs e)
+        {
+            //Create a new instance of the AddSceneDialog
+            var addSceneDialog = new AddSceneDialog(Cursor.Position.X, Cursor.Position.Y);
+
+            //Show the dialog and capture its result
+            var result = addSceneDialog.ShowDialog();
+
+            //Check the result of the dialog and add the scene if it was OK
+            if (result == DialogResult.OK)
+            {
+                //Set up the item and sub items
+                ListViewItem item = new ListViewItem();
+                item.Text = addSceneDialog.newScene.Name; //Name to display
+                item.Tag = addSceneDialog.newScene.ID; //Scene number to use
+                item.ImageIndex = Int32.Parse(addSceneDialog.newScene.ID.ToString()); //Sets the preview picture to use for the area
+
+                //Set up the X sub item
+                ListViewItem.ListViewSubItem subItemX = new ListViewItem.ListViewSubItem();
+                subItemX.Tag = "X";
+                subItemX.Text = addSceneDialog.newScene.x.ToString();
+                item.SubItems.Add(subItemX);
+
+                //Set up the Y sub item
+                ListViewItem.ListViewSubItem subItemY = new ListViewItem.ListViewSubItem();
+                subItemY.Tag = "Y";
+                subItemY.Text = addSceneDialog.newScene.y.ToString();
+                item.SubItems.Add(subItemY);
+
+                //Add the item to the list view
+                listViewScenes.Items.Add(item);
+            }
+        }
     }
 
     /************************************************************
