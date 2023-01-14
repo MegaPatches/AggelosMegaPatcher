@@ -231,7 +231,7 @@
             // 
             // btnLoadDefault
             // 
-            this.btnLoadDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLoadDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLoadDefault.Location = new System.Drawing.Point(642, 542);
             this.btnLoadDefault.Name = "btnLoadDefault";
             this.btnLoadDefault.Size = new System.Drawing.Size(88, 23);
@@ -1406,6 +1406,7 @@
             // 
             // groupSaveSlots
             // 
+            this.groupSaveSlots.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.groupSaveSlots.Controls.Add(this.radioSaveSlot3);
             this.groupSaveSlots.Controls.Add(this.radioSaveSlot2);
             this.groupSaveSlots.Controls.Add(this.radioSaveSlot1);
@@ -1451,7 +1452,8 @@
             // 
             // lblInstallPath
             // 
-            this.lblInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInstallPath.AutoSize = true;
             this.lblInstallPath.Location = new System.Drawing.Point(13, 12);
             this.lblInstallPath.Name = "lblInstallPath";
@@ -1482,7 +1484,8 @@
             // 
             // lblFileSelected
             // 
-            this.lblFileSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblFileSelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFileSelected.AutoSize = true;
             this.lblFileSelected.Location = new System.Drawing.Point(12, 40);
             this.lblFileSelected.Name = "lblFileSelected";
