@@ -707,18 +707,27 @@ namespace Aggelos_Save_Mod
 
 
                 //Scenes
-                //listViewScenes.Items.
+                //Figure out which scene is selected in the list view
+                //Exit once one is found in case there are multiple
                 foreach (ListViewItem item in listViewScenes.Items)
                 {
                     if (item.Tag.ToString() == saveFile.scene.ToString())
                     {
                         item.Selected = true;
+                        break;
                     }
                     else 
                     { 
                         item.Selected = false; 
                     }
                 }
+
+                //Load X/Y coordinates
+                tbX.Enabled = true;
+                tbX.Text = saveFile.x.ToString();
+
+                tbY.Enabled = true;
+                tbY.Text = saveFile.y.ToString();
 
                 //Split States
 
@@ -2692,11 +2701,15 @@ namespace Aggelos_Save_Mod
             //Since this function can be called on deselect, only run it if we have selected an item.
             if (listViewScenes.SelectedItems.Count > 0)
             {
-                //Get the selected scene number
+                //Get the selected scene number and information
                 int sceneNumber = 0;
+                string x = "0";
+                string y = "0";
                 try
                 {
                     sceneNumber = Int32.Parse(listViewScenes.SelectedItems[0].Tag.ToString());
+                    x = listViewScenes.SelectedItems[0].SubItems[1].Text;
+                    y = listViewScenes.SelectedItems[0].SubItems[2].Text;
                 }
                 catch (Exception ex)
                 {
@@ -2705,7 +2718,39 @@ namespace Aggelos_Save_Mod
 
                 //Set the scene to the save file
                 saveFile.scene = sceneNumber;
+
+                //Update the x/y values displayed to the user (this should update the save on their change event)
+                tbX.Text = x;
+                tbY.Text = y;
             }
+        }
+
+        private void tbX_ValueChanged(object sender, EventArgs e)
+        {
+            if (tbX.Value > tbX.Maximum)
+            {
+                tbX.Value = tbX.Maximum;
+            }
+            else if (tbX.Value < tbX.Minimum)
+            {
+                tbX.Value = tbX.Minimum;
+            }
+
+            saveFile.x = ((int)tbX.Value);
+        }
+
+        private void tbY_ValueChanged(object sender, EventArgs e)
+        {
+            if (tbY.Value > tbY.Maximum)
+            {
+                tbY.Value = tbY.Maximum;
+            }
+            else if (tbY.Value < tbY.Minimum)
+            {
+                tbY.Value = tbY.Minimum;
+            }
+
+            saveFile.y = ((int)tbY.Value);
         }
     }
 
