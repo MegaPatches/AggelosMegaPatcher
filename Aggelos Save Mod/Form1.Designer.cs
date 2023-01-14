@@ -160,6 +160,7 @@
             this.tbY = new System.Windows.Forms.NumericUpDown();
             this.lblX = new System.Windows.Forms.Label();
             this.lblY = new System.Windows.Forms.Label();
+            this.btnReloadScenes = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabSaves.SuspendLayout();
             this.groupSaveSlots.SuspendLayout();
@@ -427,6 +428,7 @@
             // 
             // tabScenes
             // 
+            this.tabScenes.Controls.Add(this.btnReloadScenes);
             this.tabScenes.Controls.Add(this.lblY);
             this.tabScenes.Controls.Add(this.lblX);
             this.tabScenes.Controls.Add(this.tbY);
@@ -486,7 +488,7 @@
             // btnSaveAllScenes
             // 
             this.btnSaveAllScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveAllScenes.Location = new System.Drawing.Point(549, 335);
+            this.btnSaveAllScenes.Location = new System.Drawing.Point(549, 313);
             this.btnSaveAllScenes.Name = "btnSaveAllScenes";
             this.btnSaveAllScenes.Size = new System.Drawing.Size(111, 45);
             this.btnSaveAllScenes.TabIndex = 47;
@@ -497,7 +499,7 @@
             // btnAddScene
             // 
             this.btnAddScene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddScene.Location = new System.Drawing.Point(549, 211);
+            this.btnAddScene.Location = new System.Drawing.Point(549, 188);
             this.btnAddScene.Name = "btnAddScene";
             this.btnAddScene.Size = new System.Drawing.Size(111, 45);
             this.btnAddScene.TabIndex = 48;
@@ -507,12 +509,13 @@
             // btnDeleteScene
             // 
             this.btnDeleteScene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteScene.Location = new System.Drawing.Point(549, 273);
+            this.btnDeleteScene.Location = new System.Drawing.Point(549, 250);
             this.btnDeleteScene.Name = "btnDeleteScene";
             this.btnDeleteScene.Size = new System.Drawing.Size(111, 45);
             this.btnDeleteScene.TabIndex = 49;
             this.btnDeleteScene.Text = "Delete Scene";
             this.btnDeleteScene.UseVisualStyleBackColor = true;
+            this.btnDeleteScene.Click += new System.EventHandler(this.btnDeleteScene_Click);
             // 
             // tabInventory
             // 
@@ -1844,6 +1847,17 @@
             this.lblY.TabIndex = 115;
             this.lblY.Text = "Y:";
             // 
+            // btnReloadScenes
+            // 
+            this.btnReloadScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReloadScenes.Location = new System.Drawing.Point(549, 375);
+            this.btnReloadScenes.Name = "btnReloadScenes";
+            this.btnReloadScenes.Size = new System.Drawing.Size(111, 45);
+            this.btnReloadScenes.TabIndex = 116;
+            this.btnReloadScenes.Text = "Reload Scenes";
+            this.btnReloadScenes.UseVisualStyleBackColor = true;
+            this.btnReloadScenes.Click += new System.EventHandler(this.btnReloadScenes_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2059,6 +2073,7 @@
         private System.Windows.Forms.Label lblX;
         private System.Windows.Forms.NumericUpDown tbY;
         private System.Windows.Forms.NumericUpDown tbX;
+        private System.Windows.Forms.Button btnReloadScenes;
     }
 }
 

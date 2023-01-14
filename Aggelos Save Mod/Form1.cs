@@ -749,98 +749,6 @@ namespace Aggelos_Save_Mod
         }
 
         /************************************************************
-         * LoadScenes
-         * 
-         * This function is called to load a list of scenes from a file
-         * expected to be in the directory with the executeable. This
-         * allows us to have the ability to save custom scene selections
-         * that will preselect desired x/y coordinates.
-         ************************************************************/
-        private void LoadScenes()
-        {
-            //Attempt to open the Scenes.txt file we expect to use for loading the listViewScenes list with selectable presets
-            try
-            {
-                //Store each line of the file in a string array
-                string[] scenesData = File.ReadAllLines(".\\Scenes.txt");
-
-                //For each row read in, create a new item in the list view
-                foreach (string line in scenesData)
-                {
-                    //Split the pieces of scene data on commas
-                    string[] scene = line.Split(',');
-
-                    //Set up the item and sub items
-                    ListViewItem item = new ListViewItem();
-                    item.Text = scene[0]; //Name to display
-                    item.Tag = scene[1]; //Scene number to use
-                    item.ImageIndex = Int32.Parse(scene[1]); //Sets the preview picture to use for the area
-
-                    //Set up the X sub item
-                    ListViewItem.ListViewSubItem subItemX = new ListViewItem.ListViewSubItem();
-                    subItemX.Tag = "X";
-                    subItemX.Text = scene[2];
-                    item.SubItems.Add(subItemX);
-
-                    //Set up the Y sub item
-                    ListViewItem.ListViewSubItem subItemY = new ListViewItem.ListViewSubItem();
-                    subItemY.Tag = "Y";
-                    subItemY.Text = scene[3];
-                    item.SubItems.Add(subItemY);
-
-                    //Add the item to the list view
-                    listViewScenes.Items.Add(item);
-                }
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Could not load scenes file: " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        /************************************************************
-         * SaveScenes
-         * 
-         * This function is called to save a list of scenes to a file
-         * expected to be in the directory with the executeable. This
-         * allows us to have the ability to save custom scene selections
-         * that will preselect desired x/y coordinates.
-         ************************************************************/
-        private async void SaveScenes()
-        {
-            //Open a Scenes.txt file in the same directory as our program
-            StreamWriter file = new StreamWriter(".\\Scenes.txt");
-
-            //For each item in our scenes list, save a row with relevant information
-            try
-            {
-                foreach (ListViewItem item in listViewScenes.Items)
-                {
-                    //Write a line to the file
-                    await file.WriteLineAsync(item.Text + "," + item.Tag + "," + item.SubItems[1].Text + "," + item.SubItems[2].Text);
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Could not save scenes file: " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            file.Close();
-        }
-
-        /************************************************************
-        * btnSaveAllScenes_Click
-        * 
-        * This function is called when the user clicks the save all
-        * scenes button on the form.
-        ************************************************************/
-        private void btnSaveAllScenes_Click(object sender, EventArgs e)
-        {
-            SaveScenes();
-        }
-
-        /************************************************************
         * btnInstallPath_Click
         * 
         * This function is called when the user clicks the installation path
@@ -2751,6 +2659,135 @@ namespace Aggelos_Save_Mod
             }
 
             saveFile.y = ((int)tbY.Value);
+        }
+
+        /************************************************************
+         * LoadScenes
+         * 
+         * This function is called to load a list of scenes from a file
+         * expected to be in the directory with the executeable. This
+         * allows us to have the ability to save custom scene selections
+         * that will preselect desired x/y coordinates.
+         ************************************************************/
+        private void LoadScenes()
+        {
+            //Ensure the list of scenes is empty before attempting to load
+            listViewScenes.Clear();
+
+            //Attempt to open the Scenes.txt file we expect to use for loading the listViewScenes list with selectable presets
+            try
+            {
+                //Store each line of the file in a string array
+                string[] scenesData = File.ReadAllLines(".\\Scenes.txt");
+
+                //For each row read in, create a new item in the list view
+                foreach (string line in scenesData)
+                {
+                    //Split the pieces of scene data on commas
+                    string[] scene = line.Split(',');
+
+                    //Set up the item and sub items
+                    ListViewItem item = new ListViewItem();
+                    item.Text = scene[0]; //Name to display
+                    item.Tag = scene[1]; //Scene number to use
+                    item.ImageIndex = Int32.Parse(scene[1]); //Sets the preview picture to use for the area
+
+                    //Set up the X sub item
+                    ListViewItem.ListViewSubItem subItemX = new ListViewItem.ListViewSubItem();
+                    subItemX.Tag = "X";
+                    subItemX.Text = scene[2];
+                    item.SubItems.Add(subItemX);
+
+                    //Set up the Y sub item
+                    ListViewItem.ListViewSubItem subItemY = new ListViewItem.ListViewSubItem();
+                    subItemY.Tag = "Y";
+                    subItemY.Text = scene[3];
+                    item.SubItems.Add(subItemY);
+
+                    //Add the item to the list view
+                    listViewScenes.Items.Add(item);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Could not load scenes file: " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /************************************************************
+         * SaveScenes
+         * 
+         * This function is called to save a list of scenes to a file
+         * expected to be in the directory with the executeable. This
+         * allows us to have the ability to save custom scene selections
+         * that will preselect desired x/y coordinates.
+         ************************************************************/
+        private async void SaveScenes()
+        {
+            //Open a Scenes.txt file in the same directory as our program
+            StreamWriter file = new StreamWriter(".\\Scenes.txt");
+
+            //For each item in our scenes list, save a row with relevant information
+            try
+            {
+                foreach (ListViewItem item in listViewScenes.Items)
+                {
+                    //Write a line to the file
+                    await file.WriteLineAsync(item.Text + "," + item.Tag + "," + item.SubItems[1].Text + "," + item.SubItems[2].Text);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Could not save scenes file: " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            file.Close();
+        }
+
+        /************************************************************
+        * btnSaveAllScenes_Click
+        * 
+        * This function is called when the user clicks the save all
+        * scenes button on the form.
+        ************************************************************/
+        private void btnSaveAllScenes_Click(object sender, EventArgs e)
+        {
+            SaveScenes();
+        }
+
+        /************************************************************
+        * btnDeleteScene_Click
+        * 
+        * This function is called when the user clicks the delete
+        * scene button on the form. This will remove the currently
+        * selected scene from the loaded list (not the file).
+        ************************************************************/
+        private void btnDeleteScene_Click(object sender, EventArgs e)
+        {
+            //Ask the user to confirm deletion of the current scene selection from the list
+            DialogResult result = MessageBox.Show("Are you sure you want to delete the scene \"" + listViewScenes.SelectedItems[0].Text + "\"?",
+                                                "Confirm Deletion",
+                                                MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+
+            //Only delete if the user has clicked OK
+            if(result == DialogResult.OK)
+            {
+                //Remove the currently selected item from the list
+                listViewScenes.Items.Remove(listViewScenes.SelectedItems[0]);
+            }
+        }
+
+        /************************************************************
+        * btnReloadScenes_Click
+        * 
+        * This function is called when the user clicks the reload
+        * scenes button on the form. This will reload the scenes list
+        * from the default file.
+        ************************************************************/
+        private void btnReloadScenes_Click(object sender, EventArgs e)
+        {
+            LoadScenes();
         }
     }
 
