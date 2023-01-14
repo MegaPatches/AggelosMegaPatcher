@@ -29,26 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Lumen Woods",
-            "2768",
-            "191"}, 13);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Bosco",
-            "3792",
-            "447"}, 14);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Castle / Basement",
-            "3680",
-            "399"}, 15);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Bosco Cave",
-            "1264",
-            "895"}, 16);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Earth Temple",
-            "50",
-            "800"}, 17);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tbFileSelected = new System.Windows.Forms.TextBox();
             this.btnLoadFile = new System.Windows.Forms.Button();
@@ -459,22 +439,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewScenes.HideSelection = false;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem1.Tag = "13";
-            listViewItem2.StateImageIndex = 0;
-            listViewItem2.Tag = "14";
-            listViewItem3.StateImageIndex = 0;
-            listViewItem3.Tag = "15";
-            listViewItem4.StateImageIndex = 0;
-            listViewItem4.Tag = "16";
-            listViewItem5.StateImageIndex = 0;
-            listViewItem5.Tag = "17";
-            this.listViewScenes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5});
             this.listViewScenes.LargeImageList = this.imgListScenePreviews;
             this.listViewScenes.Location = new System.Drawing.Point(6, 6);
             this.listViewScenes.MultiSelect = false;

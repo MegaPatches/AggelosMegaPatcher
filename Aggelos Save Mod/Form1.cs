@@ -43,6 +43,9 @@ namespace Aggelos_Save_Mod
 
             //Show detected intall path
             tbInstallPath.Text = saveFile.InstallationPath;
+
+            //Load scenes list from file
+            LoadScenes();
         }
 
         /************************************************************
@@ -746,7 +749,45 @@ namespace Aggelos_Save_Mod
          ************************************************************/
         private void LoadScenes()
         {
+            //Attempt to open the Scenes.txt file we expect to use for loading the listViewScenes list with selectable presets
+            try
+            {
+                //Store each line of the file in a string array
+                string[] scenesData = File.ReadAllLines(".\\Scenes.txt");
 
+                //For each row read in, create a new item in the list view
+                foreach (string line in scenesData)
+                {
+                    //Split the pieces of scene data on commas
+                    string[] scene = line.Split(',');
+
+                    //Set up the item and sub items
+                    ListViewItem item = new ListViewItem();
+                    item.Text = scene[0]; //Name to display
+                    item.Tag = scene[1]; //Scene number to use
+                    item.ImageIndex = Int32.Parse(scene[1]); //Sets the preview picture to use for the area
+
+                    //Set up the X sub item
+                    ListViewItem.ListViewSubItem subItemX = new ListViewItem.ListViewSubItem();
+                    subItemX.Tag = "X";
+                    subItemX.Text = scene[2];
+                    item.SubItems.Add(subItemX);
+
+                    //Set up the Y sub item
+                    ListViewItem.ListViewSubItem subItemY = new ListViewItem.ListViewSubItem();
+                    subItemY.Tag = "Y";
+                    subItemY.Text = scene[3];
+                    item.SubItems.Add(subItemY);
+
+                    //Add the item to the list view
+                    listViewScenes.Items.Add(item);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Could not load scenes file: " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /************************************************************
