@@ -24,6 +24,7 @@ using System.Windows.Forms.VisualStyles;
  * - Add way to delete a file from the tool in case the above happens.
  * - Look for cutscene triggers to allow a "skip cutscenes" option if it doesn't break progression of game.
  * - Change interface for potions to be a cycle with an arrow? Maybe for anything that has a state do this for clarity....
+ * - Add a help files section that has guides and/or documentation of things that are currently commented in code.
  ***************************/
 
 namespace Aggelos_Save_Mod

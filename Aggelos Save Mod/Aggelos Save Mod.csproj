@@ -260,5 +260,8 @@
   <ItemGroup>
     <None Include="Resources\WoodpeckerText.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScenesList.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
