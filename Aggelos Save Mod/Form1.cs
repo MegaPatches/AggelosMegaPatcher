@@ -2448,7 +2448,7 @@ namespace Aggelos_Save_Mod
         public Int32 seconde { get; set; }          //Playtime seconds
         public int death { get; set; }              //Number of deaths
         public Int32 exp { get; set; }              //Amount of experience at current level
-        public int clé { get; set; }                //
+        public int clé { get; set; }                //clé translates to key.
         public int pow { get; set; }                //Base attack stat
         public int def { get; set; }                //Base defense stat
 
@@ -2578,7 +2578,7 @@ namespace Aggelos_Save_Mod
         public int coffre_defense_up { get; set; }  //
         public int coffre_50xp2 { get; set; }       //
         public int coffre_magie_up { get; set; }    //
-        public int clé1 { get; set; }               //
+        public int clé1 { get; set; }               //clé translates to "key"
         public int power_mont { get; set; }         //
         public int contener_mont { get; set; }      //
         public int herb_mont { get; set; }          //
@@ -3284,16 +3284,16 @@ namespace Aggelos_Save_Mod
             saveData[80] = "groscoffreelement=" + groscoffreelement;
             saveData[81] = "porte1=" + porte1;
             saveData[82] = "porte2=" + porte2;
-            saveData[83] = "coffre_herbe1=" + coffre_herbe1;
-            saveData[84] = "coffre_contener1=" + coffre_contener1;
-            saveData[85] = "coffre_power_up=" + coffre_power_up;
-            saveData[86] = "coffre_defense_up=" + coffre_defense_up;
-            saveData[87] = "coffre_50xp2=" + coffre_50xp2;
-            saveData[88] = "coffre_magie_up=" + coffre_magie_up;
+            saveData[83] = "coffre herbe1=" + coffre_herbe1;
+            saveData[84] = "coffre contener1=" + coffre_contener1;
+            saveData[85] = "coffre power up=" + coffre_power_up;
+            saveData[86] = "coffre defense up=" + coffre_defense_up;
+            saveData[87] = "coffre 50xp2=" + coffre_50xp2;
+            saveData[88] = "coffre magie up=" + coffre_magie_up;
             saveData[89] = "clé1=" + clé1;
-            saveData[90] = "power_mont=" + power_mont;
-            saveData[91] = "contener_mont=" + contener_mont;
-            saveData[92] = "herb_mont=" + herb_mont;
+            saveData[90] = "power mont=" + power_mont;
+            saveData[91] = "contener mont=" + contener_mont;
+            saveData[92] = "herb mont=" + herb_mont;
             saveData[93] = "A1=" + chest_A1;
             saveData[94] = "B1=" + chest_B1;
             saveData[95] = "C1=" + chest_C1;
