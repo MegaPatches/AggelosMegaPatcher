@@ -168,12 +168,6 @@
     <None Include="Resources\LyreBody.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Aggelos_Elixir.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Aggelos_SmallPotion.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Elixir.png" />
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +208,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Tiara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirEssence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AirRing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EarthEssence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EarthRing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FireEssence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FireFlyScroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FireFlyText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FireRing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FleaScroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FleaText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LightEssence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoleScroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MoleText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WaterEssence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WaterRing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WoodpeckerScroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WoodpeckerText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScenesList.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

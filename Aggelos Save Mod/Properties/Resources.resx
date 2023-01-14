@@ -205,4 +205,55 @@
   <data name="Tiara" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tiara.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AirEssence" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AirEssence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AirRing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AirRing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EarthEssence" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EarthEssence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EarthRing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EarthRing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FireEssence" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FireEssence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FireFlyScroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FireFlyScroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FireFlyText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FireFlyText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FireRing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FireRing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FleaScroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FleaScroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FleaText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FleaText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LightEssence" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LightEssence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MoleScroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MoleScroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MoleText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MoleText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WaterEssence" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WaterEssence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WaterRing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WaterRing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WoodpeckerScroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WoodpeckerScroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WoodpeckerText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WoodpeckerText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

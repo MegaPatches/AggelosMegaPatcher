@@ -24,6 +24,7 @@ using System.Windows.Forms.VisualStyles;
  * - Add way to delete a file from the tool in case the above happens.
  * - Look for cutscene triggers to allow a "skip cutscenes" option if it doesn't break progression of game.
  * - Change interface for potions to be a cycle with an arrow? Maybe for anything that has a state do this for clarity....
+ * - Add a help files section that has guides and/or documentation of things that are currently commented in code.
  ***************************/
 
 namespace Aggelos_Save_Mod
@@ -85,6 +86,18 @@ namespace Aggelos_Save_Mod
 
                 tbExp.Enabled = true;
                 tbExp.Text = saveFile.exp.ToString();
+
+                tbPower.Enabled = true;
+                tbPower.Text = saveFile.pow.ToString();
+
+                tbDefense.Enabled = true;
+                tbDefense.Text = saveFile.def.ToString();
+
+                tbHealth.Enabled = true;
+                tbHealth.Text = saveFile.coeur.ToString();
+
+                tbMagic.Enabled = true;
+                tbMagic.Text = saveFile.magie.ToString();
 
                 //Inventory
                 //Items
@@ -407,52 +420,162 @@ namespace Aggelos_Save_Mod
                         break;
                 }
 
-                //Essences - Done first to ensure check box events fire properly for rings
-                checkEarthEssence.Enabled = true;
-                checkEarthEssence.Checked = saveFile.ring1 == 2 ? true : false;
+                //Rings and Essences - 1 or 2 for each ring. Can't seem to have essences without rings.
+                //Control the visibility of the correct image
+                btnSelectEarthLeft.Visible = true;
+                btnSelectEarthRight.Visible = true;
+                switch (saveFile.ring1)
+                {
+                    case 0:
+                        picEarthRing.Visible = false;
+                        picEarthEssence.Visible = false;
+                        btnSelectEarthLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picEarthRing.Visible = true;
+                        picEarthEssence.Visible = false;
+                        break;
+                    case 2:
+                        picEarthRing.Visible = false;
+                        picEarthEssence.Visible = true;
+                        btnSelectEarthRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
-                checkWaterEssence.Enabled = true;
-                checkWaterEssence.Checked = saveFile.ring2 == 2 ? true : false;
+                btnSelectWaterLeft.Visible = true;
+                btnSelectWaterRight.Visible = true;
+                switch (saveFile.ring2)
+                {
+                    case 0:
+                        picWaterRing.Visible = false;
+                        picWaterEssence.Visible = false;
+                        btnSelectWaterLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picWaterRing.Visible = true;
+                        picWaterEssence.Visible = false;
+                        break;
+                    case 2:
+                        picWaterRing.Visible = false;
+                        picWaterEssence.Visible = true;
+                        btnSelectWaterRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
-                checkFireEssence.Enabled = true;
-                checkFireEssence.Checked = saveFile.ring3 == 2 ? true : false;
+                btnSelectFireLeft.Visible = true;
+                btnSelectFireRight.Visible = true;
+                switch (saveFile.ring3)
+                {
+                    case 0:
+                        picFireRing.Visible = false;
+                        picFireEssence.Visible = false;
+                        btnSelectFireLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picFireRing.Visible = true;
+                        picFireEssence.Visible = false;
+                        break;
+                    case 2:
+                        picFireRing.Visible = false;
+                        picFireEssence.Visible = true;
+                        btnSelectFireRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
-                checkAirEssence.Enabled = true;
-                checkAirEssence.Checked = saveFile.ring4 == 2 ? true : false;
-
-                //Rings - "ring#" is 2.
-                checkEarthRing.Enabled = true;
-                checkEarthRing.Checked = saveFile.ring1 >= 1 ? true : false;
-
-                checkWaterRing.Enabled = true;
-                checkWaterRing.Checked = saveFile.ring2 >= 1 ? true : false;
-
-                checkFireRing.Enabled = true;
-                checkFireRing.Checked = saveFile.ring3 >= 1 ? true : false;
-
-                checkAirRing.Enabled = true;
-                checkAirRing.Checked = saveFile.ring4 >= 1 ? true : false;
-
-                //Light Skills - Firefly scroll and light essence are tied together
-                checkFireflyScroll.Enabled = true;
-                checkFireflyScroll.Checked = saveFile.lightskill == 2 ? true : false;
-
-                checkLightEssence.Enabled = true;
-                checkLightEssence.Checked = saveFile.lightskill >= 1 ? true : false;
+                btnSelectAirLeft.Visible = true;
+                btnSelectAirRight.Visible = true;
+                switch (saveFile.ring4)
+                {
+                    case 0:
+                        picAirRing.Visible = false;
+                        picAirEssence.Visible = false;
+                        btnSelectAirLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picAirRing.Visible = true;
+                        picAirEssence.Visible = false;
+                        break;
+                    case 2:
+                        picAirRing.Visible = false;
+                        picAirEssence.Visible = true;
+                        btnSelectAirRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
                 //Scrolls - 1, 2, or 3 for each main skill. Can't seem to have laters without previous.
-                //Be sure to clear the scrolls first in order to make sure we are setting them correctly on change event
-                checkMoleScroll.Enabled = true;
-                checkFleaScroll.Enabled = true;
-                checkWoodpeckerScroll.Enabled = true;
+                //Control the visibility of the correct image
+                btnSelectScrollLeft.Visible = true;
+                btnSelectScrollRight.Visible = true;
+                switch (saveFile.scroll)
+                {
+                    case 0:
+                        picMoleScroll.Visible = false;
+                        picMoleText.Visible = false;
+                        picFleaScroll.Visible = false;
+                        picFleaText.Visible = false;
+                        picWoodpeckerScroll.Visible = false;
+                        picWoodpeckerText.Visible = false;
+                        btnSelectScrollLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picMoleScroll.Visible = true;
+                        picMoleText.Visible = true;
+                        picFleaScroll.Visible = false;
+                        picFleaText.Visible = false;
+                        picWoodpeckerScroll.Visible = false;
+                        picWoodpeckerText.Visible = false;
+                        break;
+                    case 2:
+                        picMoleScroll.Visible = false;
+                        picMoleText.Visible = false;
+                        picFleaScroll.Visible = true;
+                        picFleaText.Visible = true;
+                        picWoodpeckerScroll.Visible = false;
+                        picWoodpeckerText.Visible = false;
+                        break;
+                    case 3:
+                        picMoleScroll.Visible = false;
+                        picMoleText.Visible = false;
+                        picFleaScroll.Visible = false;
+                        picFleaText.Visible = false;
+                        picWoodpeckerScroll.Visible = true;
+                        picWoodpeckerText.Visible = true;
+                        btnSelectScrollRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
-                checkWoodpeckerScroll.Checked = false;
-                checkFleaScroll.Checked = false;
-                checkMoleScroll.Checked = false;
-
-                checkWoodpeckerScroll.Checked = saveFile.scroll >= 3 ? true : false;
-                checkFleaScroll.Checked = saveFile.scroll >= 2 ? true : false;
-                checkMoleScroll.Checked = saveFile.scroll >= 1 ? true : false;
+                //Light Skills - Firefly scroll and light essence are tied together
+                btnSelectLightSkillLeft.Visible = true;
+                btnSelectLightSkillRight.Visible = true;
+                switch (saveFile.lightskill)
+                {
+                    case 0:
+                        picLightEssence.Visible = false;
+                        picFireflyScroll.Visible = false;
+                        btnSelectLightSkillLeft.Visible = false; //Re-disable if at min
+                        break;
+                    case 1:
+                        picLightEssence.Visible = true;
+                        picFireflyScroll.Visible = false;
+                        break;
+                    case 2:
+                        picLightEssence.Visible = false;
+                        picFireflyScroll.Visible = true;
+                        btnSelectLightSkillRight.Visible = false; //Re-disable if at max
+                        break;
+                    default:
+                        break;
+                }
 
                 //Weapons - "epee#" is 1. epee 1 is always available and epee7 is 1 or 2 based on blessed status
                 //checkIronSword.Enabled = false;
@@ -793,6 +916,62 @@ namespace Aggelos_Save_Mod
         private void checkHerb_CheckedChanged(object sender, EventArgs e)
         {
             saveFile.herbe = checkHerb.Checked == true ? 1 : 0;
+        }
+
+        private void tbPower_ValueChanged(object sender, EventArgs e)
+        {
+            if (tbPower.Value > tbPower.Maximum)
+            {
+                tbPower.Value = tbPower.Maximum;
+            }
+            else if (tbPower.Value < tbPower.Minimum)
+            {
+                tbPower.Value = tbPower.Minimum;
+            }
+
+            saveFile.pow = ((int)tbPower.Value);
+        }
+
+        private void tbDefense_ValueChanged(object sender, EventArgs e)
+        {
+            if (tbDefense.Value > tbDefense.Maximum)
+            {
+                tbDefense.Value = tbDefense.Maximum;
+            }
+            else if (tbDefense.Value < tbDefense.Minimum)
+            {
+                tbDefense.Value = tbDefense.Minimum;
+            }
+
+            saveFile.def = ((int)tbDefense.Value);
+        }
+        
+        private void tbHealth_ValueChanged(object sender, EventArgs e)
+        {
+            if (tbHealth.Value > tbHealth.Maximum)
+            {
+                tbHealth.Value = tbHealth.Maximum;
+            }
+            else if (tbHealth.Value < tbHealth.Minimum)
+            {
+                tbHealth.Value = tbHealth.Minimum;
+            }
+
+            saveFile.coeur = ((int)tbHealth.Value);
+        }
+
+        private void tbMagic_ValueChanged(object sender, EventArgs e)
+        {
+            if (tbMagic.Value > tbMagic.Maximum)
+            {
+                tbMagic.Value = tbMagic.Maximum;
+            }
+            else if (tbMagic.Value < tbMagic.Minimum)
+            {
+                tbMagic.Value = tbMagic.Minimum;
+            }
+
+            saveFile.magie = ((int)tbMagic.Value);
         }
 
         /************************************************************
@@ -1513,229 +1692,497 @@ namespace Aggelos_Save_Mod
         }
 
         /************************************************************
-        * RING CHANGES
-        * 
-        * The following functions are called for ring changes.
-        ************************************************************/
-        private void checkEarthRing_CheckedChanged(object sender, EventArgs e)
-        {
-            //Only change to 1 if checked and we didn't get trigger from the essence checkbox
-            if (checkEarthRing.Checked && !checkEarthEssence.Checked)
-            {
-                saveFile.ring1 = 1;
-            }
-            //If we are not checked be sure we dont have essence checked and set to 0
-            else if (!checkEarthRing.Checked)
-            {
-                checkEarthEssence.Checked = false;
-                saveFile.ring1 = 0;
-            }
-            //Otherwise do nothing because this event was triggered from another function that will handle the variable.
-        }
-
-        private void checkWaterRing_CheckedChanged(object sender, EventArgs e)
-        {
-            //Only change to 1 if checked and we didn't get trigger from the essence checkbox
-            if (checkWaterRing.Checked && !checkWaterEssence.Checked)
-            {
-                saveFile.ring2 = 1;
-            }
-            //If we are not checked be sure we dont have essence checked and set to 0
-            else if (!checkWaterRing.Checked)
-            {
-                checkWaterEssence.Checked = false;
-                saveFile.ring2 = 0;
-            }
-            //Otherwise do nothing because this event was triggered from another function that will handle the variable.
-        }
-
-        private void checkFireRing_CheckedChanged(object sender, EventArgs e)
-        {
-            //Only change to 1 if checked and we didn't get trigger from the essence checkbox
-            if (checkFireRing.Checked && !checkFireEssence.Checked)
-            {
-                saveFile.ring3 = 1;
-            }
-            //If we are not checked be sure we dont have essence checked and set to 0
-            else if (!checkFireRing.Checked)
-            {
-                checkFireEssence.Checked = false;
-                saveFile.ring3 = 0;
-            }
-            //Otherwise do nothing because this event was triggered from another function that will handle the variable.
-        }
-
-        private void checkAirRing_CheckedChanged(object sender, EventArgs e)
-        {
-            //Only change to 1 if checked and we didn't get trigger from the essence checkbox
-            if (checkAirRing.Checked && !checkAirEssence.Checked)
-            {
-                saveFile.ring4 = 1;
-            }
-            //If we are not checked be sure we dont have essence checked and set to 0
-            else if (!checkAirRing.Checked)
-            {
-                checkAirEssence.Checked = false;
-                saveFile.ring4 = 0;
-            }
-            //Otherwise do nothing because this event was triggered from another function that will handle the variable.
-        }
-
-        /************************************************************
         * SCROLL CHANGES
         * 
         * The following functions are called for scroll changes.
         ************************************************************/
-        private void checkMoleScroll_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectScrollLeft_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("MOLE");
-            //Since you can't have later scrolls without earlier scrolls, check/uncheck all that apply if unchecked here
-            if (checkMoleScroll.Checked)
+            //Decrease the value for ring slot as long as we aren't at min
+            if (saveFile.scroll > 0)
             {
-                saveFile.scroll = 1;
-            }
-            else
-            {
-                saveFile.scroll = 0;
-                checkFleaScroll.Checked = false;
-                checkWoodpeckerScroll.Checked = false;
+                saveFile.scroll -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectScrollRight.Visible = true;
             }
 
+            //If we ever become the min, disable the control
+            if (saveFile.scroll == 0)
+            {
+                btnSelectScrollLeft.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.scroll)
+            {
+                case 0:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 1:
+                    picMoleScroll.Visible = true;
+                    picMoleText.Visible = true;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 2:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = true;
+                    picFleaText.Visible = true;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 3:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = true;
+                    picWoodpeckerText.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void checkFleaScroll_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectScrollRight_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("FLEA");
-            //Since you can't have later scrolls without earlier scrolls, check/uncheck all that apply if unchecked here
-            if (checkFleaScroll.Checked)
+            //Increase the value for ring slot as long as we aren't at max
+            if (saveFile.scroll < 3)
             {
-                saveFile.scroll = 2;
-                checkMoleScroll.Checked = true;
+                saveFile.scroll += 1;
+                //Make sure to re-enable the left select now that we've increased
+                btnSelectScrollLeft.Visible = true;
             }
-            else
-            {
-                saveFile.scroll = 1;
-                checkWoodpeckerScroll.Checked = false;
-            }
-        }
 
-        private void checkWoodpeckerScroll_CheckedChanged(object sender, EventArgs e)
-        {
-            Console.WriteLine("WOODPECKER");
-            //Since you can't have later scrolls without earlier scrolls, check/uncheck all that apply if unchecked here
-            if (checkWoodpeckerScroll.Checked)
+            //If we ever become the max, disable the control
+            if (saveFile.scroll == 3)
             {
-                saveFile.scroll = 3;
-                checkMoleScroll.Checked = true;
-                checkFleaScroll.Checked = true;
+                btnSelectScrollRight.Visible = false;
             }
-            else
-            {
-                saveFile.scroll = 2;
-            }
-        }
 
-        //Can't have the firefly scroll without the light essence
-        private void checkFireflyScroll_CheckedChanged(object sender, EventArgs e)
-        {
-            //If checked always make sure light essence is checked and set to 2
-            if (checkFireflyScroll.Checked)
+            //Control the visibility of the correct image
+            switch (saveFile.scroll)
             {
-                checkLightEssence.Checked = true;
-                saveFile.lightskill = 2;
+                case 0:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 1:
+                    picMoleScroll.Visible = true;
+                    picMoleText.Visible = true;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 2:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = true;
+                    picFleaText.Visible = true;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 3:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = true;
+                    picWoodpeckerText.Visible = true;
+                    break;
+                default:
+                    break;
             }
-            //Otherwise if we have just gotten unchecked while the light essence was checked we leave it at 1
-            else if (!checkFireflyScroll.Checked && checkLightEssence.Checked)
-            {
-                saveFile.lightskill = 1;
-            }
-            //Otherwise this was triggered from unchecking the light essence and we don't want to do anything as it will handle variables.
         }
 
         /************************************************************
-        * ESSENCE CHANGES
+        * RING AND ESSENCE CHANGES
         * 
-        * The following functions are called for essence changes.
+        * The following functions are called for the ring and essence changes.
         * There is no way to give yourself the essence and not the ring.
         ************************************************************/
-        private void checkEarthEssence_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectEarthLeft_Click(object sender, EventArgs e)
         {
-            //If checked always make sure ring is checked and set to 2
-            if (checkEarthEssence.Checked)
+            //Decrease the value for ring slot as long as we aren't at min
+            if (saveFile.ring1 > 0)
             {
-                checkEarthRing.Checked = true;
-                saveFile.ring1 = 2;
+                saveFile.ring1 -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectEarthRight.Visible = true;
             }
-            //Otherwise if we have just gotten unchecked while the ring was checked we leave it at 1
-            else if (!checkEarthEssence.Checked && checkEarthRing.Checked)
+
+            //If we ever become the min, disable the control
+            if (saveFile.ring1 == 0)
             {
-                saveFile.ring1 = 1;
+                btnSelectEarthLeft.Visible = false;
             }
-            //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring1)
+            {
+                case 0:
+                    picEarthRing.Visible = false;
+                    picEarthEssence.Visible = false;
+                    break;
+                case 1:
+                    picEarthRing.Visible = true;
+                    picEarthEssence.Visible = false;
+                    break;
+                case 2:
+                    picEarthRing.Visible = true;
+                    picEarthEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void checkWaterEssence_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectEarthRight_Click(object sender, EventArgs e)
         {
-            //If checked always make sure ring is checked and set to 2
-            if (checkWaterEssence.Checked)
+            //Increase the value for ring slot as long as we aren't at max
+            if (saveFile.ring1 < 2)
             {
-                checkWaterRing.Checked = true;
-                saveFile.ring2 = 2;
+                saveFile.ring1 += 1;
+                //Make sure to re-enable the left select now that we've increased
+                btnSelectEarthLeft.Visible = true;
             }
-            //Otherwise if we have just gotten unchecked while the ring was checked we leave it at 1
-            else if (!checkWaterEssence.Checked && checkWaterRing.Checked)
+
+            //If we ever become the max, disable the control
+            if (saveFile.ring1 == 2)
             {
-                saveFile.ring2 = 1;
+                btnSelectEarthRight.Visible = false;
             }
-            //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring1)
+            {
+                case 0:
+                    picEarthRing.Visible = false;
+                    picEarthEssence.Visible = false;
+                    break;
+                case 1:
+                    picEarthRing.Visible = true;
+                    picEarthEssence.Visible = false;
+                    break;
+                case 2:
+                    picEarthRing.Visible = true;
+                    picEarthEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void checkFireEssence_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectWaterLeft_Click(object sender, EventArgs e)
         {
-            //If checked always make sure ring is checked and set to 2
-            if (checkFireEssence.Checked)
+            //Decrease the value for ring slot as long as we aren't at min
+            if (saveFile.ring2 > 0)
             {
-                checkFireRing.Checked = true;
-                saveFile.ring3 = 2;
+                saveFile.ring2 -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectWaterRight.Visible = true;
             }
-            //Otherwise if we have just gotten unchecked while the ring was checked we leave it at 1
-            else if (!checkFireEssence.Checked && checkFireRing.Checked)
+
+            //If we ever become the min, disable the control
+            if (saveFile.ring2 == 0)
             {
-                saveFile.ring3 = 1;
+                btnSelectWaterLeft.Visible = false;
             }
-            //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring2)
+            {
+                case 0:
+                    picWaterRing.Visible = false;
+                    picWaterEssence.Visible = false;
+                    break;
+                case 1:
+                    picWaterRing.Visible = true;
+                    picWaterEssence.Visible = false;
+                    break;
+                case 2:
+                    picEarthRing.Visible = true;
+                    picWaterEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void checkAirEssence_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectWaterRight_Click(object sender, EventArgs e)
         {
-            //If checked always make sure ring is checked and set to 2
-            if (checkAirEssence.Checked)
+            //Increase the value for ring slot as long as we aren't at max
+            if (saveFile.ring2 < 2)
             {
-                checkAirRing.Checked = true;
-                saveFile.ring4 = 2;
+                saveFile.ring2 += 1;
+                //Make sure to re-enable the left select now that we've increased
+                btnSelectWaterLeft.Visible = true;
             }
-            //Otherwise if we have just gotten unchecked while the ring was checked we leave it at 1
-            else if (!checkAirEssence.Checked && checkAirRing.Checked)
+
+            //If we ever become the max, disable the control
+            if (saveFile.ring2 == 2)
             {
-                saveFile.ring4 = 1;
+                btnSelectWaterRight.Visible = false;
             }
-            //Otherwise this was triggered from unchecking the ring and we don't want to do anything as it will handle variables.
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring2)
+            {
+                case 0:
+                    picWaterRing.Visible = false;
+                    picWaterEssence.Visible = false;
+                    break;
+                case 1:
+                    picWaterRing.Visible = true;
+                    picWaterEssence.Visible = false;
+                    break;
+                case 2:
+                    picWaterRing.Visible = true;
+                    picWaterEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void checkLightEssence_CheckedChanged(object sender, EventArgs e)
+        private void btnSelectFireLeft_Click(object sender, EventArgs e)
         {
-            //Only change to 1 if checked and we didn't get trigger from the firefly scroll checkbox
-            if (checkLightEssence.Checked && !checkFireflyScroll.Checked)
+            //Decrease the value for ring slot as long as we aren't at min
+            if (saveFile.ring3 > 0)
             {
-                saveFile.lightskill = 1;
+                saveFile.ring3 -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectFireRight.Visible = true;
             }
-            //If we are not checked be sure we dont have firefly checked and set to 0
-            else if (!checkLightEssence.Checked)
+
+            //If we ever become the min, disable the control
+            if (saveFile.ring3 == 0)
             {
-                checkFireflyScroll.Checked = false;
-                saveFile.lightskill = 0;
+                btnSelectFireLeft.Visible = false;
             }
-            //Otherwise do nothing because this event was triggered from another function that will handle the variable.
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring3)
+            {
+                case 0:
+                    picFireRing.Visible = false;
+                    picFireEssence.Visible = false;
+                    break;
+                case 1:
+                    picFireRing.Visible = true;
+                    picFireEssence.Visible = false;
+                    break;
+                case 2:
+                    picFireRing.Visible = true;
+                    picFireEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnSelectFireRight_Click(object sender, EventArgs e)
+        {
+            //Increase the value for ring slot as long as we aren't at max
+            if (saveFile.ring3 < 2)
+            {
+                saveFile.ring3 += 1;
+                //Make sure to re-enable the left select now that we've increased
+                btnSelectFireLeft.Visible = true;
+            }
+
+            //If we ever become the max, disable the control
+            if (saveFile.ring3 == 2)
+            {
+                btnSelectFireRight.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring3)
+            {
+                case 0:
+                    picFireRing.Visible = false;
+                    picFireEssence.Visible = false;
+                    break;
+                case 1:
+                    picFireRing.Visible = true;
+                    picFireEssence.Visible = false;
+                    break;
+                case 2:
+                    picFireRing.Visible = true;
+                    picFireEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnSelectAirLeft_Click(object sender, EventArgs e)
+        {
+            //Decrease the value for ring slot as long as we aren't at min
+            if (saveFile.ring4 > 0)
+            {
+                saveFile.ring4 -= 1;
+
+                //Make sure to re-enable the right select now that we've decreased
+                btnSelectAirRight.Visible = true;
+            }
+
+            //If we ever become the min, disable the control
+            if (saveFile.ring4 == 0)
+            {
+                btnSelectAirLeft.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring4)
+            {
+                case 0:
+                    picAirRing.Visible = false;
+                    picAirEssence.Visible = false;
+                    break;
+                case 1:
+                    picAirRing.Visible = true;
+                    picAirEssence.Visible = false;
+                    break;
+                case 2:
+                    picAirRing.Visible = true;
+                    picAirEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnSelectAirRight_Click(object sender, EventArgs e)
+        {
+            //Increase the value for ring slot as long as we aren't at max
+            if (saveFile.ring4 < 2)
+            {
+                saveFile.ring4 += 1;
+                //Make sure to re-enable the left select now that we've increased
+                btnSelectAirLeft.Visible = true;
+            }
+
+            //If we ever become the max, disable the control
+            if (saveFile.ring4 == 2)
+            {
+                btnSelectAirRight.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.ring4)
+            {
+                case 0:
+                    picAirRing.Visible = false;
+                    picAirEssence.Visible = false;
+                    break;
+                case 1:
+                    picAirRing.Visible = true;
+                    picAirEssence.Visible = false;
+                    break;
+                case 2:
+                    picAirRing.Visible = true;
+                    picAirEssence.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /************************************************************
+        * LIGHT SKILL CHANGES
+        * 
+        * The following functions are called for the light essence and firefly scroll.
+        * There is no way to give yourself the scroll and not the essence.
+        ************************************************************/
+        private void btnSelectLightSkillLeft_Click(object sender, EventArgs e)
+        {
+            //Decrease the value for ring slot as long as we aren't at min
+            if (saveFile.lightskill > 0)
+            {
+                saveFile.lightskill -= 1;
+
+                btnSelectLightSkillRight.Visible = true;
+            }
+
+            //If we ever become the min, disable the control
+            if (saveFile.lightskill == 0)
+            {
+                btnSelectLightSkillLeft.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.lightskill)
+            {
+                case 0:
+                    picLightEssence.Visible = false;
+                    picFireflyScroll.Visible = false;
+                    break;
+                case 1:
+                    picLightEssence.Visible = true;
+                    picFireflyScroll.Visible = false;
+                    break;
+                case 2:
+                    picLightEssence.Visible = false;
+                    picFireflyScroll.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnSelectLightSkillRight_Click(object sender, EventArgs e)
+        {
+            //Increase the value for ring slot as long as we aren't at max
+            if (saveFile.lightskill < 2)
+            {
+                saveFile.lightskill += 1;
+                //Make sure to re-enable the left select now that we've increased
+                btnSelectLightSkillLeft.Visible = true;
+            }
+
+            //If we ever become the max, disable the control
+            if (saveFile.lightskill == 2)
+            {
+                btnSelectLightSkillRight.Visible = false;
+            }
+
+            //Control the visibility of the correct image
+            switch (saveFile.lightskill)
+            {
+                case 0:
+                    picLightEssence.Visible = false;
+                    picFireflyScroll.Visible = false;
+                    break;
+                case 1:
+                    picLightEssence.Visible = true;
+                    picFireflyScroll.Visible = false;
+                    break;
+                case 2:
+                    picLightEssence.Visible = false;
+                    picFireflyScroll.Visible = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
         /************************************************************
@@ -1988,106 +2435,113 @@ namespace Aggelos_Save_Mod
         public bool FileLoaded { get; set; }
         
         //Slot Number
-        public string slotNumber { get; set; }
+        public string slotNumber { get; set; }      //Save file name: "sauvegarde1", "sauvegarde2", or "sauvegarde3" for each slot
 
         //Stats
-        public Int32 gem { get; set; }
-        public int coeur { get; set; }
-        public int magie { get; set; }
-        public int level { get; set; }
-        public int hard { get; set; }
-        public int heure { get; set; }
-        public int minute { get; set; }
-        public Int32 seconde { get; set; }
-        public int death { get; set; }
-        public Int32 exp { get; set; }
-        public int clé { get; set; }
-        public int pow { get; set; }
-        public int def { get; set; }
+        public Int32 gem { get; set; }              //String
+        public int coeur { get; set; }              //Health
+        public int magie { get; set; }              //Magic
+        public int level { get; set; }              //Level
+        public int hard { get; set; }               //Hard mode or not
+        public int heure { get; set; }              //Playtime hours
+        public int minute { get; set; }             //Playtime minutes
+        public Int32 seconde { get; set; }          //Playtime seconds
+        public int death { get; set; }              //Number of deaths
+        public Int32 exp { get; set; }              //Amount of experience at current level
+        public int clé { get; set; }                //
+        public int pow { get; set; }                //Base attack stat
+        public int def { get; set; }                //Base defense stat
 
         //Skills
-        public int scroll { get; set; }
-        public int ring1 { get; set; }
-        public int ring2 { get; set; }
-        public int ring3 { get; set; }
-        public int ring4 { get; set; }
+        public int scroll { get; set; }             //Scroll unlocks: Mole=1, Flea=2, Woodpecker=3
+        public int ring1 { get; set; }              //Earth unlocks: Ring=1, Essence=2
+        public int ring2 { get; set; }              //Water unlocks: Ring=1, Essence=2
+        public int ring3 { get; set; }              //Fire unlocks: Ring=1, Essence=2
+        public int ring4 { get; set; }              //Air unlocks: Ring=1, Essence=2
 
         //Map you start in, x/y coords, and percent complete
-        public int scene { get; set; }
-        public Int32 x { get; set; }
-        public Int32 y { get; set; }
-        public int pourcent { get; set; }
+        public int scene { get; set; }              //Screen the character starts on
+        public Int32 x { get; set; }                //X coordinates on the screen
+        public Int32 y { get; set; }                //Y coordinates on the screen
+        public int pourcent { get; set; }           //Percent game complete
 
         //Healing
-        public int water { get; set; }
-        public int herbe { get; set; }
+        public int water { get; set; }              //
+        public int herbe { get; set; }              //Whether you have an herb or not
 
-        //?????
-        public int histoire { get; set; }
+        //Cutscene triggers?
+        public int histoire { get; set; }           //starts at 3 in the beginning of the game
+                                                    //goes to 4 after cutscene with king
+                                                    //goes to 7 after repair harp cutscene on way to tower
+                                                    //goes to 8 after tower boss and before pillars
+                                                    //goes to 9 when the monkey is on your back
+                                                    //goes to 11 after opening door to dark clouds with monkey
+                                                    //goes to 12 after returning monkey and on the way to air ring
+                                                    //goes to 13 after defeating Varion and before jumping in to Downpour
 
         //Tutorials?
-        public int tutocoffre { get; set; }
-        public int tutosave { get; set; }
+        public int tutocoffre { get; set; }         //
+        public int tutosave { get; set; }           //Controls tutorial for how to save the first time you hit the first save point
 
-        public int lightskill { get; set; }
+        public int lightskill { get; set; }         //Light unlocks: Light Essence=1, Firefly Scroll=2
 
         //Save Point Unlocks
-        public int savep1 { get; set; }
-        public int savep2 { get; set; }
-        public int savep3 { get; set; }
-        public int savep4 { get; set; }
-        public int savep5 { get; set; }
-        public int savep6 { get; set; }
-        public int savep7 { get; set; }
-        public int savep8 { get; set; }
-        public int savep9 { get; set; }
-        public int savep10 { get; set; }
-        public int savep11 { get; set; }
-        public int savep12 { get; set; }
-        public int savep13 { get; set; }
-        public int savep14 { get; set; }
-        public int savep15 { get; set; }
+        public int savep1 { get; set; }             //
+        public int savep2 { get; set; }             //
+        public int savep3 { get; set; }             //
+        public int savep4 { get; set; }             //
+        public int savep5 { get; set; }             //
+        public int savep6 { get; set; }             //
+        public int savep7 { get; set; }             //
+        public int savep8 { get; set; }             //
+        public int savep9 { get; set; }             //
+        public int savep10 { get; set; }            //
+        public int savep11 { get; set; }            //
+        public int savep12 { get; set; }            //
+        public int savep13 { get; set; }            //
+        public int savep14 { get; set; }            //
+        public int savep15 { get; set; }            //
 
         //Something to do with Armor and Weapon
-        public int numeroarmure { get; set; }
-        public int numeroepee { get; set; }
+        public int numeroarmure { get; set; }       //Which armor is equiped
+        public int numeroepee { get; set; }         //Which weapon is equiped
 
         //Armors
-        public int armure1 { get; set; }
-        public int armure2 { get; set; }
-        public int armure3 { get; set; }
-        public int armure4 { get; set; }
-        public int armure5 { get; set; }
-        public int armure6 { get; set; }
-        public int armure7 { get; set; }
+        public int armure1 { get; set; }            //Iron armor (can't be removed even with a 0)
+        public int armure2 { get; set; }            //Steel armor
+        public int armure3 { get; set; }            //Coral armor
+        public int armure4 { get; set; }            //Samurai armor
+        public int armure5 { get; set; }            //Dragon armor
+        public int armure6 { get; set; }            //Lightning armor
+        public int armure7 { get; set; }            //Aggelos armor: Aggelos=1, Sacred=2
 
         //Weapons
-        public int epee1 { get; set; }
-        public int epee2 { get; set; }
-        public int epee3 { get; set; }
-        public int epee4 { get; set; }
-        public int epee5 { get; set; }
-        public int epee6 { get; set; }
-        public int epee7 { get; set; }
+        public int epee1 { get; set; }              //Iron dagger (can't be removed even with a 0)
+        public int epee2 { get; set; }              //Steel sword
+        public int epee3 { get; set; }              //Bubble sword
+        public int epee4 { get; set; }              //Masamune
+        public int epee5 { get; set; }              //Dragon sword
+        public int epee6 { get; set; }              //Lightning sword
+        public int epee7 { get; set; }              //Aggelos sword: Aggelos=1, Sacred=2
 
         //Regions?
-        public int region1 { get; set; }
-        public int region2 { get; set; }
+        public int region1 { get; set; }            //
+        public int region2 { get; set; }            //
         public int region3 { get; set; }            //Went from "4" to "6" after opening two chests in sun crest room, one being empty vial
-        public int region4 { get; set; }
-        public int region5 { get; set; }
-        public int region6 { get; set; }
-        public int region7 { get; set; }
-        public int region8 { get; set; }
-        public int region9 { get; set; }
+        public int region4 { get; set; }            //
+        public int region5 { get; set; }            //
+        public int region6 { get; set; }            //
+        public int region7 { get; set; }            //
+        public int region8 { get; set; }            //
+        public int region9 { get; set; }            //
 
         //Story Items
-        public int kingkey { get; set; }
-        public int livre { get; set; }
-        public int plume { get; set; }
-        public int harpefil { get; set; }           //String
-        public int harpechassis { get; set; }       //Body
-        public int harpmax { get; set; }            //Repaired
+        public int kingkey { get; set; }            //Lumen Key
+        public int livre { get; set; }              //Universal book
+        public int plume { get; set; }              //Angel feather
+        public int harpefil { get; set; }           //Lyre String: having this and "harpechassis" set to 1 shows "lyre and strings" in inventory
+        public int harpechassis { get; set; }       //Lyre Body: having this and "harpefil" set to 1 shows "lyre and strings" in inventory
+        public int harpmax { get; set; }            //Lyre Repaired: having this set to 1 overrides the other two
 
         //Map appears to be related to the armor quest. Getting the bananas sets it to 1.
         //The value is changed as you progress through the quest.
@@ -2109,128 +2563,128 @@ namespace Aggelos_Save_Mod
                                                     //16 = Shows scepter in collection after using Sun Symbol
 
         //Potions State
-        public int boule { get; set; }
+        public int boule { get; set; }              //Potions: Small Potion=1, Big Potion=2, Elixir=3
 
-        //??????
-        public int coffre20xp { get; set; }
-        public int coffre50xp { get; set; }
-        public int groscoffre { get; set; }
-        public int groscoffreelement { get; set; }
-        public int porte1 { get; set; }
-        public int porte2 { get; set; }
-        public int coffre_herbe1 { get; set; }
-        public int coffre_contener1 { get; set; }
-        public int coffre_power_up { get; set; }
-        public int coffre_defense_up { get; set; }
-        public int coffre_50xp2 { get; set; }
-        public int coffre_magie_up { get; set; }
-        public int clé1 { get; set; }
-        public int power_mont { get; set; }
-        public int contener_mont { get; set; }
-        public int herb_mont { get; set; }
-        public int chest_A1 { get; set; }
-        public int chest_B1 { get; set; }
-        public int chest_C1 { get; set; }
-        public int chest_D1 { get; set; }
-        public int chest_E1 { get; set; }
-        public int chest_F1 { get; set; }
-        public int chest_G1 { get; set; }
-        public int chest_H1 { get; set; }
-        public int chest_I1 { get; set; }
-        public int chest_J1 { get; set; }
-        public int chest_K1 { get; set; }
-        public int chest_L1 { get; set; }
-        public int chest_M1 { get; set; }
-        public int chest_N1 { get; set; }
-        public int chest_O1 { get; set; }
-        public int chest_P1 { get; set; }
-        public int chest_Q1 { get; set; }
-        public int chest_R1 { get; set; }
-        public int chest_S1 { get; set; }
-        public int chest_T1 { get; set; }
-        public int chest_U1 { get; set; }
-        public int chest_V1 { get; set; }
-        public int chest_W1 { get; set; }
-        public int chest_X1 { get; set; }
-        public int chest_Y1 { get; set; }
-        public int chest_Z1 { get; set; }
-        public int chest_30 { get; set; }
-        public int chest_31 { get; set; }
-        public int chest_32 { get; set; }
-        public int chest_33 { get; set; }
-        public int chest_34 { get; set; }
-        public int chest_35 { get; set; }
-        public int chest_36 { get; set; }
-        public int chest_37 { get; set; }
-        public int chest_38 { get; set; }
-        public int chest_39 { get; set; }
-        public int chest_40 { get; set; }
-        public int chest_41 { get; set; }
-        public int chest_42 { get; set; }
-        public int chest_43 { get; set; }
-        public int chest_44 { get; set; }
-        public int chest_45 { get; set; }
-        public int chest_46 { get; set; }
-        public int chest_47 { get; set; }
-        public int chest_48 { get; set; }
-        public int chest_49 { get; set; }
-        public int chest_50 { get; set; }
-        public int chest_51 { get; set; }
+        //Appears to be various chests
+        public int coffre20xp { get; set; }         //
+        public int coffre50xp { get; set; }         //
+        public int groscoffre { get; set; }         //
+        public int groscoffreelement { get; set; }  //Guessing this is whether or not you've picked up the light element
+        public int porte1 { get; set; }             //This and porte2 went to 1 when earth temple was defeated on the way to book
+        public int porte2 { get; set; }             //This and porte1 went to 1 when earth temple was defeated on the way to book
+        public int coffre_herbe1 { get; set; }      //
+        public int coffre_contener1 { get; set; }   //
+        public int coffre_power_up { get; set; }    //
+        public int coffre_defense_up { get; set; }  //
+        public int coffre_50xp2 { get; set; }       //
+        public int coffre_magie_up { get; set; }    //
+        public int clé1 { get; set; }               //
+        public int power_mont { get; set; }         //
+        public int contener_mont { get; set; }      //
+        public int herb_mont { get; set; }          //
+        public int chest_A1 { get; set; }           //
+        public int chest_B1 { get; set; }           //
+        public int chest_C1 { get; set; }           //
+        public int chest_D1 { get; set; }           //
+        public int chest_E1 { get; set; }           //
+        public int chest_F1 { get; set; }           //
+        public int chest_G1 { get; set; }           //
+        public int chest_H1 { get; set; }           //
+        public int chest_I1 { get; set; }           //
+        public int chest_J1 { get; set; }           //
+        public int chest_K1 { get; set; }           //
+        public int chest_L1 { get; set; }           //
+        public int chest_M1 { get; set; }           //
+        public int chest_N1 { get; set; }           //
+        public int chest_O1 { get; set; }           //
+        public int chest_P1 { get; set; }           //
+        public int chest_Q1 { get; set; }           //
+        public int chest_R1 { get; set; }           //
+        public int chest_S1 { get; set; }           //
+        public int chest_T1 { get; set; }           //
+        public int chest_U1 { get; set; }           //
+        public int chest_V1 { get; set; }           //
+        public int chest_W1 { get; set; }           //
+        public int chest_X1 { get; set; }           //
+        public int chest_Y1 { get; set; }           //
+        public int chest_Z1 { get; set; }           //
+        public int chest_30 { get; set; }           //
+        public int chest_31 { get; set; }           //
+        public int chest_32 { get; set; }           //
+        public int chest_33 { get; set; }           //
+        public int chest_34 { get; set; }           //
+        public int chest_35 { get; set; }           //
+        public int chest_36 { get; set; }           //
+        public int chest_37 { get; set; }           //
+        public int chest_38 { get; set; }           //
+        public int chest_39 { get; set; }           //
+        public int chest_40 { get; set; }           //
+        public int chest_41 { get; set; }           //
+        public int chest_42 { get; set; }           //
+        public int chest_43 { get; set; }           //
+        public int chest_44 { get; set; }           //
+        public int chest_45 { get; set; }           //
+        public int chest_46 { get; set; }           //
+        public int chest_47 { get; set; }           //
+        public int chest_48 { get; set; }           //
+        public int chest_49 { get; set; }           //
+        public int chest_50 { get; set; }           //
+        public int chest_51 { get; set; }           //
         public int chest_52 { get; set; }           //elixir chest in sun crest room
         public int chest_53 { get; set; }           //small vial chest in sun crest room (does not give vile if set to open)
-        public int chest_54 { get; set; }
-        public int chest_55 { get; set; }
-        public int chest_56 { get; set; }
-        public int chest_57 { get; set; }
-        public int chest_58 { get; set; }
-        public int chest_59 { get; set; }
-        public int chest_60 { get; set; }
-        public int chest_61 { get; set; }
-        public int chest_62 { get; set; }
-        public int chest_63 { get; set; }
-        public int chest_64 { get; set; }
-        public int chest_65 { get; set; }
-        public int chest_66 { get; set; }
-        public int chest_67 { get; set; }
-        public int chest_68 { get; set; }
-        public int chest_69 { get; set; }
-        public int chest_70 { get; set; }
-        public int chest_71 { get; set; }
-        public int chest_72 { get; set; }
-        public int chest_73 { get; set; }
-        public int chest_74 { get; set; }
-        public int chest_75 { get; set; }
-        public int chest_76 { get; set; }
-        public int chest_77 { get; set; }
-        public int chest_78 { get; set; }
-        public int chest_79 { get; set; }
-        public int chest_80 { get; set; }
-        public int chest_81 { get; set; }
-        public int chest_82 { get; set; }
-        public int chest_83 { get; set; }
-        public int chest_84 { get; set; }
-        public int chest_85 { get; set; }
-        public int chest_86 { get; set; }
-        public int chest_87 { get; set; }
-        public int chest_88 { get; set; }
-        public int chest_89 { get; set; }
-        public int chest_90 { get; set; }
-        public int chest_91 { get; set; }
-        public int chest_94 { get; set; }
-        public int chest_95 { get; set; }
-        public int chest_96 { get; set; }
-        public int chest_97 { get; set; }
-        public int chest_98 { get; set; }
-        public int chest_99 { get; set; }
-        public int chest_100 { get; set; }
-        public int chest_101 { get; set; }
-        public int chest_103 { get; set; }
-        public int chest_104 { get; set; }
-        public int chest_105 { get; set; }
-        public int chest_106 { get; set; }
-        public int chest_108 { get; set; }
-        public int chest_109 { get; set; }
-        public int chest_110 { get; set; }
+        public int chest_54 { get; set; }           //
+        public int chest_55 { get; set; }           //
+        public int chest_56 { get; set; }           //
+        public int chest_57 { get; set; }           //
+        public int chest_58 { get; set; }           //
+        public int chest_59 { get; set; }           //
+        public int chest_60 { get; set; }           //
+        public int chest_61 { get; set; }           //
+        public int chest_62 { get; set; }           //
+        public int chest_63 { get; set; }           //
+        public int chest_64 { get; set; }           //
+        public int chest_65 { get; set; }           //
+        public int chest_66 { get; set; }           //
+        public int chest_67 { get; set; }           //
+        public int chest_68 { get; set; }           //
+        public int chest_69 { get; set; }           //
+        public int chest_70 { get; set; }           //
+        public int chest_71 { get; set; }           //
+        public int chest_72 { get; set; }           //
+        public int chest_73 { get; set; }           //
+        public int chest_74 { get; set; }           //
+        public int chest_75 { get; set; }           //
+        public int chest_76 { get; set; }           //
+        public int chest_77 { get; set; }           //
+        public int chest_78 { get; set; }           //
+        public int chest_79 { get; set; }           //
+        public int chest_80 { get; set; }           //
+        public int chest_81 { get; set; }           //
+        public int chest_82 { get; set; }           //
+        public int chest_83 { get; set; }           //
+        public int chest_84 { get; set; }           //
+        public int chest_85 { get; set; }           //
+        public int chest_86 { get; set; }           //
+        public int chest_87 { get; set; }           //
+        public int chest_88 { get; set; }           //
+        public int chest_89 { get; set; }           //
+        public int chest_90 { get; set; }           //
+        public int chest_91 { get; set; }           //
+        public int chest_94 { get; set; }           //
+        public int chest_95 { get; set; }           //
+        public int chest_96 { get; set; }           //
+        public int chest_97 { get; set; }           //
+        public int chest_98 { get; set; }           //
+        public int chest_99 { get; set; }           //
+        public int chest_100 { get; set; }          //
+        public int chest_101 { get; set; }          //
+        public int chest_103 { get; set; }          //
+        public int chest_104 { get; set; }          //
+        public int chest_105 { get; set; }          //
+        public int chest_106 { get; set; }          //
+        public int chest_108 { get; set; }          //
+        public int chest_109 { get; set; }          //
+        public int chest_110 { get; set; }          //
 
 
         /************************************************************

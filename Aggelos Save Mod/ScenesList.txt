@@ -1,0 +1,39 @@
+﻿//This readme contains the list of scenes and their values in the game.
+//Scene 11 and 38+ are a black screen soft lock. Door in developer room might lead to 11 since it acts like this
+1	Wonderboy Bobi splash screen (causes a loop requiring close of game)
+2	Secret ending artwork
+3	Wonderboy Bobi splash screen (causes a loop requiring close of game)
+4	Wonderboy Bobi splash screen (causes a loop requiring close of game)
+5	Wonderboy Bobi splash screen (causes a loop requiring close of game)
+6	Wonderboy Bobi splash screen (causes a loop requiring close of game)
+7	Wonderboy Bobi splash screen (causes a loop requiring close of game)
+8	Wonderboy Bobi splash screen (causes a loop requiring close of game)
+9	Wonderboy Bobi splash screen (causes a loop requiring close of game)
+10	Developer testing room (x:250,y:0)
+11	
+12	Castle Grounds
+13	Beginning
+14	Bosco
+15	Castle/Basement
+16	Bosco Cave
+17	Earth Temple
+18	Shows the wall potion shop, but seems to be way above it and can't find how to get in the shop (x:0,y:0)
+19	Atlant
+20	Cave Systems
+21	Palulu/Outside Valion's Castle
+22	Abyss
+23	Water Temple
+24	Fira
+25	Fira Volcano
+26	Fire Temple
+27	Woodpecker Trials
+28	Plays darkness portals open cutscene
+29	Babel Tower
+30	Celestia
+31	Dark Clouds
+32	Air Temple
+33	Castle Portal of Darkness
+34	Fira Portal of Darkness
+35	Valion's Castle
+36	Downpour Portal of Darkness
+37	Start of Aggelos Upgrade Eagle Fight
