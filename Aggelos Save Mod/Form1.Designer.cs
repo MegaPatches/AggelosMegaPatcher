@@ -29,17 +29,53 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Lumen Woods",
+            "2768",
+            "191"}, 13);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Bosco",
+            "3792",
+            "447"}, 14);
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Castle / Basement",
+            "3680",
+            "399"}, 15);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Bosco Cave",
+            "1264",
+            "895"}, 16);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Earth Temple",
+            "50",
+            "800"}, 17);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Lumen Woods", 13);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Bosco", 14);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Castle / Basement", 15);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Bosco Cave", 16);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Earth Temple", 17);
             this.tbFileSelected = new System.Windows.Forms.TextBox();
             this.btnLoadFile = new System.Windows.Forms.Button();
             this.openDiag = new System.Windows.Forms.OpenFileDialog();
             this.btnLoadDefault = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabSaves = new System.Windows.Forms.TabPage();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.groupSaveSlots = new System.Windows.Forms.GroupBox();
+            this.radioSaveSlot3 = new System.Windows.Forms.RadioButton();
+            this.radioSaveSlot2 = new System.Windows.Forms.RadioButton();
+            this.radioSaveSlot1 = new System.Windows.Forms.RadioButton();
+            this.lblInstallPath = new System.Windows.Forms.Label();
+            this.tbInstallPath = new System.Windows.Forms.TextBox();
+            this.btnInstallPath = new System.Windows.Forms.Button();
+            this.lblFileSelected = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnSaveSlot = new System.Windows.Forms.Button();
+            this.btnSaveFile = new System.Windows.Forms.Button();
+            this.imgListSavePointSelectors = new System.Windows.Forms.ImageList(this.components);
+            this.tabScenes = new System.Windows.Forms.TabPage();
+            this.listViewScenes = new System.Windows.Forms.ListView();
+            this.imgListScenePreviews = new System.Windows.Forms.ImageList(this.components);
+            this.btnSaveAllScenes = new System.Windows.Forms.Button();
+            this.btnAddScene = new System.Windows.Forms.Button();
+            this.btnDeleteScene = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabInventory = new System.Windows.Forms.TabPage();
             this.tbMagic = new System.Windows.Forms.NumericUpDown();
             this.tbHealth = new System.Windows.Forms.NumericUpDown();
@@ -125,39 +161,25 @@
             this.checkBubbleSword = new System.Windows.Forms.CheckBox();
             this.checkSteelSword = new System.Windows.Forms.CheckBox();
             this.checkIronSword = new System.Windows.Forms.CheckBox();
-            this.tabSaves = new System.Windows.Forms.TabPage();
+            this.checkSaveValionsCastle = new System.Windows.Forms.CheckBox();
+            this.checkSaveDarkClouds = new System.Windows.Forms.CheckBox();
+            this.checkSaveCelestiaVillage = new System.Windows.Forms.CheckBox();
+            this.checkSaveFiraVolcano = new System.Windows.Forms.CheckBox();
+            this.checkSaveFiraVillage = new System.Windows.Forms.CheckBox();
+            this.checkSaveTheWall = new System.Windows.Forms.CheckBox();
+            this.checkSavePaluluTown = new System.Windows.Forms.CheckBox();
+            this.checkSaveTheAbyss = new System.Windows.Forms.CheckBox();
+            this.checkSaveAtlantVillage = new System.Windows.Forms.CheckBox();
+            this.checkSaveLumenCastle = new System.Windows.Forms.CheckBox();
             this.checkSaveBoscoCave = new System.Windows.Forms.CheckBox();
             this.checkSaveBoscoVillage = new System.Windows.Forms.CheckBox();
             this.checkSaveLumenWoods = new System.Windows.Forms.CheckBox();
             this.picSaveMapSelectors = new System.Windows.Forms.PictureBox();
             this.picSaveMap = new System.Windows.Forms.PictureBox();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.groupSaveSlots = new System.Windows.Forms.GroupBox();
-            this.radioSaveSlot3 = new System.Windows.Forms.RadioButton();
-            this.radioSaveSlot2 = new System.Windows.Forms.RadioButton();
-            this.radioSaveSlot1 = new System.Windows.Forms.RadioButton();
-            this.lblInstallPath = new System.Windows.Forms.Label();
-            this.tbInstallPath = new System.Windows.Forms.TextBox();
-            this.btnInstallPath = new System.Windows.Forms.Button();
-            this.lblFileSelected = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnSaveSlot = new System.Windows.Forms.Button();
-            this.btnSaveFile = new System.Windows.Forms.Button();
-            this.imgListSavePointSelectors = new System.Windows.Forms.ImageList(this.components);
-            this.checkSaveLumenCastle = new System.Windows.Forms.CheckBox();
-            this.checkSaveAtlantVillage = new System.Windows.Forms.CheckBox();
-            this.checkSaveTheAbyss = new System.Windows.Forms.CheckBox();
-            this.checkSavePaluluTown = new System.Windows.Forms.CheckBox();
-            this.checkSaveTheWall = new System.Windows.Forms.CheckBox();
-            this.checkSaveFiraVillage = new System.Windows.Forms.CheckBox();
-            this.checkSaveFiraVolcano = new System.Windows.Forms.CheckBox();
-            this.checkSaveCelestiaVillage = new System.Windows.Forms.CheckBox();
-            this.checkSaveDarkClouds = new System.Windows.Forms.CheckBox();
-            this.checkSaveValionsCastle = new System.Windows.Forms.CheckBox();
-            this.tabScenes = new System.Windows.Forms.TabPage();
-            this.listViewScenes = new System.Windows.Forms.ListView();
-            this.imgListScenePreviews = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
+            this.tabSaves.SuspendLayout();
+            this.groupSaveSlots.SuspendLayout();
+            this.tabScenes.SuspendLayout();
             this.tabInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbHealth)).BeginInit();
@@ -205,11 +227,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosArmor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSacredSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosSword)).BeginInit();
-            this.tabSaves.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMapSelectors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMap)).BeginInit();
-            this.groupSaveSlots.SuspendLayout();
-            this.tabScenes.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbFileSelected
@@ -261,6 +280,265 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(722, 463);
             this.tabControl1.TabIndex = 10;
+            // 
+            // tabSaves
+            // 
+            this.tabSaves.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabSaves.Controls.Add(this.checkSaveValionsCastle);
+            this.tabSaves.Controls.Add(this.checkSaveDarkClouds);
+            this.tabSaves.Controls.Add(this.checkSaveCelestiaVillage);
+            this.tabSaves.Controls.Add(this.checkSaveFiraVolcano);
+            this.tabSaves.Controls.Add(this.checkSaveFiraVillage);
+            this.tabSaves.Controls.Add(this.checkSaveTheWall);
+            this.tabSaves.Controls.Add(this.checkSavePaluluTown);
+            this.tabSaves.Controls.Add(this.checkSaveTheAbyss);
+            this.tabSaves.Controls.Add(this.checkSaveAtlantVillage);
+            this.tabSaves.Controls.Add(this.checkSaveLumenCastle);
+            this.tabSaves.Controls.Add(this.checkSaveBoscoCave);
+            this.tabSaves.Controls.Add(this.checkSaveBoscoVillage);
+            this.tabSaves.Controls.Add(this.checkSaveLumenWoods);
+            this.tabSaves.Controls.Add(this.picSaveMapSelectors);
+            this.tabSaves.Controls.Add(this.picSaveMap);
+            this.tabSaves.Location = new System.Drawing.Point(4, 22);
+            this.tabSaves.Name = "tabSaves";
+            this.tabSaves.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSaves.Size = new System.Drawing.Size(714, 437);
+            this.tabSaves.TabIndex = 1;
+            this.tabSaves.Text = "Saves";
+            this.tabSaves.UseVisualStyleBackColor = true;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(13, 552);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 13);
+            this.lblStatus.TabIndex = 33;
+            // 
+            // groupSaveSlots
+            // 
+            this.groupSaveSlots.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.groupSaveSlots.Controls.Add(this.radioSaveSlot3);
+            this.groupSaveSlots.Controls.Add(this.radioSaveSlot2);
+            this.groupSaveSlots.Controls.Add(this.radioSaveSlot1);
+            this.groupSaveSlots.Location = new System.Drawing.Point(214, 527);
+            this.groupSaveSlots.Name = "groupSaveSlots";
+            this.groupSaveSlots.Size = new System.Drawing.Size(74, 37);
+            this.groupSaveSlots.TabIndex = 38;
+            this.groupSaveSlots.TabStop = false;
+            this.groupSaveSlots.Text = "Save Slot";
+            // 
+            // radioSaveSlot3
+            // 
+            this.radioSaveSlot3.AutoSize = true;
+            this.radioSaveSlot3.Location = new System.Drawing.Point(53, 16);
+            this.radioSaveSlot3.Name = "radioSaveSlot3";
+            this.radioSaveSlot3.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot3.TabIndex = 45;
+            this.radioSaveSlot3.TabStop = true;
+            this.radioSaveSlot3.UseVisualStyleBackColor = true;
+            this.radioSaveSlot3.CheckedChanged += new System.EventHandler(this.radioSaveSlot3_CheckedChanged);
+            // 
+            // radioSaveSlot2
+            // 
+            this.radioSaveSlot2.AutoSize = true;
+            this.radioSaveSlot2.Location = new System.Drawing.Point(29, 16);
+            this.radioSaveSlot2.Name = "radioSaveSlot2";
+            this.radioSaveSlot2.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot2.TabIndex = 44;
+            this.radioSaveSlot2.TabStop = true;
+            this.radioSaveSlot2.UseVisualStyleBackColor = true;
+            this.radioSaveSlot2.CheckedChanged += new System.EventHandler(this.radioSaveSlot2_CheckedChanged);
+            // 
+            // radioSaveSlot1
+            // 
+            this.radioSaveSlot1.AutoSize = true;
+            this.radioSaveSlot1.Location = new System.Drawing.Point(6, 16);
+            this.radioSaveSlot1.Name = "radioSaveSlot1";
+            this.radioSaveSlot1.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot1.TabIndex = 43;
+            this.radioSaveSlot1.TabStop = true;
+            this.radioSaveSlot1.UseVisualStyleBackColor = true;
+            this.radioSaveSlot1.CheckedChanged += new System.EventHandler(this.radioSaveSlot1_CheckedChanged);
+            // 
+            // lblInstallPath
+            // 
+            this.lblInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblInstallPath.AutoSize = true;
+            this.lblInstallPath.Location = new System.Drawing.Point(13, 12);
+            this.lblInstallPath.Name = "lblInstallPath";
+            this.lblInstallPath.Size = new System.Drawing.Size(62, 13);
+            this.lblInstallPath.TabIndex = 39;
+            this.lblInstallPath.Text = "Install Path:";
+            // 
+            // tbInstallPath
+            // 
+            this.tbInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbInstallPath.Enabled = false;
+            this.tbInstallPath.Location = new System.Drawing.Point(93, 9);
+            this.tbInstallPath.Name = "tbInstallPath";
+            this.tbInstallPath.Size = new System.Drawing.Size(479, 20);
+            this.tbInstallPath.TabIndex = 41;
+            // 
+            // btnInstallPath
+            // 
+            this.btnInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInstallPath.Location = new System.Drawing.Point(578, 6);
+            this.btnInstallPath.Name = "btnInstallPath";
+            this.btnInstallPath.Size = new System.Drawing.Size(152, 23);
+            this.btnInstallPath.TabIndex = 42;
+            this.btnInstallPath.Text = "Installation Path...";
+            this.btnInstallPath.UseVisualStyleBackColor = true;
+            this.btnInstallPath.Click += new System.EventHandler(this.btnInstallPath_Click);
+            // 
+            // lblFileSelected
+            // 
+            this.lblFileSelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFileSelected.AutoSize = true;
+            this.lblFileSelected.Location = new System.Drawing.Point(12, 40);
+            this.lblFileSelected.Name = "lblFileSelected";
+            this.lblFileSelected.Size = new System.Drawing.Size(72, 13);
+            this.lblFileSelected.TabIndex = 43;
+            this.lblFileSelected.Text = "Loaded From:";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnSaveSlot
+            // 
+            this.btnSaveSlot.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSaveSlot.Enabled = false;
+            this.btnSaveSlot.Location = new System.Drawing.Point(308, 533);
+            this.btnSaveSlot.Name = "btnSaveSlot";
+            this.btnSaveSlot.Size = new System.Drawing.Size(127, 33);
+            this.btnSaveSlot.TabIndex = 46;
+            this.btnSaveSlot.Text = "Save To Slot";
+            this.btnSaveSlot.UseVisualStyleBackColor = true;
+            this.btnSaveSlot.Click += new System.EventHandler(this.btnSaveSlot_Click);
+            // 
+            // btnSaveFile
+            // 
+            this.btnSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveFile.Location = new System.Drawing.Point(655, 35);
+            this.btnSaveFile.Name = "btnSaveFile";
+            this.btnSaveFile.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveFile.TabIndex = 2;
+            this.btnSaveFile.Text = "Save File";
+            this.btnSaveFile.UseVisualStyleBackColor = true;
+            this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
+            // 
+            // imgListSavePointSelectors
+            // 
+            this.imgListSavePointSelectors.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListSavePointSelectors.ImageStream")));
+            this.imgListSavePointSelectors.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListSavePointSelectors.Images.SetKeyName(0, "SaveMapSelectorOff.jpg");
+            this.imgListSavePointSelectors.Images.SetKeyName(1, "SaveMapSelectorOn.jpg");
+            // 
+            // tabScenes
+            // 
+            this.tabScenes.Controls.Add(this.btnDeleteScene);
+            this.tabScenes.Controls.Add(this.btnAddScene);
+            this.tabScenes.Controls.Add(this.btnSaveAllScenes);
+            this.tabScenes.Controls.Add(this.listViewScenes);
+            this.tabScenes.Location = new System.Drawing.Point(4, 22);
+            this.tabScenes.Name = "tabScenes";
+            this.tabScenes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabScenes.Size = new System.Drawing.Size(714, 437);
+            this.tabScenes.TabIndex = 2;
+            this.tabScenes.Text = "Scenes";
+            this.tabScenes.UseVisualStyleBackColor = true;
+            // 
+            // listViewScenes
+            // 
+            this.listViewScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewScenes.HideSelection = false;
+            listViewItem1.StateImageIndex = 0;
+            listViewItem1.Tag = "13";
+            listViewItem2.StateImageIndex = 0;
+            listViewItem2.Tag = "14";
+            listViewItem3.StateImageIndex = 0;
+            listViewItem3.Tag = "15";
+            listViewItem4.StateImageIndex = 0;
+            listViewItem4.Tag = "16";
+            listViewItem5.StateImageIndex = 0;
+            listViewItem5.Tag = "17";
+            this.listViewScenes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
+            this.listViewScenes.LargeImageList = this.imgListScenePreviews;
+            this.listViewScenes.Location = new System.Drawing.Point(6, 6);
+            this.listViewScenes.MultiSelect = false;
+            this.listViewScenes.Name = "listViewScenes";
+            this.listViewScenes.Size = new System.Drawing.Size(488, 425);
+            this.listViewScenes.SmallImageList = this.imgListScenePreviews;
+            this.listViewScenes.TabIndex = 0;
+            this.listViewScenes.TileSize = new System.Drawing.Size(78, 30);
+            this.listViewScenes.UseCompatibleStateImageBehavior = false;
+            this.listViewScenes.SelectedIndexChanged += new System.EventHandler(this.listViewScenes_SelectedIndexChanged);
+            // 
+            // imgListScenePreviews
+            // 
+            this.imgListScenePreviews.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListScenePreviews.ImageStream")));
+            this.imgListScenePreviews.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListScenePreviews.Images.SetKeyName(0, "ScenePreview0.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(1, "ScenePreview1.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(2, "ScenePreview2.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(3, "ScenePreview3.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(4, "ScenePreview4.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(5, "ScenePreview5.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(6, "ScenePreview6.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(7, "ScenePreview7.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(8, "ScenePreview8.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(9, "ScenePreview9.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(10, "ScenePreview10.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(11, "ScenePreview11.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(12, "ScenePreview12.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(13, "ScenePreview13.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(14, "ScenePreview14.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(15, "ScenePreview15.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(16, "ScenePreview16.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(17, "ScenePreview17.jpg");
+            // 
+            // btnSaveAllScenes
+            // 
+            this.btnSaveAllScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveAllScenes.Location = new System.Drawing.Point(549, 335);
+            this.btnSaveAllScenes.Name = "btnSaveAllScenes";
+            this.btnSaveAllScenes.Size = new System.Drawing.Size(111, 45);
+            this.btnSaveAllScenes.TabIndex = 47;
+            this.btnSaveAllScenes.Text = "Save All Scenes";
+            this.btnSaveAllScenes.UseVisualStyleBackColor = true;
+            this.btnSaveAllScenes.Click += new System.EventHandler(this.btnSaveAllScenes_Click);
+            // 
+            // btnAddScene
+            // 
+            this.btnAddScene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddScene.Location = new System.Drawing.Point(549, 211);
+            this.btnAddScene.Name = "btnAddScene";
+            this.btnAddScene.Size = new System.Drawing.Size(111, 45);
+            this.btnAddScene.TabIndex = 48;
+            this.btnAddScene.Text = "Add Scene";
+            this.btnAddScene.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteScene
+            // 
+            this.btnDeleteScene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteScene.Location = new System.Drawing.Point(549, 273);
+            this.btnDeleteScene.Name = "btnDeleteScene";
+            this.btnDeleteScene.Size = new System.Drawing.Size(111, 45);
+            this.btnDeleteScene.TabIndex = 49;
+            this.btnDeleteScene.Text = "Delete Scene";
+            this.btnDeleteScene.UseVisualStyleBackColor = true;
             // 
             // tabInventory
             // 
@@ -1310,31 +1588,155 @@
             this.checkIronSword.TabIndex = 19;
             this.checkIronSword.UseVisualStyleBackColor = true;
             // 
-            // tabSaves
+            // checkSaveValionsCastle
             // 
-            this.tabSaves.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabSaves.Controls.Add(this.checkSaveValionsCastle);
-            this.tabSaves.Controls.Add(this.checkSaveDarkClouds);
-            this.tabSaves.Controls.Add(this.checkSaveCelestiaVillage);
-            this.tabSaves.Controls.Add(this.checkSaveFiraVolcano);
-            this.tabSaves.Controls.Add(this.checkSaveFiraVillage);
-            this.tabSaves.Controls.Add(this.checkSaveTheWall);
-            this.tabSaves.Controls.Add(this.checkSavePaluluTown);
-            this.tabSaves.Controls.Add(this.checkSaveTheAbyss);
-            this.tabSaves.Controls.Add(this.checkSaveAtlantVillage);
-            this.tabSaves.Controls.Add(this.checkSaveLumenCastle);
-            this.tabSaves.Controls.Add(this.checkSaveBoscoCave);
-            this.tabSaves.Controls.Add(this.checkSaveBoscoVillage);
-            this.tabSaves.Controls.Add(this.checkSaveLumenWoods);
-            this.tabSaves.Controls.Add(this.picSaveMapSelectors);
-            this.tabSaves.Controls.Add(this.picSaveMap);
-            this.tabSaves.Location = new System.Drawing.Point(4, 22);
-            this.tabSaves.Name = "tabSaves";
-            this.tabSaves.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSaves.Size = new System.Drawing.Size(714, 437);
-            this.tabSaves.TabIndex = 1;
-            this.tabSaves.Text = "Saves";
-            this.tabSaves.UseVisualStyleBackColor = true;
+            this.checkSaveValionsCastle.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveValionsCastle.AutoSize = true;
+            this.checkSaveValionsCastle.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveValionsCastle.Enabled = false;
+            this.checkSaveValionsCastle.ImageIndex = 0;
+            this.checkSaveValionsCastle.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveValionsCastle.Location = new System.Drawing.Point(0, 354);
+            this.checkSaveValionsCastle.Name = "checkSaveValionsCastle";
+            this.checkSaveValionsCastle.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveValionsCastle.TabIndex = 59;
+            this.checkSaveValionsCastle.UseVisualStyleBackColor = true;
+            this.checkSaveValionsCastle.CheckedChanged += new System.EventHandler(this.checkSaveValionsCastle_CheckedChanged);
+            // 
+            // checkSaveDarkClouds
+            // 
+            this.checkSaveDarkClouds.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveDarkClouds.AutoSize = true;
+            this.checkSaveDarkClouds.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveDarkClouds.Enabled = false;
+            this.checkSaveDarkClouds.ImageIndex = 0;
+            this.checkSaveDarkClouds.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveDarkClouds.Location = new System.Drawing.Point(0, 324);
+            this.checkSaveDarkClouds.Name = "checkSaveDarkClouds";
+            this.checkSaveDarkClouds.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveDarkClouds.TabIndex = 58;
+            this.checkSaveDarkClouds.UseVisualStyleBackColor = true;
+            this.checkSaveDarkClouds.CheckedChanged += new System.EventHandler(this.checkSaveDarkClouds_CheckedChanged);
+            // 
+            // checkSaveCelestiaVillage
+            // 
+            this.checkSaveCelestiaVillage.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveCelestiaVillage.AutoSize = true;
+            this.checkSaveCelestiaVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveCelestiaVillage.Enabled = false;
+            this.checkSaveCelestiaVillage.ImageIndex = 0;
+            this.checkSaveCelestiaVillage.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveCelestiaVillage.Location = new System.Drawing.Point(0, 295);
+            this.checkSaveCelestiaVillage.Name = "checkSaveCelestiaVillage";
+            this.checkSaveCelestiaVillage.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveCelestiaVillage.TabIndex = 57;
+            this.checkSaveCelestiaVillage.UseVisualStyleBackColor = true;
+            this.checkSaveCelestiaVillage.CheckedChanged += new System.EventHandler(this.checkSaveCelestiaVillage_CheckedChanged);
+            // 
+            // checkSaveFiraVolcano
+            // 
+            this.checkSaveFiraVolcano.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveFiraVolcano.AutoSize = true;
+            this.checkSaveFiraVolcano.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveFiraVolcano.Enabled = false;
+            this.checkSaveFiraVolcano.ImageIndex = 0;
+            this.checkSaveFiraVolcano.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveFiraVolcano.Location = new System.Drawing.Point(0, 265);
+            this.checkSaveFiraVolcano.Name = "checkSaveFiraVolcano";
+            this.checkSaveFiraVolcano.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveFiraVolcano.TabIndex = 56;
+            this.checkSaveFiraVolcano.UseVisualStyleBackColor = true;
+            this.checkSaveFiraVolcano.CheckedChanged += new System.EventHandler(this.checkSaveFiraVolcano_CheckedChanged);
+            // 
+            // checkSaveFiraVillage
+            // 
+            this.checkSaveFiraVillage.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveFiraVillage.AutoSize = true;
+            this.checkSaveFiraVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveFiraVillage.Enabled = false;
+            this.checkSaveFiraVillage.ImageIndex = 0;
+            this.checkSaveFiraVillage.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveFiraVillage.Location = new System.Drawing.Point(0, 236);
+            this.checkSaveFiraVillage.Name = "checkSaveFiraVillage";
+            this.checkSaveFiraVillage.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveFiraVillage.TabIndex = 55;
+            this.checkSaveFiraVillage.UseVisualStyleBackColor = true;
+            this.checkSaveFiraVillage.CheckedChanged += new System.EventHandler(this.checkSaveFiraVillage_CheckedChanged);
+            // 
+            // checkSaveTheWall
+            // 
+            this.checkSaveTheWall.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveTheWall.AutoSize = true;
+            this.checkSaveTheWall.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveTheWall.Enabled = false;
+            this.checkSaveTheWall.ImageIndex = 0;
+            this.checkSaveTheWall.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveTheWall.Location = new System.Drawing.Point(0, 206);
+            this.checkSaveTheWall.Name = "checkSaveTheWall";
+            this.checkSaveTheWall.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveTheWall.TabIndex = 54;
+            this.checkSaveTheWall.UseVisualStyleBackColor = true;
+            this.checkSaveTheWall.CheckedChanged += new System.EventHandler(this.checkSaveTheWall_CheckedChanged);
+            // 
+            // checkSavePaluluTown
+            // 
+            this.checkSavePaluluTown.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSavePaluluTown.AutoSize = true;
+            this.checkSavePaluluTown.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSavePaluluTown.Enabled = false;
+            this.checkSavePaluluTown.ImageIndex = 0;
+            this.checkSavePaluluTown.ImageList = this.imgListSavePointSelectors;
+            this.checkSavePaluluTown.Location = new System.Drawing.Point(0, 177);
+            this.checkSavePaluluTown.Name = "checkSavePaluluTown";
+            this.checkSavePaluluTown.Size = new System.Drawing.Size(41, 31);
+            this.checkSavePaluluTown.TabIndex = 53;
+            this.checkSavePaluluTown.UseVisualStyleBackColor = true;
+            this.checkSavePaluluTown.CheckedChanged += new System.EventHandler(this.checkSavePaluluTown_CheckedChanged);
+            // 
+            // checkSaveTheAbyss
+            // 
+            this.checkSaveTheAbyss.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveTheAbyss.AutoSize = true;
+            this.checkSaveTheAbyss.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveTheAbyss.Enabled = false;
+            this.checkSaveTheAbyss.ImageIndex = 0;
+            this.checkSaveTheAbyss.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveTheAbyss.Location = new System.Drawing.Point(0, 149);
+            this.checkSaveTheAbyss.Name = "checkSaveTheAbyss";
+            this.checkSaveTheAbyss.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveTheAbyss.TabIndex = 52;
+            this.checkSaveTheAbyss.UseVisualStyleBackColor = true;
+            this.checkSaveTheAbyss.CheckedChanged += new System.EventHandler(this.checkSaveTheAbyss_CheckedChanged);
+            // 
+            // checkSaveAtlantVillage
+            // 
+            this.checkSaveAtlantVillage.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveAtlantVillage.AutoSize = true;
+            this.checkSaveAtlantVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveAtlantVillage.Enabled = false;
+            this.checkSaveAtlantVillage.ImageIndex = 0;
+            this.checkSaveAtlantVillage.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveAtlantVillage.Location = new System.Drawing.Point(0, 120);
+            this.checkSaveAtlantVillage.Name = "checkSaveAtlantVillage";
+            this.checkSaveAtlantVillage.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveAtlantVillage.TabIndex = 51;
+            this.checkSaveAtlantVillage.UseVisualStyleBackColor = true;
+            this.checkSaveAtlantVillage.CheckedChanged += new System.EventHandler(this.checkSaveAtlantVillage_CheckedChanged);
+            // 
+            // checkSaveLumenCastle
+            // 
+            this.checkSaveLumenCastle.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkSaveLumenCastle.AutoSize = true;
+            this.checkSaveLumenCastle.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkSaveLumenCastle.Enabled = false;
+            this.checkSaveLumenCastle.ImageIndex = 0;
+            this.checkSaveLumenCastle.ImageList = this.imgListSavePointSelectors;
+            this.checkSaveLumenCastle.Location = new System.Drawing.Point(0, 90);
+            this.checkSaveLumenCastle.Name = "checkSaveLumenCastle";
+            this.checkSaveLumenCastle.Size = new System.Drawing.Size(41, 31);
+            this.checkSaveLumenCastle.TabIndex = 50;
+            this.checkSaveLumenCastle.UseVisualStyleBackColor = true;
+            this.checkSaveLumenCastle.CheckedChanged += new System.EventHandler(this.checkSaveLumenCastle_CheckedChanged);
             // 
             // checkSaveBoscoCave
             // 
@@ -1405,355 +1807,6 @@
             this.picSaveMap.TabIndex = 0;
             this.picSaveMap.TabStop = false;
             // 
-            // lblStatus
-            // 
-            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(13, 552);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(0, 13);
-            this.lblStatus.TabIndex = 33;
-            // 
-            // groupSaveSlots
-            // 
-            this.groupSaveSlots.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.groupSaveSlots.Controls.Add(this.radioSaveSlot3);
-            this.groupSaveSlots.Controls.Add(this.radioSaveSlot2);
-            this.groupSaveSlots.Controls.Add(this.radioSaveSlot1);
-            this.groupSaveSlots.Location = new System.Drawing.Point(214, 527);
-            this.groupSaveSlots.Name = "groupSaveSlots";
-            this.groupSaveSlots.Size = new System.Drawing.Size(74, 37);
-            this.groupSaveSlots.TabIndex = 38;
-            this.groupSaveSlots.TabStop = false;
-            this.groupSaveSlots.Text = "Save Slot";
-            // 
-            // radioSaveSlot3
-            // 
-            this.radioSaveSlot3.AutoSize = true;
-            this.radioSaveSlot3.Location = new System.Drawing.Point(53, 16);
-            this.radioSaveSlot3.Name = "radioSaveSlot3";
-            this.radioSaveSlot3.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot3.TabIndex = 45;
-            this.radioSaveSlot3.TabStop = true;
-            this.radioSaveSlot3.UseVisualStyleBackColor = true;
-            this.radioSaveSlot3.CheckedChanged += new System.EventHandler(this.radioSaveSlot3_CheckedChanged);
-            // 
-            // radioSaveSlot2
-            // 
-            this.radioSaveSlot2.AutoSize = true;
-            this.radioSaveSlot2.Location = new System.Drawing.Point(29, 16);
-            this.radioSaveSlot2.Name = "radioSaveSlot2";
-            this.radioSaveSlot2.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot2.TabIndex = 44;
-            this.radioSaveSlot2.TabStop = true;
-            this.radioSaveSlot2.UseVisualStyleBackColor = true;
-            this.radioSaveSlot2.CheckedChanged += new System.EventHandler(this.radioSaveSlot2_CheckedChanged);
-            // 
-            // radioSaveSlot1
-            // 
-            this.radioSaveSlot1.AutoSize = true;
-            this.radioSaveSlot1.Location = new System.Drawing.Point(6, 16);
-            this.radioSaveSlot1.Name = "radioSaveSlot1";
-            this.radioSaveSlot1.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot1.TabIndex = 43;
-            this.radioSaveSlot1.TabStop = true;
-            this.radioSaveSlot1.UseVisualStyleBackColor = true;
-            this.radioSaveSlot1.CheckedChanged += new System.EventHandler(this.radioSaveSlot1_CheckedChanged);
-            // 
-            // lblInstallPath
-            // 
-            this.lblInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblInstallPath.AutoSize = true;
-            this.lblInstallPath.Location = new System.Drawing.Point(13, 12);
-            this.lblInstallPath.Name = "lblInstallPath";
-            this.lblInstallPath.Size = new System.Drawing.Size(62, 13);
-            this.lblInstallPath.TabIndex = 39;
-            this.lblInstallPath.Text = "Install Path:";
-            // 
-            // tbInstallPath
-            // 
-            this.tbInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbInstallPath.Enabled = false;
-            this.tbInstallPath.Location = new System.Drawing.Point(93, 9);
-            this.tbInstallPath.Name = "tbInstallPath";
-            this.tbInstallPath.Size = new System.Drawing.Size(479, 20);
-            this.tbInstallPath.TabIndex = 41;
-            // 
-            // btnInstallPath
-            // 
-            this.btnInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInstallPath.Location = new System.Drawing.Point(578, 6);
-            this.btnInstallPath.Name = "btnInstallPath";
-            this.btnInstallPath.Size = new System.Drawing.Size(152, 23);
-            this.btnInstallPath.TabIndex = 42;
-            this.btnInstallPath.Text = "Installation Path...";
-            this.btnInstallPath.UseVisualStyleBackColor = true;
-            this.btnInstallPath.Click += new System.EventHandler(this.btnInstallPath_Click);
-            // 
-            // lblFileSelected
-            // 
-            this.lblFileSelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFileSelected.AutoSize = true;
-            this.lblFileSelected.Location = new System.Drawing.Point(12, 40);
-            this.lblFileSelected.Name = "lblFileSelected";
-            this.lblFileSelected.Size = new System.Drawing.Size(72, 13);
-            this.lblFileSelected.TabIndex = 43;
-            this.lblFileSelected.Text = "Loaded From:";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnSaveSlot
-            // 
-            this.btnSaveSlot.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSaveSlot.Enabled = false;
-            this.btnSaveSlot.Location = new System.Drawing.Point(308, 533);
-            this.btnSaveSlot.Name = "btnSaveSlot";
-            this.btnSaveSlot.Size = new System.Drawing.Size(127, 33);
-            this.btnSaveSlot.TabIndex = 46;
-            this.btnSaveSlot.Text = "Save To Slot";
-            this.btnSaveSlot.UseVisualStyleBackColor = true;
-            this.btnSaveSlot.Click += new System.EventHandler(this.btnSaveSlot_Click);
-            // 
-            // btnSaveFile
-            // 
-            this.btnSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveFile.Location = new System.Drawing.Point(655, 35);
-            this.btnSaveFile.Name = "btnSaveFile";
-            this.btnSaveFile.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveFile.TabIndex = 2;
-            this.btnSaveFile.Text = "Save File";
-            this.btnSaveFile.UseVisualStyleBackColor = true;
-            this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
-            // 
-            // imgListSavePointSelectors
-            // 
-            this.imgListSavePointSelectors.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListSavePointSelectors.ImageStream")));
-            this.imgListSavePointSelectors.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgListSavePointSelectors.Images.SetKeyName(0, "SaveMapSelectorOff.jpg");
-            this.imgListSavePointSelectors.Images.SetKeyName(1, "SaveMapSelectorOn.jpg");
-            // 
-            // checkSaveLumenCastle
-            // 
-            this.checkSaveLumenCastle.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkSaveLumenCastle.AutoSize = true;
-            this.checkSaveLumenCastle.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveLumenCastle.Enabled = false;
-            this.checkSaveLumenCastle.ImageIndex = 0;
-            this.checkSaveLumenCastle.ImageList = this.imgListSavePointSelectors;
-            this.checkSaveLumenCastle.Location = new System.Drawing.Point(0, 90);
-            this.checkSaveLumenCastle.Name = "checkSaveLumenCastle";
-            this.checkSaveLumenCastle.Size = new System.Drawing.Size(41, 31);
-            this.checkSaveLumenCastle.TabIndex = 50;
-            this.checkSaveLumenCastle.UseVisualStyleBackColor = true;
-            this.checkSaveLumenCastle.CheckedChanged += new System.EventHandler(this.checkSaveLumenCastle_CheckedChanged);
-            // 
-            // checkSaveAtlantVillage
-            // 
-            this.checkSaveAtlantVillage.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkSaveAtlantVillage.AutoSize = true;
-            this.checkSaveAtlantVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveAtlantVillage.Enabled = false;
-            this.checkSaveAtlantVillage.ImageIndex = 0;
-            this.checkSaveAtlantVillage.ImageList = this.imgListSavePointSelectors;
-            this.checkSaveAtlantVillage.Location = new System.Drawing.Point(0, 120);
-            this.checkSaveAtlantVillage.Name = "checkSaveAtlantVillage";
-            this.checkSaveAtlantVillage.Size = new System.Drawing.Size(41, 31);
-            this.checkSaveAtlantVillage.TabIndex = 51;
-            this.checkSaveAtlantVillage.UseVisualStyleBackColor = true;
-            this.checkSaveAtlantVillage.CheckedChanged += new System.EventHandler(this.checkSaveAtlantVillage_CheckedChanged);
-            // 
-            // checkSaveTheAbyss
-            // 
-            this.checkSaveTheAbyss.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkSaveTheAbyss.AutoSize = true;
-            this.checkSaveTheAbyss.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveTheAbyss.Enabled = false;
-            this.checkSaveTheAbyss.ImageIndex = 0;
-            this.checkSaveTheAbyss.ImageList = this.imgListSavePointSelectors;
-            this.checkSaveTheAbyss.Location = new System.Drawing.Point(0, 149);
-            this.checkSaveTheAbyss.Name = "checkSaveTheAbyss";
-            this.checkSaveTheAbyss.Size = new System.Drawing.Size(41, 31);
-            this.checkSaveTheAbyss.TabIndex = 52;
-            this.checkSaveTheAbyss.UseVisualStyleBackColor = true;
-            this.checkSaveTheAbyss.CheckedChanged += new System.EventHandler(this.checkSaveTheAbyss_CheckedChanged);
-            // 
-            // checkSavePaluluTown
-            // 
-            this.checkSavePaluluTown.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkSavePaluluTown.AutoSize = true;
-            this.checkSavePaluluTown.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSavePaluluTown.Enabled = false;
-            this.checkSavePaluluTown.ImageIndex = 0;
-            this.checkSavePaluluTown.ImageList = this.imgListSavePointSelectors;
-            this.checkSavePaluluTown.Location = new System.Drawing.Point(0, 177);
-            this.checkSavePaluluTown.Name = "checkSavePaluluTown";
-            this.checkSavePaluluTown.Size = new System.Drawing.Size(41, 31);
-            this.checkSavePaluluTown.TabIndex = 53;
-            this.checkSavePaluluTown.UseVisualStyleBackColor = true;
-            this.checkSavePaluluTown.CheckedChanged += new System.EventHandler(this.checkSavePaluluTown_CheckedChanged);
-            // 
-            // checkSaveTheWall
-            // 
-            this.checkSaveTheWall.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkSaveTheWall.AutoSize = true;
-            this.checkSaveTheWall.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveTheWall.Enabled = false;
-            this.checkSaveTheWall.ImageIndex = 0;
-            this.checkSaveTheWall.ImageList = this.imgListSavePointSelectors;
-            this.checkSaveTheWall.Location = new System.Drawing.Point(0, 206);
-            this.checkSaveTheWall.Name = "checkSaveTheWall";
-            this.checkSaveTheWall.Size = new System.Drawing.Size(41, 31);
-            this.checkSaveTheWall.TabIndex = 54;
-            this.checkSaveTheWall.UseVisualStyleBackColor = true;
-            this.checkSaveTheWall.CheckedChanged += new System.EventHandler(this.checkSaveTheWall_CheckedChanged);
-            // 
-            // checkSaveFiraVillage
-            // 
-            this.checkSaveFiraVillage.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkSaveFiraVillage.AutoSize = true;
-            this.checkSaveFiraVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveFiraVillage.Enabled = false;
-            this.checkSaveFiraVillage.ImageIndex = 0;
-            this.checkSaveFiraVillage.ImageList = this.imgListSavePointSelectors;
-            this.checkSaveFiraVillage.Location = new System.Drawing.Point(0, 236);
-            this.checkSaveFiraVillage.Name = "checkSaveFiraVillage";
-            this.checkSaveFiraVillage.Size = new System.Drawing.Size(41, 31);
-            this.checkSaveFiraVillage.TabIndex = 55;
-            this.checkSaveFiraVillage.UseVisualStyleBackColor = true;
-            this.checkSaveFiraVillage.CheckedChanged += new System.EventHandler(this.checkSaveFiraVillage_CheckedChanged);
-            // 
-            // checkSaveFiraVolcano
-            // 
-            this.checkSaveFiraVolcano.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkSaveFiraVolcano.AutoSize = true;
-            this.checkSaveFiraVolcano.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveFiraVolcano.Enabled = false;
-            this.checkSaveFiraVolcano.ImageIndex = 0;
-            this.checkSaveFiraVolcano.ImageList = this.imgListSavePointSelectors;
-            this.checkSaveFiraVolcano.Location = new System.Drawing.Point(0, 265);
-            this.checkSaveFiraVolcano.Name = "checkSaveFiraVolcano";
-            this.checkSaveFiraVolcano.Size = new System.Drawing.Size(41, 31);
-            this.checkSaveFiraVolcano.TabIndex = 56;
-            this.checkSaveFiraVolcano.UseVisualStyleBackColor = true;
-            this.checkSaveFiraVolcano.CheckedChanged += new System.EventHandler(this.checkSaveFiraVolcano_CheckedChanged);
-            // 
-            // checkSaveCelestiaVillage
-            // 
-            this.checkSaveCelestiaVillage.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkSaveCelestiaVillage.AutoSize = true;
-            this.checkSaveCelestiaVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveCelestiaVillage.Enabled = false;
-            this.checkSaveCelestiaVillage.ImageIndex = 0;
-            this.checkSaveCelestiaVillage.ImageList = this.imgListSavePointSelectors;
-            this.checkSaveCelestiaVillage.Location = new System.Drawing.Point(0, 295);
-            this.checkSaveCelestiaVillage.Name = "checkSaveCelestiaVillage";
-            this.checkSaveCelestiaVillage.Size = new System.Drawing.Size(41, 31);
-            this.checkSaveCelestiaVillage.TabIndex = 57;
-            this.checkSaveCelestiaVillage.UseVisualStyleBackColor = true;
-            this.checkSaveCelestiaVillage.CheckedChanged += new System.EventHandler(this.checkSaveCelestiaVillage_CheckedChanged);
-            // 
-            // checkSaveDarkClouds
-            // 
-            this.checkSaveDarkClouds.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkSaveDarkClouds.AutoSize = true;
-            this.checkSaveDarkClouds.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveDarkClouds.Enabled = false;
-            this.checkSaveDarkClouds.ImageIndex = 0;
-            this.checkSaveDarkClouds.ImageList = this.imgListSavePointSelectors;
-            this.checkSaveDarkClouds.Location = new System.Drawing.Point(0, 324);
-            this.checkSaveDarkClouds.Name = "checkSaveDarkClouds";
-            this.checkSaveDarkClouds.Size = new System.Drawing.Size(41, 31);
-            this.checkSaveDarkClouds.TabIndex = 58;
-            this.checkSaveDarkClouds.UseVisualStyleBackColor = true;
-            this.checkSaveDarkClouds.CheckedChanged += new System.EventHandler(this.checkSaveDarkClouds_CheckedChanged);
-            // 
-            // checkSaveValionsCastle
-            // 
-            this.checkSaveValionsCastle.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkSaveValionsCastle.AutoSize = true;
-            this.checkSaveValionsCastle.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveValionsCastle.Enabled = false;
-            this.checkSaveValionsCastle.ImageIndex = 0;
-            this.checkSaveValionsCastle.ImageList = this.imgListSavePointSelectors;
-            this.checkSaveValionsCastle.Location = new System.Drawing.Point(0, 354);
-            this.checkSaveValionsCastle.Name = "checkSaveValionsCastle";
-            this.checkSaveValionsCastle.Size = new System.Drawing.Size(41, 31);
-            this.checkSaveValionsCastle.TabIndex = 59;
-            this.checkSaveValionsCastle.UseVisualStyleBackColor = true;
-            this.checkSaveValionsCastle.CheckedChanged += new System.EventHandler(this.checkSaveValionsCastle_CheckedChanged);
-            // 
-            // tabScenes
-            // 
-            this.tabScenes.Controls.Add(this.listViewScenes);
-            this.tabScenes.Location = new System.Drawing.Point(4, 22);
-            this.tabScenes.Name = "tabScenes";
-            this.tabScenes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabScenes.Size = new System.Drawing.Size(714, 437);
-            this.tabScenes.TabIndex = 2;
-            this.tabScenes.Text = "Scenes";
-            this.tabScenes.UseVisualStyleBackColor = true;
-            // 
-            // listViewScenes
-            // 
-            this.listViewScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewScenes.HideSelection = false;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem1.Tag = "13";
-            listViewItem2.StateImageIndex = 0;
-            listViewItem2.Tag = "14";
-            listViewItem3.StateImageIndex = 0;
-            listViewItem3.Tag = "15";
-            listViewItem4.StateImageIndex = 0;
-            listViewItem4.Tag = "16";
-            listViewItem5.StateImageIndex = 0;
-            listViewItem5.Tag = "17";
-            this.listViewScenes.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5});
-            this.listViewScenes.LargeImageList = this.imgListScenePreviews;
-            this.listViewScenes.Location = new System.Drawing.Point(6, 6);
-            this.listViewScenes.MultiSelect = false;
-            this.listViewScenes.Name = "listViewScenes";
-            this.listViewScenes.Size = new System.Drawing.Size(702, 425);
-            this.listViewScenes.SmallImageList = this.imgListScenePreviews;
-            this.listViewScenes.TabIndex = 0;
-            this.listViewScenes.TileSize = new System.Drawing.Size(78, 30);
-            this.listViewScenes.UseCompatibleStateImageBehavior = false;
-            this.listViewScenes.SelectedIndexChanged += new System.EventHandler(this.listViewScenes_SelectedIndexChanged);
-            // 
-            // imgListScenePreviews
-            // 
-            this.imgListScenePreviews.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListScenePreviews.ImageStream")));
-            this.imgListScenePreviews.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgListScenePreviews.Images.SetKeyName(0, "ScenePreview0.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(1, "ScenePreview1.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(2, "ScenePreview2.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(3, "ScenePreview3.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(4, "ScenePreview4.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(5, "ScenePreview5.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(6, "ScenePreview6.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(7, "ScenePreview7.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(8, "ScenePreview8.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(9, "ScenePreview9.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(10, "ScenePreview10.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(11, "ScenePreview11.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(12, "ScenePreview12.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(13, "ScenePreview13.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(14, "ScenePreview14.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(15, "ScenePreview15.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(16, "ScenePreview16.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(17, "ScenePreview17.jpg");
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1774,6 +1827,11 @@
             this.Name = "Form1";
             this.Text = "Aggelos Save Mod";
             this.tabControl1.ResumeLayout(false);
+            this.tabSaves.ResumeLayout(false);
+            this.tabSaves.PerformLayout();
+            this.groupSaveSlots.ResumeLayout(false);
+            this.groupSaveSlots.PerformLayout();
+            this.tabScenes.ResumeLayout(false);
             this.tabInventory.ResumeLayout(false);
             this.tabInventory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).EndInit();
@@ -1822,13 +1880,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosArmor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSacredSword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosSword)).EndInit();
-            this.tabSaves.ResumeLayout(false);
-            this.tabSaves.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMapSelectors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMap)).EndInit();
-            this.groupSaveSlots.ResumeLayout(false);
-            this.groupSaveSlots.PerformLayout();
-            this.tabScenes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1958,6 +2011,10 @@
         private System.Windows.Forms.TabPage tabScenes;
         private System.Windows.Forms.ListView listViewScenes;
         private System.Windows.Forms.ImageList imgListScenePreviews;
+        private System.Windows.Forms.Button btnDeleteScene;
+        private System.Windows.Forms.Button btnAddScene;
+        private System.Windows.Forms.Button btnSaveAllScenes;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

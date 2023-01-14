@@ -265,6 +265,12 @@
     <None Include="Resources\SaveMapSelections.jpg" />
     <None Include="Resources\SaveMapSelectorOff.jpg" />
     <None Include="Resources\SaveMapSelectorOn.jpg" />
+    <None Include="Resources\ScenePreview12.jpg" />
+    <None Include="Resources\ScenePreview13.jpg" />
+    <None Include="Resources\ScenePreview14.jpg" />
+    <None Include="Resources\ScenePreview15.jpg" />
+    <None Include="Resources\ScenePreview16.jpg" />
+    <None Include="Resources\ScenePreview17.jpg" />
     <Content Include="ScenesList.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

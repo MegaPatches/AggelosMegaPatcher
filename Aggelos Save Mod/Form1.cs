@@ -737,6 +737,60 @@ namespace Aggelos_Save_Mod
         }
 
         /************************************************************
+         * LoadScenes
+         * 
+         * This function is called to load a list of scenes from a file
+         * expected to be in the directory with the executeable. This
+         * allows us to have the ability to save custom scene selections
+         * that will preselect desired x/y coordinates.
+         ************************************************************/
+        private void LoadScenes()
+        {
+
+        }
+
+        /************************************************************
+         * SaveScenes
+         * 
+         * This function is called to save a list of scenes to a file
+         * expected to be in the directory with the executeable. This
+         * allows us to have the ability to save custom scene selections
+         * that will preselect desired x/y coordinates.
+         ************************************************************/
+        private async void SaveScenes()
+        {
+            //Open a Scenes.txt file in the same directory as our program
+            StreamWriter file = new StreamWriter(".\\Scenes.txt");
+
+            //For each item in our scenes list, save a row with relevant information
+            try
+            {
+                foreach (ListViewItem item in listViewScenes.Items)
+                {
+                    //Write a line to the file
+                    await file.WriteLineAsync(item.Text + "," + item.Tag + "," + item.SubItems[1].Text + "," + item.SubItems[2].Text);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Could not save scenes file: " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            file.Close();
+        }
+
+        /************************************************************
+        * btnSaveAllScenes_Click
+        * 
+        * This function is called when the user clicks the save all
+        * scenes button on the form.
+        ************************************************************/
+        private void btnSaveAllScenes_Click(object sender, EventArgs e)
+        {
+            SaveScenes();
+        }
+
+        /************************************************************
         * btnInstallPath_Click
         * 
         * This function is called when the user clicks the installation path
