@@ -473,6 +473,16 @@ namespace Aggelos_Save_Mod.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Scenes_Guide {
+            get {
+                object obj = ResourceManager.GetObject("Scenes_Guide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Scepter {
             get {
                 object obj = ResourceManager.GetObject("Scepter", resourceCulture);

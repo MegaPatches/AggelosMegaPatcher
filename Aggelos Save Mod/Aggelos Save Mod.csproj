@@ -90,6 +90,12 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="SceneGuideDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneGuideDialog.Designer.cs">
+      <DependentUpon>SceneGuideDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scene.cs" />
     <Compile Include="Save.cs" />
     <Compile Include="MainForm.cs">
@@ -108,6 +114,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneGuideDialog.resx">
+      <DependentUpon>SceneGuideDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -295,6 +304,7 @@
     <None Include="Resources\ScenePreview16.jpg" />
     <None Include="Resources\ScenePreview17.jpg" />
     <None Include="Resources\ProgramIcon.ico" />
+    <None Include="Resources\Scenes_Guide.png" />
     <Content Include="ScenesList.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

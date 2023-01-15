@@ -138,6 +138,7 @@
             this.picSaveMapSelectors = new System.Windows.Forms.PictureBox();
             this.picSaveMap = new System.Windows.Forms.PictureBox();
             this.tabScenes = new System.Windows.Forms.TabPage();
+            this.btnSceneGuide = new System.Windows.Forms.Button();
             this.btnReloadScenes = new System.Windows.Forms.Button();
             this.lblY = new System.Windows.Forms.Label();
             this.lblX = new System.Windows.Forms.Label();
@@ -1571,6 +1572,7 @@
             // 
             // tabScenes
             // 
+            this.tabScenes.Controls.Add(this.btnSceneGuide);
             this.tabScenes.Controls.Add(this.btnReloadScenes);
             this.tabScenes.Controls.Add(this.lblY);
             this.tabScenes.Controls.Add(this.lblX);
@@ -1587,6 +1589,17 @@
             this.tabScenes.TabIndex = 2;
             this.tabScenes.Text = "Scenes";
             this.tabScenes.UseVisualStyleBackColor = true;
+            // 
+            // btnSceneGuide
+            // 
+            this.btnSceneGuide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSceneGuide.Location = new System.Drawing.Point(637, 6);
+            this.btnSceneGuide.Name = "btnSceneGuide";
+            this.btnSceneGuide.Size = new System.Drawing.Size(71, 23);
+            this.btnSceneGuide.TabIndex = 48;
+            this.btnSceneGuide.Text = "Guide";
+            this.btnSceneGuide.UseVisualStyleBackColor = true;
+            this.btnSceneGuide.Click += new System.EventHandler(this.btnSceneGuide_Click);
             // 
             // btnReloadScenes
             // 
@@ -2109,6 +2122,7 @@
         private System.Windows.Forms.NumericUpDown tbX;
         private System.Windows.Forms.Button btnReloadScenes;
         private System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.Button btnSceneGuide;
     }
 }
 

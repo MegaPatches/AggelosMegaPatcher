@@ -2893,5 +2893,21 @@ namespace Aggelos_Save_Mod
             //Show the dialog and capture its result
             var result = aboutDialog.ShowDialog();
         }
+
+        /************************************************************
+        * btnSceneGuide_Click
+        * 
+        * This function is called when the user clicks the guide
+        * button on the scenes form. This will show a popup to the user
+        * showing a scenes map to use as a guide for adding new scenes.
+        ************************************************************/
+        private void btnSceneGuide_Click(object sender, EventArgs e)
+        {
+            //Create a new instance of the SceneGuide
+            var sceneGuideDialog = new SceneGuideDialog();
+
+            //Show the dialog and capture its result
+            var result = sceneGuideDialog.ShowDialog();
+        }
     }
 }
