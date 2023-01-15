@@ -20,7 +20,6 @@ namespace Aggelos_Save_Mod
         #region Attributes
         //File Information
         public string InstallationPath { get; set; }
-        public bool FileLoaded { get; set; }
 
         //Slot Number
         public string slotNumber { get; set; }      //Save file name: "sauvegarde1", "sauvegarde2", or "sauvegarde3" for each slot
@@ -285,9 +284,6 @@ namespace Aggelos_Save_Mod
         {
             //Get the installation path for the save
             GetInstallationPath();
-
-            //Mark that no file is loaded
-            FileLoaded = false;
 
             //Set the default values for each item to an empty loadable save
             SetDefault();
@@ -559,9 +555,6 @@ namespace Aggelos_Save_Mod
                 chest_108 = Int16.Parse(saveData[193].Substring(saveData[193].IndexOf("=") + 1));
                 chest_109 = Int16.Parse(saveData[194].Substring(saveData[194].IndexOf("=") + 1));
                 chest_110 = Int16.Parse(saveData[195].Substring(saveData[195].IndexOf("=") + 1));
-
-                //Mark file as loaded if everything has successfully been set
-                FileLoaded = true;
             }
             catch (Exception e)
             {
@@ -580,6 +573,7 @@ namespace Aggelos_Save_Mod
          ************************************************************/
         public void SetDefault()
         {
+            slotNumber = "sauvegarde1";
             gem = 0;
             coeur = 30;
             magie = 3;

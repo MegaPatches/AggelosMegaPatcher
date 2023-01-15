@@ -370,7 +370,6 @@
             // tbMagic
             // 
             this.tbMagic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbMagic.Enabled = false;
             this.tbMagic.Location = new System.Drawing.Point(616, 89);
             this.tbMagic.Maximum = new decimal(new int[] {
             6,
@@ -385,7 +384,6 @@
             // tbHealth
             // 
             this.tbHealth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbHealth.Enabled = false;
             this.tbHealth.Location = new System.Drawing.Point(535, 89);
             this.tbHealth.Maximum = new decimal(new int[] {
             40,
@@ -400,7 +398,6 @@
             // tbDefense
             // 
             this.tbDefense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbDefense.Enabled = false;
             this.tbDefense.Location = new System.Drawing.Point(53, 370);
             this.tbDefense.Maximum = new decimal(new int[] {
             50,
@@ -415,7 +412,6 @@
             // tbPower
             // 
             this.tbPower.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPower.Enabled = false;
             this.tbPower.Location = new System.Drawing.Point(53, 270);
             this.tbPower.Maximum = new decimal(new int[] {
             140,
@@ -455,7 +451,6 @@
             this.btnSelectLightSkillRight.TabIndex = 106;
             this.btnSelectLightSkillRight.Text = ">";
             this.btnSelectLightSkillRight.UseVisualStyleBackColor = true;
-            this.btnSelectLightSkillRight.Visible = false;
             this.btnSelectLightSkillRight.Click += new System.EventHandler(this.btnSelectLightSkillRight_Click);
             // 
             // btnSelectLightSkillLeft
@@ -502,7 +497,6 @@
             // tbGems
             // 
             this.tbGems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbGems.Enabled = false;
             this.tbGems.Increment = new decimal(new int[] {
             100,
             0,
@@ -524,7 +518,6 @@
             this.checkHerb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkHerb.AutoSize = true;
             this.checkHerb.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkHerb.Enabled = false;
             this.checkHerb.Location = new System.Drawing.Point(654, 115);
             this.checkHerb.Name = "checkHerb";
             this.checkHerb.Size = new System.Drawing.Size(15, 14);
@@ -535,7 +528,6 @@
             // tbExp
             // 
             this.tbExp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbExp.Enabled = false;
             this.tbExp.Increment = new decimal(new int[] {
             100,
             0,
@@ -565,7 +557,6 @@
             // tbLevel
             // 
             this.tbLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbLevel.Enabled = false;
             this.tbLevel.Location = new System.Drawing.Point(535, 189);
             this.tbLevel.Maximum = new decimal(new int[] {
             20,
@@ -615,7 +606,6 @@
             this.btnSelectScrollRight.TabIndex = 98;
             this.btnSelectScrollRight.Text = ">";
             this.btnSelectScrollRight.UseVisualStyleBackColor = true;
-            this.btnSelectScrollRight.Visible = false;
             this.btnSelectScrollRight.Click += new System.EventHandler(this.btnSelectScrollRight_Click);
             // 
             // btnSelectScrollLeft
@@ -657,7 +647,6 @@
             this.btnSelectAirRight.TabIndex = 94;
             this.btnSelectAirRight.Text = ">";
             this.btnSelectAirRight.UseVisualStyleBackColor = true;
-            this.btnSelectAirRight.Visible = false;
             this.btnSelectAirRight.Click += new System.EventHandler(this.btnSelectAirRight_Click);
             // 
             // btnSelectAirLeft
@@ -699,7 +688,6 @@
             this.btnSelectFireRight.TabIndex = 90;
             this.btnSelectFireRight.Text = ">";
             this.btnSelectFireRight.UseVisualStyleBackColor = true;
-            this.btnSelectFireRight.Visible = false;
             this.btnSelectFireRight.Click += new System.EventHandler(this.btnSelectFireRight_Click);
             // 
             // btnSelectFireLeft
@@ -741,7 +729,6 @@
             this.btnSelectWaterRight.TabIndex = 86;
             this.btnSelectWaterRight.Text = ">";
             this.btnSelectWaterRight.UseVisualStyleBackColor = true;
-            this.btnSelectWaterRight.Visible = false;
             this.btnSelectWaterRight.Click += new System.EventHandler(this.btnSelectWaterRight_Click);
             // 
             // btnSelectWaterLeft
@@ -783,7 +770,6 @@
             this.btnSelectEarthRight.TabIndex = 82;
             this.btnSelectEarthRight.Text = ">";
             this.btnSelectEarthRight.UseVisualStyleBackColor = true;
-            this.btnSelectEarthRight.Visible = false;
             this.btnSelectEarthRight.Click += new System.EventHandler(this.btnSelectEarthRight_Click);
             // 
             // btnSelectEarthLeft
@@ -925,7 +911,6 @@
             this.btnSelectQuestItemRight.TabIndex = 68;
             this.btnSelectQuestItemRight.Text = ">";
             this.btnSelectQuestItemRight.UseVisualStyleBackColor = true;
-            this.btnSelectQuestItemRight.Visible = false;
             this.btnSelectQuestItemRight.Click += new System.EventHandler(this.btnSelectQuestItemRight_Click);
             // 
             // btnSelectQuestItemLeft
@@ -977,7 +962,6 @@
             this.btnSelectPotionRight.TabIndex = 62;
             this.btnSelectPotionRight.Text = ">";
             this.btnSelectPotionRight.UseVisualStyleBackColor = true;
-            this.btnSelectPotionRight.Visible = false;
             this.btnSelectPotionRight.Click += new System.EventHandler(this.btnSelectPotionRight_Click);
             // 
             // btnSelectPotionLeft
@@ -1039,7 +1023,6 @@
             this.btnSelectLyreRight.TabIndex = 56;
             this.btnSelectLyreRight.Text = ">";
             this.btnSelectLyreRight.UseVisualStyleBackColor = true;
-            this.btnSelectLyreRight.Visible = false;
             this.btnSelectLyreRight.Click += new System.EventHandler(this.btnSelectLyreRight_Click);
             // 
             // btnSelectLyreLeft
@@ -1050,7 +1033,6 @@
             this.btnSelectLyreLeft.TabIndex = 55;
             this.btnSelectLyreLeft.Text = "<";
             this.btnSelectLyreLeft.UseVisualStyleBackColor = true;
-            this.btnSelectLyreLeft.Visible = false;
             this.btnSelectLyreLeft.Click += new System.EventHandler(this.btnSelectLyreLeft_Click);
             // 
             // picSacredArmor
@@ -1081,7 +1063,6 @@
             this.btnSelectArmorRight.TabIndex = 52;
             this.btnSelectArmorRight.Text = ">";
             this.btnSelectArmorRight.UseVisualStyleBackColor = true;
-            this.btnSelectArmorRight.Visible = false;
             this.btnSelectArmorRight.Click += new System.EventHandler(this.btnSelectArmorRight_Click);
             // 
             // btnSelectArmorLeft
@@ -1123,7 +1104,6 @@
             this.btnSelectSwordRight.TabIndex = 48;
             this.btnSelectSwordRight.Text = ">";
             this.btnSelectSwordRight.UseVisualStyleBackColor = true;
-            this.btnSelectSwordRight.Visible = false;
             this.btnSelectSwordRight.Click += new System.EventHandler(this.btnSelectSwordRight_Click);
             // 
             // btnSelectSwordLeft
@@ -1141,7 +1121,6 @@
             // 
             this.checkUniversalBook.AutoSize = true;
             this.checkUniversalBook.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkUniversalBook.Enabled = false;
             this.checkUniversalBook.Location = new System.Drawing.Point(94, 115);
             this.checkUniversalBook.Name = "checkUniversalBook";
             this.checkUniversalBook.Size = new System.Drawing.Size(15, 14);
@@ -1153,7 +1132,6 @@
             // 
             this.checkAngelFeather.AutoSize = true;
             this.checkAngelFeather.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkAngelFeather.Enabled = false;
             this.checkAngelFeather.Location = new System.Drawing.Point(23, 168);
             this.checkAngelFeather.Name = "checkAngelFeather";
             this.checkAngelFeather.Size = new System.Drawing.Size(15, 14);
@@ -1165,7 +1143,6 @@
             // 
             this.checkLumenKey.AutoSize = true;
             this.checkLumenKey.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkLumenKey.Enabled = false;
             this.checkLumenKey.Location = new System.Drawing.Point(23, 115);
             this.checkLumenKey.Name = "checkLumenKey";
             this.checkLumenKey.Size = new System.Drawing.Size(15, 14);
@@ -1177,7 +1154,6 @@
             // 
             this.checkLightningArmor.AutoSize = true;
             this.checkLightningArmor.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkLightningArmor.Enabled = false;
             this.checkLightningArmor.Location = new System.Drawing.Point(548, 386);
             this.checkLightningArmor.Name = "checkLightningArmor";
             this.checkLightningArmor.Size = new System.Drawing.Size(15, 14);
@@ -1189,7 +1165,6 @@
             // 
             this.checkDragonArmor.AutoSize = true;
             this.checkDragonArmor.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkDragonArmor.Enabled = false;
             this.checkDragonArmor.Location = new System.Drawing.Point(483, 386);
             this.checkDragonArmor.Name = "checkDragonArmor";
             this.checkDragonArmor.Size = new System.Drawing.Size(15, 14);
@@ -1201,7 +1176,6 @@
             // 
             this.checkSamuraiArmor.AutoSize = true;
             this.checkSamuraiArmor.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSamuraiArmor.Enabled = false;
             this.checkSamuraiArmor.Location = new System.Drawing.Point(413, 386);
             this.checkSamuraiArmor.Name = "checkSamuraiArmor";
             this.checkSamuraiArmor.Size = new System.Drawing.Size(15, 14);
@@ -1213,7 +1187,6 @@
             // 
             this.checkCoralArmor.AutoSize = true;
             this.checkCoralArmor.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkCoralArmor.Enabled = false;
             this.checkCoralArmor.Location = new System.Drawing.Point(346, 386);
             this.checkCoralArmor.Name = "checkCoralArmor";
             this.checkCoralArmor.Size = new System.Drawing.Size(15, 14);
@@ -1225,7 +1198,6 @@
             // 
             this.checkSteelArmor.AutoSize = true;
             this.checkSteelArmor.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSteelArmor.Enabled = false;
             this.checkSteelArmor.Location = new System.Drawing.Point(278, 386);
             this.checkSteelArmor.Name = "checkSteelArmor";
             this.checkSteelArmor.Size = new System.Drawing.Size(15, 14);
@@ -1250,7 +1222,6 @@
             // 
             this.checkLightningSword.AutoSize = true;
             this.checkLightningSword.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkLightningSword.Enabled = false;
             this.checkLightningSword.Location = new System.Drawing.Point(548, 284);
             this.checkLightningSword.Name = "checkLightningSword";
             this.checkLightningSword.Size = new System.Drawing.Size(15, 14);
@@ -1262,7 +1233,6 @@
             // 
             this.checkDragonSword.AutoSize = true;
             this.checkDragonSword.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkDragonSword.Enabled = false;
             this.checkDragonSword.Location = new System.Drawing.Point(483, 284);
             this.checkDragonSword.Name = "checkDragonSword";
             this.checkDragonSword.Size = new System.Drawing.Size(15, 14);
@@ -1274,7 +1244,6 @@
             // 
             this.checkMasamune.AutoSize = true;
             this.checkMasamune.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkMasamune.Enabled = false;
             this.checkMasamune.Location = new System.Drawing.Point(414, 284);
             this.checkMasamune.Name = "checkMasamune";
             this.checkMasamune.Size = new System.Drawing.Size(15, 14);
@@ -1286,7 +1255,6 @@
             // 
             this.checkBubbleSword.AutoSize = true;
             this.checkBubbleSword.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBubbleSword.Enabled = false;
             this.checkBubbleSword.Location = new System.Drawing.Point(346, 284);
             this.checkBubbleSword.Name = "checkBubbleSword";
             this.checkBubbleSword.Size = new System.Drawing.Size(15, 14);
@@ -1298,7 +1266,6 @@
             // 
             this.checkSteelSword.AutoSize = true;
             this.checkSteelSword.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSteelSword.Enabled = false;
             this.checkSteelSword.Location = new System.Drawing.Point(280, 284);
             this.checkSteelSword.Name = "checkSteelSword";
             this.checkSteelSword.Size = new System.Drawing.Size(15, 14);
@@ -1350,7 +1317,6 @@
             this.checkSaveValionsCastle.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkSaveValionsCastle.AutoSize = true;
             this.checkSaveValionsCastle.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveValionsCastle.Enabled = false;
             this.checkSaveValionsCastle.ImageIndex = 0;
             this.checkSaveValionsCastle.ImageList = this.imgListSavePointSelectors;
             this.checkSaveValionsCastle.Location = new System.Drawing.Point(0, 354);
@@ -1372,7 +1338,6 @@
             this.checkSaveDarkClouds.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkSaveDarkClouds.AutoSize = true;
             this.checkSaveDarkClouds.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveDarkClouds.Enabled = false;
             this.checkSaveDarkClouds.ImageIndex = 0;
             this.checkSaveDarkClouds.ImageList = this.imgListSavePointSelectors;
             this.checkSaveDarkClouds.Location = new System.Drawing.Point(0, 324);
@@ -1387,7 +1352,6 @@
             this.checkSaveCelestiaVillage.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkSaveCelestiaVillage.AutoSize = true;
             this.checkSaveCelestiaVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveCelestiaVillage.Enabled = false;
             this.checkSaveCelestiaVillage.ImageIndex = 0;
             this.checkSaveCelestiaVillage.ImageList = this.imgListSavePointSelectors;
             this.checkSaveCelestiaVillage.Location = new System.Drawing.Point(0, 295);
@@ -1402,7 +1366,6 @@
             this.checkSaveFiraVolcano.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkSaveFiraVolcano.AutoSize = true;
             this.checkSaveFiraVolcano.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveFiraVolcano.Enabled = false;
             this.checkSaveFiraVolcano.ImageIndex = 0;
             this.checkSaveFiraVolcano.ImageList = this.imgListSavePointSelectors;
             this.checkSaveFiraVolcano.Location = new System.Drawing.Point(0, 265);
@@ -1417,7 +1380,6 @@
             this.checkSaveFiraVillage.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkSaveFiraVillage.AutoSize = true;
             this.checkSaveFiraVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveFiraVillage.Enabled = false;
             this.checkSaveFiraVillage.ImageIndex = 0;
             this.checkSaveFiraVillage.ImageList = this.imgListSavePointSelectors;
             this.checkSaveFiraVillage.Location = new System.Drawing.Point(0, 236);
@@ -1432,7 +1394,6 @@
             this.checkSaveTheWall.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkSaveTheWall.AutoSize = true;
             this.checkSaveTheWall.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveTheWall.Enabled = false;
             this.checkSaveTheWall.ImageIndex = 0;
             this.checkSaveTheWall.ImageList = this.imgListSavePointSelectors;
             this.checkSaveTheWall.Location = new System.Drawing.Point(0, 206);
@@ -1447,7 +1408,6 @@
             this.checkSavePaluluTown.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkSavePaluluTown.AutoSize = true;
             this.checkSavePaluluTown.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSavePaluluTown.Enabled = false;
             this.checkSavePaluluTown.ImageIndex = 0;
             this.checkSavePaluluTown.ImageList = this.imgListSavePointSelectors;
             this.checkSavePaluluTown.Location = new System.Drawing.Point(0, 177);
@@ -1462,7 +1422,6 @@
             this.checkSaveTheAbyss.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkSaveTheAbyss.AutoSize = true;
             this.checkSaveTheAbyss.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveTheAbyss.Enabled = false;
             this.checkSaveTheAbyss.ImageIndex = 0;
             this.checkSaveTheAbyss.ImageList = this.imgListSavePointSelectors;
             this.checkSaveTheAbyss.Location = new System.Drawing.Point(0, 149);
@@ -1477,7 +1436,6 @@
             this.checkSaveAtlantVillage.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkSaveAtlantVillage.AutoSize = true;
             this.checkSaveAtlantVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveAtlantVillage.Enabled = false;
             this.checkSaveAtlantVillage.ImageIndex = 0;
             this.checkSaveAtlantVillage.ImageList = this.imgListSavePointSelectors;
             this.checkSaveAtlantVillage.Location = new System.Drawing.Point(0, 120);
@@ -1492,7 +1450,6 @@
             this.checkSaveLumenCastle.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkSaveLumenCastle.AutoSize = true;
             this.checkSaveLumenCastle.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveLumenCastle.Enabled = false;
             this.checkSaveLumenCastle.ImageIndex = 0;
             this.checkSaveLumenCastle.ImageList = this.imgListSavePointSelectors;
             this.checkSaveLumenCastle.Location = new System.Drawing.Point(0, 90);
@@ -1507,7 +1464,6 @@
             this.checkSaveBoscoCave.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkSaveBoscoCave.AutoSize = true;
             this.checkSaveBoscoCave.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveBoscoCave.Enabled = false;
             this.checkSaveBoscoCave.ImageIndex = 0;
             this.checkSaveBoscoCave.ImageList = this.imgListSavePointSelectors;
             this.checkSaveBoscoCave.Location = new System.Drawing.Point(0, 60);
@@ -1522,7 +1478,6 @@
             this.checkSaveBoscoVillage.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkSaveBoscoVillage.AutoSize = true;
             this.checkSaveBoscoVillage.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveBoscoVillage.Enabled = false;
             this.checkSaveBoscoVillage.ImageIndex = 0;
             this.checkSaveBoscoVillage.ImageList = this.imgListSavePointSelectors;
             this.checkSaveBoscoVillage.Location = new System.Drawing.Point(0, 30);
@@ -1537,7 +1492,6 @@
             this.checkSaveLumenWoods.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkSaveLumenWoods.AutoSize = true;
             this.checkSaveLumenWoods.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkSaveLumenWoods.Enabled = false;
             this.checkSaveLumenWoods.ImageIndex = 0;
             this.checkSaveLumenWoods.ImageList = this.imgListSavePointSelectors;
             this.checkSaveLumenWoods.Location = new System.Drawing.Point(0, 0);
@@ -1875,7 +1829,6 @@
             // btnSaveSlot
             // 
             this.btnSaveSlot.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSaveSlot.Enabled = false;
             this.btnSaveSlot.Location = new System.Drawing.Point(307, 534);
             this.btnSaveSlot.Name = "btnSaveSlot";
             this.btnSaveSlot.Size = new System.Drawing.Size(127, 33);

@@ -35,6 +35,8 @@ namespace Aggelos_Save_Mod
         //Declaring global save file object for use throughout the program
         public Save saveFile = new Save();
 
+        public bool fileLoaded = false;
+
         //Declaring preset file being used
         public string presetFile = "";
 
@@ -74,6 +76,9 @@ namespace Aggelos_Save_Mod
             //Show detected intall path
             tbInstallPath.Text = saveFile.InstallationPath;
 
+            //Load defaults in the UI
+            RefreshUI();
+
             //Load scenes list from file
             LoadScenes();
         }
@@ -86,696 +91,679 @@ namespace Aggelos_Save_Mod
          ************************************************************/
         private void RefreshUI()
         {
-            //Make sure we have loaded a file first
-            if (saveFile.FileLoaded)
+            #region //Save Slots
+            //Set the default save slot to whatever was found in the preset,
+            //otherwise 3 in case the other two slots are for casual
+            switch (saveFile.slotNumber)
             {
-                //Set the default save slot to whatever was found in the preset,
-                //otherwise 3 in case the other two slots are for casual
-                switch (saveFile.slotNumber)
-                {
-                    case "sauvegarde1":
-                        radioSaveSlot1.Checked = true;
-                        break;
-                    case "sauvegarde2":
-                        radioSaveSlot2.Checked = true;
-                        break;
-                    case "savegarde3":
-                        radioSaveSlot3.Checked = true;
-                        break;
-                    default:
-                        radioSaveSlot3.Checked = true;
-                        break;
-                }
-
-                tbFileSelected.Text = presetFile;
-                btnSaveSlot.Enabled = true;
-
-                //Main Stats
-                tbGems.Enabled = true;
-                tbGems.Text = saveFile.gem.ToString();
-
-                tbLevel.Enabled = true;
-                tbLevel.Text = saveFile.level.ToString();
-
-                tbExp.Enabled = true;
-                tbExp.Text = saveFile.exp.ToString();
-
-                tbPower.Enabled = true;
-                tbPower.Text = saveFile.pow.ToString();
-
-                tbDefense.Enabled = true;
-                tbDefense.Text = saveFile.def.ToString();
-
-                tbHealth.Enabled = true;
-                tbHealth.Text = saveFile.coeur.ToString();
-
-                tbMagic.Enabled = true;
-                tbMagic.Text = saveFile.magie.ToString();
-
-                //Inventory
-                //Items
-                checkHerb.Enabled = true;
-                checkHerb.Checked = saveFile.herbe == 1 ? true : false;
-
-                //Control the visibility of the correct image
-                btnSelectPotionLeft.Visible = true;
-                btnSelectPotionRight.Visible = true;
-                switch (saveFile.boule)
-                {
-                    case 0:
-                        picSmallPotion.Visible = false;
-                        picBigPotion.Visible = false;
-                        picElixir.Visible = false;
-                        btnSelectPotionLeft.Visible = false; //Re-disable if at min
-                        break;
-                    case 1:
-                        picSmallPotion.Visible = true;
-                        picBigPotion.Visible = false;
-                        picElixir.Visible = false;
-                        break;
-                    case 2:
-                        picSmallPotion.Visible = false;
-                        picBigPotion.Visible = true;
-                        picElixir.Visible = false;
-                        break;
-                    case 3:
-                        picSmallPotion.Visible = false;
-                        picBigPotion.Visible = false;
-                        picElixir.Visible = true;
-                        btnSelectPotionRight.Visible = false; //Re-disable if at max
-                        break;
-                    default:
-                        break;
-                }
-
-                checkLumenKey.Enabled = true;
-                checkLumenKey.Checked = saveFile.kingkey == 1 ? true : false;
-
-                checkAngelFeather.Enabled = true;
-                checkAngelFeather.Checked = saveFile.plume == 1 ? true : false;
-
-                //Control the visibility of the correct image
-                btnSelectQuestItemLeft.Visible = true;
-                btnSelectQuestItemRight.Visible = true;
-                switch (saveFile.map)
-                {
-                    case 0:
-                        picBananas.Visible = false;
-                        picNecklace.Visible = false;
-                        picBrokenCrown.Visible = false;
-                        picTiara.Visible = false;
-                        picMoon.Visible = false;
-                        picShell.Visible = false;
-                        picStar.Visible = false;
-                        picCrystal.Visible = false;
-                        picScepter.Visible = false;
-                        picSun.Visible = false;
-                        picEmptyVial.Visible = false;
-                        picFullVial.Visible = false;
-                        btnSelectQuestItemLeft.Visible = false; //Re-disable if at min
-                        break;
-                    case 1:
-                        picBananas.Visible = true;
-                        picNecklace.Visible = false;
-                        picBrokenCrown.Visible = false;
-                        picTiara.Visible = false;
-                        picMoon.Visible = false;
-                        picShell.Visible = false;
-                        picStar.Visible = false;
-                        picCrystal.Visible = false;
-                        picScepter.Visible = false;
-                        picSun.Visible = false;
-                        picEmptyVial.Visible = false;
-                        picFullVial.Visible = false;
-                        break;
-                    case 2:
-                        picBananas.Visible = false;
-                        picNecklace.Visible = true;
-                        picBrokenCrown.Visible = false;
-                        picTiara.Visible = false;
-                        picMoon.Visible = false;
-                        picShell.Visible = false;
-                        picStar.Visible = false;
-                        picCrystal.Visible = false;
-                        picScepter.Visible = false;
-                        picSun.Visible = false;
-                        picEmptyVial.Visible = false;
-                        picFullVial.Visible = false;
-                        break;
-                    case 3:
-                        picBananas.Visible = false;
-                        picNecklace.Visible = false;
-                        picBrokenCrown.Visible = true;
-                        picTiara.Visible = false;
-                        picMoon.Visible = false;
-                        picShell.Visible = false;
-                        picStar.Visible = false;
-                        picCrystal.Visible = false;
-                        picScepter.Visible = false;
-                        picSun.Visible = false;
-                        picEmptyVial.Visible = false;
-                        picFullVial.Visible = false;
-                        break;
-                    case 4:
-                        picBananas.Visible = false;
-                        picNecklace.Visible = false;
-                        picBrokenCrown.Visible = false;
-                        picTiara.Visible = true;
-                        picMoon.Visible = false;
-                        picShell.Visible = false;
-                        picStar.Visible = false;
-                        picCrystal.Visible = false;
-                        picScepter.Visible = false;
-                        picSun.Visible = false;
-                        picEmptyVial.Visible = false;
-                        picFullVial.Visible = false;
-                        break;
-                    case 5:
-                        picBananas.Visible = false;
-                        picNecklace.Visible = false;
-                        picBrokenCrown.Visible = false;
-                        picTiara.Visible = false;
-                        picMoon.Visible = true;
-                        picShell.Visible = false;
-                        picStar.Visible = false;
-                        picCrystal.Visible = false;
-                        picScepter.Visible = false;
-                        picSun.Visible = false;
-                        picEmptyVial.Visible = false;
-                        picFullVial.Visible = false;
-                        break;
-                    case 6:
-                        picBananas.Visible = false;
-                        picNecklace.Visible = false;
-                        picBrokenCrown.Visible = false;
-                        picTiara.Visible = false;
-                        picMoon.Visible = false;
-                        picShell.Visible = true;
-                        picStar.Visible = false;
-                        picCrystal.Visible = false;
-                        picScepter.Visible = false;
-                        picSun.Visible = false;
-                        picEmptyVial.Visible = false;
-                        picFullVial.Visible = false;
-                        break;
-                    case 7:
-                        picBananas.Visible = false;
-                        picNecklace.Visible = false;
-                        picBrokenCrown.Visible = false;
-                        picTiara.Visible = false;
-                        picMoon.Visible = false;
-                        picShell.Visible = false;
-                        picStar.Visible = true;
-                        picCrystal.Visible = false;
-                        picScepter.Visible = false;
-                        picSun.Visible = false;
-                        picEmptyVial.Visible = false;
-                        picFullVial.Visible = false;
-                        break;
-                    case 8:
-                        picBananas.Visible = false;
-                        picNecklace.Visible = false;
-                        picBrokenCrown.Visible = false;
-                        picTiara.Visible = false;
-                        picMoon.Visible = false;
-                        picShell.Visible = false;
-                        picStar.Visible = false;
-                        picCrystal.Visible = true;
-                        picScepter.Visible = false;
-                        picSun.Visible = false;
-                        picEmptyVial.Visible = false;
-                        picFullVial.Visible = false;
-                        break;
-                    case 9:
-                        picBananas.Visible = false;
-                        picNecklace.Visible = false;
-                        picBrokenCrown.Visible = false;
-                        picTiara.Visible = false;
-                        picMoon.Visible = false;
-                        picShell.Visible = false;
-                        picStar.Visible = false;
-                        picCrystal.Visible = false;
-                        picScepter.Visible = true;
-                        picSun.Visible = false;
-                        picEmptyVial.Visible = false;
-                        picFullVial.Visible = false;
-                        break;
-                    case 10:
-                        picBananas.Visible = false;
-                        picNecklace.Visible = false;
-                        picBrokenCrown.Visible = false;
-                        picTiara.Visible = false;
-                        picMoon.Visible = false;
-                        picShell.Visible = false;
-                        picStar.Visible = false;
-                        picCrystal.Visible = false;
-                        picScepter.Visible = false;
-                        picSun.Visible = true;
-                        picEmptyVial.Visible = false;
-                        picFullVial.Visible = false;
-                        break;
-                    case 11:
-                        picBananas.Visible = false;
-                        picNecklace.Visible = false;
-                        picBrokenCrown.Visible = false;
-                        picTiara.Visible = false;
-                        picMoon.Visible = false;
-                        picShell.Visible = false;
-                        picStar.Visible = false;
-                        picCrystal.Visible = false;
-                        picScepter.Visible = false;
-                        picSun.Visible = false;
-                        picEmptyVial.Visible = true;
-                        picFullVial.Visible = false;
-                        break;
-                    case 12:
-                        picBananas.Visible = false;
-                        picNecklace.Visible = false;
-                        picBrokenCrown.Visible = false;
-                        picTiara.Visible = false;
-                        picMoon.Visible = false;
-                        picShell.Visible = false;
-                        picStar.Visible = false;
-                        picCrystal.Visible = false;
-                        picScepter.Visible = false;
-                        picSun.Visible = false;
-                        picEmptyVial.Visible = false;
-                        picFullVial.Visible = true;
-                        btnSelectQuestItemRight.Visible = false; //Re-disable if at max
-                        break;
-                    default:
-                        break;
-                }
-
-                checkUniversalBook.Enabled = true;
-                checkUniversalBook.Checked = saveFile.livre == 1 ? true : false;
-
-                //Determine the current state of the lyre based on the three variables
-                int currentLyreState = 0;
-                if (saveFile.harpefil == 0 && saveFile.harpechassis == 0 && saveFile.harpmax == 0)
-                {
-                    currentLyreState = 0;
-                }
-                else if (saveFile.harpefil == 1 && saveFile.harpechassis == 0 && saveFile.harpmax == 0)
-                {
-                    currentLyreState = 1;
-                }
-                else if (saveFile.harpefil == 0 && saveFile.harpechassis == 1 && saveFile.harpmax == 0)
-                {
-                    currentLyreState = 2;
-                }
-                else if (saveFile.harpefil == 1 && saveFile.harpechassis == 1 && saveFile.harpmax == 0)
-                {
-                    currentLyreState = 3;
-                }
-                else if (saveFile.harpefil == 1 && saveFile.harpechassis == 1 && saveFile.harpmax == 1)
-                {
-                    currentLyreState = 4;
-                }
-                //Control the visibility of the correct image and set the correct variables
-                btnSelectLyreLeft.Visible = true;
-                btnSelectLyreRight.Visible = true;
-                switch (currentLyreState)
-                {
-                    //Have none
-                    case 0:
-                        saveFile.harpefil = 0;
-                        saveFile.harpechassis = 0;
-                        saveFile.harpmax = 0;
-                        picLyreStrings.Visible = false;
-                        picLyreBody.Visible = false;
-                        picLyreWithStrings.Visible = false;
-                        picLyreRepaired.Visible = false;
-                        btnSelectLyreLeft.Visible = false; //Re-disable if at min
-                        break;
-                    //Have string only
-                    case 1:
-                        saveFile.harpefil = 1;
-                        saveFile.harpechassis = 0;
-                        saveFile.harpmax = 0;
-                        picLyreStrings.Visible = true;
-                        picLyreBody.Visible = false;
-                        picLyreWithStrings.Visible = false;
-                        picLyreRepaired.Visible = false;
-                        break;
-                    //Have body only
-                    case 2:
-                        saveFile.harpefil = 0;
-                        saveFile.harpechassis = 1;
-                        saveFile.harpmax = 0;
-                        picLyreStrings.Visible = false;
-                        picLyreBody.Visible = true;
-                        picLyreWithStrings.Visible = false;
-                        picLyreRepaired.Visible = false;
-                        break;
-                    //Have body and string
-                    case 3:
-                        saveFile.harpefil = 1;
-                        saveFile.harpechassis = 1;
-                        saveFile.harpmax = 0;
-                        picLyreStrings.Visible = false;
-                        picLyreBody.Visible = false;
-                        picLyreWithStrings.Visible = true;
-                        picLyreRepaired.Visible = false;
-                        break;
-                    //Repaired
-                    case 4:
-                        saveFile.harpefil = 1;
-                        saveFile.harpechassis = 1;
-                        saveFile.harpmax = 1;
-                        picLyreStrings.Visible = false;
-                        picLyreBody.Visible = false;
-                        picLyreWithStrings.Visible = false;
-                        picLyreRepaired.Visible = true;
-                        btnSelectLyreRight.Visible = false; //Re-disable if at max
-                        break;
-                    default:
-                        break;
-                }
-
-                //Rings and Essences - 1 or 2 for each ring. Can't seem to have essences without rings.
-                //Control the visibility of the correct image
-                btnSelectEarthLeft.Visible = true;
-                btnSelectEarthRight.Visible = true;
-                switch (saveFile.ring1)
-                {
-                    case 0:
-                        picEarthRing.Visible = false;
-                        picEarthEssence.Visible = false;
-                        btnSelectEarthLeft.Visible = false; //Re-disable if at min
-                        break;
-                    case 1:
-                        picEarthRing.Visible = true;
-                        picEarthEssence.Visible = false;
-                        break;
-                    case 2:
-                        picEarthRing.Visible = false;
-                        picEarthEssence.Visible = true;
-                        btnSelectEarthRight.Visible = false; //Re-disable if at max
-                        break;
-                    default:
-                        break;
-                }
-
-                btnSelectWaterLeft.Visible = true;
-                btnSelectWaterRight.Visible = true;
-                switch (saveFile.ring2)
-                {
-                    case 0:
-                        picWaterRing.Visible = false;
-                        picWaterEssence.Visible = false;
-                        btnSelectWaterLeft.Visible = false; //Re-disable if at min
-                        break;
-                    case 1:
-                        picWaterRing.Visible = true;
-                        picWaterEssence.Visible = false;
-                        break;
-                    case 2:
-                        picWaterRing.Visible = false;
-                        picWaterEssence.Visible = true;
-                        btnSelectWaterRight.Visible = false; //Re-disable if at max
-                        break;
-                    default:
-                        break;
-                }
-
-                btnSelectFireLeft.Visible = true;
-                btnSelectFireRight.Visible = true;
-                switch (saveFile.ring3)
-                {
-                    case 0:
-                        picFireRing.Visible = false;
-                        picFireEssence.Visible = false;
-                        btnSelectFireLeft.Visible = false; //Re-disable if at min
-                        break;
-                    case 1:
-                        picFireRing.Visible = true;
-                        picFireEssence.Visible = false;
-                        break;
-                    case 2:
-                        picFireRing.Visible = false;
-                        picFireEssence.Visible = true;
-                        btnSelectFireRight.Visible = false; //Re-disable if at max
-                        break;
-                    default:
-                        break;
-                }
-
-                btnSelectAirLeft.Visible = true;
-                btnSelectAirRight.Visible = true;
-                switch (saveFile.ring4)
-                {
-                    case 0:
-                        picAirRing.Visible = false;
-                        picAirEssence.Visible = false;
-                        btnSelectAirLeft.Visible = false; //Re-disable if at min
-                        break;
-                    case 1:
-                        picAirRing.Visible = true;
-                        picAirEssence.Visible = false;
-                        break;
-                    case 2:
-                        picAirRing.Visible = false;
-                        picAirEssence.Visible = true;
-                        btnSelectAirRight.Visible = false; //Re-disable if at max
-                        break;
-                    default:
-                        break;
-                }
-
-                //Scrolls - 1, 2, or 3 for each main skill. Can't seem to have laters without previous.
-                //Control the visibility of the correct image
-                btnSelectScrollLeft.Visible = true;
-                btnSelectScrollRight.Visible = true;
-                switch (saveFile.scroll)
-                {
-                    case 0:
-                        picMoleScroll.Visible = false;
-                        picMoleText.Visible = false;
-                        picFleaScroll.Visible = false;
-                        picFleaText.Visible = false;
-                        picWoodpeckerScroll.Visible = false;
-                        picWoodpeckerText.Visible = false;
-                        btnSelectScrollLeft.Visible = false; //Re-disable if at min
-                        break;
-                    case 1:
-                        picMoleScroll.Visible = true;
-                        picMoleText.Visible = true;
-                        picFleaScroll.Visible = false;
-                        picFleaText.Visible = false;
-                        picWoodpeckerScroll.Visible = false;
-                        picWoodpeckerText.Visible = false;
-                        break;
-                    case 2:
-                        picMoleScroll.Visible = false;
-                        picMoleText.Visible = false;
-                        picFleaScroll.Visible = true;
-                        picFleaText.Visible = true;
-                        picWoodpeckerScroll.Visible = false;
-                        picWoodpeckerText.Visible = false;
-                        break;
-                    case 3:
-                        picMoleScroll.Visible = false;
-                        picMoleText.Visible = false;
-                        picFleaScroll.Visible = false;
-                        picFleaText.Visible = false;
-                        picWoodpeckerScroll.Visible = true;
-                        picWoodpeckerText.Visible = true;
-                        btnSelectScrollRight.Visible = false; //Re-disable if at max
-                        break;
-                    default:
-                        break;
-                }
-
-                //Light Skills - Firefly scroll and light essence are tied together
-                btnSelectLightSkillLeft.Visible = true;
-                btnSelectLightSkillRight.Visible = true;
-                switch (saveFile.lightskill)
-                {
-                    case 0:
-                        picLightEssence.Visible = false;
-                        picFireflyScroll.Visible = false;
-                        btnSelectLightSkillLeft.Visible = false; //Re-disable if at min
-                        break;
-                    case 1:
-                        picLightEssence.Visible = true;
-                        picFireflyScroll.Visible = false;
-                        break;
-                    case 2:
-                        picLightEssence.Visible = false;
-                        picFireflyScroll.Visible = true;
-                        btnSelectLightSkillRight.Visible = false; //Re-disable if at max
-                        break;
-                    default:
-                        break;
-                }
-
-                //Weapons - "epee#" is 1. epee 1 is always available and epee7 is 1 or 2 based on blessed status
-                //checkIronSword.Enabled = false;
-                //checkIronSword.Checked = saveFile.epee1 == 1 ? true : true;
-
-                checkSteelSword.Enabled = true;
-                checkSteelSword.Checked = saveFile.epee2 == 1 ? true : false;
-
-                checkBubbleSword.Enabled = true;
-                checkBubbleSword.Checked = saveFile.epee3 == 1 ? true : false;
-
-                checkMasamune.Enabled = true;
-                checkMasamune.Checked = saveFile.epee4 == 1 ? true : false;
-
-                checkDragonSword.Enabled = true;
-                checkDragonSword.Checked = saveFile.epee5 == 1 ? true : false;
-
-                checkLightningSword.Enabled = true;
-                checkLightningSword.Checked = saveFile.epee6 == 1 ? true : false;
-
-                //Control the visibility of the correct image
-                btnSelectSwordLeft.Visible = true;
-                btnSelectSwordRight.Visible = true;
-                switch (saveFile.epee7)
-                {
-                    case 0:
-                        picAggelosSword.Visible = false;
-                        picSacredSword.Visible = false;
-                        btnSelectSwordLeft.Visible = false; //Re-disable if at min
-                        break;
-                    case 1:
-                        picAggelosSword.Visible = true;
-                        picSacredSword.Visible = false;
-                        break;
-                    case 2:
-                        picAggelosSword.Visible = false;
-                        picSacredSword.Visible = true;
-                        btnSelectSwordRight.Visible = false; //Re-disable if at max
-                        break;
-                    default:
-                        break;
-                }
-
-                //Armor - "armure#" is 1. armure 1 is always available and armure7 is 1 or 2 based on blessed status
-                //checkIronArmor.Enabled = false;
-                //checkIronArmor.Checked = saveFile.armure1 == 1 ? true : true;
-
-                checkSteelArmor.Enabled = true;
-                checkSteelArmor.Checked = saveFile.armure2 == 1 ? true : false;
-
-                checkCoralArmor.Enabled = true;
-                checkCoralArmor.Checked = saveFile.armure3 == 1 ? true : false;
-
-                checkSamuraiArmor.Enabled = true;
-                checkSamuraiArmor.Checked = saveFile.armure4 == 1 ? true : false;
-
-                checkDragonArmor.Enabled = true;
-                checkDragonArmor.Checked = saveFile.armure5 == 1 ? true : false;
-
-                checkLightningArmor.Enabled = true;
-                checkLightningArmor.Checked = saveFile.armure6 == 1 ? true : false;
-
-                //Control the visibility of the correct image
-                btnSelectArmorLeft.Visible = true;
-                btnSelectArmorRight.Visible = true;
-                switch (saveFile.armure7)
-                {
-                    case 0:
-                        picAggelosArmor.Visible = false;
-                        picSacredArmor.Visible = false;
-                        btnSelectArmorLeft.Visible = false; //Re-disable if at min
-                        break;
-                    case 1:
-                        picAggelosArmor.Visible = true;
-                        picSacredArmor.Visible = false;
-                        break;
-                    case 2:
-                        picAggelosArmor.Visible = false;
-                        picSacredArmor.Visible = true;
-                        btnSelectArmorRight.Visible = false; //Re-disable if at max
-                        break;
-                    default:
-                        break;
-                }
-
-
-                //Save Point Map
-                checkSaveLumenWoods.Enabled = true;
-                checkSaveLumenWoods.Checked = saveFile.savep1 == 1 ? true : false;
-
-                checkSaveBoscoVillage.Enabled = true;
-                checkSaveBoscoVillage.Checked = saveFile.savep2 == 1 ? true : false;
-
-                checkSaveBoscoCave.Enabled = true;
-                checkSaveBoscoCave.Checked = saveFile.savep3 == 1 ? true : false;
-
-                checkSaveLumenCastle.Enabled = true;
-                checkSaveLumenCastle.Checked = saveFile.savep4 == 1 ? true : false;
-
-                checkSaveAtlantVillage.Enabled = true;
-                checkSaveAtlantVillage.Checked = saveFile.savep5 == 1 ? true : false;
-
-                checkSaveTheAbyss.Enabled = true;
-                checkSaveTheAbyss.Checked = saveFile.savep6 == 1 ? true : false;
-
-                checkSavePaluluTown.Enabled = true;
-                checkSavePaluluTown.Checked = saveFile.savep7 == 1 ? true : false;
-
-                checkSaveTheWall.Enabled = true;
-                checkSaveTheWall.Checked = saveFile.savep8 == 1 ? true : false;
-
-                checkSaveFiraVillage.Enabled = true;
-                checkSaveFiraVillage.Checked = saveFile.savep9 == 1 ? true : false;
-
-                checkSaveFiraVolcano.Enabled = true;
-                checkSaveFiraVolcano.Checked = saveFile.savep10 == 1 ? true : false;
-
-                checkSaveCelestiaVillage.Enabled = true;
-                checkSaveCelestiaVillage.Checked = saveFile.savep11 == 1 ? true : false;
-
-                checkSaveDarkClouds.Enabled = true;
-                checkSaveDarkClouds.Checked = saveFile.savep12 == 1 ? true : false;
-
-                checkSaveValionsCastle.Enabled = true;
-                checkSaveValionsCastle.Checked = saveFile.savep13 == 1 ? true : false;
-
-
-                //Scenes
-                //Figure out which scene is selected in the list view
-                //Exit once one is found in case there are multiple
-                foreach (ListViewItem item in listViewScenes.Items)
-                {
-                    if (item.Tag.ToString() == saveFile.scene.ToString())
-                    {
-                        item.Selected = true;
-                        break;
-                    }
-                    else
-                    {
-                        item.Selected = false;
-                    }
-                }
-
-                //Load X/Y coordinates
-                tbX.Enabled = true;
-                tbX.Text = saveFile.x.ToString();
-
-                tbY.Enabled = true;
-                tbY.Text = saveFile.y.ToString();
-
-                //Split States
-
+                case "sauvegarde1":
+                    radioSaveSlot1.Checked = true;
+                    break;
+                case "sauvegarde2":
+                    radioSaveSlot2.Checked = true;
+                    break;
+                case "savegarde3":
+                    radioSaveSlot3.Checked = true;
+                    break;
+                default:
+                    radioSaveSlot1.Checked = true;
+                    break;
             }
-            //Blank the values and disable the controls since no file is loaded
-            else
+
+            tbFileSelected.Text = presetFile;
+            btnSaveSlot.Enabled = true;
+            #endregion
+
+            #region //Main Stats
+            tbGems.Enabled = true;
+            tbGems.Text = saveFile.gem.ToString();
+
+            tbLevel.Enabled = true;
+            tbLevel.Text = saveFile.level.ToString();
+
+            tbExp.Enabled = true;
+            tbExp.Text = saveFile.exp.ToString();
+
+            tbPower.Enabled = true;
+            tbPower.Text = saveFile.pow.ToString();
+
+            tbDefense.Enabled = true;
+            tbDefense.Text = saveFile.def.ToString();
+
+            tbHealth.Enabled = true;
+            tbHealth.Text = saveFile.coeur.ToString();
+
+            tbMagic.Enabled = true;
+            tbMagic.Text = saveFile.magie.ToString();
+            #endregion
+
+            #region //Inventory
+            //Items
+            checkHerb.Enabled = true;
+            checkHerb.Checked = saveFile.herbe == 1 ? true : false;
+
+            //Control the visibility of the correct image
+            btnSelectPotionLeft.Visible = true;
+            btnSelectPotionRight.Visible = true;
+            switch (saveFile.boule)
             {
-                btnSaveSlot.Enabled = false;
-
-                tbGems.Enabled = false;
-                tbGems.Text = "";
-
-                tbLevel.Enabled = false;
-                tbLevel.Text = "";
-
-                tbExp.Enabled = false;
-                tbExp.Text = "";
+                case 0:
+                    picSmallPotion.Visible = false;
+                    picBigPotion.Visible = false;
+                    picElixir.Visible = false;
+                    btnSelectPotionLeft.Visible = false; //Re-disable if at min
+                    break;
+                case 1:
+                    picSmallPotion.Visible = true;
+                    picBigPotion.Visible = false;
+                    picElixir.Visible = false;
+                    break;
+                case 2:
+                    picSmallPotion.Visible = false;
+                    picBigPotion.Visible = true;
+                    picElixir.Visible = false;
+                    break;
+                case 3:
+                    picSmallPotion.Visible = false;
+                    picBigPotion.Visible = false;
+                    picElixir.Visible = true;
+                    btnSelectPotionRight.Visible = false; //Re-disable if at max
+                    break;
+                default:
+                    break;
             }
+
+            checkLumenKey.Enabled = true;
+            checkLumenKey.Checked = saveFile.kingkey == 1 ? true : false;
+
+            checkAngelFeather.Enabled = true;
+            checkAngelFeather.Checked = saveFile.plume == 1 ? true : false;
+
+            //Control the visibility of the correct image
+            btnSelectQuestItemLeft.Visible = true;
+            btnSelectQuestItemRight.Visible = true;
+            switch (saveFile.map)
+            {
+                case 0:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    btnSelectQuestItemLeft.Visible = false; //Re-disable if at min
+                    break;
+                case 1:
+                    picBananas.Visible = true;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 2:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = true;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 3:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = true;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 4:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = true;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 5:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = true;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 6:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = true;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 7:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = true;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 8:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = true;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 9:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = true;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 10:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = true;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = false;
+                    break;
+                case 11:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = true;
+                    picFullVial.Visible = false;
+                    break;
+                case 12:
+                    picBananas.Visible = false;
+                    picNecklace.Visible = false;
+                    picBrokenCrown.Visible = false;
+                    picTiara.Visible = false;
+                    picMoon.Visible = false;
+                    picShell.Visible = false;
+                    picStar.Visible = false;
+                    picCrystal.Visible = false;
+                    picScepter.Visible = false;
+                    picSun.Visible = false;
+                    picEmptyVial.Visible = false;
+                    picFullVial.Visible = true;
+                    btnSelectQuestItemRight.Visible = false; //Re-disable if at max
+                    break;
+                default:
+                    break;
+            }
+
+            checkUniversalBook.Enabled = true;
+            checkUniversalBook.Checked = saveFile.livre == 1 ? true : false;
+
+            //Determine the current state of the lyre based on the three variables
+            int currentLyreState = 0;
+            if (saveFile.harpefil == 0 && saveFile.harpechassis == 0 && saveFile.harpmax == 0)
+            {
+                currentLyreState = 0;
+            }
+            else if (saveFile.harpefil == 1 && saveFile.harpechassis == 0 && saveFile.harpmax == 0)
+            {
+                currentLyreState = 1;
+            }
+            else if (saveFile.harpefil == 0 && saveFile.harpechassis == 1 && saveFile.harpmax == 0)
+            {
+                currentLyreState = 2;
+            }
+            else if (saveFile.harpefil == 1 && saveFile.harpechassis == 1 && saveFile.harpmax == 0)
+            {
+                currentLyreState = 3;
+            }
+            else if (saveFile.harpefil == 1 && saveFile.harpechassis == 1 && saveFile.harpmax == 1)
+            {
+                currentLyreState = 4;
+            }
+            //Control the visibility of the correct image and set the correct variables
+            btnSelectLyreLeft.Visible = true;
+            btnSelectLyreRight.Visible = true;
+            switch (currentLyreState)
+            {
+                //Have none
+                case 0:
+                    saveFile.harpefil = 0;
+                    saveFile.harpechassis = 0;
+                    saveFile.harpmax = 0;
+                    picLyreStrings.Visible = false;
+                    picLyreBody.Visible = false;
+                    picLyreWithStrings.Visible = false;
+                    picLyreRepaired.Visible = false;
+                    btnSelectLyreLeft.Visible = false; //Re-disable if at min
+                    break;
+                //Have string only
+                case 1:
+                    saveFile.harpefil = 1;
+                    saveFile.harpechassis = 0;
+                    saveFile.harpmax = 0;
+                    picLyreStrings.Visible = true;
+                    picLyreBody.Visible = false;
+                    picLyreWithStrings.Visible = false;
+                    picLyreRepaired.Visible = false;
+                    break;
+                //Have body only
+                case 2:
+                    saveFile.harpefil = 0;
+                    saveFile.harpechassis = 1;
+                    saveFile.harpmax = 0;
+                    picLyreStrings.Visible = false;
+                    picLyreBody.Visible = true;
+                    picLyreWithStrings.Visible = false;
+                    picLyreRepaired.Visible = false;
+                    break;
+                //Have body and string
+                case 3:
+                    saveFile.harpefil = 1;
+                    saveFile.harpechassis = 1;
+                    saveFile.harpmax = 0;
+                    picLyreStrings.Visible = false;
+                    picLyreBody.Visible = false;
+                    picLyreWithStrings.Visible = true;
+                    picLyreRepaired.Visible = false;
+                    break;
+                //Repaired
+                case 4:
+                    saveFile.harpefil = 1;
+                    saveFile.harpechassis = 1;
+                    saveFile.harpmax = 1;
+                    picLyreStrings.Visible = false;
+                    picLyreBody.Visible = false;
+                    picLyreWithStrings.Visible = false;
+                    picLyreRepaired.Visible = true;
+                    btnSelectLyreRight.Visible = false; //Re-disable if at max
+                    break;
+                default:
+                    break;
+            }
+
+            //Rings and Essences - 1 or 2 for each ring. Can't seem to have essences without rings.
+            //Control the visibility of the correct image
+            btnSelectEarthLeft.Visible = true;
+            btnSelectEarthRight.Visible = true;
+            switch (saveFile.ring1)
+            {
+                case 0:
+                    picEarthRing.Visible = false;
+                    picEarthEssence.Visible = false;
+                    btnSelectEarthLeft.Visible = false; //Re-disable if at min
+                    break;
+                case 1:
+                    picEarthRing.Visible = true;
+                    picEarthEssence.Visible = false;
+                    break;
+                case 2:
+                    picEarthRing.Visible = false;
+                    picEarthEssence.Visible = true;
+                    btnSelectEarthRight.Visible = false; //Re-disable if at max
+                    break;
+                default:
+                    break;
+            }
+
+            btnSelectWaterLeft.Visible = true;
+            btnSelectWaterRight.Visible = true;
+            switch (saveFile.ring2)
+            {
+                case 0:
+                    picWaterRing.Visible = false;
+                    picWaterEssence.Visible = false;
+                    btnSelectWaterLeft.Visible = false; //Re-disable if at min
+                    break;
+                case 1:
+                    picWaterRing.Visible = true;
+                    picWaterEssence.Visible = false;
+                    break;
+                case 2:
+                    picWaterRing.Visible = false;
+                    picWaterEssence.Visible = true;
+                    btnSelectWaterRight.Visible = false; //Re-disable if at max
+                    break;
+                default:
+                    break;
+            }
+
+            btnSelectFireLeft.Visible = true;
+            btnSelectFireRight.Visible = true;
+            switch (saveFile.ring3)
+            {
+                case 0:
+                    picFireRing.Visible = false;
+                    picFireEssence.Visible = false;
+                    btnSelectFireLeft.Visible = false; //Re-disable if at min
+                    break;
+                case 1:
+                    picFireRing.Visible = true;
+                    picFireEssence.Visible = false;
+                    break;
+                case 2:
+                    picFireRing.Visible = false;
+                    picFireEssence.Visible = true;
+                    btnSelectFireRight.Visible = false; //Re-disable if at max
+                    break;
+                default:
+                    break;
+            }
+
+            btnSelectAirLeft.Visible = true;
+            btnSelectAirRight.Visible = true;
+            switch (saveFile.ring4)
+            {
+                case 0:
+                    picAirRing.Visible = false;
+                    picAirEssence.Visible = false;
+                    btnSelectAirLeft.Visible = false; //Re-disable if at min
+                    break;
+                case 1:
+                    picAirRing.Visible = true;
+                    picAirEssence.Visible = false;
+                    break;
+                case 2:
+                    picAirRing.Visible = false;
+                    picAirEssence.Visible = true;
+                    btnSelectAirRight.Visible = false; //Re-disable if at max
+                    break;
+                default:
+                    break;
+            }
+
+            //Scrolls - 1, 2, or 3 for each main skill. Can't seem to have laters without previous.
+            //Control the visibility of the correct image
+            btnSelectScrollLeft.Visible = true;
+            btnSelectScrollRight.Visible = true;
+            switch (saveFile.scroll)
+            {
+                case 0:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    btnSelectScrollLeft.Visible = false; //Re-disable if at min
+                    break;
+                case 1:
+                    picMoleScroll.Visible = true;
+                    picMoleText.Visible = true;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 2:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = true;
+                    picFleaText.Visible = true;
+                    picWoodpeckerScroll.Visible = false;
+                    picWoodpeckerText.Visible = false;
+                    break;
+                case 3:
+                    picMoleScroll.Visible = false;
+                    picMoleText.Visible = false;
+                    picFleaScroll.Visible = false;
+                    picFleaText.Visible = false;
+                    picWoodpeckerScroll.Visible = true;
+                    picWoodpeckerText.Visible = true;
+                    btnSelectScrollRight.Visible = false; //Re-disable if at max
+                    break;
+                default:
+                    break;
+            }
+
+            //Light Skills - Firefly scroll and light essence are tied together
+            btnSelectLightSkillLeft.Visible = true;
+            btnSelectLightSkillRight.Visible = true;
+            switch (saveFile.lightskill)
+            {
+                case 0:
+                    picLightEssence.Visible = false;
+                    picFireflyScroll.Visible = false;
+                    btnSelectLightSkillLeft.Visible = false; //Re-disable if at min
+                    break;
+                case 1:
+                    picLightEssence.Visible = true;
+                    picFireflyScroll.Visible = false;
+                    break;
+                case 2:
+                    picLightEssence.Visible = false;
+                    picFireflyScroll.Visible = true;
+                    btnSelectLightSkillRight.Visible = false; //Re-disable if at max
+                    break;
+                default:
+                    break;
+            }
+
+            //Weapons - "epee#" is 1. epee 1 is always available and epee7 is 1 or 2 based on blessed status
+            //checkIronSword.Enabled = false;
+            //checkIronSword.Checked = saveFile.epee1 == 1 ? true : true;
+
+            checkSteelSword.Enabled = true;
+            checkSteelSword.Checked = saveFile.epee2 == 1 ? true : false;
+
+            checkBubbleSword.Enabled = true;
+            checkBubbleSword.Checked = saveFile.epee3 == 1 ? true : false;
+
+            checkMasamune.Enabled = true;
+            checkMasamune.Checked = saveFile.epee4 == 1 ? true : false;
+
+            checkDragonSword.Enabled = true;
+            checkDragonSword.Checked = saveFile.epee5 == 1 ? true : false;
+
+            checkLightningSword.Enabled = true;
+            checkLightningSword.Checked = saveFile.epee6 == 1 ? true : false;
+
+            //Control the visibility of the correct image
+            btnSelectSwordLeft.Visible = true;
+            btnSelectSwordRight.Visible = true;
+            switch (saveFile.epee7)
+            {
+                case 0:
+                    picAggelosSword.Visible = false;
+                    picSacredSword.Visible = false;
+                    btnSelectSwordLeft.Visible = false; //Re-disable if at min
+                    break;
+                case 1:
+                    picAggelosSword.Visible = true;
+                    picSacredSword.Visible = false;
+                    break;
+                case 2:
+                    picAggelosSword.Visible = false;
+                    picSacredSword.Visible = true;
+                    btnSelectSwordRight.Visible = false; //Re-disable if at max
+                    break;
+                default:
+                    break;
+            }
+
+            //Armor - "armure#" is 1. armure 1 is always available and armure7 is 1 or 2 based on blessed status
+            //checkIronArmor.Enabled = false;
+            //checkIronArmor.Checked = saveFile.armure1 == 1 ? true : true;
+
+            checkSteelArmor.Enabled = true;
+            checkSteelArmor.Checked = saveFile.armure2 == 1 ? true : false;
+
+            checkCoralArmor.Enabled = true;
+            checkCoralArmor.Checked = saveFile.armure3 == 1 ? true : false;
+
+            checkSamuraiArmor.Enabled = true;
+            checkSamuraiArmor.Checked = saveFile.armure4 == 1 ? true : false;
+
+            checkDragonArmor.Enabled = true;
+            checkDragonArmor.Checked = saveFile.armure5 == 1 ? true : false;
+
+            checkLightningArmor.Enabled = true;
+            checkLightningArmor.Checked = saveFile.armure6 == 1 ? true : false;
+
+            //Control the visibility of the correct image
+            btnSelectArmorLeft.Visible = true;
+            btnSelectArmorRight.Visible = true;
+            switch (saveFile.armure7)
+            {
+                case 0:
+                    picAggelosArmor.Visible = false;
+                    picSacredArmor.Visible = false;
+                    btnSelectArmorLeft.Visible = false; //Re-disable if at min
+                    break;
+                case 1:
+                    picAggelosArmor.Visible = true;
+                    picSacredArmor.Visible = false;
+                    break;
+                case 2:
+                    picAggelosArmor.Visible = false;
+                    picSacredArmor.Visible = true;
+                    btnSelectArmorRight.Visible = false; //Re-disable if at max
+                    break;
+                default:
+                    break;
+            }
+            #endregion
+
+            #region //Save Point Map
+            checkSaveLumenWoods.Enabled = true;
+            checkSaveLumenWoods.Checked = saveFile.savep1 == 1 ? true : false;
+
+            checkSaveBoscoVillage.Enabled = true;
+            checkSaveBoscoVillage.Checked = saveFile.savep2 == 1 ? true : false;
+
+            checkSaveBoscoCave.Enabled = true;
+            checkSaveBoscoCave.Checked = saveFile.savep3 == 1 ? true : false;
+
+            checkSaveLumenCastle.Enabled = true;
+            checkSaveLumenCastle.Checked = saveFile.savep4 == 1 ? true : false;
+
+            checkSaveAtlantVillage.Enabled = true;
+            checkSaveAtlantVillage.Checked = saveFile.savep5 == 1 ? true : false;
+
+            checkSaveTheAbyss.Enabled = true;
+            checkSaveTheAbyss.Checked = saveFile.savep6 == 1 ? true : false;
+
+            checkSavePaluluTown.Enabled = true;
+            checkSavePaluluTown.Checked = saveFile.savep7 == 1 ? true : false;
+
+            checkSaveTheWall.Enabled = true;
+            checkSaveTheWall.Checked = saveFile.savep8 == 1 ? true : false;
+
+            checkSaveFiraVillage.Enabled = true;
+            checkSaveFiraVillage.Checked = saveFile.savep9 == 1 ? true : false;
+
+            checkSaveFiraVolcano.Enabled = true;
+            checkSaveFiraVolcano.Checked = saveFile.savep10 == 1 ? true : false;
+
+            checkSaveCelestiaVillage.Enabled = true;
+            checkSaveCelestiaVillage.Checked = saveFile.savep11 == 1 ? true : false;
+
+            checkSaveDarkClouds.Enabled = true;
+            checkSaveDarkClouds.Checked = saveFile.savep12 == 1 ? true : false;
+
+            checkSaveValionsCastle.Enabled = true;
+            checkSaveValionsCastle.Checked = saveFile.savep13 == 1 ? true : false;
+            #endregion
+
+            #region //Scenes
+            //Figure out which scene is selected in the list view
+            //Exit once one is found in case there are multiple
+            foreach (ListViewItem item in listViewScenes.Items)
+            {
+                if (item.Tag.ToString() == saveFile.scene.ToString())
+                {
+                    item.Selected = true;
+                    break;
+                }
+                else
+                {
+                    item.Selected = false;
+                }
+            }
+
+            //Load X/Y coordinates
+            tbX.Enabled = true;
+            tbX.Text = saveFile.x.ToString();
+
+            tbY.Enabled = true;
+            tbY.Text = saveFile.y.ToString();
+            #endregion
         }
 
         /************************************************************
@@ -824,6 +812,9 @@ namespace Aggelos_Save_Mod
                 //Update the file name with the file being read
                 presetFile = fileName;
 
+                //Mark that a file has been loaded
+                fileLoaded = true;
+
                 //Return the array
                 return saveData;
             }
@@ -835,6 +826,9 @@ namespace Aggelos_Save_Mod
 
                 //Reset the text box to show no file selected
                 presetFile = "";
+
+                //Mark that no file is loaded
+                fileLoaded = false;
 
                 //Return empty array if there was an error
                 return new string[0];
