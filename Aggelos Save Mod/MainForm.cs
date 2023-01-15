@@ -2662,6 +2662,16 @@ namespace Aggelos_Save_Mod
                 //Update the x/y values displayed to the user (this should update the save on their change event)
                 tbX.Text = x;
                 tbY.Text = y;
+
+                //Enable copy and delete if we have a selected item
+                btnDeleteScene.Enabled = true;
+                btnCopyScene.Enabled = true;
+            }
+            else
+            {
+                //Disable the copy and delete button with no scene selected
+                btnDeleteScene.Enabled = false;
+                btnCopyScene.Enabled = false;
             }
         }
 
@@ -2848,6 +2858,57 @@ namespace Aggelos_Save_Mod
         {
             //Create a new instance of the AddSceneDialog
             var addSceneDialog = new AddSceneDialog(Cursor.Position.X, Cursor.Position.Y, defaultScenesList);
+
+            //Show the dialog and capture its result
+            var result = addSceneDialog.ShowDialog();
+
+            //Check the result of the dialog and add the scene if it was OK
+            if (result == DialogResult.OK)
+            {
+                //Set up the item and sub items
+                ListViewItem item = new ListViewItem();
+                item.Text = addSceneDialog.newScene.Name; //Name to display
+                item.Tag = addSceneDialog.newScene.ID; //Scene number to use
+                item.ImageIndex = Int32.Parse(addSceneDialog.newScene.ID.ToString()); //Sets the preview picture to use for the area
+
+                //Set up the X sub item
+                ListViewItem.ListViewSubItem subItemX = new ListViewItem.ListViewSubItem();
+                subItemX.Tag = "X";
+                subItemX.Text = addSceneDialog.newScene.x.ToString();
+                item.SubItems.Add(subItemX);
+
+                //Set up the Y sub item
+                ListViewItem.ListViewSubItem subItemY = new ListViewItem.ListViewSubItem();
+                subItemY.Tag = "Y";
+                subItemY.Text = addSceneDialog.newScene.y.ToString();
+                item.SubItems.Add(subItemY);
+
+                //Add the item to the list view
+                listViewScenes.Items.Add(item);
+            }
+
+            //Automatically save our scenes list for the user
+            SaveScenes();
+        }
+
+        /************************************************************
+        * btnCopyScene_Click
+        * 
+        * This function is called when the user clicks the copy
+        * scene button on the form. This will show a popup to the user
+        * for entering in the information for a new scene selection in
+        * the scene list. It will load the defaults of the currently
+        * selected scene in the list view.
+        ************************************************************/
+        private void btnCopyScene_Click(object sender, EventArgs e)
+        {
+            //Create a new instance of the AddSceneDialog
+            var addSceneDialog = new AddSceneDialog(Cursor.Position.X, Cursor.Position.Y, 
+                                                    defaultScenesList, 
+                                                    new Scene(listViewScenes.SelectedItems[0].Text, 
+                                                                Int32.Parse(listViewScenes.SelectedItems[0].Tag.ToString()),
+                                                                Int32.Parse(listViewScenes.SelectedItems[0].SubItems[1].Text),
+                                                                Int32.Parse(listViewScenes.SelectedItems[0].SubItems[2].Text)));
 
             //Show the dialog and capture its result
             var result = addSceneDialog.ShowDialog();

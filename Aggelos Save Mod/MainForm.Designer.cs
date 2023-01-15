@@ -163,6 +163,7 @@
             this.btnSaveFile = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnAbout = new System.Windows.Forms.Button();
+            this.btnCopyScene = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).BeginInit();
@@ -1572,6 +1573,7 @@
             // 
             // tabScenes
             // 
+            this.tabScenes.Controls.Add(this.btnCopyScene);
             this.tabScenes.Controls.Add(this.btnSceneGuide);
             this.tabScenes.Controls.Add(this.btnReloadScenes);
             this.tabScenes.Controls.Add(this.lblY);
@@ -1604,9 +1606,9 @@
             // btnReloadScenes
             // 
             this.btnReloadScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReloadScenes.Location = new System.Drawing.Point(549, 375);
+            this.btnReloadScenes.Location = new System.Drawing.Point(611, 386);
             this.btnReloadScenes.Name = "btnReloadScenes";
-            this.btnReloadScenes.Size = new System.Drawing.Size(111, 45);
+            this.btnReloadScenes.Size = new System.Drawing.Size(97, 45);
             this.btnReloadScenes.TabIndex = 116;
             this.btnReloadScenes.Text = "Reload Scenes";
             this.btnReloadScenes.UseVisualStyleBackColor = true;
@@ -1678,7 +1680,8 @@
             // btnDeleteScene
             // 
             this.btnDeleteScene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteScene.Location = new System.Drawing.Point(549, 250);
+            this.btnDeleteScene.Enabled = false;
+            this.btnDeleteScene.Location = new System.Drawing.Point(549, 323);
             this.btnDeleteScene.Name = "btnDeleteScene";
             this.btnDeleteScene.Size = new System.Drawing.Size(111, 45);
             this.btnDeleteScene.TabIndex = 49;
@@ -1689,9 +1692,9 @@
             // btnAddScene
             // 
             this.btnAddScene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddScene.Location = new System.Drawing.Point(549, 188);
+            this.btnAddScene.Location = new System.Drawing.Point(500, 260);
             this.btnAddScene.Name = "btnAddScene";
-            this.btnAddScene.Size = new System.Drawing.Size(111, 45);
+            this.btnAddScene.Size = new System.Drawing.Size(97, 45);
             this.btnAddScene.TabIndex = 48;
             this.btnAddScene.Text = "Add Scene";
             this.btnAddScene.UseVisualStyleBackColor = true;
@@ -1700,9 +1703,9 @@
             // btnSaveAllScenes
             // 
             this.btnSaveAllScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveAllScenes.Location = new System.Drawing.Point(549, 313);
+            this.btnSaveAllScenes.Location = new System.Drawing.Point(500, 386);
             this.btnSaveAllScenes.Name = "btnSaveAllScenes";
-            this.btnSaveAllScenes.Size = new System.Drawing.Size(111, 45);
+            this.btnSaveAllScenes.Size = new System.Drawing.Size(97, 45);
             this.btnSaveAllScenes.TabIndex = 47;
             this.btnSaveAllScenes.Text = "Save All Scenes";
             this.btnSaveAllScenes.UseVisualStyleBackColor = true;
@@ -1902,6 +1905,18 @@
             this.btnAbout.Text = "About...";
             this.btnAbout.UseVisualStyleBackColor = true;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
+            // btnCopyScene
+            // 
+            this.btnCopyScene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCopyScene.Enabled = false;
+            this.btnCopyScene.Location = new System.Drawing.Point(611, 260);
+            this.btnCopyScene.Name = "btnCopyScene";
+            this.btnCopyScene.Size = new System.Drawing.Size(97, 45);
+            this.btnCopyScene.TabIndex = 117;
+            this.btnCopyScene.Text = "Copy Scene";
+            this.btnCopyScene.UseVisualStyleBackColor = true;
+            this.btnCopyScene.Click += new System.EventHandler(this.btnCopyScene_Click);
             // 
             // MainForm
             // 
@@ -2123,6 +2138,7 @@
         private System.Windows.Forms.Button btnReloadScenes;
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Button btnSceneGuide;
+        private System.Windows.Forms.Button btnCopyScene;
     }
 }
 

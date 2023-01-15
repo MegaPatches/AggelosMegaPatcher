@@ -29,6 +29,24 @@ namespace Aggelos_Save_Mod
             this.startLocationY = y;
             this.defaultScenesList= scenesList;
 
+            //Load the combo box with the scenes list and their appropriate labels
+            cbScenes.DataSource = defaultScenesList;
+
+            Load += new EventHandler(AddSceneDialog_Load);
+        }
+
+        //Adding a constructor override for specifying starting position of popup alongside a default to load for newScene
+        public AddSceneDialog(int x, int y, Scene[] scenesList, Scene selectedScene) : this()
+        {
+            this.startLocationX = x;
+            this.startLocationY = y;
+            this.defaultScenesList = scenesList;
+
+            //Load the combo box with the scenes list and their appropriate labels
+            cbScenes.DataSource = defaultScenesList;
+
+            this.newScene = selectedScene;
+
             Load += new EventHandler(AddSceneDialog_Load);
         }
 
@@ -42,8 +60,8 @@ namespace Aggelos_Save_Mod
             //Set the location of the popup
             this.SetDesktopLocation(startLocationX, startLocationY);
 
-            //Load the combo box with the scenes list and their appropriate labels
-            cbScenes.DataSource = defaultScenesList;
+            //Set the combo box selection to the new scene value (in case one was passed in for copy)
+            cbScenes.SelectedValue = newScene.ID;
 
             //Set the text box to a default prompt
             tbSceneName.Text = newScene.Name;
