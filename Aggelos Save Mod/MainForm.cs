@@ -2677,44 +2677,84 @@ namespace Aggelos_Save_Mod
             //Ensure the list of scenes is empty before attempting to load
             listViewScenes.Clear();
 
+            //Set up a blank list of scenes to fill with loaded data
+            List<Scene> scenesList = new List<Scene>();
+
             //Attempt to open the Scenes.txt file we expect to use for loading the listViewScenes list with selectable presets
             try
             {
                 //Store each line of the file in a string array
                 string[] scenesData = File.ReadAllLines(".\\Scenes.txt");
 
-                //For each row read in, create a new item in the list view
+                //For each row read in, add a new scene to the array
                 foreach (string line in scenesData)
                 {
                     //Split the pieces of scene data on commas
                     string[] scene = line.Split(',');
 
-                    //Set up the item and sub items
-                    ListViewItem item = new ListViewItem();
-                    item.Text = scene[0]; //Name to display
-                    item.Tag = scene[1]; //Scene number to use
-                    item.ImageIndex = Int32.Parse(scene[1]); //Sets the preview picture to use for the area
-
-                    //Set up the X sub item
-                    ListViewItem.ListViewSubItem subItemX = new ListViewItem.ListViewSubItem();
-                    subItemX.Tag = "X";
-                    subItemX.Text = scene[2];
-                    item.SubItems.Add(subItemX);
-
-                    //Set up the Y sub item
-                    ListViewItem.ListViewSubItem subItemY = new ListViewItem.ListViewSubItem();
-                    subItemY.Tag = "Y";
-                    subItemY.Text = scene[3];
-                    item.SubItems.Add(subItemY);
-
-                    //Add the item to the list view
-                    listViewScenes.Items.Add(item);
+                    //Add a new scene with the line data to the scenesList
+                    scenesList.Add(new Scene(scene[0], Int32.Parse(scene[1]), Int32.Parse(scene[2]), Int32.Parse(scene[3])));
                 }
 
             }
             catch (Exception e)
             {
-                MessageBox.Show("Could not load scenes file: " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //If there were any issues loading the scenes, set up the default scenes and warn the user
+                scenesList = new List<Scene>
+                {
+                    new Scene("Lumen Woods", 13, 2768, 191),
+                    new Scene("Bosco", 14, 3792, 447),
+                    new Scene("Castle / Basement", 15, 3680, 399),
+                    new Scene("Bosco Cave", 16, 1264, 895),
+                    new Scene("Earth Temple", 17, 50, 800),
+                    new Scene("Symbol Locations and Shops", 18, 0, 0),
+                    new Scene("Atlant", 19, 2848, 1247),
+                    new Scene("Cave Systems", 20, 0, 0),
+                    new Scene("Palulu / Outside Valion's Castle", 21, 1056, 399),
+                    new Scene("The Abyss", 22, 2672, 543),
+                    new Scene("Water Temple", 23, 50, 800),
+                    new Scene("Fira", 24, 2256, 655),
+                    new Scene("Fira Volcano", 25, 1328, 1071),
+                    new Scene("Fire Temple", 26, 3950, 575),
+                    new Scene("Woodpecker Trials", 27, 0, 0),
+                    new Scene("Darkness Opens Cutscene", 28, 0, 0),
+                    new Scene("Babel Tower", 29, 896, 1462),
+                    new Scene("Celestia", 30, 2016, 2047),
+                    new Scene("Dark Clouds", 31, 2544, 287),
+                    new Scene("Air Temple", 32, 700, 1630),
+                    new Scene("Castle Portal of Darkness", 33, 50, 553),
+                    new Scene("Fira Portal of Darkness", 34, 50, 610),
+                    new Scene("Valion's Castle", 35, 2168, 1199),
+                    new Scene("Downpour Portal of Darkness", 36, 50, 600)
+                };
+
+                
+                MessageBox.Show("Could not load scenes file. Loading default scenes list: " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            //For each scene in the array create a new item in the list view
+            foreach (Scene scene in scenesList)
+            {
+                //Set up the item and sub items
+                ListViewItem item = new ListViewItem();
+                item.Text = scene.Name; //Name to display
+                item.Tag = scene.ID; //Scene number to use
+                item.ImageIndex = scene.ID; //Sets the preview picture to use for the area
+
+                //Set up the X sub item
+                ListViewItem.ListViewSubItem subItemX = new ListViewItem.ListViewSubItem();
+                subItemX.Tag = "X";
+                subItemX.Text = scene.x.ToString();
+                item.SubItems.Add(subItemX);
+
+                //Set up the Y sub item
+                ListViewItem.ListViewSubItem subItemY = new ListViewItem.ListViewSubItem();
+                subItemY.Tag = "Y";
+                subItemY.Text = scene.y.ToString();
+                item.SubItems.Add(subItemY);
+
+                //Add the item to the list view
+                listViewScenes.Items.Add(item);
             }
         }
 
