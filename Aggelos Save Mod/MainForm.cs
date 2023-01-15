@@ -21,8 +21,6 @@ using System.Windows.Forms.VisualStyles;
  *      - Add way to delete a file from the tool.
  *      - Look for cutscene triggers to allow a "skip cutscenes" option if it doesn't break progression of game.
  *      - Add a help files section that has guides and/or documentation of things that are currently commented in code.
- *      - Add copy/duplicate to scene selector
- *      - Store/load scenes from Scene class instead of hardcoded
  *      - Fix default coordinates for things
  * - Cleanup:
  *      - 
