@@ -484,6 +484,25 @@
             this.imgListScenePreviews.Images.SetKeyName(15, "ScenePreview15.jpg");
             this.imgListScenePreviews.Images.SetKeyName(16, "ScenePreview16.jpg");
             this.imgListScenePreviews.Images.SetKeyName(17, "ScenePreview17.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(18, "ScenePreview18.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(19, "ScenePreview19.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(20, "ScenePreview20.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(21, "ScenePreview21.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(22, "ScenePreview22.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(23, "ScenePreview23.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(24, "ScenePreview24.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(25, "ScenePreview25.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(26, "ScenePreview26.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(27, "ScenePreview27.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(28, "ScenePreview28.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(29, "ScenePreview29.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(30, "ScenePreview30.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(31, "ScenePreview31.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(32, "ScenePreview32.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(33, "ScenePreview33.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(34, "ScenePreview34.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(35, "ScenePreview35.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(36, "ScenePreview36.jpg");
             // 
             // btnSaveAllScenes
             // 
