@@ -84,6 +84,23 @@ namespace Aggelos_Save_Mod
         }
 
         /************************************************************
+         * ShowStatusMessage
+         * 
+         * This function is used to show the user a status message
+         * at the bottom of the control. This allows for providing
+         * non-intrusive feedback to actions performed.
+         ************************************************************/
+        public async void ShowStatusMessage(string message, int seconds = 5)
+        {
+            //Update the status text on the screen for the user
+            lblStatus.Text = message;
+
+            //Leave status message on screen for a number of seconds (default 5) then remove
+            await Task.Delay(seconds*1000);
+            lblStatus.Text = "";
+        }
+
+        /************************************************************
          * RefreshUI
          * 
          * This function is called to refresh the values displayed to
@@ -841,7 +858,7 @@ namespace Aggelos_Save_Mod
         * This function is called when the user clicks the load button on the form.
         * The file chosen is expected to be the save file contents.
         ************************************************************/
-        private async void btnLoadFile_Click(object sender, EventArgs e)
+        private void btnLoadFile_Click(object sender, EventArgs e)
         {
             //Call the dialog box and check that the OK button was clicked
             if (openDiag.ShowDialog() == DialogResult.OK)
@@ -858,21 +875,17 @@ namespace Aggelos_Save_Mod
                         //Be sure to refresh our app based on the loaded values
                         RefreshUI();
 
-                        lblStatus.Text = "Save loaded successfully.";
+                        ShowStatusMessage("Save loaded successfully.");
                     }
                     else
                     {
-                        lblStatus.Text = "Errors during update...";
+                        ShowStatusMessage("Errors during update...");
                     }
                 }
                 else
                 {
-                    lblStatus.Text = "Failed to load file...";
+                    ShowStatusMessage("Failed to load file...");
                 }
-
-                //Leave status message on screen for 5 seconds then remove
-                await Task.Delay(5000);
-                lblStatus.Text = "";
             }
         }
 
@@ -882,7 +895,7 @@ namespace Aggelos_Save_Mod
         * This function is called when the user clicks the save preset button 
         * on the form. The file chosen is updated with the values from the form.
         ************************************************************/
-        private async void btnSaveFile_Click(object sender, EventArgs e)
+        private void btnSaveFile_Click(object sender, EventArgs e)
         {
             //Declare a new save dialog
             SaveFileDialog savePresetDialog = new SaveFileDialog();
@@ -898,16 +911,12 @@ namespace Aggelos_Save_Mod
                 //Save the changes to the preset file
                 if (saveFile.SaveChanges(savePresetDialog.FileName))
                 {
-                    lblStatus.Text = "Save changes completed.";
+                    ShowStatusMessage("Save changes completed.");
                 }
                 else
                 {
-                    lblStatus.Text = "Errors during last save...";
+                    ShowStatusMessage("Errors during last save...");
                 }
-
-                //Leave status message on screen for 5 seconds then remove
-                await Task.Delay(5000);
-                lblStatus.Text = "";
             }
         }
 
@@ -917,22 +926,19 @@ namespace Aggelos_Save_Mod
         * This function is called when the user clicks the save button on the form.
         * The file chosen is updated with the values from the form.
         ************************************************************/
-        private async void btnSaveSlot_Click(object sender, EventArgs e)
+        private void btnSaveSlot_Click(object sender, EventArgs e)
         {
             //Save the changes based on the installation path and the slot number
             string savePath = saveFile.InstallationPath + "\\" + saveFile.slotNumber + ".ini";
 
             if (saveFile.SaveChanges(savePath))
             {
-                lblStatus.Text = "Save changes completed.";
+                ShowStatusMessage("Save changes completed.");
             }
             else
             {
-                lblStatus.Text = "Errors during last save...";
+                ShowStatusMessage("Errors during last save...");
             }
-
-            await Task.Delay(3000);
-            lblStatus.Text = "";
         }
 
         /************************************************************
@@ -941,7 +947,7 @@ namespace Aggelos_Save_Mod
         * This function is called when the user clicks the load defaul button on the form.
         * The UI is set to default save file data.
         ************************************************************/
-        private async void btnLoadDefault_Click(object sender, EventArgs e)
+        private void btnLoadDefault_Click(object sender, EventArgs e)
         {
             //Set the default properties
             saveFile.SetDefault();
@@ -949,10 +955,7 @@ namespace Aggelos_Save_Mod
             //Refresh the UI
             RefreshUI();
 
-            lblStatus.Text = "Defaults loaded.";
-
-            await Task.Delay(3000);
-            lblStatus.Text = "";
+            ShowStatusMessage("Defaults loaded.");
         }
 
         /************************************************************
@@ -2733,8 +2736,10 @@ namespace Aggelos_Save_Mod
                 //If there were any issues loading the scenes, set up the default scenes and warn the user
                 scenesList = new List<Scene>(defaultScenesList);
 
+                ShowStatusMessage("Could not load scenes. Loading defaults.",10);
                 
-                MessageBox.Show("Could not load scenes file. Loading default scenes list: " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //Disabling this message box so that it doesn't intrude every time the user opens the standalone .exe without a Scenes.txt
+                //MessageBox.Show("Could not load scenes file. Loading default scenes list: " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             //For each scene in the array create a new item in the list view
