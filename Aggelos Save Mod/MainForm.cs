@@ -25,9 +25,9 @@ using System.Windows.Forms.VisualStyles;
  *      - Store/load scenes from Scene class instead of hardcoded
  *      - Fix default coordinates for things
  * - Cleanup:
- *      - Add about box
+ *      - 
  * - Bugs:
- *      -
+ *      - 
  ***************************/
 
 namespace Aggelos_Save_Mod
@@ -2836,6 +2836,22 @@ namespace Aggelos_Save_Mod
 
             //Automatically save our scenes list for the user
             SaveScenes();
+        }
+
+        /************************************************************
+        * btnAbout_Click
+        * 
+        * This function is called when the user clicks the about
+        * button on the form. This will show a popup to the user
+        * showing product and version information.
+        ************************************************************/
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            //Create a new instance of the AboutBox
+            var aboutDialog = new AboutBox();
+
+            //Show the dialog and capture its result
+            var result = aboutDialog.ShowDialog();
         }
     }
 }

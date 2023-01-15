@@ -1888,6 +1888,7 @@
             this.btnAbout.TabIndex = 47;
             this.btnAbout.Text = "About...";
             this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // MainForm
             // 

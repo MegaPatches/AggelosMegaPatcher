@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Aggelos Save Mod")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A save editor tool for Aggelos to assist with speedrunning. Original code by MegaPatches.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Aggelos Save Mod")]
+[assembly: AssemblyProduct("Aggelos Mega Patcher")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
