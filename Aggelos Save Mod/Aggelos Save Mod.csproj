@@ -286,7 +286,6 @@
     <None Include="Resources\ScenePreview16.jpg" />
     <None Include="Resources\ScenePreview17.jpg" />
     <None Include="Resources\ProgramIcon.ico" />
-    <Content Include="ProgramIcon.ico" />
     <Content Include="ScenesList.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
