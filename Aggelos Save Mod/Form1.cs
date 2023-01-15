@@ -26,8 +26,6 @@ using System.Windows.Forms.VisualStyles;
  *      - Fix default coordinates for things
  * - Cleanup:
  *      - Move classes to their own files
- *      - Add preview screenshots to image list for each scene
- *      - Add program icon
  *      - Rename Form1 and possible rename to "Mega Patcher"?
  * - Bugs:
  *      -

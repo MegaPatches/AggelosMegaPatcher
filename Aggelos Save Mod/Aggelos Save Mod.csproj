@@ -67,6 +67,9 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ProgramIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -280,6 +283,8 @@
     <None Include="Resources\ScenePreview15.jpg" />
     <None Include="Resources\ScenePreview16.jpg" />
     <None Include="Resources\ScenePreview17.jpg" />
+    <None Include="Resources\ProgramIcon.ico" />
+    <Content Include="ProgramIcon.ico" />
     <Content Include="ScenesList.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

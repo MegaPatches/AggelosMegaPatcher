@@ -35,32 +35,6 @@
             this.openDiag = new System.Windows.Forms.OpenFileDialog();
             this.btnLoadDefault = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabSaves = new System.Windows.Forms.TabPage();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.groupSaveSlots = new System.Windows.Forms.GroupBox();
-            this.radioSaveSlot3 = new System.Windows.Forms.RadioButton();
-            this.radioSaveSlot2 = new System.Windows.Forms.RadioButton();
-            this.radioSaveSlot1 = new System.Windows.Forms.RadioButton();
-            this.lblInstallPath = new System.Windows.Forms.Label();
-            this.tbInstallPath = new System.Windows.Forms.TextBox();
-            this.btnInstallPath = new System.Windows.Forms.Button();
-            this.lblFileSelected = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnSaveSlot = new System.Windows.Forms.Button();
-            this.btnSaveFile = new System.Windows.Forms.Button();
-            this.imgListSavePointSelectors = new System.Windows.Forms.ImageList(this.components);
-            this.tabScenes = new System.Windows.Forms.TabPage();
-            this.listViewScenes = new System.Windows.Forms.ListView();
-            this.imgListScenePreviews = new System.Windows.Forms.ImageList(this.components);
-            this.btnSaveAllScenes = new System.Windows.Forms.Button();
-            this.btnAddScene = new System.Windows.Forms.Button();
-            this.btnDeleteScene = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.tbX = new System.Windows.Forms.NumericUpDown();
-            this.tbY = new System.Windows.Forms.NumericUpDown();
-            this.lblX = new System.Windows.Forms.Label();
-            this.lblY = new System.Windows.Forms.Label();
-            this.btnReloadScenes = new System.Windows.Forms.Button();
             this.tabInventory = new System.Windows.Forms.TabPage();
             this.tbMagic = new System.Windows.Forms.NumericUpDown();
             this.tbHealth = new System.Windows.Forms.NumericUpDown();
@@ -146,7 +120,9 @@
             this.checkBubbleSword = new System.Windows.Forms.CheckBox();
             this.checkSteelSword = new System.Windows.Forms.CheckBox();
             this.checkIronSword = new System.Windows.Forms.CheckBox();
+            this.tabSaves = new System.Windows.Forms.TabPage();
             this.checkSaveValionsCastle = new System.Windows.Forms.CheckBox();
+            this.imgListSavePointSelectors = new System.Windows.Forms.ImageList(this.components);
             this.checkSaveDarkClouds = new System.Windows.Forms.CheckBox();
             this.checkSaveCelestiaVillage = new System.Windows.Forms.CheckBox();
             this.checkSaveFiraVolcano = new System.Windows.Forms.CheckBox();
@@ -161,12 +137,31 @@
             this.checkSaveLumenWoods = new System.Windows.Forms.CheckBox();
             this.picSaveMapSelectors = new System.Windows.Forms.PictureBox();
             this.picSaveMap = new System.Windows.Forms.PictureBox();
+            this.tabScenes = new System.Windows.Forms.TabPage();
+            this.btnReloadScenes = new System.Windows.Forms.Button();
+            this.lblY = new System.Windows.Forms.Label();
+            this.lblX = new System.Windows.Forms.Label();
+            this.tbY = new System.Windows.Forms.NumericUpDown();
+            this.tbX = new System.Windows.Forms.NumericUpDown();
+            this.btnDeleteScene = new System.Windows.Forms.Button();
+            this.btnAddScene = new System.Windows.Forms.Button();
+            this.btnSaveAllScenes = new System.Windows.Forms.Button();
+            this.listViewScenes = new System.Windows.Forms.ListView();
+            this.imgListScenePreviews = new System.Windows.Forms.ImageList(this.components);
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.groupSaveSlots = new System.Windows.Forms.GroupBox();
+            this.radioSaveSlot3 = new System.Windows.Forms.RadioButton();
+            this.radioSaveSlot2 = new System.Windows.Forms.RadioButton();
+            this.radioSaveSlot1 = new System.Windows.Forms.RadioButton();
+            this.lblInstallPath = new System.Windows.Forms.Label();
+            this.tbInstallPath = new System.Windows.Forms.TextBox();
+            this.btnInstallPath = new System.Windows.Forms.Button();
+            this.lblFileSelected = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnSaveSlot = new System.Windows.Forms.Button();
+            this.btnSaveFile = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
-            this.tabSaves.SuspendLayout();
-            this.groupSaveSlots.SuspendLayout();
-            this.tabScenes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbY)).BeginInit();
             this.tabInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbHealth)).BeginInit();
@@ -214,8 +209,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosArmor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSacredSword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosSword)).BeginInit();
+            this.tabSaves.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMapSelectors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMap)).BeginInit();
+            this.tabScenes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbX)).BeginInit();
+            this.groupSaveSlots.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbFileSelected
@@ -267,349 +267,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(722, 463);
             this.tabControl1.TabIndex = 10;
-            // 
-            // tabSaves
-            // 
-            this.tabSaves.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabSaves.Controls.Add(this.checkSaveValionsCastle);
-            this.tabSaves.Controls.Add(this.checkSaveDarkClouds);
-            this.tabSaves.Controls.Add(this.checkSaveCelestiaVillage);
-            this.tabSaves.Controls.Add(this.checkSaveFiraVolcano);
-            this.tabSaves.Controls.Add(this.checkSaveFiraVillage);
-            this.tabSaves.Controls.Add(this.checkSaveTheWall);
-            this.tabSaves.Controls.Add(this.checkSavePaluluTown);
-            this.tabSaves.Controls.Add(this.checkSaveTheAbyss);
-            this.tabSaves.Controls.Add(this.checkSaveAtlantVillage);
-            this.tabSaves.Controls.Add(this.checkSaveLumenCastle);
-            this.tabSaves.Controls.Add(this.checkSaveBoscoCave);
-            this.tabSaves.Controls.Add(this.checkSaveBoscoVillage);
-            this.tabSaves.Controls.Add(this.checkSaveLumenWoods);
-            this.tabSaves.Controls.Add(this.picSaveMapSelectors);
-            this.tabSaves.Controls.Add(this.picSaveMap);
-            this.tabSaves.Location = new System.Drawing.Point(4, 22);
-            this.tabSaves.Name = "tabSaves";
-            this.tabSaves.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSaves.Size = new System.Drawing.Size(714, 437);
-            this.tabSaves.TabIndex = 1;
-            this.tabSaves.Text = "Saves";
-            this.tabSaves.UseVisualStyleBackColor = true;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(13, 552);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(0, 13);
-            this.lblStatus.TabIndex = 33;
-            // 
-            // groupSaveSlots
-            // 
-            this.groupSaveSlots.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.groupSaveSlots.Controls.Add(this.radioSaveSlot3);
-            this.groupSaveSlots.Controls.Add(this.radioSaveSlot2);
-            this.groupSaveSlots.Controls.Add(this.radioSaveSlot1);
-            this.groupSaveSlots.Location = new System.Drawing.Point(214, 527);
-            this.groupSaveSlots.Name = "groupSaveSlots";
-            this.groupSaveSlots.Size = new System.Drawing.Size(74, 37);
-            this.groupSaveSlots.TabIndex = 38;
-            this.groupSaveSlots.TabStop = false;
-            this.groupSaveSlots.Text = "Save Slot";
-            // 
-            // radioSaveSlot3
-            // 
-            this.radioSaveSlot3.AutoSize = true;
-            this.radioSaveSlot3.Location = new System.Drawing.Point(53, 16);
-            this.radioSaveSlot3.Name = "radioSaveSlot3";
-            this.radioSaveSlot3.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot3.TabIndex = 45;
-            this.radioSaveSlot3.TabStop = true;
-            this.radioSaveSlot3.UseVisualStyleBackColor = true;
-            this.radioSaveSlot3.CheckedChanged += new System.EventHandler(this.radioSaveSlot3_CheckedChanged);
-            // 
-            // radioSaveSlot2
-            // 
-            this.radioSaveSlot2.AutoSize = true;
-            this.radioSaveSlot2.Location = new System.Drawing.Point(29, 16);
-            this.radioSaveSlot2.Name = "radioSaveSlot2";
-            this.radioSaveSlot2.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot2.TabIndex = 44;
-            this.radioSaveSlot2.TabStop = true;
-            this.radioSaveSlot2.UseVisualStyleBackColor = true;
-            this.radioSaveSlot2.CheckedChanged += new System.EventHandler(this.radioSaveSlot2_CheckedChanged);
-            // 
-            // radioSaveSlot1
-            // 
-            this.radioSaveSlot1.AutoSize = true;
-            this.radioSaveSlot1.Location = new System.Drawing.Point(6, 16);
-            this.radioSaveSlot1.Name = "radioSaveSlot1";
-            this.radioSaveSlot1.Size = new System.Drawing.Size(14, 13);
-            this.radioSaveSlot1.TabIndex = 43;
-            this.radioSaveSlot1.TabStop = true;
-            this.radioSaveSlot1.UseVisualStyleBackColor = true;
-            this.radioSaveSlot1.CheckedChanged += new System.EventHandler(this.radioSaveSlot1_CheckedChanged);
-            // 
-            // lblInstallPath
-            // 
-            this.lblInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblInstallPath.AutoSize = true;
-            this.lblInstallPath.Location = new System.Drawing.Point(13, 12);
-            this.lblInstallPath.Name = "lblInstallPath";
-            this.lblInstallPath.Size = new System.Drawing.Size(62, 13);
-            this.lblInstallPath.TabIndex = 39;
-            this.lblInstallPath.Text = "Install Path:";
-            // 
-            // tbInstallPath
-            // 
-            this.tbInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbInstallPath.Enabled = false;
-            this.tbInstallPath.Location = new System.Drawing.Point(93, 9);
-            this.tbInstallPath.Name = "tbInstallPath";
-            this.tbInstallPath.Size = new System.Drawing.Size(479, 20);
-            this.tbInstallPath.TabIndex = 41;
-            // 
-            // btnInstallPath
-            // 
-            this.btnInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInstallPath.Location = new System.Drawing.Point(578, 6);
-            this.btnInstallPath.Name = "btnInstallPath";
-            this.btnInstallPath.Size = new System.Drawing.Size(152, 23);
-            this.btnInstallPath.TabIndex = 42;
-            this.btnInstallPath.Text = "Installation Path...";
-            this.btnInstallPath.UseVisualStyleBackColor = true;
-            this.btnInstallPath.Click += new System.EventHandler(this.btnInstallPath_Click);
-            // 
-            // lblFileSelected
-            // 
-            this.lblFileSelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFileSelected.AutoSize = true;
-            this.lblFileSelected.Location = new System.Drawing.Point(12, 40);
-            this.lblFileSelected.Name = "lblFileSelected";
-            this.lblFileSelected.Size = new System.Drawing.Size(72, 13);
-            this.lblFileSelected.TabIndex = 43;
-            this.lblFileSelected.Text = "Loaded From:";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnSaveSlot
-            // 
-            this.btnSaveSlot.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSaveSlot.Enabled = false;
-            this.btnSaveSlot.Location = new System.Drawing.Point(308, 533);
-            this.btnSaveSlot.Name = "btnSaveSlot";
-            this.btnSaveSlot.Size = new System.Drawing.Size(127, 33);
-            this.btnSaveSlot.TabIndex = 46;
-            this.btnSaveSlot.Text = "Save To Slot";
-            this.btnSaveSlot.UseVisualStyleBackColor = true;
-            this.btnSaveSlot.Click += new System.EventHandler(this.btnSaveSlot_Click);
-            // 
-            // btnSaveFile
-            // 
-            this.btnSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveFile.Location = new System.Drawing.Point(655, 35);
-            this.btnSaveFile.Name = "btnSaveFile";
-            this.btnSaveFile.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveFile.TabIndex = 2;
-            this.btnSaveFile.Text = "Save File";
-            this.btnSaveFile.UseVisualStyleBackColor = true;
-            this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
-            // 
-            // imgListSavePointSelectors
-            // 
-            this.imgListSavePointSelectors.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListSavePointSelectors.ImageStream")));
-            this.imgListSavePointSelectors.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgListSavePointSelectors.Images.SetKeyName(0, "SaveMapSelectorOff.jpg");
-            this.imgListSavePointSelectors.Images.SetKeyName(1, "SaveMapSelectorOn.jpg");
-            // 
-            // tabScenes
-            // 
-            this.tabScenes.Controls.Add(this.btnReloadScenes);
-            this.tabScenes.Controls.Add(this.lblY);
-            this.tabScenes.Controls.Add(this.lblX);
-            this.tabScenes.Controls.Add(this.tbY);
-            this.tabScenes.Controls.Add(this.tbX);
-            this.tabScenes.Controls.Add(this.btnDeleteScene);
-            this.tabScenes.Controls.Add(this.btnAddScene);
-            this.tabScenes.Controls.Add(this.btnSaveAllScenes);
-            this.tabScenes.Controls.Add(this.listViewScenes);
-            this.tabScenes.Location = new System.Drawing.Point(4, 22);
-            this.tabScenes.Name = "tabScenes";
-            this.tabScenes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabScenes.Size = new System.Drawing.Size(714, 437);
-            this.tabScenes.TabIndex = 2;
-            this.tabScenes.Text = "Scenes";
-            this.tabScenes.UseVisualStyleBackColor = true;
-            // 
-            // listViewScenes
-            // 
-            this.listViewScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewScenes.HideSelection = false;
-            this.listViewScenes.LargeImageList = this.imgListScenePreviews;
-            this.listViewScenes.Location = new System.Drawing.Point(6, 6);
-            this.listViewScenes.MultiSelect = false;
-            this.listViewScenes.Name = "listViewScenes";
-            this.listViewScenes.Size = new System.Drawing.Size(488, 425);
-            this.listViewScenes.SmallImageList = this.imgListScenePreviews;
-            this.listViewScenes.TabIndex = 0;
-            this.listViewScenes.TileSize = new System.Drawing.Size(78, 30);
-            this.listViewScenes.UseCompatibleStateImageBehavior = false;
-            this.listViewScenes.SelectedIndexChanged += new System.EventHandler(this.listViewScenes_SelectedIndexChanged);
-            // 
-            // imgListScenePreviews
-            // 
-            this.imgListScenePreviews.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListScenePreviews.ImageStream")));
-            this.imgListScenePreviews.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgListScenePreviews.Images.SetKeyName(0, "ScenePreview0.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(1, "ScenePreview1.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(2, "ScenePreview2.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(3, "ScenePreview3.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(4, "ScenePreview4.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(5, "ScenePreview5.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(6, "ScenePreview6.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(7, "ScenePreview7.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(8, "ScenePreview8.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(9, "ScenePreview9.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(10, "ScenePreview10.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(11, "ScenePreview11.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(12, "ScenePreview12.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(13, "ScenePreview13.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(14, "ScenePreview14.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(15, "ScenePreview15.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(16, "ScenePreview16.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(17, "ScenePreview17.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(18, "ScenePreview18.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(19, "ScenePreview19.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(20, "ScenePreview20.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(21, "ScenePreview21.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(22, "ScenePreview22.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(23, "ScenePreview23.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(24, "ScenePreview24.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(25, "ScenePreview25.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(26, "ScenePreview26.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(27, "ScenePreview27.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(28, "ScenePreview28.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(29, "ScenePreview29.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(30, "ScenePreview30.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(31, "ScenePreview31.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(32, "ScenePreview32.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(33, "ScenePreview33.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(34, "ScenePreview34.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(35, "ScenePreview35.jpg");
-            this.imgListScenePreviews.Images.SetKeyName(36, "ScenePreview36.jpg");
-            // 
-            // btnSaveAllScenes
-            // 
-            this.btnSaveAllScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveAllScenes.Location = new System.Drawing.Point(549, 313);
-            this.btnSaveAllScenes.Name = "btnSaveAllScenes";
-            this.btnSaveAllScenes.Size = new System.Drawing.Size(111, 45);
-            this.btnSaveAllScenes.TabIndex = 47;
-            this.btnSaveAllScenes.Text = "Save All Scenes";
-            this.btnSaveAllScenes.UseVisualStyleBackColor = true;
-            this.btnSaveAllScenes.Click += new System.EventHandler(this.btnSaveAllScenes_Click);
-            // 
-            // btnAddScene
-            // 
-            this.btnAddScene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddScene.Location = new System.Drawing.Point(549, 188);
-            this.btnAddScene.Name = "btnAddScene";
-            this.btnAddScene.Size = new System.Drawing.Size(111, 45);
-            this.btnAddScene.TabIndex = 48;
-            this.btnAddScene.Text = "Add Scene";
-            this.btnAddScene.UseVisualStyleBackColor = true;
-            this.btnAddScene.Click += new System.EventHandler(this.btnAddScene_Click);
-            // 
-            // btnDeleteScene
-            // 
-            this.btnDeleteScene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteScene.Location = new System.Drawing.Point(549, 250);
-            this.btnDeleteScene.Name = "btnDeleteScene";
-            this.btnDeleteScene.Size = new System.Drawing.Size(111, 45);
-            this.btnDeleteScene.TabIndex = 49;
-            this.btnDeleteScene.Text = "Delete Scene";
-            this.btnDeleteScene.UseVisualStyleBackColor = true;
-            this.btnDeleteScene.Click += new System.EventHandler(this.btnDeleteScene_Click);
-            // 
-            // tbX
-            // 
-            this.tbX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbX.Enabled = false;
-            this.tbX.Location = new System.Drawing.Point(569, 69);
-            this.tbX.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.tbX.Minimum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            -2147483648});
-            this.tbX.Name = "tbX";
-            this.tbX.Size = new System.Drawing.Size(75, 20);
-            this.tbX.TabIndex = 113;
-            this.tbX.ThousandsSeparator = true;
-            this.tbX.ValueChanged += new System.EventHandler(this.tbX_ValueChanged);
-            // 
-            // tbY
-            // 
-            this.tbY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbY.Enabled = false;
-            this.tbY.Location = new System.Drawing.Point(569, 125);
-            this.tbY.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.tbY.Minimum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            -2147483648});
-            this.tbY.Name = "tbY";
-            this.tbY.Size = new System.Drawing.Size(75, 20);
-            this.tbY.TabIndex = 114;
-            this.tbY.ValueChanged += new System.EventHandler(this.tbY_ValueChanged);
-            // 
-            // lblX
-            // 
-            this.lblX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblX.AutoSize = true;
-            this.lblX.Location = new System.Drawing.Point(594, 53);
-            this.lblX.Name = "lblX";
-            this.lblX.Size = new System.Drawing.Size(17, 13);
-            this.lblX.TabIndex = 47;
-            this.lblX.Text = "X:";
-            // 
-            // lblY
-            // 
-            this.lblY.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblY.AutoSize = true;
-            this.lblY.Location = new System.Drawing.Point(594, 109);
-            this.lblY.Name = "lblY";
-            this.lblY.Size = new System.Drawing.Size(17, 13);
-            this.lblY.TabIndex = 115;
-            this.lblY.Text = "Y:";
-            // 
-            // btnReloadScenes
-            // 
-            this.btnReloadScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReloadScenes.Location = new System.Drawing.Point(549, 375);
-            this.btnReloadScenes.Name = "btnReloadScenes";
-            this.btnReloadScenes.Size = new System.Drawing.Size(111, 45);
-            this.btnReloadScenes.TabIndex = 116;
-            this.btnReloadScenes.Text = "Reload Scenes";
-            this.btnReloadScenes.UseVisualStyleBackColor = true;
-            this.btnReloadScenes.Click += new System.EventHandler(this.btnReloadScenes_Click);
             // 
             // tabInventory
             // 
@@ -1659,6 +1316,32 @@
             this.checkIronSword.TabIndex = 19;
             this.checkIronSword.UseVisualStyleBackColor = true;
             // 
+            // tabSaves
+            // 
+            this.tabSaves.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabSaves.Controls.Add(this.checkSaveValionsCastle);
+            this.tabSaves.Controls.Add(this.checkSaveDarkClouds);
+            this.tabSaves.Controls.Add(this.checkSaveCelestiaVillage);
+            this.tabSaves.Controls.Add(this.checkSaveFiraVolcano);
+            this.tabSaves.Controls.Add(this.checkSaveFiraVillage);
+            this.tabSaves.Controls.Add(this.checkSaveTheWall);
+            this.tabSaves.Controls.Add(this.checkSavePaluluTown);
+            this.tabSaves.Controls.Add(this.checkSaveTheAbyss);
+            this.tabSaves.Controls.Add(this.checkSaveAtlantVillage);
+            this.tabSaves.Controls.Add(this.checkSaveLumenCastle);
+            this.tabSaves.Controls.Add(this.checkSaveBoscoCave);
+            this.tabSaves.Controls.Add(this.checkSaveBoscoVillage);
+            this.tabSaves.Controls.Add(this.checkSaveLumenWoods);
+            this.tabSaves.Controls.Add(this.picSaveMapSelectors);
+            this.tabSaves.Controls.Add(this.picSaveMap);
+            this.tabSaves.Location = new System.Drawing.Point(4, 22);
+            this.tabSaves.Name = "tabSaves";
+            this.tabSaves.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSaves.Size = new System.Drawing.Size(714, 437);
+            this.tabSaves.TabIndex = 1;
+            this.tabSaves.Text = "Saves";
+            this.tabSaves.UseVisualStyleBackColor = true;
+            // 
             // checkSaveValionsCastle
             // 
             this.checkSaveValionsCastle.Appearance = System.Windows.Forms.Appearance.Button;
@@ -1673,6 +1356,13 @@
             this.checkSaveValionsCastle.TabIndex = 59;
             this.checkSaveValionsCastle.UseVisualStyleBackColor = true;
             this.checkSaveValionsCastle.CheckedChanged += new System.EventHandler(this.checkSaveValionsCastle_CheckedChanged);
+            // 
+            // imgListSavePointSelectors
+            // 
+            this.imgListSavePointSelectors.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListSavePointSelectors.ImageStream")));
+            this.imgListSavePointSelectors.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListSavePointSelectors.Images.SetKeyName(0, "SaveMapSelectorOff.jpg");
+            this.imgListSavePointSelectors.Images.SetKeyName(1, "SaveMapSelectorOn.jpg");
             // 
             // checkSaveDarkClouds
             // 
@@ -1878,6 +1568,316 @@
             this.picSaveMap.TabIndex = 0;
             this.picSaveMap.TabStop = false;
             // 
+            // tabScenes
+            // 
+            this.tabScenes.Controls.Add(this.btnReloadScenes);
+            this.tabScenes.Controls.Add(this.lblY);
+            this.tabScenes.Controls.Add(this.lblX);
+            this.tabScenes.Controls.Add(this.tbY);
+            this.tabScenes.Controls.Add(this.tbX);
+            this.tabScenes.Controls.Add(this.btnDeleteScene);
+            this.tabScenes.Controls.Add(this.btnAddScene);
+            this.tabScenes.Controls.Add(this.btnSaveAllScenes);
+            this.tabScenes.Controls.Add(this.listViewScenes);
+            this.tabScenes.Location = new System.Drawing.Point(4, 22);
+            this.tabScenes.Name = "tabScenes";
+            this.tabScenes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabScenes.Size = new System.Drawing.Size(714, 437);
+            this.tabScenes.TabIndex = 2;
+            this.tabScenes.Text = "Scenes";
+            this.tabScenes.UseVisualStyleBackColor = true;
+            // 
+            // btnReloadScenes
+            // 
+            this.btnReloadScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReloadScenes.Location = new System.Drawing.Point(549, 375);
+            this.btnReloadScenes.Name = "btnReloadScenes";
+            this.btnReloadScenes.Size = new System.Drawing.Size(111, 45);
+            this.btnReloadScenes.TabIndex = 116;
+            this.btnReloadScenes.Text = "Reload Scenes";
+            this.btnReloadScenes.UseVisualStyleBackColor = true;
+            this.btnReloadScenes.Click += new System.EventHandler(this.btnReloadScenes_Click);
+            // 
+            // lblY
+            // 
+            this.lblY.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblY.AutoSize = true;
+            this.lblY.Location = new System.Drawing.Point(594, 109);
+            this.lblY.Name = "lblY";
+            this.lblY.Size = new System.Drawing.Size(17, 13);
+            this.lblY.TabIndex = 115;
+            this.lblY.Text = "Y:";
+            // 
+            // lblX
+            // 
+            this.lblX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblX.AutoSize = true;
+            this.lblX.Location = new System.Drawing.Point(594, 53);
+            this.lblX.Name = "lblX";
+            this.lblX.Size = new System.Drawing.Size(17, 13);
+            this.lblX.TabIndex = 47;
+            this.lblX.Text = "X:";
+            // 
+            // tbY
+            // 
+            this.tbY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbY.Enabled = false;
+            this.tbY.Location = new System.Drawing.Point(569, 125);
+            this.tbY.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.tbY.Minimum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            -2147483648});
+            this.tbY.Name = "tbY";
+            this.tbY.Size = new System.Drawing.Size(75, 20);
+            this.tbY.TabIndex = 114;
+            this.tbY.ValueChanged += new System.EventHandler(this.tbY_ValueChanged);
+            // 
+            // tbX
+            // 
+            this.tbX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbX.Enabled = false;
+            this.tbX.Location = new System.Drawing.Point(569, 69);
+            this.tbX.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.tbX.Minimum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            -2147483648});
+            this.tbX.Name = "tbX";
+            this.tbX.Size = new System.Drawing.Size(75, 20);
+            this.tbX.TabIndex = 113;
+            this.tbX.ThousandsSeparator = true;
+            this.tbX.ValueChanged += new System.EventHandler(this.tbX_ValueChanged);
+            // 
+            // btnDeleteScene
+            // 
+            this.btnDeleteScene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteScene.Location = new System.Drawing.Point(549, 250);
+            this.btnDeleteScene.Name = "btnDeleteScene";
+            this.btnDeleteScene.Size = new System.Drawing.Size(111, 45);
+            this.btnDeleteScene.TabIndex = 49;
+            this.btnDeleteScene.Text = "Delete Scene";
+            this.btnDeleteScene.UseVisualStyleBackColor = true;
+            this.btnDeleteScene.Click += new System.EventHandler(this.btnDeleteScene_Click);
+            // 
+            // btnAddScene
+            // 
+            this.btnAddScene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddScene.Location = new System.Drawing.Point(549, 188);
+            this.btnAddScene.Name = "btnAddScene";
+            this.btnAddScene.Size = new System.Drawing.Size(111, 45);
+            this.btnAddScene.TabIndex = 48;
+            this.btnAddScene.Text = "Add Scene";
+            this.btnAddScene.UseVisualStyleBackColor = true;
+            this.btnAddScene.Click += new System.EventHandler(this.btnAddScene_Click);
+            // 
+            // btnSaveAllScenes
+            // 
+            this.btnSaveAllScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveAllScenes.Location = new System.Drawing.Point(549, 313);
+            this.btnSaveAllScenes.Name = "btnSaveAllScenes";
+            this.btnSaveAllScenes.Size = new System.Drawing.Size(111, 45);
+            this.btnSaveAllScenes.TabIndex = 47;
+            this.btnSaveAllScenes.Text = "Save All Scenes";
+            this.btnSaveAllScenes.UseVisualStyleBackColor = true;
+            this.btnSaveAllScenes.Click += new System.EventHandler(this.btnSaveAllScenes_Click);
+            // 
+            // listViewScenes
+            // 
+            this.listViewScenes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewScenes.HideSelection = false;
+            this.listViewScenes.LargeImageList = this.imgListScenePreviews;
+            this.listViewScenes.Location = new System.Drawing.Point(6, 6);
+            this.listViewScenes.MultiSelect = false;
+            this.listViewScenes.Name = "listViewScenes";
+            this.listViewScenes.Size = new System.Drawing.Size(488, 425);
+            this.listViewScenes.SmallImageList = this.imgListScenePreviews;
+            this.listViewScenes.TabIndex = 0;
+            this.listViewScenes.TileSize = new System.Drawing.Size(78, 30);
+            this.listViewScenes.UseCompatibleStateImageBehavior = false;
+            this.listViewScenes.SelectedIndexChanged += new System.EventHandler(this.listViewScenes_SelectedIndexChanged);
+            // 
+            // imgListScenePreviews
+            // 
+            this.imgListScenePreviews.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListScenePreviews.ImageStream")));
+            this.imgListScenePreviews.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListScenePreviews.Images.SetKeyName(0, "ScenePreview0.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(1, "ScenePreview1.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(2, "ScenePreview2.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(3, "ScenePreview3.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(4, "ScenePreview4.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(5, "ScenePreview5.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(6, "ScenePreview6.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(7, "ScenePreview7.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(8, "ScenePreview8.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(9, "ScenePreview9.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(10, "ScenePreview10.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(11, "ScenePreview11.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(12, "ScenePreview12.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(13, "ScenePreview13.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(14, "ScenePreview14.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(15, "ScenePreview15.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(16, "ScenePreview16.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(17, "ScenePreview17.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(18, "ScenePreview18.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(19, "ScenePreview19.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(20, "ScenePreview20.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(21, "ScenePreview21.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(22, "ScenePreview22.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(23, "ScenePreview23.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(24, "ScenePreview24.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(25, "ScenePreview25.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(26, "ScenePreview26.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(27, "ScenePreview27.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(28, "ScenePreview28.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(29, "ScenePreview29.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(30, "ScenePreview30.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(31, "ScenePreview31.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(32, "ScenePreview32.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(33, "ScenePreview33.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(34, "ScenePreview34.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(35, "ScenePreview35.jpg");
+            this.imgListScenePreviews.Images.SetKeyName(36, "ScenePreview36.jpg");
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(13, 552);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 13);
+            this.lblStatus.TabIndex = 33;
+            // 
+            // groupSaveSlots
+            // 
+            this.groupSaveSlots.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.groupSaveSlots.Controls.Add(this.radioSaveSlot3);
+            this.groupSaveSlots.Controls.Add(this.radioSaveSlot2);
+            this.groupSaveSlots.Controls.Add(this.radioSaveSlot1);
+            this.groupSaveSlots.Location = new System.Drawing.Point(214, 527);
+            this.groupSaveSlots.Name = "groupSaveSlots";
+            this.groupSaveSlots.Size = new System.Drawing.Size(74, 37);
+            this.groupSaveSlots.TabIndex = 38;
+            this.groupSaveSlots.TabStop = false;
+            this.groupSaveSlots.Text = "Save Slot";
+            // 
+            // radioSaveSlot3
+            // 
+            this.radioSaveSlot3.AutoSize = true;
+            this.radioSaveSlot3.Location = new System.Drawing.Point(53, 16);
+            this.radioSaveSlot3.Name = "radioSaveSlot3";
+            this.radioSaveSlot3.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot3.TabIndex = 45;
+            this.radioSaveSlot3.TabStop = true;
+            this.radioSaveSlot3.UseVisualStyleBackColor = true;
+            this.radioSaveSlot3.CheckedChanged += new System.EventHandler(this.radioSaveSlot3_CheckedChanged);
+            // 
+            // radioSaveSlot2
+            // 
+            this.radioSaveSlot2.AutoSize = true;
+            this.radioSaveSlot2.Location = new System.Drawing.Point(29, 16);
+            this.radioSaveSlot2.Name = "radioSaveSlot2";
+            this.radioSaveSlot2.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot2.TabIndex = 44;
+            this.radioSaveSlot2.TabStop = true;
+            this.radioSaveSlot2.UseVisualStyleBackColor = true;
+            this.radioSaveSlot2.CheckedChanged += new System.EventHandler(this.radioSaveSlot2_CheckedChanged);
+            // 
+            // radioSaveSlot1
+            // 
+            this.radioSaveSlot1.AutoSize = true;
+            this.radioSaveSlot1.Location = new System.Drawing.Point(6, 16);
+            this.radioSaveSlot1.Name = "radioSaveSlot1";
+            this.radioSaveSlot1.Size = new System.Drawing.Size(14, 13);
+            this.radioSaveSlot1.TabIndex = 43;
+            this.radioSaveSlot1.TabStop = true;
+            this.radioSaveSlot1.UseVisualStyleBackColor = true;
+            this.radioSaveSlot1.CheckedChanged += new System.EventHandler(this.radioSaveSlot1_CheckedChanged);
+            // 
+            // lblInstallPath
+            // 
+            this.lblInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblInstallPath.AutoSize = true;
+            this.lblInstallPath.Location = new System.Drawing.Point(13, 12);
+            this.lblInstallPath.Name = "lblInstallPath";
+            this.lblInstallPath.Size = new System.Drawing.Size(62, 13);
+            this.lblInstallPath.TabIndex = 39;
+            this.lblInstallPath.Text = "Install Path:";
+            // 
+            // tbInstallPath
+            // 
+            this.tbInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbInstallPath.Enabled = false;
+            this.tbInstallPath.Location = new System.Drawing.Point(93, 9);
+            this.tbInstallPath.Name = "tbInstallPath";
+            this.tbInstallPath.Size = new System.Drawing.Size(479, 20);
+            this.tbInstallPath.TabIndex = 41;
+            // 
+            // btnInstallPath
+            // 
+            this.btnInstallPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInstallPath.Location = new System.Drawing.Point(578, 6);
+            this.btnInstallPath.Name = "btnInstallPath";
+            this.btnInstallPath.Size = new System.Drawing.Size(152, 23);
+            this.btnInstallPath.TabIndex = 42;
+            this.btnInstallPath.Text = "Installation Path...";
+            this.btnInstallPath.UseVisualStyleBackColor = true;
+            this.btnInstallPath.Click += new System.EventHandler(this.btnInstallPath_Click);
+            // 
+            // lblFileSelected
+            // 
+            this.lblFileSelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFileSelected.AutoSize = true;
+            this.lblFileSelected.Location = new System.Drawing.Point(12, 40);
+            this.lblFileSelected.Name = "lblFileSelected";
+            this.lblFileSelected.Size = new System.Drawing.Size(72, 13);
+            this.lblFileSelected.TabIndex = 43;
+            this.lblFileSelected.Text = "Loaded From:";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnSaveSlot
+            // 
+            this.btnSaveSlot.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSaveSlot.Enabled = false;
+            this.btnSaveSlot.Location = new System.Drawing.Point(308, 533);
+            this.btnSaveSlot.Name = "btnSaveSlot";
+            this.btnSaveSlot.Size = new System.Drawing.Size(127, 33);
+            this.btnSaveSlot.TabIndex = 46;
+            this.btnSaveSlot.Text = "Save To Slot";
+            this.btnSaveSlot.UseVisualStyleBackColor = true;
+            this.btnSaveSlot.Click += new System.EventHandler(this.btnSaveSlot_Click);
+            // 
+            // btnSaveFile
+            // 
+            this.btnSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveFile.Location = new System.Drawing.Point(655, 35);
+            this.btnSaveFile.Name = "btnSaveFile";
+            this.btnSaveFile.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveFile.TabIndex = 2;
+            this.btnSaveFile.Text = "Save File";
+            this.btnSaveFile.UseVisualStyleBackColor = true;
+            this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1895,17 +1895,10 @@
             this.Controls.Add(this.btnLoadDefault);
             this.Controls.Add(this.btnLoadFile);
             this.Controls.Add(this.tbFileSelected);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Aggelos Save Mod";
             this.tabControl1.ResumeLayout(false);
-            this.tabSaves.ResumeLayout(false);
-            this.tabSaves.PerformLayout();
-            this.groupSaveSlots.ResumeLayout(false);
-            this.groupSaveSlots.PerformLayout();
-            this.tabScenes.ResumeLayout(false);
-            this.tabScenes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbY)).EndInit();
             this.tabInventory.ResumeLayout(false);
             this.tabInventory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).EndInit();
@@ -1954,8 +1947,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosArmor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSacredSword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAggelosSword)).EndInit();
+            this.tabSaves.ResumeLayout(false);
+            this.tabSaves.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMapSelectors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSaveMap)).EndInit();
+            this.tabScenes.ResumeLayout(false);
+            this.tabScenes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbX)).EndInit();
+            this.groupSaveSlots.ResumeLayout(false);
+            this.groupSaveSlots.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
