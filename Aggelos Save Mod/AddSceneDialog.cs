@@ -14,35 +14,8 @@ namespace Aggelos_Save_Mod
     {
         private int startLocationX;
         private int startLocationY;
-
-        Scene[] scenesList;
         public Scene newScene = new Scene("My Scene", 13, 0, 0);
-
-        public AddSceneDialog()
-        {
-            InitializeComponent();
-        }
-
-        //Adding a constructor override for specifying starting position of popup
-        public AddSceneDialog(int x, int y) : this()
-        {
-            this.startLocationX = x;
-            this.startLocationY = y;
-
-            Load += new EventHandler(AddSceneDialog_Load);
-        }
-
-        /************************************************************
-        * AddSceneDialog_Load
-        * 
-        * This function handles loading defaults and setting desktop position
-        ************************************************************/
-        private void AddSceneDialog_Load(object sender, System.EventArgs e)
-        {
-            //Set the location of the popup
-            this.SetDesktopLocation(startLocationX, startLocationY);
-
-            scenesList = new Scene[]
+        public Scene[] defaultScenesList = new Scene[]
             {
                 new Scene("Lumen Woods", 13, 2768, 191),
                 new Scene("Bosco", 14, 3792, 447),
@@ -70,8 +43,35 @@ namespace Aggelos_Save_Mod
                 new Scene("Downpour Portal of Darkness", 36, 50, 600)
             };
 
+        public AddSceneDialog()
+        {
+            InitializeComponent();
+        }
+
+        //Adding a constructor override for specifying starting position of popup
+        public AddSceneDialog(int x, int y) : this()
+        {
+            this.startLocationX = x;
+            this.startLocationY = y;
+
+            Load += new EventHandler(AddSceneDialog_Load);
+        }
+
+        /************************************************************
+        * AddSceneDialog_Load
+        * 
+        * This function handles loading defaults and setting desktop position
+        ************************************************************/
+        private void AddSceneDialog_Load(object sender, System.EventArgs e)
+        {
+            //Set the location of the popup
+            this.SetDesktopLocation(startLocationX, startLocationY);
+
             //Load the combo box with the scenes list and their appropriate labels
-            cbScenes.DataSource = scenesList;
+            cbScenes.DataSource = defaultScenesList;
+
+            //Set the text box to a default prompt
+            tbSceneName.Text = newScene.Name;
         }
 
         /************************************************************
@@ -110,8 +110,8 @@ namespace Aggelos_Save_Mod
             newScene.ID = Int32.Parse(cbScenes.SelectedValue.ToString());
 
             //Set the default x/y values based on the selection
-            tbX.Text = scenesList[cbScenes.SelectedIndex].x.ToString();
-            tbY.Text = scenesList[cbScenes.SelectedIndex].y.ToString();
+            tbX.Text = defaultScenesList[cbScenes.SelectedIndex].x.ToString();
+            tbY.Text = defaultScenesList[cbScenes.SelectedIndex].y.ToString();
         }
 
         private void tbX_ValueChanged(object sender, EventArgs e)
@@ -130,22 +130,6 @@ namespace Aggelos_Save_Mod
         {
             //Set the return name of the scene save
             newScene.Name = tbSceneName.Text;
-        }
-    }
-
-    public class Scene
-    {
-        public string Name { get; set; }
-        public int ID { get; set; }
-        public int x { get; set; }
-        public int y { get; set; }
-
-        public Scene(string name, int id, int x, int y)
-        {
-            this.Name = name;
-            this.ID = id;
-            this.x = x;
-            this.y = y;
         }
     }
 }
