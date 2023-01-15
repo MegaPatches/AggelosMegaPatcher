@@ -25,7 +25,7 @@ using System.Windows.Forms.VisualStyles;
  * - Cleanup:
  *      - 
  * - Bugs:
- *      - 
+ *      - Need to figure out why teleporting to portals doesn't allow for boss spawns (related to the cutscene triggers?)
  ***************************/
 
 namespace Aggelos_Save_Mod
@@ -43,21 +43,22 @@ namespace Aggelos_Save_Mod
         //Declaring a list of default scenes and coordinates to use for each area
         public Scene[] defaultScenesList = new Scene[]
             {
+                new Scene("Beginning", 12, 1872, 445),
                 new Scene("Lumen Woods", 13, 2768, 191),
                 new Scene("Bosco", 14, 3792, 447),
                 new Scene("Castle / Basement", 15, 3680, 399),
                 new Scene("Bosco Cave", 16, 1264, 895),
                 new Scene("Earth Temple", 17, 50, 800),
-                new Scene("Symbol Locations and Shops", 18, 0, 0),
+                new Scene("The Wall", 18, 576, 591),
                 new Scene("Atlant", 19, 2848, 1247),
-                new Scene("Cave Systems", 20, 0, 0),
+                new Scene("Cave Systems", 20, 1480, 1090),
                 new Scene("Palulu / Outside Valion's Castle", 21, 1056, 399),
                 new Scene("The Abyss", 22, 2672, 543),
                 new Scene("Water Temple", 23, 50, 800),
                 new Scene("Fira", 24, 2256, 655),
                 new Scene("Fira Volcano", 25, 1328, 1071),
                 new Scene("Fire Temple", 26, 3950, 575),
-                new Scene("Woodpecker Trials", 27, 0, 0),
+                new Scene("Woodpecker Trials", 27, 190, 445),
                 new Scene("Darkness Opens Cutscene", 28, 0, 0),
                 new Scene("Babel Tower", 29, 896, 1462),
                 new Scene("Celestia", 30, 2016, 2047),

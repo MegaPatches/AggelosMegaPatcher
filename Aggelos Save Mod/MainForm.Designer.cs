@@ -138,6 +138,7 @@
             this.picSaveMapSelectors = new System.Windows.Forms.PictureBox();
             this.picSaveMap = new System.Windows.Forms.PictureBox();
             this.tabScenes = new System.Windows.Forms.TabPage();
+            this.btnCopyScene = new System.Windows.Forms.Button();
             this.btnSceneGuide = new System.Windows.Forms.Button();
             this.btnReloadScenes = new System.Windows.Forms.Button();
             this.lblY = new System.Windows.Forms.Label();
@@ -163,7 +164,6 @@
             this.btnSaveFile = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnAbout = new System.Windows.Forms.Button();
-            this.btnCopyScene = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).BeginInit();
@@ -384,9 +384,14 @@
             // tbHealth
             // 
             this.tbHealth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbHealth.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.tbHealth.Location = new System.Drawing.Point(535, 89);
             this.tbHealth.Maximum = new decimal(new int[] {
-            40,
+            200,
             0,
             0,
             0});
@@ -1546,6 +1551,18 @@
             this.tabScenes.Text = "Scenes";
             this.tabScenes.UseVisualStyleBackColor = true;
             // 
+            // btnCopyScene
+            // 
+            this.btnCopyScene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCopyScene.Enabled = false;
+            this.btnCopyScene.Location = new System.Drawing.Point(611, 260);
+            this.btnCopyScene.Name = "btnCopyScene";
+            this.btnCopyScene.Size = new System.Drawing.Size(97, 45);
+            this.btnCopyScene.TabIndex = 117;
+            this.btnCopyScene.Text = "Copy Scene";
+            this.btnCopyScene.UseVisualStyleBackColor = true;
+            this.btnCopyScene.Click += new System.EventHandler(this.btnCopyScene_Click);
+            // 
             // btnSceneGuide
             // 
             this.btnSceneGuide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1858,18 +1875,6 @@
             this.btnAbout.Text = "About...";
             this.btnAbout.UseVisualStyleBackColor = true;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
-            // 
-            // btnCopyScene
-            // 
-            this.btnCopyScene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCopyScene.Enabled = false;
-            this.btnCopyScene.Location = new System.Drawing.Point(611, 260);
-            this.btnCopyScene.Name = "btnCopyScene";
-            this.btnCopyScene.Size = new System.Drawing.Size(97, 45);
-            this.btnCopyScene.TabIndex = 117;
-            this.btnCopyScene.Text = "Copy Scene";
-            this.btnCopyScene.UseVisualStyleBackColor = true;
-            this.btnCopyScene.Click += new System.EventHandler(this.btnCopyScene_Click);
             // 
             // MainForm
             // 
