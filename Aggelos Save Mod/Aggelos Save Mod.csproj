@@ -86,11 +86,11 @@
   <ItemGroup>
     <Compile Include="Scene.cs" />
     <Compile Include="Save.cs" />
-    <Compile Include="MegaPatcher.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MegaPatcher.Designer.cs">
-      <DependentUpon>MegaPatcher.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AddSceneDialog.cs">
       <SubType>Form</SubType>
@@ -100,8 +100,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MegaPatcher.resx">
-      <DependentUpon>MegaPatcher.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddSceneDialog.resx">
       <DependentUpon>AddSceneDialog.cs</DependentUpon>
