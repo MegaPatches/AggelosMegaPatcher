@@ -67,6 +67,9 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ProgramIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -81,16 +84,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneGuideDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneGuideDialog.Designer.cs">
+      <DependentUpon>SceneGuideDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scene.cs" />
+    <Compile Include="Save.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSceneDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSceneDialog.Designer.cs">
+      <DependentUpon>AddSceneDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneGuideDialog.resx">
+      <DependentUpon>SceneGuideDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSceneDialog.resx">
+      <DependentUpon>AddSceneDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -261,6 +293,18 @@
     <None Include="Resources\WoodpeckerText.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\SaveMap.jpg" />
+    <None Include="Resources\SaveMapSelections.jpg" />
+    <None Include="Resources\SaveMapSelectorOff.jpg" />
+    <None Include="Resources\SaveMapSelectorOn.jpg" />
+    <None Include="Resources\ScenePreview12.jpg" />
+    <None Include="Resources\ScenePreview13.jpg" />
+    <None Include="Resources\ScenePreview14.jpg" />
+    <None Include="Resources\ScenePreview15.jpg" />
+    <None Include="Resources\ScenePreview16.jpg" />
+    <None Include="Resources\ScenePreview17.jpg" />
+    <None Include="Resources\ProgramIcon.ico" />
+    <None Include="Resources\Scenes_Guide.png" />
     <Content Include="ScenesList.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
