@@ -69,6 +69,9 @@ namespace Aggelos_Save_Mod
                 new Scene("Downpour Portal of Darkness", 36, 50, 600)
             };
 
+        //Create a new instance of the SceneGuide
+        SceneGuideDialog sceneGuideDialog = new SceneGuideDialog();
+
         public MainForm()
         {
             InitializeComponent();
@@ -2964,11 +2967,8 @@ namespace Aggelos_Save_Mod
         ************************************************************/
         private void btnSceneGuide_Click(object sender, EventArgs e)
         {
-            //Create a new instance of the SceneGuide
-            var sceneGuideDialog = new SceneGuideDialog();
-
-            //Show the dialog and capture its result
-            var result = sceneGuideDialog.ShowDialog();
+            //Show the dialog
+            sceneGuideDialog.Show();
         }
     }
 }
