@@ -161,6 +161,7 @@
             this.btnSaveSlot = new System.Windows.Forms.Button();
             this.btnSaveFile = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnAbout = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbMagic)).BeginInit();
@@ -247,11 +248,11 @@
             // btnLoadDefault
             // 
             this.btnLoadDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoadDefault.Location = new System.Drawing.Point(642, 542);
+            this.btnLoadDefault.Location = new System.Drawing.Point(659, 35);
             this.btnLoadDefault.Name = "btnLoadDefault";
-            this.btnLoadDefault.Size = new System.Drawing.Size(88, 23);
+            this.btnLoadDefault.Size = new System.Drawing.Size(71, 23);
             this.btnLoadDefault.TabIndex = 46;
-            this.btnLoadDefault.Text = "Load Default";
+            this.btnLoadDefault.Text = "Reset UI";
             this.btnLoadDefault.UseVisualStyleBackColor = true;
             this.btnLoadDefault.Click += new System.EventHandler(this.btnLoadDefault_Click);
             // 
@@ -1768,7 +1769,7 @@
             this.groupSaveSlots.Controls.Add(this.radioSaveSlot3);
             this.groupSaveSlots.Controls.Add(this.radioSaveSlot2);
             this.groupSaveSlots.Controls.Add(this.radioSaveSlot1);
-            this.groupSaveSlots.Location = new System.Drawing.Point(214, 527);
+            this.groupSaveSlots.Location = new System.Drawing.Point(217, 528);
             this.groupSaveSlots.Name = "groupSaveSlots";
             this.groupSaveSlots.Size = new System.Drawing.Size(74, 37);
             this.groupSaveSlots.TabIndex = 38;
@@ -1859,7 +1860,7 @@
             // 
             this.btnSaveSlot.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSaveSlot.Enabled = false;
-            this.btnSaveSlot.Location = new System.Drawing.Point(308, 533);
+            this.btnSaveSlot.Location = new System.Drawing.Point(307, 534);
             this.btnSaveSlot.Name = "btnSaveSlot";
             this.btnSaveSlot.Size = new System.Drawing.Size(127, 33);
             this.btnSaveSlot.TabIndex = 46;
@@ -1869,20 +1870,31 @@
             // 
             // btnSaveFile
             // 
-            this.btnSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveFile.Location = new System.Drawing.Point(655, 35);
+            this.btnSaveFile.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSaveFile.Location = new System.Drawing.Point(440, 534);
             this.btnSaveFile.Name = "btnSaveFile";
-            this.btnSaveFile.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveFile.Size = new System.Drawing.Size(127, 33);
             this.btnSaveFile.TabIndex = 2;
-            this.btnSaveFile.Text = "Save File";
+            this.btnSaveFile.Text = "Save To File";
             this.btnSaveFile.UseVisualStyleBackColor = true;
             this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
             // 
-            // MegaPatcher
+            // btnAbout
+            // 
+            this.btnAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAbout.Location = new System.Drawing.Point(661, 542);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(71, 23);
+            this.btnAbout.TabIndex = 47;
+            this.btnAbout.Text = "About...";
+            this.btnAbout.UseVisualStyleBackColor = true;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 577);
+            this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnSaveFile);
             this.Controls.Add(this.btnSaveSlot);
             this.Controls.Add(this.lblFileSelected);
@@ -1896,7 +1908,7 @@
             this.Controls.Add(this.btnLoadFile);
             this.Controls.Add(this.tbFileSelected);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MegaPatcher";
+            this.Name = "MainForm";
             this.Text = "Aggelos Mega Patcher";
             this.tabControl1.ResumeLayout(false);
             this.tabInventory.ResumeLayout(false);
@@ -2095,6 +2107,7 @@
         private System.Windows.Forms.NumericUpDown tbY;
         private System.Windows.Forms.NumericUpDown tbX;
         private System.Windows.Forms.Button btnReloadScenes;
+        private System.Windows.Forms.Button btnAbout;
     }
 }
 
