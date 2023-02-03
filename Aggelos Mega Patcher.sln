@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aggelos Save Mod", "Aggelos Save Mod\Aggelos Save Mod.csproj", "{499966E4-985D-48F9-B02E-E2F7E46E183D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aggelos Mega Patcher", "Aggelos Save Mod\Aggelos Mega Patcher.csproj", "{499966E4-985D-48F9-B02E-E2F7E46E183D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
