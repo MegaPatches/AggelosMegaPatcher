@@ -1940,7 +1940,7 @@ namespace Aggelos_Mega_Patcher
                     picEarthEssence.Visible = false;
                     break;
                 case 2:
-                    picEarthRing.Visible = true;
+                    picEarthRing.Visible = false;
                     picEarthEssence.Visible = true;
                     break;
                 default:
@@ -1976,7 +1976,7 @@ namespace Aggelos_Mega_Patcher
                     picEarthEssence.Visible = false;
                     break;
                 case 2:
-                    picEarthRing.Visible = true;
+                    picEarthRing.Visible = false;
                     picEarthEssence.Visible = true;
                     break;
                 default:
@@ -2013,7 +2013,7 @@ namespace Aggelos_Mega_Patcher
                     picWaterEssence.Visible = false;
                     break;
                 case 2:
-                    picEarthRing.Visible = true;
+                    picEarthRing.Visible = false;
                     picWaterEssence.Visible = true;
                     break;
                 default:
@@ -2049,7 +2049,7 @@ namespace Aggelos_Mega_Patcher
                     picWaterEssence.Visible = false;
                     break;
                 case 2:
-                    picWaterRing.Visible = true;
+                    picWaterRing.Visible = false;
                     picWaterEssence.Visible = true;
                     break;
                 default:
@@ -2086,7 +2086,7 @@ namespace Aggelos_Mega_Patcher
                     picFireEssence.Visible = false;
                     break;
                 case 2:
-                    picFireRing.Visible = true;
+                    picFireRing.Visible = false;
                     picFireEssence.Visible = true;
                     break;
                 default:
@@ -2122,7 +2122,7 @@ namespace Aggelos_Mega_Patcher
                     picFireEssence.Visible = false;
                     break;
                 case 2:
-                    picFireRing.Visible = true;
+                    picFireRing.Visible = false;
                     picFireEssence.Visible = true;
                     break;
                 default:
@@ -2159,7 +2159,7 @@ namespace Aggelos_Mega_Patcher
                     picAirEssence.Visible = false;
                     break;
                 case 2:
-                    picAirRing.Visible = true;
+                    picAirRing.Visible = false;
                     picAirEssence.Visible = true;
                     break;
                 default:
@@ -2195,7 +2195,7 @@ namespace Aggelos_Mega_Patcher
                     picAirEssence.Visible = false;
                     break;
                 case 2:
-                    picAirRing.Visible = true;
+                    picAirRing.Visible = false;
                     picAirEssence.Visible = true;
                     break;
                 default:
