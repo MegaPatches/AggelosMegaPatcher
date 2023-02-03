@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aggelos_Save_Mod
+namespace Aggelos_Mega_Patcher
 {
     /************************************************************
      * Scene

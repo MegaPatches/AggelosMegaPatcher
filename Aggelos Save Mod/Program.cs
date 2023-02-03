@@ -11,7 +11,7 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Aggelos_Save_Mod
+namespace Aggelos_Mega_Patcher
 {
     internal static class Program
     {

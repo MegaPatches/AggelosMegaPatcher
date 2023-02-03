@@ -1,4 +1,4 @@
-﻿namespace Aggelos_Save_Mod
+﻿namespace Aggelos_Mega_Patcher
 {
     partial class MainForm
     {
@@ -273,7 +273,7 @@
             // 
             // tabInventory
             // 
-            this.tabInventory.BackgroundImage = global::Aggelos_Save_Mod.Properties.Resources.Inventory;
+            this.tabInventory.BackgroundImage = global::Aggelos_Mega_Patcher.Properties.Resources.Inventory;
             this.tabInventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabInventory.Controls.Add(this.tbMagic);
             this.tabInventory.Controls.Add(this.tbHealth);
@@ -430,7 +430,7 @@
             // 
             // picFireflyScroll
             // 
-            this.picFireflyScroll.Image = global::Aggelos_Save_Mod.Properties.Resources.FireFlyScroll;
+            this.picFireflyScroll.Image = global::Aggelos_Mega_Patcher.Properties.Resources.FireFlyScroll;
             this.picFireflyScroll.Location = new System.Drawing.Point(429, 154);
             this.picFireflyScroll.Name = "picFireflyScroll";
             this.picFireflyScroll.Size = new System.Drawing.Size(40, 40);
@@ -440,7 +440,7 @@
             // 
             // picLightEssence
             // 
-            this.picLightEssence.Image = global::Aggelos_Save_Mod.Properties.Resources.LightEssence;
+            this.picLightEssence.Image = global::Aggelos_Mega_Patcher.Properties.Resources.LightEssence;
             this.picLightEssence.Location = new System.Drawing.Point(429, 154);
             this.picLightEssence.Name = "picLightEssence";
             this.picLightEssence.Size = new System.Drawing.Size(40, 40);
@@ -471,7 +471,7 @@
             // 
             // picWoodpeckerScroll
             // 
-            this.picWoodpeckerScroll.Image = global::Aggelos_Save_Mod.Properties.Resources.WoodpeckerScroll;
+            this.picWoodpeckerScroll.Image = global::Aggelos_Mega_Patcher.Properties.Resources.WoodpeckerScroll;
             this.picWoodpeckerScroll.Location = new System.Drawing.Point(237, 154);
             this.picWoodpeckerScroll.Name = "picWoodpeckerScroll";
             this.picWoodpeckerScroll.Size = new System.Drawing.Size(40, 40);
@@ -481,7 +481,7 @@
             // 
             // picWoodpeckerText
             // 
-            this.picWoodpeckerText.Image = global::Aggelos_Save_Mod.Properties.Resources.WoodpeckerText;
+            this.picWoodpeckerText.Image = global::Aggelos_Mega_Patcher.Properties.Resources.WoodpeckerText;
             this.picWoodpeckerText.Location = new System.Drawing.Point(222, 200);
             this.picWoodpeckerText.Name = "picWoodpeckerText";
             this.picWoodpeckerText.Size = new System.Drawing.Size(72, 20);
@@ -491,7 +491,7 @@
             // 
             // picFleaText
             // 
-            this.picFleaText.Image = global::Aggelos_Save_Mod.Properties.Resources.FleaText;
+            this.picFleaText.Image = global::Aggelos_Mega_Patcher.Properties.Resources.FleaText;
             this.picFleaText.Location = new System.Drawing.Point(223, 200);
             this.picFleaText.Name = "picFleaText";
             this.picFleaText.Size = new System.Drawing.Size(71, 20);
@@ -551,7 +551,7 @@
             // 
             // picMoleText
             // 
-            this.picMoleText.Image = global::Aggelos_Save_Mod.Properties.Resources.MoleText;
+            this.picMoleText.Image = global::Aggelos_Mega_Patcher.Properties.Resources.MoleText;
             this.picMoleText.Location = new System.Drawing.Point(222, 200);
             this.picMoleText.Name = "picMoleText";
             this.picMoleText.Size = new System.Drawing.Size(72, 20);
@@ -585,7 +585,7 @@
             // 
             // picFleaScroll
             // 
-            this.picFleaScroll.Image = global::Aggelos_Save_Mod.Properties.Resources.FleaScroll;
+            this.picFleaScroll.Image = global::Aggelos_Mega_Patcher.Properties.Resources.FleaScroll;
             this.picFleaScroll.Location = new System.Drawing.Point(237, 154);
             this.picFleaScroll.Name = "picFleaScroll";
             this.picFleaScroll.Size = new System.Drawing.Size(40, 40);
@@ -595,7 +595,7 @@
             // 
             // picMoleScroll
             // 
-            this.picMoleScroll.Image = global::Aggelos_Save_Mod.Properties.Resources.MoleScroll;
+            this.picMoleScroll.Image = global::Aggelos_Mega_Patcher.Properties.Resources.MoleScroll;
             this.picMoleScroll.Location = new System.Drawing.Point(237, 154);
             this.picMoleScroll.Name = "picMoleScroll";
             this.picMoleScroll.Size = new System.Drawing.Size(40, 40);
@@ -626,7 +626,7 @@
             // 
             // picAirEssence
             // 
-            this.picAirEssence.Image = global::Aggelos_Save_Mod.Properties.Resources.AirEssence;
+            this.picAirEssence.Image = global::Aggelos_Mega_Patcher.Properties.Resources.AirEssence;
             this.picAirEssence.Location = new System.Drawing.Point(445, 57);
             this.picAirEssence.Name = "picAirEssence";
             this.picAirEssence.Size = new System.Drawing.Size(40, 40);
@@ -636,7 +636,7 @@
             // 
             // picAirRing
             // 
-            this.picAirRing.Image = global::Aggelos_Save_Mod.Properties.Resources.AirRing;
+            this.picAirRing.Image = global::Aggelos_Mega_Patcher.Properties.Resources.AirRing;
             this.picAirRing.Location = new System.Drawing.Point(445, 57);
             this.picAirRing.Name = "picAirRing";
             this.picAirRing.Size = new System.Drawing.Size(40, 40);
@@ -667,7 +667,7 @@
             // 
             // picFireEssence
             // 
-            this.picFireEssence.Image = global::Aggelos_Save_Mod.Properties.Resources.FireEssence;
+            this.picFireEssence.Image = global::Aggelos_Mega_Patcher.Properties.Resources.FireEssence;
             this.picFireEssence.Location = new System.Drawing.Point(372, 57);
             this.picFireEssence.Name = "picFireEssence";
             this.picFireEssence.Size = new System.Drawing.Size(40, 40);
@@ -677,7 +677,7 @@
             // 
             // picFireRing
             // 
-            this.picFireRing.Image = global::Aggelos_Save_Mod.Properties.Resources.FireRing;
+            this.picFireRing.Image = global::Aggelos_Mega_Patcher.Properties.Resources.FireRing;
             this.picFireRing.Location = new System.Drawing.Point(372, 57);
             this.picFireRing.Name = "picFireRing";
             this.picFireRing.Size = new System.Drawing.Size(40, 40);
@@ -708,7 +708,7 @@
             // 
             // picWaterEssence
             // 
-            this.picWaterEssence.Image = global::Aggelos_Save_Mod.Properties.Resources.WaterEssence;
+            this.picWaterEssence.Image = global::Aggelos_Mega_Patcher.Properties.Resources.WaterEssence;
             this.picWaterEssence.Location = new System.Drawing.Point(298, 57);
             this.picWaterEssence.Name = "picWaterEssence";
             this.picWaterEssence.Size = new System.Drawing.Size(40, 40);
@@ -718,7 +718,7 @@
             // 
             // picWaterRing
             // 
-            this.picWaterRing.Image = global::Aggelos_Save_Mod.Properties.Resources.WaterRing;
+            this.picWaterRing.Image = global::Aggelos_Mega_Patcher.Properties.Resources.WaterRing;
             this.picWaterRing.Location = new System.Drawing.Point(298, 57);
             this.picWaterRing.Name = "picWaterRing";
             this.picWaterRing.Size = new System.Drawing.Size(40, 40);
@@ -749,7 +749,7 @@
             // 
             // picEarthEssence
             // 
-            this.picEarthEssence.Image = global::Aggelos_Save_Mod.Properties.Resources.EarthEssence;
+            this.picEarthEssence.Image = global::Aggelos_Mega_Patcher.Properties.Resources.EarthEssence;
             this.picEarthEssence.Location = new System.Drawing.Point(224, 57);
             this.picEarthEssence.Name = "picEarthEssence";
             this.picEarthEssence.Size = new System.Drawing.Size(40, 40);
@@ -759,7 +759,7 @@
             // 
             // picEarthRing
             // 
-            this.picEarthRing.Image = global::Aggelos_Save_Mod.Properties.Resources.EarthRing;
+            this.picEarthRing.Image = global::Aggelos_Mega_Patcher.Properties.Resources.EarthRing;
             this.picEarthRing.Location = new System.Drawing.Point(224, 57);
             this.picEarthRing.Name = "picEarthRing";
             this.picEarthRing.Size = new System.Drawing.Size(40, 40);
@@ -790,7 +790,7 @@
             // 
             // picFullVial
             // 
-            this.picFullVial.Image = global::Aggelos_Save_Mod.Properties.Resources.FullVial;
+            this.picFullVial.Image = global::Aggelos_Mega_Patcher.Properties.Resources.FullVial;
             this.picFullVial.Location = new System.Drawing.Point(108, 60);
             this.picFullVial.Name = "picFullVial";
             this.picFullVial.Size = new System.Drawing.Size(40, 40);
@@ -800,7 +800,7 @@
             // 
             // picEmptyVial
             // 
-            this.picEmptyVial.Image = global::Aggelos_Save_Mod.Properties.Resources.EmptyVial;
+            this.picEmptyVial.Image = global::Aggelos_Mega_Patcher.Properties.Resources.EmptyVial;
             this.picEmptyVial.Location = new System.Drawing.Point(108, 60);
             this.picEmptyVial.Name = "picEmptyVial";
             this.picEmptyVial.Size = new System.Drawing.Size(40, 40);
@@ -810,7 +810,7 @@
             // 
             // picSun
             // 
-            this.picSun.Image = global::Aggelos_Save_Mod.Properties.Resources.Sun;
+            this.picSun.Image = global::Aggelos_Mega_Patcher.Properties.Resources.Sun;
             this.picSun.Location = new System.Drawing.Point(108, 60);
             this.picSun.Name = "picSun";
             this.picSun.Size = new System.Drawing.Size(40, 40);
@@ -820,7 +820,7 @@
             // 
             // picScepter
             // 
-            this.picScepter.Image = global::Aggelos_Save_Mod.Properties.Resources.Scepter;
+            this.picScepter.Image = global::Aggelos_Mega_Patcher.Properties.Resources.Scepter;
             this.picScepter.Location = new System.Drawing.Point(108, 60);
             this.picScepter.Name = "picScepter";
             this.picScepter.Size = new System.Drawing.Size(40, 40);
@@ -830,7 +830,7 @@
             // 
             // picCrystal
             // 
-            this.picCrystal.Image = global::Aggelos_Save_Mod.Properties.Resources.Crystal;
+            this.picCrystal.Image = global::Aggelos_Mega_Patcher.Properties.Resources.Crystal;
             this.picCrystal.Location = new System.Drawing.Point(108, 60);
             this.picCrystal.Name = "picCrystal";
             this.picCrystal.Size = new System.Drawing.Size(40, 40);
@@ -840,7 +840,7 @@
             // 
             // picStar
             // 
-            this.picStar.Image = global::Aggelos_Save_Mod.Properties.Resources.Star;
+            this.picStar.Image = global::Aggelos_Mega_Patcher.Properties.Resources.Star;
             this.picStar.Location = new System.Drawing.Point(108, 60);
             this.picStar.Name = "picStar";
             this.picStar.Size = new System.Drawing.Size(40, 40);
@@ -850,7 +850,7 @@
             // 
             // picShell
             // 
-            this.picShell.Image = global::Aggelos_Save_Mod.Properties.Resources.Shell;
+            this.picShell.Image = global::Aggelos_Mega_Patcher.Properties.Resources.Shell;
             this.picShell.Location = new System.Drawing.Point(108, 60);
             this.picShell.Name = "picShell";
             this.picShell.Size = new System.Drawing.Size(40, 40);
@@ -860,7 +860,7 @@
             // 
             // picMoon
             // 
-            this.picMoon.Image = global::Aggelos_Save_Mod.Properties.Resources.Moon;
+            this.picMoon.Image = global::Aggelos_Mega_Patcher.Properties.Resources.Moon;
             this.picMoon.Location = new System.Drawing.Point(108, 60);
             this.picMoon.Name = "picMoon";
             this.picMoon.Size = new System.Drawing.Size(40, 40);
@@ -870,7 +870,7 @@
             // 
             // picTiara
             // 
-            this.picTiara.Image = global::Aggelos_Save_Mod.Properties.Resources.Tiara;
+            this.picTiara.Image = global::Aggelos_Mega_Patcher.Properties.Resources.Tiara;
             this.picTiara.Location = new System.Drawing.Point(108, 60);
             this.picTiara.Name = "picTiara";
             this.picTiara.Size = new System.Drawing.Size(40, 40);
@@ -880,7 +880,7 @@
             // 
             // picBrokenCrown
             // 
-            this.picBrokenCrown.Image = global::Aggelos_Save_Mod.Properties.Resources.BrokenCrown;
+            this.picBrokenCrown.Image = global::Aggelos_Mega_Patcher.Properties.Resources.BrokenCrown;
             this.picBrokenCrown.Location = new System.Drawing.Point(108, 60);
             this.picBrokenCrown.Name = "picBrokenCrown";
             this.picBrokenCrown.Size = new System.Drawing.Size(40, 40);
@@ -890,7 +890,7 @@
             // 
             // picNecklace
             // 
-            this.picNecklace.Image = global::Aggelos_Save_Mod.Properties.Resources.Necklace;
+            this.picNecklace.Image = global::Aggelos_Mega_Patcher.Properties.Resources.Necklace;
             this.picNecklace.Location = new System.Drawing.Point(108, 60);
             this.picNecklace.Name = "picNecklace";
             this.picNecklace.Size = new System.Drawing.Size(40, 40);
@@ -900,7 +900,7 @@
             // 
             // picBananas
             // 
-            this.picBananas.Image = global::Aggelos_Save_Mod.Properties.Resources.Bananas;
+            this.picBananas.Image = global::Aggelos_Mega_Patcher.Properties.Resources.Bananas;
             this.picBananas.Location = new System.Drawing.Point(108, 60);
             this.picBananas.Name = "picBananas";
             this.picBananas.Size = new System.Drawing.Size(40, 40);
@@ -931,7 +931,7 @@
             // 
             // picElixir
             // 
-            this.picElixir.Image = global::Aggelos_Save_Mod.Properties.Resources.Elixir;
+            this.picElixir.Image = global::Aggelos_Mega_Patcher.Properties.Resources.Elixir;
             this.picElixir.Location = new System.Drawing.Point(36, 60);
             this.picElixir.Name = "picElixir";
             this.picElixir.Size = new System.Drawing.Size(40, 40);
@@ -951,7 +951,7 @@
             // 
             // picSmallPotion
             // 
-            this.picSmallPotion.Image = global::Aggelos_Save_Mod.Properties.Resources.SmallPotion;
+            this.picSmallPotion.Image = global::Aggelos_Mega_Patcher.Properties.Resources.SmallPotion;
             this.picSmallPotion.Location = new System.Drawing.Point(36, 60);
             this.picSmallPotion.Name = "picSmallPotion";
             this.picSmallPotion.Size = new System.Drawing.Size(40, 40);
@@ -982,7 +982,7 @@
             // 
             // picLyreRepaired
             // 
-            this.picLyreRepaired.Image = global::Aggelos_Save_Mod.Properties.Resources.LyreRepaired;
+            this.picLyreRepaired.Image = global::Aggelos_Mega_Patcher.Properties.Resources.LyreRepaired;
             this.picLyreRepaired.Location = new System.Drawing.Point(108, 157);
             this.picLyreRepaired.Name = "picLyreRepaired";
             this.picLyreRepaired.Size = new System.Drawing.Size(40, 40);
@@ -992,7 +992,7 @@
             // 
             // picLyreWithStrings
             // 
-            this.picLyreWithStrings.Image = global::Aggelos_Save_Mod.Properties.Resources.LyreAndStrings;
+            this.picLyreWithStrings.Image = global::Aggelos_Mega_Patcher.Properties.Resources.LyreAndStrings;
             this.picLyreWithStrings.Location = new System.Drawing.Point(108, 157);
             this.picLyreWithStrings.Name = "picLyreWithStrings";
             this.picLyreWithStrings.Size = new System.Drawing.Size(40, 40);
@@ -1002,7 +1002,7 @@
             // 
             // picLyreBody
             // 
-            this.picLyreBody.Image = global::Aggelos_Save_Mod.Properties.Resources.LyreBody;
+            this.picLyreBody.Image = global::Aggelos_Mega_Patcher.Properties.Resources.LyreBody;
             this.picLyreBody.Location = new System.Drawing.Point(108, 157);
             this.picLyreBody.Name = "picLyreBody";
             this.picLyreBody.Size = new System.Drawing.Size(40, 40);
@@ -1012,7 +1012,7 @@
             // 
             // picLyreStrings
             // 
-            this.picLyreStrings.Image = global::Aggelos_Save_Mod.Properties.Resources.LyreStrings;
+            this.picLyreStrings.Image = global::Aggelos_Mega_Patcher.Properties.Resources.LyreStrings;
             this.picLyreStrings.Location = new System.Drawing.Point(108, 157);
             this.picLyreStrings.Name = "picLyreStrings";
             this.picLyreStrings.Size = new System.Drawing.Size(40, 40);
@@ -1042,7 +1042,7 @@
             // 
             // picSacredArmor
             // 
-            this.picSacredArmor.Image = global::Aggelos_Save_Mod.Properties.Resources.SacredArmor;
+            this.picSacredArmor.Image = global::Aggelos_Mega_Patcher.Properties.Resources.SacredArmor;
             this.picSacredArmor.Location = new System.Drawing.Point(629, 373);
             this.picSacredArmor.Name = "picSacredArmor";
             this.picSacredArmor.Size = new System.Drawing.Size(40, 40);
@@ -1052,7 +1052,7 @@
             // 
             // picAggelosArmor
             // 
-            this.picAggelosArmor.Image = global::Aggelos_Save_Mod.Properties.Resources.AggelosArmor;
+            this.picAggelosArmor.Image = global::Aggelos_Mega_Patcher.Properties.Resources.AggelosArmor;
             this.picAggelosArmor.Location = new System.Drawing.Point(629, 373);
             this.picAggelosArmor.Name = "picAggelosArmor";
             this.picAggelosArmor.Size = new System.Drawing.Size(40, 40);
@@ -1083,7 +1083,7 @@
             // 
             // picSacredSword
             // 
-            this.picSacredSword.Image = global::Aggelos_Save_Mod.Properties.Resources.SacredSword;
+            this.picSacredSword.Image = global::Aggelos_Mega_Patcher.Properties.Resources.SacredSword;
             this.picSacredSword.Location = new System.Drawing.Point(629, 274);
             this.picSacredSword.Name = "picSacredSword";
             this.picSacredSword.Size = new System.Drawing.Size(40, 40);
@@ -1093,7 +1093,7 @@
             // 
             // picAggelosSword
             // 
-            this.picAggelosSword.Image = global::Aggelos_Save_Mod.Properties.Resources.AggelosSword;
+            this.picAggelosSword.Image = global::Aggelos_Mega_Patcher.Properties.Resources.AggelosSword;
             this.picAggelosSword.Location = new System.Drawing.Point(629, 274);
             this.picAggelosSword.Name = "picAggelosSword";
             this.picAggelosSword.Size = new System.Drawing.Size(40, 40);
@@ -1510,7 +1510,7 @@
             // 
             this.picSaveMapSelectors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.picSaveMapSelectors.BackgroundImage = global::Aggelos_Save_Mod.Properties.Resources.SaveMapSelections;
+            this.picSaveMapSelectors.BackgroundImage = global::Aggelos_Mega_Patcher.Properties.Resources.SaveMapSelections;
             this.picSaveMapSelectors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picSaveMapSelectors.Location = new System.Drawing.Point(0, 0);
             this.picSaveMapSelectors.Name = "picSaveMapSelectors";
@@ -1522,7 +1522,7 @@
             // 
             this.picSaveMap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.picSaveMap.BackgroundImage = global::Aggelos_Save_Mod.Properties.Resources.SaveMap;
+            this.picSaveMap.BackgroundImage = global::Aggelos_Mega_Patcher.Properties.Resources.SaveMap;
             this.picSaveMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picSaveMap.Location = new System.Drawing.Point(43, 0);
             this.picSaveMap.Name = "picSaveMap";

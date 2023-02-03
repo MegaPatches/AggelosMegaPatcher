@@ -1,4 +1,4 @@
-﻿namespace Aggelos_Save_Mod
+﻿namespace Aggelos_Mega_Patcher
 {
     partial class SceneGuideDialog
     {
@@ -36,7 +36,7 @@
             // picSceneGuideMap
             // 
             this.picSceneGuideMap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picSceneGuideMap.Image = global::Aggelos_Save_Mod.Properties.Resources.Scenes_Guide;
+            this.picSceneGuideMap.Image = global::Aggelos_Mega_Patcher.Properties.Resources.Scenes_Guide;
             this.picSceneGuideMap.Location = new System.Drawing.Point(0, 0);
             this.picSceneGuideMap.Name = "picSceneGuideMap";
             this.picSceneGuideMap.Size = new System.Drawing.Size(1087, 645);

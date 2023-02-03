@@ -28,7 +28,7 @@ using System.Windows.Forms.VisualStyles;
  *      - Need to figure out why teleporting to portals doesn't allow for boss spawns (related to the cutscene triggers?)
  ***************************/
 
-namespace Aggelos_Save_Mod
+namespace Aggelos_Mega_Patcher
 {
     public partial class MainForm : Form
     {

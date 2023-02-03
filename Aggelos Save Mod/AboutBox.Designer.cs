@@ -1,4 +1,4 @@
-﻿namespace Aggelos_Save_Mod
+﻿namespace Aggelos_Mega_Patcher
 {
     partial class AboutBox
     {

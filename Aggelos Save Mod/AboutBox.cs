@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Aggelos_Save_Mod
+namespace Aggelos_Mega_Patcher
 {
     partial class AboutBox : Form
     {
